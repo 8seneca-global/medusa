@@ -5,6 +5,8 @@ export const defaultAdminCollectionFields = [
   "created_at",
   "updated_at",
   "metadata",
+  "description",
+  "is_active",
 ]
 
 export const retrieveTransformQueryConfig = {

@@ -140,6 +140,7 @@
           "keyName": "IDX_product_category_parent_category_id",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_category_parent_category_id\" ON \"product_category\" (parent_category_id) WHERE deleted_at IS NULL"
@@ -148,6 +149,7 @@
           "keyName": "IDX_product_category_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_category_deleted_at\" ON \"product_category\" (deleted_at) WHERE deleted_at IS NULL"
@@ -156,6 +158,7 @@
           "keyName": "IDX_product_category_path",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_category_path\" ON \"product_category\" (mpath) WHERE deleted_at IS NULL"
@@ -164,6 +167,7 @@
           "keyName": "IDX_category_handle_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_category_handle_unique\" ON \"product_category\" (handle) WHERE deleted_at IS NULL"
@@ -174,6 +178,7 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -193,7 +198,8 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -232,6 +238,25 @@
           "primary": false,
           "nullable": true,
           "mappedType": "json"
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "mappedType": "text"
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "default": "false",
+          "mappedType": "boolean"
         },
         "created_at": {
           "name": "created_at",
@@ -273,6 +298,7 @@
           "keyName": "IDX_product_collection_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_collection_deleted_at\" ON \"product_collection\" (deleted_at) WHERE deleted_at IS NULL"
@@ -281,6 +307,7 @@
           "keyName": "IDX_collection_handle_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_collection_handle_unique\" ON \"product_collection\" (handle) WHERE deleted_at IS NULL"
@@ -291,12 +318,14 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
       ],
       "checks": [],
-      "foreignKeys": {}
+      "foreignKeys": {},
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -367,6 +396,7 @@
           "keyName": "IDX_product_tag_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_tag_deleted_at\" ON \"product_tag\" (deleted_at) WHERE deleted_at IS NULL"
@@ -375,6 +405,7 @@
           "keyName": "IDX_tag_value_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_tag_value_unique\" ON \"product_tag\" (value) WHERE deleted_at IS NULL"
@@ -385,12 +416,14 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
       ],
       "checks": [],
-      "foreignKeys": {}
+      "foreignKeys": {},
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -461,6 +494,7 @@
           "keyName": "IDX_product_type_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_type_deleted_at\" ON \"product_type\" (deleted_at) WHERE deleted_at IS NULL"
@@ -469,6 +503,7 @@
           "keyName": "IDX_type_value_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_type_value_unique\" ON \"product_type\" (value) WHERE deleted_at IS NULL"
@@ -479,12 +514,14 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
       ],
       "checks": [],
-      "foreignKeys": {}
+      "foreignKeys": {},
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -726,6 +763,7 @@
           "keyName": "IDX_product_type_id",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_type_id\" ON \"product\" (type_id) WHERE deleted_at IS NULL"
@@ -734,6 +772,7 @@
           "keyName": "IDX_product_collection_id",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_collection_id\" ON \"product\" (collection_id) WHERE deleted_at IS NULL"
@@ -742,6 +781,7 @@
           "keyName": "IDX_product_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_deleted_at\" ON \"product\" (deleted_at) WHERE deleted_at IS NULL"
@@ -750,6 +790,7 @@
           "keyName": "IDX_product_handle_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_product_handle_unique\" ON \"product\" (handle) WHERE deleted_at IS NULL"
@@ -760,6 +801,7 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -792,7 +834,8 @@
           "deleteRule": "set null",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -872,6 +915,7 @@
           "keyName": "IDX_product_option_product_id",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_option_product_id\" ON \"product_option\" (product_id) WHERE deleted_at IS NULL"
@@ -880,6 +924,7 @@
           "keyName": "IDX_product_option_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_option_deleted_at\" ON \"product_option\" (deleted_at) WHERE deleted_at IS NULL"
@@ -888,6 +933,7 @@
           "keyName": "IDX_option_product_id_title_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_option_product_id_title_unique\" ON \"product_option\" (product_id, title) WHERE deleted_at IS NULL"
@@ -898,6 +944,7 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -917,7 +964,8 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -997,6 +1045,7 @@
           "keyName": "IDX_product_option_value_option_id",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_option_value_option_id\" ON \"product_option_value\" (option_id) WHERE deleted_at IS NULL"
@@ -1005,6 +1054,7 @@
           "keyName": "IDX_product_option_value_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_option_value_deleted_at\" ON \"product_option_value\" (deleted_at) WHERE deleted_at IS NULL"
@@ -1013,6 +1063,7 @@
           "keyName": "IDX_option_value_option_id_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_option_value_option_id_unique\" ON \"product_option_value\" (option_id, value) WHERE deleted_at IS NULL"
@@ -1023,6 +1074,7 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -1042,7 +1094,8 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -1132,6 +1185,7 @@
           "keyName": "IDX_image_product_id",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_image_product_id\" ON \"image\" (product_id) WHERE deleted_at IS NULL"
@@ -1140,6 +1194,7 @@
           "keyName": "IDX_image_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_image_deleted_at\" ON \"image\" (deleted_at) WHERE deleted_at IS NULL"
@@ -1148,6 +1203,7 @@
           "keyName": "IDX_product_image_url",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_image_url\" ON \"image\" (url) WHERE deleted_at IS NULL"
@@ -1158,6 +1214,7 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -1177,7 +1234,8 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -1210,6 +1268,7 @@
             "product_tag_id"
           ],
           "composite": true,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -1242,7 +1301,8 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -1275,6 +1335,7 @@
             "product_category_id"
           ],
           "composite": true,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -1307,7 +1368,8 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -1525,6 +1587,7 @@
           "keyName": "IDX_product_variant_product_id",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_variant_product_id\" ON \"product_variant\" (product_id) WHERE deleted_at IS NULL"
@@ -1533,6 +1596,7 @@
           "keyName": "IDX_product_variant_deleted_at",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE INDEX IF NOT EXISTS \"IDX_product_variant_deleted_at\" ON \"product_variant\" (deleted_at) WHERE deleted_at IS NULL"
@@ -1541,6 +1605,7 @@
           "keyName": "IDX_product_variant_sku_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_product_variant_sku_unique\" ON \"product_variant\" (sku) WHERE deleted_at IS NULL"
@@ -1549,6 +1614,7 @@
           "keyName": "IDX_product_variant_barcode_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_product_variant_barcode_unique\" ON \"product_variant\" (barcode) WHERE deleted_at IS NULL"
@@ -1557,6 +1623,7 @@
           "keyName": "IDX_product_variant_ean_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_product_variant_ean_unique\" ON \"product_variant\" (ean) WHERE deleted_at IS NULL"
@@ -1565,6 +1632,7 @@
           "keyName": "IDX_product_variant_upc_unique",
           "columnNames": [],
           "composite": false,
+          "constraint": false,
           "primary": false,
           "unique": false,
           "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_product_variant_upc_unique\" ON \"product_variant\" (upc) WHERE deleted_at IS NULL"
@@ -1575,6 +1643,7 @@
             "id"
           ],
           "composite": false,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -1594,7 +1663,8 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     },
     {
       "columns": {
@@ -1627,6 +1697,7 @@
             "option_value_id"
           ],
           "composite": true,
+          "constraint": true,
           "primary": true,
           "unique": true
         }
@@ -1659,7 +1730,9 @@
           "deleteRule": "cascade",
           "updateRule": "cascade"
         }
-      }
+      },
+      "nativeEnums": {}
     }
-  ]
+  ],
+  "nativeEnums": {}
 }

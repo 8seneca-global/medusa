@@ -71,6 +71,18 @@ export const CollectionGeneralSection = ({
         </Text>
         <Text size="small">/{collection.handle}</Text>
       </div>
+      <div className="text-ui-fg-subtle grid grid-cols-2 items-center px-6 py-4">
+        <Text size="small" leading="compact" weight="plus">
+          {t("fields.description")}
+        </Text>
+        <Text size="small">{collection.description || "N/A"}</Text>
+      </div>
+      <div className="text-ui-fg-subtle grid grid-cols-2 items-center px-6 py-4">
+        <Text size="small" leading="compact" weight="plus">
+          Is Active
+        </Text>
+        <Text size="small">{collection.is_active ? "Yes" : "No"}</Text>
+      </div>
     </Container>
   )
 }

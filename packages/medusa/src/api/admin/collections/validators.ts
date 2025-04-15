@@ -38,5 +38,7 @@ export type AdminUpdateCollectionType = z.infer<typeof AdminUpdateCollection>
 export const AdminUpdateCollection = z.object({
   title: z.string().optional(),
   handle: z.string().optional(),
+  description: z.string().optional(),
+  is_active: z.boolean().optional(),
   metadata: z.record(z.unknown()).nullish(),
 })

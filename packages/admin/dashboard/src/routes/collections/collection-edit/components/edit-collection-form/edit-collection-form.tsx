@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Button, Input, Text } from "@medusajs/ui"
+import { Button, Input, Text, Switch, Textarea } from "@medusajs/ui"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import * as zod from "zod"
@@ -17,6 +17,8 @@ type EditCollectionFormProps = {
 const EditCollectionSchema = zod.object({
   title: zod.string().min(1),
   handle: zod.string().min(1),
+  description: zod.string().optional(),
+  is_active: zod.boolean(),
 })
 
 export const EditCollectionForm = ({ collection }: EditCollectionFormProps) => {
@@ -27,6 +29,8 @@ export const EditCollectionForm = ({ collection }: EditCollectionFormProps) => {
     defaultValues: {
       title: collection.title,
       handle: collection.handle,
+      description: collection.description,
+      is_active: collection.is_active,
     },
     resolver: zodResolver(EditCollectionSchema),
   })
@@ -84,6 +88,39 @@ export const EditCollectionForm = ({ collection }: EditCollectionFormProps) => {
                         </div>
                         <Input {...field} className="pl-10" />
                       </div>
+                    </Form.Control>
+                    <Form.ErrorMessage />
+                  </Form.Item>
+                )
+              }}
+            />
+            <Form.Field
+              control={form.control}
+              name="description"
+              render={({ field }) => {
+                return (
+                  <Form.Item>
+                    <Form.Label>{t("fields.description")}</Form.Label>
+                    <Form.Control>
+                      <Textarea {...field} />
+                    </Form.Control>
+                    <Form.ErrorMessage />
+                  </Form.Item>
+                )
+              }}
+            />
+            <Form.Field
+              control={form.control}
+              name="is_active"
+              render={({ field }) => {
+                return (
+                  <Form.Item>
+                    <Form.Label>Is Active</Form.Label>
+                    <Form.Control>
+                      <Switch
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
                     </Form.Control>
                     <Form.ErrorMessage />
                   </Form.Item>

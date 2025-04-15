@@ -16,6 +16,14 @@ export interface BaseCollection {
    */
   handle: string
   /**
+   * The collection's description.
+   */
+  description: string
+  /**
+   * Whether the collection is active.
+   */
+  is_active: boolean
+  /**
    * The date the collection was created.
    */
   created_at: string

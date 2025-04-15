@@ -23,6 +23,14 @@ export interface AdminUpdateCollection {
    */
   handle?: string
   /**
+   * The collection's description.
+   */
+  description?: string
+  /**
+   * Whether the collection is active.
+   */
+  is_active?: boolean
+  /**
    * Key-value pairs of custom data.
    */
   metadata?: Record<string, any> | null
