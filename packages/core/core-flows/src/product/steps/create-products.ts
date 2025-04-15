@@ -5,7 +5,7 @@ import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 export const createProductsStepId = "create-products"
 /**
  * This step creates one or more products.
- * 
+ *
  * @example
  * const data = createProductsStep([{
  *   title: "Shirt",
@@ -28,8 +28,10 @@ export const createProductsStepId = "create-products"
 export const createProductsStep = createStep(
   createProductsStepId,
   async (data: ProductTypes.CreateProductDTO[], { container }) => {
+    console.log(data)
     const service = container.resolve<IProductModuleService>(Modules.PRODUCT)
 
+    console.log(data)
     const created = await service.createProducts(data)
     return new StepResponse(
       created,

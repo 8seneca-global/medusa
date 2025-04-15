@@ -57,8 +57,8 @@ export const ProductCreateVariantsForm = ({
     pricePreferences,
   })
 
-  const variantData = useMemo(() => {
-    const ret = []
+  const variantData: any = useMemo(() => {
+    const ret: any = []
 
     variants.forEach((v, i) => {
       if (v.should_create) {

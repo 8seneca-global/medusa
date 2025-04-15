@@ -170,6 +170,10 @@ export interface AdminCreateProduct {
    */
   description?: string
   /**
+   * The product's long description.
+   */
+  long_description?: string
+  /**
    * Whether the product is a gift card.
    */
   is_giftcard?: boolean
@@ -388,6 +392,10 @@ export interface AdminUpdateProduct {
    * The product's description.
    */
   description?: string | null
+  /**
+   * The product's long description.
+   */
+  long_description?: string | null
   /**
    * Whether the product is a gift card.
    */

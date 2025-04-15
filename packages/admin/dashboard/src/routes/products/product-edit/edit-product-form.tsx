@@ -41,7 +41,6 @@ export const EditProductForm = ({
   const { getFormFields } = useExtension()
 
   const fields = getFormFields("product", "edit")
-  console.log(product)
 
   const { mutateAsync: updateProduct, isPending } = useUpdateProduct(product.id)
 

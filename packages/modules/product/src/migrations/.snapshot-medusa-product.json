@@ -551,6 +551,15 @@
           "nullable": true,
           "mappedType": "text"
         },
+        "long_description": {
+          "name": "long_description",
+          "type": "text",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "mappedType": "text"
+        },
         "is_giftcard": {
           "name": "is_giftcard",
           "type": "boolean",
