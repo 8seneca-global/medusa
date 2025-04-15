@@ -82,11 +82,6 @@ export function getRouteMap({
                         import("../../routes/products/product-detail"),
                       children: [
                         {
-                          path: "edit",
-                          lazy: () =>
-                            import("../../routes/products/product-edit"),
-                        },
-                        {
                           path: "edit-variant",
                           lazy: () =>
                             import(

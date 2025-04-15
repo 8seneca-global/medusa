@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next"
 import { Form } from "../../../../../../../components/common/form"
 import { HandleInput } from "../../../../../../../components/inputs/handle-input"
 import { ProductCreateSchemaType } from "../../../../types"
+import { RichTextEditor } from "../../../../../../../components/rich-text-editor"
 
 type ProductCreateGeneralSectionProps = {
   form: UseFormReturn<ProductCreateSchemaType>
@@ -27,7 +28,7 @@ export const ProductCreateGeneralSection = ({
                 <Form.Item>
                   <Form.Label>{t("products.fields.title.label")}</Form.Label>
                   <Form.Control>
-                    <Input {...field} placeholder="Winter jacket" />
+                    <Input {...field} placeholder="Dark chocolate" />
                   </Form.Control>
                 </Form.Item>
               )
@@ -43,7 +44,7 @@ export const ProductCreateGeneralSection = ({
                     {t("products.fields.subtitle.label")}
                   </Form.Label>
                   <Form.Control>
-                    <Input {...field} placeholder="Warm and cosy" />
+                    <Input {...field} placeholder="Bitter and sweet" />
                   </Form.Control>
                 </Form.Item>
               )
@@ -62,7 +63,7 @@ export const ProductCreateGeneralSection = ({
                     {t("fields.handle")}
                   </Form.Label>
                   <Form.Control>
-                    <HandleInput {...field} placeholder="winter-jacket" />
+                    <HandleInput {...field} placeholder="dark-chocolate" />
                   </Form.Control>
                 </Form.Item>
               )
@@ -80,7 +81,32 @@ export const ProductCreateGeneralSection = ({
                 {t("products.fields.description.label")}
               </Form.Label>
               <Form.Control>
-                <Textarea {...field} placeholder="A warm and cozy jacket" />
+                <Textarea
+                  {...field}
+                  placeholder="A coffee dark chocolate with fruity flavors, smokiness sweetness and bitterness creating a rich a balanced taste experience."
+                />
+              </Form.Control>
+            </Form.Item>
+          )
+        }}
+      />
+      <Form.Field
+        control={form.control}
+        name="long_description"
+        render={({ field }) => {
+          return (
+            <Form.Item>
+              <Form.Label optional>
+                {t(
+                  "products.fields.long_description.label",
+                  "Long Description"
+                )}
+              </Form.Label>
+              <Form.Control>
+                <RichTextEditor
+                  value={field.value || ""}
+                  onChange={field.onChange}
+                />
               </Form.Control>
             </Form.Item>
           )

@@ -36,6 +36,7 @@ export const normalizeProductFormValues = (
     title: values.title.trim(),
     subtitle: values.subtitle?.trim(),
     description: values.description?.trim(),
+    long_description: values.long_description,
     discountable: values.discountable || undefined,
     width: values.width ? parseFloat(values.width) : undefined,
     length: values.length ? parseFloat(values.length) : undefined,
