@@ -705,6 +705,16 @@
           "nullable": true,
           "mappedType": "json"
         },
+        "collection_position": {
+          "name": "collection_position",
+          "type": "integer",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "default": "0",
+          "mappedType": "integer"
+        },
         "type_id": {
           "name": "type_id",
           "type": "text",

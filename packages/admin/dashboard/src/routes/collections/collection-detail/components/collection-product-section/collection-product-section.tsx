@@ -111,6 +111,15 @@ export const CollectionProductSection = ({
                 },
               ],
             },
+            {
+              actions: [
+                {
+                  icon: <PencilSquare />,
+                  label: "Edit product position",
+                  to: "products-position",
+                },
+              ],
+            },
           ]}
         />
       </div>

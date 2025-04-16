@@ -34,6 +34,7 @@ const Product = model
     variants: model.hasMany(() => ProductVariant, {
       mappedBy: "product",
     }),
+    collection_position: model.number().default(0),
     type: model
       .belongsTo(() => ProductType, {
         mappedBy: "products",

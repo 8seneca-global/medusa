@@ -81,6 +81,10 @@ export interface BaseProduct {
    */
   collection_id: string | null
   /**
+   * The product's position in its collection.
+   */
+  collection_position: number
+  /**
    * The product's categories.
    */
   categories?: BaseProductCategory[] | null

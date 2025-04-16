@@ -1174,8 +1174,6 @@ export default class ProductModuleService
       ProductModuleService.normalizeUpdateProductCollectionInput
     ) as UpdateCollectionInput[]
 
-    // TODO: Maybe we can update upsertWithReplace to not remove oneToMany entities, but just disassociate them? With that we can remove the code below.
-    // Another alternative is to not allow passing product_ids to a collection, and instead set the collection_id through the product update call.
     const updatedCollections = await this.productCollectionService_.update(
       normalizedInput.map((c) =>
         removeUndefined({ ...c, products: undefined })
@@ -1209,6 +1207,7 @@ export default class ProductModuleService
             selector: dissociateSelector,
             data: {
               collection_id: null,
+              collection_position: null,
             },
           },
         ]
@@ -1218,6 +1217,7 @@ export default class ProductModuleService
             selector: associateSelector,
             data: {
               collection_id: collectionData.id,
+              collection_position: 0, // Default position when adding products
             },
           })
         }
@@ -1233,6 +1233,30 @@ export default class ProductModuleService
 
     if (updateSelectorAndData.length) {
       await this.productService_.update(updateSelectorAndData, sharedContext)
+
+      // After updating products, reorder collection_position for all products in the collection
+      for (const collection of updatedCollections) {
+        const products = await this.productService_.list(
+          { collection_id: collection.id },
+          { order: { collection_position: "ASC" } },
+          sharedContext
+        )
+
+        // Update collection_position to maintain sequential ordering
+        await Promise.all(
+          products.map((product, index) =>
+            this.productService_.update(
+              [
+                {
+                  selector: { id: product.id },
+                  data: { collection_position: index },
+                },
+              ],
+              sharedContext
+            )
+          )
+        )
+      }
     }
 
     return collections

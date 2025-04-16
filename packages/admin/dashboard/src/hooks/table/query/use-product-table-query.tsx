@@ -7,7 +7,7 @@ type UseProductTableQueryProps = {
 }
 
 const DEFAULT_FIELDS =
-  "id,title,handle,status,*collection,*sales_channels,variants.id,thumbnail"
+  "id,title,handle,status,*collection,*sales_channels,variants.id,thumbnail,collection_position"
 
 export const useProductTableQuery = ({
   prefix,
@@ -56,7 +56,7 @@ export const useProductTableQuery = ({
     category_id: category_id?.split(","),
     collection_id: collection_id?.split(","),
     is_giftcard: is_giftcard ? is_giftcard === "true" : undefined,
-    order: order,
+    order: order || "collection_position",
     tag_id: tag_id ? tag_id.split(",") : undefined,
     type_id: type_id?.split(","),
     status: status?.split(",") as HttpTypes.AdminProductStatus[],

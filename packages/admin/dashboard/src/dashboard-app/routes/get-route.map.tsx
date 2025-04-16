@@ -549,6 +549,13 @@ export function getRouteMap({
                         ),
                     },
                     {
+                      path: "products-position",
+                      lazy: () =>
+                        import(
+                          "../../routes/collections/collection-products-position"
+                        ),
+                    },
+                    {
                       path: "metadata/edit",
                       lazy: () =>
                         import("../../routes/collections/collection-metadata"),

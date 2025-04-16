@@ -25,6 +25,7 @@ type Product {
   material: String
   collection: ProductCollection
   collection_id: String
+  collection_position: Int
   categories: [ProductCategory]
   type: ProductType
   type_id: String

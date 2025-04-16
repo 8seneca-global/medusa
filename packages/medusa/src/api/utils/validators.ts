@@ -41,7 +41,17 @@ export const createBatchBody = (
 
 export const createLinkBody = () => {
   return z.object({
-    add: z.array(z.string()).optional(),
+    add: z
+      .array(
+        z.union([
+          z.string(),
+          z.object({
+            id: z.string(),
+            collection_position: z.number(),
+          }),
+        ])
+      )
+      .optional(),
     remove: z.array(z.string()).optional(),
   })
 }
