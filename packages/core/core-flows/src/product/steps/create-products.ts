@@ -28,10 +28,8 @@ export const createProductsStepId = "create-products"
 export const createProductsStep = createStep(
   createProductsStepId,
   async (data: ProductTypes.CreateProductDTO[], { container }) => {
-    console.log(data)
     const service = container.resolve<IProductModuleService>(Modules.PRODUCT)
 
-    console.log(data)
     const created = await service.createProducts(data)
     return new StepResponse(
       created,
