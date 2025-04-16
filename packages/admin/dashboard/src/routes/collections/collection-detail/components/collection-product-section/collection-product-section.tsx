@@ -92,6 +92,32 @@ export const CollectionProductSection = ({
     )
   }
 
+  const groups = useMemo(() => {
+    const addAction = {
+      actions: [
+        {
+          icon: <Plus />,
+          label: t("actions.add"),
+          to: "products",
+        },
+      ],
+    }
+
+    const editPositionAction = {
+      actions: [
+        {
+          icon: <PencilSquare />,
+          label: "Edit product position",
+          to: "products-position",
+        },
+      ],
+    }
+
+    return (products?.length ?? 0) > 0
+      ? [addAction, editPositionAction]
+      : [addAction]
+  }, [products, t])
+
   if (isError) {
     throw error
   }
@@ -100,28 +126,7 @@ export const CollectionProductSection = ({
     <Container className="divide-y p-0">
       <div className="flex items-center justify-between px-6 py-4">
         <Heading level="h2">{t("products.domain")}</Heading>
-        <ActionMenu
-          groups={[
-            {
-              actions: [
-                {
-                  icon: <Plus />,
-                  label: t("actions.add"),
-                  to: "products",
-                },
-              ],
-            },
-            {
-              actions: [
-                {
-                  icon: <PencilSquare />,
-                  label: "Edit product position",
-                  to: "products-position",
-                },
-              ],
-            },
-          ]}
-        />
+        <ActionMenu groups={groups} />
       </div>
       <_DataTable
         table={table}

@@ -20,8 +20,9 @@ import { CSS } from "@dnd-kit/utilities"
 import { DotsSix } from "@medusajs/icons"
 import { Text } from "@medusajs/ui"
 import React, { useState } from "react"
+import { Thumbnail } from "../../../components/common/thumbnail"
 
-type ProductTreeProps<T> = {
+type ProductTreeProps<T extends { id: string; thumbnail?: string | null }> = {
   value: T[]
   onChange: (
     value: {
@@ -33,7 +34,10 @@ type ProductTreeProps<T> = {
   renderValue: (item: T) => string
 }
 
-export const ProductTree = <T extends { id: string }>({
+export const ProductTree = <
+  // eslint-disable-next-line prettier/prettier
+  T extends { id: string; thumbnail?: string | null },
+>({
   value,
   onChange,
   renderValue,
@@ -87,9 +91,14 @@ export const ProductTree = <T extends { id: string }>({
         <div className="flex flex-col gap-y-2 p-4">
           {value.map((item) => (
             <SortableItem key={item.id} id={item.id}>
-              <div className="border-ui-border-base bg-ui-bg-base flex items-center gap-x-2 rounded-md border p-2">
+              <div className="border-ui-border-base bg-ui-bg-base flex items-center gap-x-4 rounded-md border p-2">
                 <DotsSix className="text-ui-fg-subtle" />
-                <Text>{renderValue(item)}</Text>
+                <div className="flex flex-1 items-center gap-x-4">
+                  <div className="h-[32px] w-[32px]">
+                    <Thumbnail src={item.thumbnail} />
+                  </div>
+                  <Text>{renderValue(item)}</Text>
+                </div>
               </div>
             </SortableItem>
           ))}
@@ -97,9 +106,14 @@ export const ProductTree = <T extends { id: string }>({
       </SortableContext>
       <DragOverlay>
         {activeItem ? (
-          <div className="border-ui-border-base bg-ui-bg-base flex items-center gap-x-2 rounded-md border p-2">
+          <div className="border-ui-border-base bg-ui-bg-base flex items-center gap-x-4 rounded-md border p-2">
             <DotsSix className="text-ui-fg-subtle" />
-            <Text>{renderValue(activeItem)}</Text>
+            <div className="flex flex-1 items-center gap-x-4">
+              <div className="h-[32px] w-[32px]">
+                <Thumbnail src={activeItem.thumbnail} />
+              </div>
+              <Text>{renderValue(activeItem)}</Text>
+            </div>
           </div>
         ) : null}
       </DragOverlay>

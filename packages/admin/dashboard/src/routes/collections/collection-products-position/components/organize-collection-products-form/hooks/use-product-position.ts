@@ -9,7 +9,7 @@ import { queryClient } from "../../../../../../lib/query-client"
 import { ProductTreeItem } from "../../../types"
 
 const QUERY = {
-  fields: "id,title,collection_id,collection_position",
+  fields: "id,title,collection_id,collection_position,thumbnail",
   collection_id: "null",
   limit: 9999,
   order: "collection_position",
