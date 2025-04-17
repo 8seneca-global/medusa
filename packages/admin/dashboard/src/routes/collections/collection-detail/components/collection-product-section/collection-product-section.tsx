@@ -1,4 +1,4 @@
-import { PencilSquare, Plus, Trash } from "@medusajs/icons"
+import { Pencil, PencilSquare, Plus, Trash } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
 import { Checkbox, Container, Heading, toast, usePrompt } from "@medusajs/ui"
 import { keepPreviousData } from "@tanstack/react-query"
@@ -40,8 +40,24 @@ export const CollectionProductSection = ({
   const filters = useProductTableFilters(["collections"])
   const columns = useColumns()
 
+  const sortedProducts = useMemo(() => {
+    if (!products) {
+      return []
+    }
+    if (raw.order) {
+      return products
+    }
+
+    return products?.sort((a, b) => {
+      return (
+        (a as any)?.product_addition?.product_position -
+        (b as any)?.product_addition?.product_position
+      )
+    })
+  }, [products, raw.order])
+
   const { table } = useDataTable({
-    data: products ?? [],
+    data: sortedProducts ?? [],
     columns,
     getRowId: (row) => row.id,
     count,
@@ -108,6 +124,11 @@ export const CollectionProductSection = ({
                   icon: <Plus />,
                   label: t("actions.add"),
                   to: "products",
+                },
+                {
+                  icon: <Pencil />,
+                  label: "Edit Position",
+                  to: `/collections/${collection.id}/edit-position`,
                 },
               ],
             },

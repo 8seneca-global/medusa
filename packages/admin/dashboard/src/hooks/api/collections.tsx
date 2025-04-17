@@ -119,7 +119,9 @@ export const useCreateCollection = (
     mutationFn: (payload) => sdk.admin.productCollection.create(payload),
     onSuccess: (data, variables, context) => {
       queryClient.invalidateQueries({ queryKey: collectionsQueryKeys.lists() })
-
+      queryClient.invalidateQueries({
+        queryKey: ["collection-products-position"],
+      })
       options?.onSuccess?.(data, variables, context)
     },
     ...options,
