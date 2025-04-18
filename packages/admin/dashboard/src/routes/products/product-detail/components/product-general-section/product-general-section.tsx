@@ -34,6 +34,7 @@ const EditProductSchema = zod.object({
   handle: zod.string().min(1),
   material: zod.string().optional(),
   description: zod.string().optional(),
+  long_description: zod.string().optional(),
   discountable: zod.boolean(),
 })
 
@@ -57,11 +58,11 @@ export const ProductGeneralSection = ({
     defaultValues: {
       status: product.status,
       title: product.title,
-      material: product.material || "",
-      subtitle: product.subtitle || "",
-      handle: product.handle || "",
-      description: product.description || "",
-      long_description: product.product_addition?.long_description || "",
+      material: product.material ?? "",
+      subtitle: product.subtitle ?? "",
+      handle: product.handle ?? "",
+      description: product.description ?? "",
+      long_description: product.product_addition?.long_description ?? "",
       discountable: product.discountable,
     },
     schema: EditProductSchema,

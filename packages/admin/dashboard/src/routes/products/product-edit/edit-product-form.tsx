@@ -28,6 +28,7 @@ const EditProductSchema = zod.object({
   handle: zod.string().min(1),
   material: zod.string().optional(),
   description: zod.string().optional(),
+  long_description: zod.string().optional(),
   discountable: zod.boolean(),
 })
 
@@ -65,6 +66,10 @@ export const EditProductForm = ({
       isValueChanged(formValues.handle, product.handle) ||
       isValueChanged(formValues.material, product.material) ||
       isValueChanged(formValues.description, product.description) ||
+      isValueChanged(
+        formValues.long_description,
+        product.product_addition.long_description
+      ) ||
       isValueChanged(formValues.discountable, product.discountable)
     )
   }, [form, product])
