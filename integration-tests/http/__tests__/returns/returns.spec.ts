@@ -2,8 +2,8 @@ import {
   ContainerRegistrationKeys,
   Modules,
   RuleOperator,
-} from "@medusajs/utils"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@8medusa/utils"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 import {
   adminHeaders,
   createAdminUser,

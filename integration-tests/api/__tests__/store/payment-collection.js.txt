@@ -33,7 +33,7 @@ describe("/store/payment-collections", () => {
 
     await simpleCustomerFactory(dbConnection, {
       id: "customer",
-      email: "test@medusajs.com",
+      email: "test@8medusa.com",
     })
   })
 

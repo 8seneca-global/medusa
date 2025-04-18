@@ -1,8 +1,8 @@
 import {
   PermanentStepFailureError,
   SkipStepResponse,
-} from "@medusajs/orchestration"
-import { OrchestrationUtils, isDefined } from "@medusajs/utils"
+} from "@8medusa/orchestration"
+import { OrchestrationUtils, isDefined } from "@8medusa/utils"
 
 /**
  * This class is used to create the response returned by a step. A step return its data by returning an instance of `StepResponse`.
@@ -47,12 +47,12 @@ export class StepResponse<TOutput, TCompensateInput = TOutput> {
    * @param message - An optional message to be logged.
    *
    * @example
-   * import { Product } from "@medusajs/medusa"
+   * import { Product } from "@8medusa/medusa"
    * import {
    *   createStep,
    *   StepResponse,
    *   createWorkflow
-   * } from "@medusajs/workflows-sdk"
+   * } from "@8medusa/workflows-sdk"
    *
    * interface CreateProductInput {
    *   title: string

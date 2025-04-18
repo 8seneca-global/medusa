@@ -1,6 +1,6 @@
-import { ArrowUpRightOnBox, PencilSquare } from "@medusajs/icons"
-import { HttpTypes } from "@medusajs/types"
-import { Container, Heading, Text } from "@medusajs/ui"
+import { ArrowUpRightOnBox, PencilSquare } from "@8medusa/icons"
+import { HttpTypes } from "@8medusa/types"
+import { Container, Heading, Text } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { useParams } from "react-router-dom"
 

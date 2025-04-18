@@ -1,4 +1,4 @@
-import { IndexTypes } from "@medusajs/framework/types"
+import { IndexTypes } from "@8medusa/framework/types"
 import {
   GraphQLUtils,
   isDefined,
@@ -6,7 +6,7 @@ import {
   isPresent,
   isString,
   unflattenObjectKeys,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { Knex } from "@mikro-orm/knex"
 import { OrderBy, QueryFormat, QueryOptions, Select } from "@types"
 

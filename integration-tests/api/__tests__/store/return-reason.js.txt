@@ -1,6 +1,6 @@
 const path = require("path")
 
-const { ReturnReason } = require("@medusajs/medusa")
+const { ReturnReason } = require("@8medusa/medusa")
 
 const setupServer = require("../../../environment-helpers/setup-server")
 const { useApi } = require("../../../environment-helpers/use-api")

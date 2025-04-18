@@ -1,7 +1,7 @@
-import { InventoryTypes } from "@medusajs/framework/types"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { InventoryTypes } from "@8medusa/framework/types"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
-import { MathBN, Modules } from "@medusajs/framework/utils"
+import { MathBN, Modules } from "@8medusa/framework/utils"
 
 /**
  * The data to adjust the inventory levels.

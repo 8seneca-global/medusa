@@ -1,5 +1,5 @@
-import { generateResetPasswordTokenWorkflow } from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { generateResetPasswordTokenWorkflow } from "@8medusa/core-flows"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 import jwt from "jsonwebtoken"
 import {
   adminHeaders,

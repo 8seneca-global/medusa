@@ -1,12 +1,12 @@
-import { PencilSquare, Trash } from "@medusajs/icons"
-import { Button, Container, Heading, toast, usePrompt } from "@medusajs/ui"
+import { PencilSquare, Trash } from "@8medusa/icons"
+import { Button, Container, Heading, toast, usePrompt } from "@8medusa/ui"
 import { keepPreviousData } from "@tanstack/react-query"
 import { createColumnHelper } from "@tanstack/react-table"
 import { useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { Link, Outlet, useLoaderData, useLocation } from "react-router-dom"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { ActionMenu } from "../../../../../components/common/action-menu"
 import { _DataTable } from "../../../../../components/table/data-table"
 import {

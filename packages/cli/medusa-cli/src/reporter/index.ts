@@ -3,7 +3,7 @@ import { ulid } from "ulid"
 import winston from "winston"
 import { inspect } from "util"
 import stackTrace from "stack-trace"
-import { track } from "@medusajs/telemetry"
+import { track } from "@8medusa/telemetry"
 import { panicHandler } from "./panic-handler"
 
 const LOG_LEVEL = process.env.LOG_LEVEL || "http"

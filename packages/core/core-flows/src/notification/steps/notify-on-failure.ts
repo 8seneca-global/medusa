@@ -1,6 +1,6 @@
-import { INotificationModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { INotificationModuleService } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The notifications to send.

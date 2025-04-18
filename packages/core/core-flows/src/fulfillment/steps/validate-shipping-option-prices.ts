@@ -1,10 +1,10 @@
-import { FulfillmentWorkflow } from "@medusajs/framework/types"
+import { FulfillmentWorkflow } from "@8medusa/framework/types"
 import {
   MedusaError,
   Modules,
   ShippingOptionPriceType,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The data to validate shipping option prices.

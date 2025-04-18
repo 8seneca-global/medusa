@@ -1,12 +1,12 @@
-import { featureFlagRouter } from "@medusajs/framework"
-import { MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+import { featureFlagRouter } from "@8medusa/framework"
+import { MedusaResponse } from "@8medusa/framework/http"
+import { HttpTypes } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   isPresent,
   QueryContext,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import IndexEngineFeatureFlag from "../../../loaders/feature-flags/index-engine"
 import { wrapVariantsWithInventoryQuantityForSalesChannel } from "../../utils/middlewares"
 import { RequestWithContext, wrapProductsWithTaxPrices } from "./helpers"

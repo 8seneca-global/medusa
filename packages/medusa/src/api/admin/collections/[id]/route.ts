@@ -1,16 +1,16 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import {
   deleteCollectionsWorkflow,
   updateCollectionsWorkflow,
-} from "@medusajs/core-flows"
+} from "@8medusa/core-flows"
 
 import { AdminUpdateCollectionType } from "../validators"
 import { refetchCollection } from "../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { HttpTypes } from "@8medusa/framework/types"
+import { MedusaError } from "@8medusa/framework/utils"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest,

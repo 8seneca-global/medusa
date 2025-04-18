@@ -2,8 +2,8 @@ import {
   createStep,
   createWorkflow,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { when } from "@medusajs/framework/workflows-sdk/composer"
+} from "@8medusa/framework/workflows-sdk"
+import { when } from "@8medusa/framework/workflows-sdk/composer"
 
 const step_1 = createStep(
   "step_1",

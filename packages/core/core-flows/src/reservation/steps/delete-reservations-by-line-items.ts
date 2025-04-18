@@ -1,7 +1,7 @@
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
-import { IInventoryService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { IInventoryService } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
 
 /**
  * The IDs of the line items to delete reservations for.

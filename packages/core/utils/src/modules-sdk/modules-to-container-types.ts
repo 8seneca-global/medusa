@@ -1,6 +1,6 @@
 import { join } from "path"
 import { Modules } from "./definition"
-import type { LoadedModule } from "@medusajs/types"
+import type { LoadedModule } from "@8medusa/types"
 import { FileSystem } from "../common/file-system"
 import { toCamelCase } from "../common/to-camel-case"
 import { upperCaseFirst } from "../common/upper-case-first"
@@ -93,7 +93,7 @@ export async function generateContainerTypes(
 
         if (SERVICES_INTERFACES[key]) {
           result.imports.push(
-            `import type { ${SERVICES_INTERFACES[key]} } from '@medusajs/framework/types'`
+            `import type { ${SERVICES_INTERFACES[key]} } from '@8medusa/framework/types'`
           )
           result.mappings.push(`${interfaceKey}: ${SERVICES_INTERFACES[key]}`)
           return
@@ -132,7 +132,7 @@ export async function generateContainerTypes(
   const fileName = "modules-bindings.d.ts"
   const fileContents = `${imports.join(
     "\n"
-  )}\n\ndeclare module '@medusajs/framework/types' {
+  )}\n\ndeclare module '@8medusa/framework/types' {
   interface ${interfaceName} {
     ${mappings.join(",\n    ")}
   }

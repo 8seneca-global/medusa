@@ -2,7 +2,7 @@ import {
   PricingRuleOperator,
   RuleOperator,
   ShippingOptionPriceType as ShippingOptionPriceTypeEnum,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { z } from "zod"
 import { booleanString } from "../../utils/common-validators"
 import {

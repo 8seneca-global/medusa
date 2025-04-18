@@ -6,7 +6,7 @@ import {
   ShippingProfile,
   ShippingProfileType,
   Store,
-} from "@medusajs/medusa"
+} from "@8medusa/medusa"
 import {
   ProductVariantFactoryData,
   simpleProductVariantFactory,
@@ -16,7 +16,7 @@ import {
   simpleSalesChannelFactory,
 } from "./simple-sales-channel-factory"
 
-import { generateEntityId } from "@medusajs/utils"
+import { generateEntityId } from "@8medusa/utils"
 import faker from "faker"
 import { DataSource } from "typeorm"
 

@@ -5,7 +5,7 @@ import {
   CircleDottedLine,
   CircleHalfSolid,
   Plus,
-} from "@medusajs/icons"
+} from "@8medusa/icons"
 import { Accordion as RadixAccordion } from "radix-ui"
 import * as React from "react"
 

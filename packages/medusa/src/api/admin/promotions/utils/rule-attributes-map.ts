@@ -2,7 +2,7 @@ import {
   ApplicationMethodType,
   PromotionType,
   RuleOperator,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { operatorsMap } from "./operators-map"
 
 export enum DisguisedRule {

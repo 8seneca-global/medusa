@@ -1,4 +1,4 @@
-import { ReservationItemDTO } from "@medusajs/types"
+import { ReservationItemDTO } from "@8medusa/types"
 
 /**
  * Builds a map of reservations by line item id.

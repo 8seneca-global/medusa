@@ -1,4 +1,4 @@
-import { BigNumberInput } from "@medusajs/types"
+import { BigNumberInput } from "@8medusa/types"
 import {
   ApplicationMethodAllocation,
   ApplicationMethodType,

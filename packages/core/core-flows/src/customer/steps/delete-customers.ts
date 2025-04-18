@@ -1,6 +1,6 @@
-import { ICustomerModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { ICustomerModuleService } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The IDs of the customers to delete.

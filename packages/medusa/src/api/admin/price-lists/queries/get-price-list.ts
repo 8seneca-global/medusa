@@ -1,10 +1,10 @@
-import { MedusaContainer } from "@medusajs/framework/types"
+import { MedusaContainer } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   isPresent,
   MedusaError,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { AdminPriceListRemoteQueryDTO } from "../types"
 import { buildPriceListResponse } from "./"
 

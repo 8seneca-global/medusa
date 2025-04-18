@@ -1,11 +1,11 @@
-import { PaymentDTO } from "@medusajs/framework/types"
-import { deepFlatMap, MathBN } from "@medusajs/framework/utils"
+import { PaymentDTO } from "@8medusa/framework/types"
+import { deepFlatMap, MathBN } from "@8medusa/framework/utils"
 import {
   createWorkflow,
   transform,
   when,
   WorkflowData,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../../common"
 import { refundPaymentsWorkflow } from "../../../payment"
 

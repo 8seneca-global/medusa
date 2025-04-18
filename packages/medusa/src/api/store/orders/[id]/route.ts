@@ -1,6 +1,6 @@
-import { getOrderDetailWorkflow } from "@medusajs/core-flows"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+import { getOrderDetailWorkflow } from "@8medusa/core-flows"
+import { MedusaRequest, MedusaResponse } from "@8medusa/framework/http"
+import { HttpTypes } from "@8medusa/framework/types"
 
 // TODO: Do we want to apply some sort of authentication here? My suggestion is that we do
 export const GET = async (

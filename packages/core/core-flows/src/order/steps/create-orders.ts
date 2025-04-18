@@ -1,6 +1,6 @@
-import { CreateOrderDTO, IOrderModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { CreateOrderDTO, IOrderModuleService } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The orders to create.

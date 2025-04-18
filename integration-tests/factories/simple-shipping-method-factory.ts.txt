@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm"
 import faker from "faker"
-import { ShippingMethod, ShippingMethodTaxLine } from "@medusajs/medusa"
+import { ShippingMethod, ShippingMethodTaxLine } from "@8medusa/medusa"
 
 import {
   ShippingOptionFactoryData,

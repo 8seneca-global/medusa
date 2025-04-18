@@ -1,4 +1,4 @@
-import { defineJoinerConfig, Modules } from "@medusajs/framework/utils"
+import { defineJoinerConfig, Modules } from "@8medusa/framework/utils"
 import {
   Product,
   ProductCategory,

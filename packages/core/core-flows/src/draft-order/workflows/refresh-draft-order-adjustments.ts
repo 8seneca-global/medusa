@@ -1,11 +1,11 @@
-import { PromotionActions } from "@medusajs/framework/utils"
+import { PromotionActions } from "@8medusa/framework/utils"
 import {
   createWorkflow,
   parallelize,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { OrderDTO } from "@medusajs/types"
+} from "@8medusa/framework/workflows-sdk"
+import { OrderDTO } from "@8medusa/types"
 import {
   getActionsToComputeFromPromotionsStep,
   getPromotionCodesToApply,

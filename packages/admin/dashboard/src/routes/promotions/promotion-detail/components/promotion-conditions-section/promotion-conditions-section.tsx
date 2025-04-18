@@ -1,6 +1,6 @@
-import { PencilSquare } from "@medusajs/icons"
-import { HttpTypes, PromotionRuleTypes } from "@medusajs/types"
-import { Badge, Container, Heading } from "@medusajs/ui"
+import { PencilSquare } from "@8medusa/icons"
+import { HttpTypes, PromotionRuleTypes } from "@8medusa/types"
+import { Badge, Container, Heading } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 
 import { ActionMenu } from "../../../../../components/common/action-menu"

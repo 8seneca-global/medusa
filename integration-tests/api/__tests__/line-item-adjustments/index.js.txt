@@ -1,5 +1,5 @@
 const path = require("path")
-const { LineItemAdjustment } = require("@medusajs/medusa")
+const { LineItemAdjustment } = require("@8medusa/medusa")
 const setupServer = require("../../../environment-helpers/setup-server")
 const { useApi } = require("../../../environment-helpers/use-api")
 const { initDb, useDb } = require("../../../environment-helpers/use-db")

@@ -1,4 +1,4 @@
-import { Link } from "@medusajs/modules-sdk"
+import { Link } from "@8medusa/modules-sdk"
 import {
   ConfigModule,
   IApiKeyModuleService,
@@ -28,12 +28,12 @@ import {
   Logger,
   ModuleImplementations,
   RemoteQueryFunction,
-} from "@medusajs/types"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/utils"
+} from "@8medusa/types"
+import { ContainerRegistrationKeys, Modules } from "@8medusa/utils"
 import { Knex } from "@mikro-orm/knex"
 import { AwilixContainer, ResolveOptions } from "awilix"
 
-declare module "@medusajs/types" {
+declare module "@8medusa/types" {
   export interface ModuleImplementations {
     /**
      * @deprecated use {@link ContainerRegistrationKeys.LINK} instead.

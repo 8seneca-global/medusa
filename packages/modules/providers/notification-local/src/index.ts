@@ -1,4 +1,4 @@
-import { ModuleProvider, Modules } from "@medusajs/framework/utils"
+import { ModuleProvider, Modules } from "@8medusa/framework/utils"
 import { LocalNotificationService } from "./services/local"
 
 const services = [LocalNotificationService]

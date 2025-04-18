@@ -2,9 +2,9 @@ import {
   AuthenticatedMedusaRequest,
   refetchEntities,
   refetchEntity,
-} from "@medusajs/framework/http"
-import { MedusaPricingContext } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@8medusa/framework/http"
+import { MedusaPricingContext } from "@8medusa/framework/types"
+import { MedusaError } from "@8medusa/framework/utils"
 import { NextFunction } from "express"
 
 export function setPricingContext() {

@@ -1,10 +1,10 @@
-import { cancelReturnWorkflow } from "@medusajs/core-flows"
+import { cancelReturnWorkflow } from "@8medusa/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { AdminPostCancelReturnReqSchemaType } from "../../validators"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@8medusa/framework/types"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<AdminPostCancelReturnReqSchemaType>,

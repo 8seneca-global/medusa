@@ -1,12 +1,12 @@
-import { MedusaStoreRequest, refetchEntity } from "@medusajs/framework/http"
+import { MedusaStoreRequest, refetchEntity } from "@8medusa/framework/http"
 import {
   HttpTypes,
   ItemTaxLineDTO,
   MedusaContainer,
   TaxableItemDTO,
   TaxCalculationContext,
-} from "@medusajs/framework/types"
-import { calculateAmountsWithTax, Modules } from "@medusajs/framework/utils"
+} from "@8medusa/framework/types"
+import { calculateAmountsWithTax, Modules } from "@8medusa/framework/utils"
 
 export type RequestWithContext<
   Body,

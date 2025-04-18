@@ -1,4 +1,4 @@
-import { PromotionUtils, model } from "@medusajs/framework/utils"
+import { PromotionUtils, model } from "@8medusa/framework/utils"
 import Campaign from "./campaign"
 
 const CampaignBudget = model.define(

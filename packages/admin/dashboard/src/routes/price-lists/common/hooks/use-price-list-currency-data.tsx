@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { useRegions } from "../../../../hooks/api/regions"
 import { useStore } from "../../../../hooks/api/store"
 import { usePricePreferences } from "../../../../hooks/api/price-preferences"

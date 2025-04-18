@@ -1,7 +1,7 @@
 import type {
   IDistributedSchedulerStorage,
   SchedulerOptions,
-} from "@medusajs/orchestration"
+} from "@8medusa/orchestration"
 
 export class MockSchedulerStorage implements IDistributedSchedulerStorage {
   async schedule(

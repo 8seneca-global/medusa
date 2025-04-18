@@ -1,8 +1,8 @@
 import * as zod from "zod"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { AdminInventoryItem, AdminStockLocation } from "@medusajs/types"
-import { Button, Text, toast } from "@medusajs/ui"
+import { AdminInventoryItem, AdminStockLocation } from "@8medusa/types"
+import { Button, Text, toast } from "@8medusa/ui"
 import { useFieldArray, useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import { z } from "zod"

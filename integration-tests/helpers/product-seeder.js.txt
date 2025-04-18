@@ -11,7 +11,7 @@ const {
   ShippingProfileType,
   MoneyAmount,
   ProductVariantMoneyAmount,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 const { breaking } = require("./breaking")
 
 module.exports = async (dataSource, data = {}) => {

@@ -1,5 +1,5 @@
-import { isDefined, MedusaError } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { isDefined, MedusaError } from "@8medusa/framework/utils"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The details of the shipping options to validate.

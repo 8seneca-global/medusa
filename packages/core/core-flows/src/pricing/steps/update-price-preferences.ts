@@ -1,12 +1,12 @@
 import {
   IPricingModuleService,
   PricingWorkflow,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   Modules,
   getSelectsAndRelationsFromObjectArray,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 export const updatePricePreferencesStepId = "update-price-preferences"
 /**

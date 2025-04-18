@@ -1,14 +1,14 @@
 import {
   deletePriceListsWorkflow,
   updatePriceListsWorkflow,
-} from "@medusajs/core-flows"
+} from "@8medusa/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { fetchPriceList } from "../helpers"
 import { AdminUpdatePriceListType } from "../validators"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@8medusa/framework/types"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest,

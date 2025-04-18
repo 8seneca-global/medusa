@@ -1,9 +1,9 @@
-import { logger } from "@medusajs/framework/logger"
+import { logger } from "@8medusa/framework/logger"
 import {
   AdminOptions,
   ConfigModule,
   PluginDetails,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import { Express } from "express"
 import path from "path"
 import { ADMIN_RELATIVE_OUTPUT_DIR } from "../utils"
@@ -74,7 +74,7 @@ export default async function adminLoader({
 }
 
 async function initDevelopmentServer(app: Express, options: IntializedOptions) {
-  const { develop } = await import("@medusajs/admin-bundler")
+  const { develop } = await import("@8medusa/admin-bundler")
 
   const adminMiddleware = await develop(options)
   app.use(options.path, adminMiddleware)
@@ -82,7 +82,7 @@ async function initDevelopmentServer(app: Express, options: IntializedOptions) {
 }
 
 async function serveProductionBuild(app: Express, options: IntializedOptions) {
-  const { serve } = await import("@medusajs/admin-bundler")
+  const { serve } = await import("@8medusa/admin-bundler")
 
   const adminRoute = await serve(options)
 

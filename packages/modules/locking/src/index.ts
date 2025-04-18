@@ -1,4 +1,4 @@
-import { Module, Modules } from "@medusajs/framework/utils"
+import { Module, Modules } from "@8medusa/framework/utils"
 import { default as loadProviders } from "./loaders/providers"
 import LockingModuleService from "./services/locking-module"
 

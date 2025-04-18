@@ -9,13 +9,13 @@ import {
   RemoteQueryInput,
   RemoteQueryObjectConfig,
   RemoteQueryObjectFromStringResult,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   MedusaError,
   isObject,
   remoteQueryObjectFromString,
   unflattenObjectKeys,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { RemoteQuery } from "./remote-query"
 import { toRemoteQuery } from "./to-remote-query"
 

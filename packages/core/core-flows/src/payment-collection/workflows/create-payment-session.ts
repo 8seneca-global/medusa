@@ -2,7 +2,7 @@ import {
   AccountHolderDTO,
   CustomerDTO,
   PaymentSessionDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -10,14 +10,14 @@ import {
   parallelize,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { createRemoteLinkStep, useRemoteQueryStep } from "../../common"
 import {
   createPaymentSessionStep,
   createPaymentAccountHolderStep,
 } from "../steps"
 import { deletePaymentSessionsWorkflow } from "./delete-payment-sessions"
-import { isPresent, Modules } from "@medusajs/framework/utils"
+import { isPresent, Modules } from "@8medusa/framework/utils"
 
 /**
  * The data to create payment sessions.

@@ -2,12 +2,12 @@ import {
   AuthWorkflowEvents,
   generateJwtToken,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   createWorkflow,
   transform,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { emitEventStep, useRemoteQueryStep } from "../../common"
 
 /**

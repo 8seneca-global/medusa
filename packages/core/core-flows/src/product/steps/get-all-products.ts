@@ -1,9 +1,9 @@
 import {
   FilterableProductProps,
   RemoteQueryFunction,
-} from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/types"
+import { ContainerRegistrationKeys } from "@8medusa/framework/utils"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The configuration to retrieve the products.

@@ -1,3 +1,3 @@
-import { defineConfig } from "@medusajs/utils"
+import { defineConfig } from "@8medusa/utils"
 
 export default defineConfig()

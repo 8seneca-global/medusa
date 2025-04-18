@@ -4,7 +4,7 @@ const {
   LineItem,
   Fulfillment,
   Return,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 
 module.exports = async (dataSource, data = {}) => {
   const manager = dataSource.manager

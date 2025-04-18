@@ -1,7 +1,7 @@
-import { IPricingModuleService } from "@medusajs/framework/types"
-import { Module, Modules } from "@medusajs/framework/utils"
+import { IPricingModuleService } from "@8medusa/framework/types"
+import { Module, Modules } from "@8medusa/framework/utils"
 import { PricingModuleService } from "@services"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@8medusa/test-utils"
 
 moduleIntegrationTestRunner<IPricingModuleService>({
   moduleName: Modules.PRICING,

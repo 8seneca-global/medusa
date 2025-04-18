@@ -1,4 +1,4 @@
-import { AdminOrderLineItem, DateComparisonOperator } from "@medusajs/types"
+import { AdminOrderLineItem, DateComparisonOperator } from "@8medusa/types"
 import { OnChangeFn, RowSelectionState } from "@tanstack/react-table"
 import { useMemo, useState } from "react"
 

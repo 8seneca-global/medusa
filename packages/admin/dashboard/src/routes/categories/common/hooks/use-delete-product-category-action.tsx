@@ -1,5 +1,5 @@
-import { HttpTypes } from "@medusajs/types"
-import { toast, usePrompt } from "@medusajs/ui"
+import { HttpTypes } from "@8medusa/types"
+import { toast, usePrompt } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import { useDeleteProductCategory } from "../../../../hooks/api/categories"

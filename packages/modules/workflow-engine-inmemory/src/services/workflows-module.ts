@@ -5,17 +5,17 @@ import {
   InternalModuleDeclaration,
   ModulesSdkTypes,
   WorkflowsSdkTypes,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   InjectSharedContext,
   isDefined,
   MedusaContext,
   ModulesSdkUtils,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import type {
   ReturnWorkflow,
   UnwrapWorkflowInputDataType,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { SqlEntityManager } from "@mikro-orm/postgresql"
 import { WorkflowExecution } from "@models"
 import { WorkflowOrchestratorService } from "@services"

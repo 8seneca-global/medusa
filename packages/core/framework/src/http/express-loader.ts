@@ -8,7 +8,7 @@ import path from "path"
 import { logger } from "../logger"
 import { configManager } from "../config"
 import { MedusaRequest, MedusaResponse } from "./types"
-import { dynamicImport } from "@medusajs/utils"
+import { dynamicImport } from "@8medusa/utils"
 
 const NOISY_ENDPOINTS_CHUNKS = ["@fs", "@id", "@vite", "@react", "node_modules"]
 

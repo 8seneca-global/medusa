@@ -1,9 +1,9 @@
 import {
   IProductModuleService,
   ProductCategoryWorkflow,
-} from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
 
 export const batchLinkProductsToCategoryStepId =
   "batch-link-products-to-category"

@@ -1,5 +1,5 @@
-import { HttpTypes } from "@medusajs/types"
-import { Button, ProgressStatus, ProgressTabs, toast } from "@medusajs/ui"
+import { HttpTypes } from "@8medusa/types"
+import { Button, ProgressStatus, ProgressTabs, toast } from "@8medusa/ui"
 import { useEffect, useMemo, useState } from "react"
 import { useWatch } from "react-hook-form"
 import { useTranslation } from "react-i18next"

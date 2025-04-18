@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { HttpTypes, InventoryLevelDTO, StockLocationDTO } from "@medusajs/types"
-import { Button, Input, Text, toast } from "@medusajs/ui"
+import { HttpTypes, InventoryLevelDTO, StockLocationDTO } from "@8medusa/types"
+import { Button, Input, Text, toast } from "@8medusa/ui"
 import { useForm, useWatch } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import { z } from "zod"

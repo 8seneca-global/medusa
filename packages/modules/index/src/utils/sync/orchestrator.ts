@@ -1,4 +1,4 @@
-import { ILockingModule } from "@medusajs/types"
+import { ILockingModule } from "@8medusa/types"
 
 export class Orchestrator {
   /**

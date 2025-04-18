@@ -1,4 +1,4 @@
-import type { PropertyType } from "@medusajs/types"
+import type { PropertyType } from "@8medusa/types"
 import { DmlEntity } from "../entity"
 import { parseEntityName } from "./entity-builder/parse-entity-name"
 import { setGraphQLRelationship } from "./graphql-builder/set-relationship"

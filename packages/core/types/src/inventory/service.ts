@@ -759,7 +759,7 @@ export interface IInventoryService extends IModuleService {
    * @example
    * import {
    *   initialize as initializeInventoryModule,
-   * } from "@medusajs/inventory"
+   * } from "@8medusa/inventory"
    *
    * async function restoreReservationItemsByLineItem (
    *   lineItemIds: string[]

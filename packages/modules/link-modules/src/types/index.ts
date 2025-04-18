@@ -1,4 +1,4 @@
-import { Logger } from "@medusajs/framework/types"
+import { Logger } from "@8medusa/framework/types"
 
 export type InitializeModuleInjectableDependencies = {
   logger?: Logger

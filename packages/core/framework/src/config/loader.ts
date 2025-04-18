@@ -1,5 +1,5 @@
 import { ConfigModule } from "./types"
-import { ContainerRegistrationKeys, getConfigFile } from "@medusajs/utils"
+import { ContainerRegistrationKeys, getConfigFile } from "@8medusa/utils"
 import { logger } from "../logger"
 import { ConfigManager } from "./config"
 import { container } from "../container"

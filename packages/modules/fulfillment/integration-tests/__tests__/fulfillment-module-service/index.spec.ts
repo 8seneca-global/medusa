@@ -1,15 +1,15 @@
-import { ModulesDefinition } from "@medusajs/framework/modules-sdk"
+import { ModulesDefinition } from "@8medusa/framework/modules-sdk"
 import {
   FulfillmentSetDTO,
   IFulfillmentModuleService,
-} from "@medusajs/framework/types"
-import { Module, Modules } from "@medusajs/framework/utils"
+} from "@8medusa/framework/types"
+import { Module, Modules } from "@8medusa/framework/utils"
 import { FulfillmentModuleService, FulfillmentProviderService } from "@services"
 import {
   initModules,
   moduleIntegrationTestRunner,
   SuiteOptions,
-} from "@medusajs/test-utils"
+} from "@8medusa/test-utils"
 import { resolve } from "path"
 import { createFullDataStructure } from "../../__fixtures__"
 import { FulfillmentProviderServiceFixtures } from "../../__fixtures__/providers"

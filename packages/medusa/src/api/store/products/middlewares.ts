@@ -1,7 +1,7 @@
 import {
   featureFlagRouter,
   validateAndTransformQuery,
-} from "@medusajs/framework"
+} from "@8medusa/framework"
 import {
   applyDefaultFilters,
   applyParamsAsFilters,
@@ -9,8 +9,8 @@ import {
   clearFiltersByKey,
   maybeApplyLinkFilter,
   MiddlewareRoute,
-} from "@medusajs/framework/http"
-import { isPresent, ProductStatus } from "@medusajs/framework/utils"
+} from "@8medusa/framework/http"
+import { isPresent, ProductStatus } from "@8medusa/framework/utils"
 import IndexEngineFeatureFlag from "../../../loaders/feature-flags/index-engine"
 import {
   filterByValidSalesChannels,

@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@8medusa/framework/utils"
 import PaymentCollection from "./payment-collection"
 
 const PaymentProvider = model.define("PaymentProvider", {

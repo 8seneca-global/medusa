@@ -1,6 +1,6 @@
-import logger from "@medusajs/cli/dist/reporter"
+import logger from "@8medusa/cli/dist/reporter"
 import cors, { CorsOptions } from "cors"
-import { parseCorsOrigins } from "@medusajs/utils"
+import { parseCorsOrigins } from "@8medusa/utils"
 import type { Express, RequestHandler, ErrorRequestHandler } from "express"
 import type {
   MedusaRequest,

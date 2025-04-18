@@ -4,7 +4,7 @@ import {
   ShippingOptionRequirement,
   ShippingProfile,
   ShippingProfileType,
-} from "@medusajs/medusa"
+} from "@8medusa/medusa"
 import faker from "faker"
 import { DataSource } from "typeorm"
 import { simpleRegionFactory } from "./simple-region-factory"

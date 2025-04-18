@@ -3,7 +3,7 @@ import path from "path"
 import http from "http"
 import express from "express"
 import cluster from "cluster"
-import { track } from "@medusajs/telemetry"
+import { track } from "@8medusa/telemetry"
 import { scheduleJob } from "node-schedule"
 
 import {
@@ -13,12 +13,12 @@ import {
   GracefulShutdownServer,
   isPresent,
   generateContainerTypes,
-} from "@medusajs/framework/utils"
-import { logger } from "@medusajs/framework/logger"
+} from "@8medusa/framework/utils"
+import { logger } from "@8medusa/framework/logger"
 
 import loaders from "../loaders"
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { MedusaModule } from "@8medusa/framework/modules-sdk"
+import { MedusaContainer } from "@8medusa/framework/types"
 import { parse } from "url"
 
 const EVERY_SIXTH_HOUR = "0 */6 * * *"

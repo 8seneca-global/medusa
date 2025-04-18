@@ -1,6 +1,6 @@
 import { transform } from "../transform"
 import { WorkflowData, WorkflowTransactionContext } from "../type"
-import { OrchestrationUtils } from "@medusajs/utils"
+import { OrchestrationUtils } from "@8medusa/utils"
 import { resolveValue } from "./resolve-value"
 
 export function proxify<T>(obj: WorkflowData<any>): T {

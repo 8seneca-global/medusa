@@ -1,5 +1,5 @@
 import { memoize } from "lodash"
-import logger from "@medusajs/cli/dist/reporter"
+import logger from "@8medusa/cli/dist/reporter"
 import { json, NextFunction, RequestHandler, text, urlencoded } from "express"
 
 import type {

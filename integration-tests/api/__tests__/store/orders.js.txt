@@ -9,7 +9,7 @@ const {
   LineItem,
   Payment,
   PaymentSession,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 
 const setupServer = require("../../../environment-helpers/setup-server")
 const { useApi } = require("../../../environment-helpers/use-api")
@@ -20,7 +20,7 @@ const {
   simpleCartFactory,
   simpleShippingOptionFactory,
 } = require("../../../factories")
-const { MedusaError } = require("@medusajs/utils")
+const { MedusaError } = require("@8medusa/utils")
 
 jest.setTimeout(30000)
 
@@ -126,7 +126,7 @@ describe("/store/carts", () => {
       })
 
       await api.post(`/store/carts/${cartId}`, {
-        email: "testmailer@medusajs.com",
+        email: "testmailer@8medusa.com",
       })
 
       await api.post(`/store/carts/${cartId}/payment-sessions`).catch((err) => {
@@ -175,7 +175,7 @@ describe("/store/carts", () => {
       })
 
       await api.post(`/store/carts/${cartId}`, {
-        email: "testmailer@medusajs.com",
+        email: "testmailer@8medusa.com",
       })
 
       await api.post(`/store/carts/${cartId}/payment-sessions`).catch((err) => {
@@ -395,7 +395,7 @@ describe("/store/carts", () => {
         quantity: 1,
       })
       await api.post(`/store/carts/${cartId}`, {
-        email: "testmailer@medusajs.com",
+        email: "testmailer@8medusa.com",
       })
       await api.post(`/store/carts/${cartId}/payment-sessions`)
 
@@ -485,7 +485,7 @@ describe("/store/carts", () => {
         quantity: 1,
       })
       await api.post(`/store/carts/${cartId}`, {
-        email: "testmailer@medusajs.com",
+        email: "testmailer@8medusa.com",
       })
       await api.post(`/store/carts/${cartId}/payment-sessions`)
 
@@ -543,7 +543,7 @@ describe("/store/carts", () => {
         quantity: 1,
       })
       await api.post(`/store/carts/${cartId}`, {
-        email: "testmailer@medusajs.com",
+        email: "testmailer@8medusa.com",
       })
       await api.post(`/store/carts/${cartId}/payment-sessions`)
 
@@ -600,7 +600,7 @@ describe("/store/carts", () => {
         quantity: 1,
       })
       await api.post(`/store/carts/${cartId}`, {
-        email: "testmailer@medusajs.com",
+        email: "testmailer@8medusa.com",
       })
       await api.post(`/store/carts/${cartId}/payment-sessions`)
 

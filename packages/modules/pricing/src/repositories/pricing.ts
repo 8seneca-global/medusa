@@ -4,7 +4,7 @@ import {
   MedusaError,
   MikroOrmBase,
   PriceListStatus,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 
 import {
   CalculatedPriceSetDTO,
@@ -12,7 +12,7 @@ import {
   PricingContext,
   PricingFilters,
   PricingRepositoryService,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import { Knex, SqlEntityManager } from "@mikro-orm/postgresql"
 
 export class PricingRepository

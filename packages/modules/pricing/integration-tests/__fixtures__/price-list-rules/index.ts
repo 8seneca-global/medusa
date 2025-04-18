@@ -1,6 +1,6 @@
 import { SqlEntityManager } from "@mikro-orm/postgresql"
 import { PriceListRule } from "@models"
-import { toMikroORMEntity } from "@medusajs/framework/utils"
+import { toMikroORMEntity } from "@8medusa/framework/utils"
 import { defaultPriceListRuleData } from "./data"
 
 export * from "./data"

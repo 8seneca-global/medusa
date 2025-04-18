@@ -1,9 +1,9 @@
-import { Modules, SalesChannelWorkflowEvents } from "@medusajs/framework/utils"
+import { Modules, SalesChannelWorkflowEvents } from "@8medusa/framework/utils"
 import {
   createWorkflow,
   transform,
   WorkflowData,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { emitEventStep } from "../../common"
 import { removeRemoteLinkStep } from "../../common/steps/remove-remote-links"
 import { deleteSalesChannelsStep } from "../steps/delete-sales-channels"

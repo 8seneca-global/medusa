@@ -1,8 +1,8 @@
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
 import {
   ContainerRegistrationKeys,
   getVariantAvailability,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 
 /**
  * The details required to compute the inventory availability for a list of variants in a given sales channel.

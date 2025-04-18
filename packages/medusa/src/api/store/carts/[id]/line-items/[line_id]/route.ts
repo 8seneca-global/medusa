@@ -1,11 +1,11 @@
 import {
   deleteLineItemsWorkflow,
   updateLineItemInCartWorkflow,
-} from "@medusajs/core-flows"
-import { prepareListQuery } from "@medusajs/framework"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@8medusa/core-flows"
+import { prepareListQuery } from "@8medusa/framework"
+import { MedusaRequest, MedusaResponse } from "@8medusa/framework/http"
+import { HttpTypes } from "@8medusa/framework/types"
+import { MedusaError } from "@8medusa/framework/utils"
 import { refetchCart } from "../../../helpers"
 import { StoreUpdateCartLineItemType } from "../../../validators"
 

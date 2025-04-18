@@ -5,7 +5,7 @@ import {
   FindConfig,
   MedusaPricingContext,
   RequestQueryFields,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import { MedusaContainer } from "../container"
 import { RestrictedFields } from "./utils/restricted-fields"
 

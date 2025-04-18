@@ -1,4 +1,4 @@
-# @medusajs/toolbox
+# @8medusa/toolbox
 
 ## 2.7.0
 

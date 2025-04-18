@@ -1,12 +1,12 @@
-import { PaymentCollectionDTO } from "@medusajs/framework/types"
-import { MedusaError, PaymentCollectionStatus } from "@medusajs/framework/utils"
+import { PaymentCollectionDTO } from "@8medusa/framework/types"
+import { MedusaError, PaymentCollectionStatus } from "@8medusa/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { updatePaymentCollectionStep } from "../steps/update-payment-collection"
 import { cancelPaymentStep } from "../steps/cancel-payment"

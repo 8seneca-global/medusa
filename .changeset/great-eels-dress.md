@@ -1,5 +1,5 @@
 ---
-"@medusajs/index": patch
+"@8medusa/index": patch
 ---
 
 fix(index): Default schema typings

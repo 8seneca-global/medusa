@@ -3,12 +3,12 @@ import {
   InternalModuleDeclaration,
   Logger,
   Message,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   AbstractEventBusModuleService,
   isPresent,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { BulkJobOptions, Queue, Worker } from "bullmq"
 import { Redis } from "ioredis"
 import { BullJob, EventBusRedisModuleOptions, Options } from "../types"

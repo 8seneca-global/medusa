@@ -1,11 +1,11 @@
 import { glob } from "glob"
-import { logger } from "@medusajs/framework/logger"
+import { logger } from "@8medusa/framework/logger"
 import {
   toUnixSlash,
   DmlEntity,
   dynamicImport,
   defineMikroOrmCliConfig,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { dirname, join } from "path"
 
 import { MetadataStorage } from "@mikro-orm/core"

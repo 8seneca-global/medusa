@@ -1,5 +1,5 @@
-import { ConfirmVariantInventoryWorkflowInputDTO } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { ConfirmVariantInventoryWorkflowInputDTO } from "@8medusa/framework/types"
+import { MedusaError } from "@8medusa/framework/utils"
 import { prepareConfirmInventoryInput } from "../prepare-confirm-inventory-input"
 
 describe("prepareConfirmInventoryInput", () => {

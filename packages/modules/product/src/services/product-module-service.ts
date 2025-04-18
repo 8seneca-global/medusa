@@ -9,7 +9,7 @@ import {
   ModuleJoinerConfig,
   ModulesSdkTypes,
   ProductTypes,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   Product,
   ProductCategory,
@@ -42,7 +42,7 @@ import {
   promiseAll,
   removeUndefined,
   toHandle,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   UpdateCategoryInput,
   UpdateCollectionInput,

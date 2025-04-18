@@ -7,13 +7,13 @@ import {
   PriceDTO,
   ProductDTO,
   ProductVariantDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   promiseAll,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { AdminBatchVariantInventoryItemsType } from "./validators"
 
 const isPricing = (fieldName: string) =>

@@ -1,5 +1,5 @@
 import { join } from "path"
-import { WorkflowManager, WorkflowScheduler } from "@medusajs/orchestration"
+import { WorkflowManager, WorkflowScheduler } from "@8medusa/orchestration"
 import { MockSchedulerStorage } from "../__fixtures__/mock-scheduler-storage"
 import { JobLoader } from "../job-loader"
 

@@ -4,12 +4,12 @@ import {
   IAuthModuleService,
   IUserModuleService,
   MedusaContainer,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   ApiKeyType,
   Modules,
   PUBLISHABLE_KEY_HEADER,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import jwt from "jsonwebtoken"
 import Scrypt from "scrypt-kdf"
 import { getContainer } from "../environment-helpers/use-container"

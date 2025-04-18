@@ -1,6 +1,6 @@
-import { Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { IOrderModuleService, OrderDTO } from "@medusajs/types"
+import { Modules } from "@8medusa/framework/utils"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
+import { IOrderModuleService, OrderDTO } from "@8medusa/types"
 
 interface GetDraftOrderPromotionContextStepInput {
   order: OrderDTO

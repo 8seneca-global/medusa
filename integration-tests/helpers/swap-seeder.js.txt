@@ -7,11 +7,11 @@ const {
   Swap,
   Cart,
   Return,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 const {
   CustomShippingOption,
-} = require("@medusajs/medusa/dist/models/custom-shipping-option")
-const { Region } = require("@medusajs/medusa/dist/models/region")
+} = require("@8medusa/medusa/dist/models/custom-shipping-option")
+const { Region } = require("@8medusa/medusa/dist/models/region")
 
 let regionId
 let region

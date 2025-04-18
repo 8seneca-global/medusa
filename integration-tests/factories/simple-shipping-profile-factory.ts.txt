@@ -1,4 +1,4 @@
-import { ShippingProfile, ShippingProfileType } from "@medusajs/medusa"
+import { ShippingProfile, ShippingProfileType } from "@8medusa/medusa"
 import faker from "faker"
 import { Connection } from "typeorm"
 

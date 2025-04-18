@@ -8,14 +8,14 @@ import {
   ShippingOptionDTO,
   WithCalculatedPrice,
   AdditionalData,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   MathBN,
   MedusaError,
   Modules,
   OrderWorkflowEvents,
   isDefined,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -24,7 +24,7 @@ import {
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import {
   createRemoteLinkStep,
   emitEventStep,
@@ -327,8 +327,8 @@ export const createAndCompleteReturnOrderWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { createAndCompleteReturnOrderWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { createAndCompleteReturnOrderWorkflow } from "@8medusa/medusa/core-flows";
+ * import { StepResponse } from "@8medusa/workflows-sdk";
  * 
  * createAndCompleteReturnOrderWorkflow.hooks.setPricingContext((
  *   { order, additional_data }, { container }

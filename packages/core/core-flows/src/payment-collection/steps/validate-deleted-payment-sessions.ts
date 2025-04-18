@@ -1,5 +1,5 @@
-import { MedusaError } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { MedusaError } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The data to validate that the specified payment session IDs were deleted.

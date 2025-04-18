@@ -1,4 +1,4 @@
-import { EventBusTypes, InternalModuleDeclaration } from "@medusajs/types"
+import { EventBusTypes, InternalModuleDeclaration } from "@8medusa/types"
 import { ulid } from "ulid"
 
 export abstract class AbstractEventBusModuleService

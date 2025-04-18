@@ -6,9 +6,9 @@ import {
   PromotionDTO,
   RemoveItemAdjustmentAction,
   RemoveShippingMethodAdjustment,
-} from "@medusajs/framework/types"
-import { ComputedActions, Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/types"
+import { ComputedActions, Modules } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The details of the actions computed by the Promotion Module.

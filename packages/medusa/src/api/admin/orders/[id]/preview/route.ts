@@ -1,9 +1,9 @@
-import { HttpTypes } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { HttpTypes } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest,

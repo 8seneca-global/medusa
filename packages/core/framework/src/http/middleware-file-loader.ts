@@ -1,6 +1,6 @@
 import zod from "zod"
 import { join } from "path"
-import { dynamicImport, FileSystem } from "@medusajs/utils"
+import { dynamicImport, FileSystem } from "@8medusa/utils"
 
 import { logger } from "../logger"
 import {

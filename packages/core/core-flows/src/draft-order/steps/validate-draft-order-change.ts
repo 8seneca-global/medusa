@@ -1,5 +1,5 @@
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { OrderChangeDTO, OrderDTO } from "@medusajs/types"
+import { createStep } from "@8medusa/framework/workflows-sdk"
+import { OrderChangeDTO, OrderDTO } from "@8medusa/types"
 import { throwIfOrderChangeIsNotActive } from "../../order/utils/order-validation"
 import { throwIfNotDraftOrder } from "../utils/validation"
 

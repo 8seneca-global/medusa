@@ -1,5 +1,5 @@
-import { AdminOrder } from "@medusajs/types"
-import { Container, Heading } from "@medusajs/ui"
+import { AdminOrder } from "@8medusa/types"
+import { Container, Heading } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { OrderTimeline } from "./order-timeline"
 

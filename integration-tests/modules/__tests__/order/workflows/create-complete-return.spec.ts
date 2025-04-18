@@ -1,9 +1,9 @@
 import {
   createAndCompleteReturnOrderWorkflow,
   createShippingOptionsWorkflow,
-} from "@medusajs/core-flows"
-import { RemoteLink } from "@medusajs/modules-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@8medusa/core-flows"
+import { RemoteLink } from "@8medusa/modules-sdk"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 import {
   FulfillmentSetDTO,
   FulfillmentWorkflow,
@@ -15,13 +15,13 @@ import {
   RegionDTO,
   ShippingOptionDTO,
   StockLocationDTO,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   RuleOperator,
   remoteQueryObjectFromString,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 
 jest.setTimeout(500000)
 

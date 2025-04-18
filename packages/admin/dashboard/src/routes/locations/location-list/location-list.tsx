@@ -1,5 +1,5 @@
-import { ShoppingBag } from "@medusajs/icons"
-import { Container, Heading } from "@medusajs/ui"
+import { ShoppingBag } from "@8medusa/icons"
+import { Container, Heading } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { useLoaderData } from "react-router-dom"
 

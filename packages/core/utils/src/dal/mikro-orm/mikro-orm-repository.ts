@@ -10,7 +10,7 @@ import {
   RepositoryService,
   RepositoryTransformOptions,
   UpsertWithReplaceConfig,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   EntityClass,
   EntityManager,

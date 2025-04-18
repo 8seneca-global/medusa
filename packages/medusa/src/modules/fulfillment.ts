@@ -1,6 +1,6 @@
-import FulfillmentModule from "@medusajs/fulfillment"
+import FulfillmentModule from "@8medusa/fulfillment"
 
-export * from "@medusajs/fulfillment"
+export * from "@8medusa/fulfillment"
 
 export default FulfillmentModule
-export const discoveryPath = require.resolve("@medusajs/fulfillment")
+export const discoveryPath = require.resolve("@8medusa/fulfillment")

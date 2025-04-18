@@ -1,4 +1,4 @@
-import { dynamicImport, promiseAll, readDirRecursive } from "@medusajs/utils"
+import { dynamicImport, promiseAll, readDirRecursive } from "@8medusa/utils"
 import { Dirent } from "fs"
 import { access } from "fs/promises"
 import { join, parse } from "path"

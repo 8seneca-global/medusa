@@ -4,7 +4,7 @@ const setupServer = require("../../../environment-helpers/setup-server")
 const { useApi } = require("../../../environment-helpers/use-api")
 const { initDb, useDb } = require("../../../environment-helpers/use-db")
 
-const { Customer } = require("@medusajs/medusa")
+const { Customer } = require("@8medusa/medusa")
 
 jest.setTimeout(30000)
 

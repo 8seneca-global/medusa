@@ -1,18 +1,18 @@
-import { container, MedusaAppLoader } from "@medusajs/framework"
-import { configLoader } from "@medusajs/framework/config"
-import { pgConnectionLoader } from "@medusajs/framework/database"
-import { featureFlagsLoader } from "@medusajs/framework/feature-flags"
-import { expressLoader } from "@medusajs/framework/http"
-import { JobLoader } from "@medusajs/framework/jobs"
-import { LinkLoader } from "@medusajs/framework/links"
-import { logger } from "@medusajs/framework/logger"
-import { SubscriberLoader } from "@medusajs/framework/subscribers"
+import { container, MedusaAppLoader } from "@8medusa/framework"
+import { configLoader } from "@8medusa/framework/config"
+import { pgConnectionLoader } from "@8medusa/framework/database"
+import { featureFlagsLoader } from "@8medusa/framework/feature-flags"
+import { expressLoader } from "@8medusa/framework/http"
+import { JobLoader } from "@8medusa/framework/jobs"
+import { LinkLoader } from "@8medusa/framework/links"
+import { logger } from "@8medusa/framework/logger"
+import { SubscriberLoader } from "@8medusa/framework/subscribers"
 import {
   ConfigModule,
   LoadedModule,
   MedusaContainer,
   PluginDetails,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   getResolvedPlugins,
@@ -20,8 +20,8 @@ import {
   mergePluginModules,
   promiseAll,
   validateModuleName,
-} from "@medusajs/framework/utils"
-import { WorkflowLoader } from "@medusajs/framework/workflows"
+} from "@8medusa/framework/utils"
+import { WorkflowLoader } from "@8medusa/framework/workflows"
 import { asValue } from "awilix"
 import { Express, NextFunction, Request, Response } from "express"
 import { join } from "path"
@@ -179,7 +179,7 @@ export default async ({
     rootDirectory
   )
 
-  const { createDefaultsWorkflow } = await import("@medusajs/core-flows")
+  const { createDefaultsWorkflow } = await import("@8medusa/core-flows")
   await createDefaultsWorkflow(container).run()
   await onApplicationStart()
 

@@ -3,8 +3,8 @@ import {
   getTotalVariantAvailability,
   getVariantAvailability,
   MedusaError,
-} from "@medusajs/framework/utils"
-import { MedusaRequest, MedusaStoreRequest } from "@medusajs/framework/http"
+} from "@8medusa/framework/utils"
+import { MedusaRequest, MedusaStoreRequest } from "@8medusa/framework/http"
 
 export const wrapVariantsWithTotalInventoryQuantity = async (
   req: MedusaRequest,

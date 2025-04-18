@@ -1,4 +1,4 @@
-import { AdminOptions } from "@medusajs/types"
+import { AdminOptions } from "@8medusa/types"
 
 export type BundlerOptions = Required<Pick<AdminOptions, "path">> &
   Pick<AdminOptions, "vite" | "backendUrl" | "storefrontUrl"> & {

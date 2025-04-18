@@ -1,7 +1,7 @@
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
-import { IInventoryService, InventoryTypes } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { IInventoryService, InventoryTypes } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
 
 /**
  * The data to create the inventory items.

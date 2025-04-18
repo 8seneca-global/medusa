@@ -1,4 +1,4 @@
-import { generatePostgresAlterColummnIfExistStatement } from "@medusajs/framework/utils"
+import { generatePostgresAlterColummnIfExistStatement } from "@8medusa/framework/utils"
 import { Migration } from "@mikro-orm/migrations"
 
 export class Migration20240225134525 extends Migration {

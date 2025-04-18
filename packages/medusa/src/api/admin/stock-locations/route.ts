@@ -1,15 +1,15 @@
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 
-import { createStockLocationsWorkflow } from "@medusajs/core-flows"
+import { createStockLocationsWorkflow } from "@8medusa/core-flows"
 import { refetchStockLocation } from "./helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@8medusa/framework/types"
 
 // Create stock location
 export const POST = async (

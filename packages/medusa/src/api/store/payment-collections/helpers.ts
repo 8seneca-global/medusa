@@ -1,8 +1,8 @@
 import {
   MedusaContainer,
   PaymentCollectionDTO,
-} from "@medusajs/framework/types"
-import { refetchEntity } from "@medusajs/framework/http"
+} from "@8medusa/framework/types"
+import { refetchEntity } from "@8medusa/framework/http"
 
 export const refetchPaymentCollection = async (
   id: string,

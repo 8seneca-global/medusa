@@ -1,6 +1,6 @@
-import ProductModule from "@medusajs/product"
+import ProductModule from "@8medusa/product"
 
-export * from "@medusajs/product"
+export * from "@8medusa/product"
 
 export default ProductModule
-export const discoveryPath = require.resolve("@medusajs/product")
+export const discoveryPath = require.resolve("@8medusa/product")

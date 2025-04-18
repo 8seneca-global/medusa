@@ -5,7 +5,7 @@ import {
   QueryGraphFunction,
   RemoteQueryFunction,
   Subscriber,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   MikroOrmBaseRepository as BaseRepository,
   CommonEvents,
@@ -17,7 +17,7 @@ import {
   MedusaContext,
   toMikroORMEntity,
   unflattenObjectKeys,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   EntityManager,
   EntityRepository,

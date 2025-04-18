@@ -1,10 +1,10 @@
-import { markOrderFulfillmentAsDeliveredWorkflow } from "@medusajs/core-flows"
-import { HttpTypes } from "@medusajs/framework/types"
+import { markOrderFulfillmentAsDeliveredWorkflow } from "@8medusa/core-flows"
+import { HttpTypes } from "@8medusa/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntity,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest,

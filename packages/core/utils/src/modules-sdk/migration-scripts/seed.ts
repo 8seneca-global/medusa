@@ -1,4 +1,4 @@
-import { LoaderOptions, Logger, ModulesSdkTypes } from "@medusajs/types"
+import { LoaderOptions, Logger, ModulesSdkTypes } from "@8medusa/types"
 import { EntitySchema } from "@mikro-orm/core"
 import { EOL } from "os"
 import { resolve } from "path"

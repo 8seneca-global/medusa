@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.7.0
+  - @8medusa/telemetry@2.7.0
 
 ## 2.6.1
 
@@ -14,21 +14,21 @@
 - [#11738](https://github.com/medusajs/medusa/pull/11738) [`3b470f41427e487c68f89b8ee8155de716ffe861`](https://github.com/medusajs/medusa/commit/3b470f41427e487c68f89b8ee8155de716ffe861) Thanks [@olivermrbl](https://github.com/olivermrbl)! - chore: Remove ranges on Medusa packages
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.6.1
+  - @8medusa/telemetry@2.6.1
 
 ## 2.6.0
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.6.0
+  - @8medusa/telemetry@2.6.0
 
 ## 2.5.1
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.5.1
+  - @8medusa/telemetry@2.5.1
 
 ## 2.5.0
 
@@ -37,7 +37,7 @@
 - [#11037](https://github.com/medusajs/medusa/pull/11037) [`a16eaad6c97e1233bd30142adf314065d322af50`](https://github.com/medusajs/medusa/commit/a16eaad6c97e1233bd30142adf314065d322af50) Thanks [@Gederooney](https://github.com/Gederooney)! - Fix issue where create-medusa-app repeatedly asked for database credentials even when --db-url was specified. The logic in MedusaProjectCreator->create()->initializeProject()->setupDatabase() always defines a dbName. Updated the getDbClientAndCredentials() method to check db-url first
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.5.0
+  - @8medusa/telemetry@2.5.0
 
 ## 2.4.0
 
@@ -46,14 +46,14 @@
 - [#11071](https://github.com/medusajs/medusa/pull/11071) [`cd758067d41ef29139c7dcdcc0639e9d9d520bd8`](https://github.com/medusajs/medusa/commit/cd758067d41ef29139c7dcdcc0639e9d9d520bd8) Thanks [@shahednasser](https://github.com/shahednasser)! - fix(create-medusa-app): fix database name from input not used in setup
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.4.0
+  - @8medusa/telemetry@2.4.0
 
 ## 2.3.1
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.3.1
+  - @8medusa/telemetry@2.3.1
 
 ## 2.3.0
 
@@ -62,7 +62,7 @@
 - [#10908](https://github.com/medusajs/medusa/pull/10908) [`c895ed8013fe2feae7b0a92a5d0aad937f58a08a`](https://github.com/medusajs/medusa/commit/c895ed8013fe2feae7b0a92a5d0aad937f58a08a) Thanks [@adrien2p](https://github.com/adrien2p)! - Feat/plugin scaffolding
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.3.0
+  - @8medusa/telemetry@2.3.0
 
 ## 2.2.0
 
@@ -75,84 +75,84 @@
 - [#10812](https://github.com/medusajs/medusa/pull/10812) [`152a94e1e1f245e0dc5594174db41d37e68789d6`](https://github.com/medusajs/medusa/commit/152a94e1e1f245e0dc5594174db41d37e68789d6) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app): improve by adding depth to clone commands
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.2.0
+  - @8medusa/telemetry@2.2.0
 
 ## 2.1.3
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.1.3
+  - @8medusa/telemetry@2.1.3
 
 ## 2.1.2
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.1.2
+  - @8medusa/telemetry@2.1.2
 
 ## 2.1.1
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.1.1
+  - @8medusa/telemetry@2.1.1
 
 ## 2.1.0
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.1.0
+  - @8medusa/telemetry@2.1.0
 
 ## 2.0.7
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.0.7
+  - @8medusa/telemetry@2.0.7
 
 ## 2.0.6
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.0.6
+  - @8medusa/telemetry@2.0.6
 
 ## 2.0.5
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.0.5
+  - @8medusa/telemetry@2.0.5
 
 ## 2.0.4
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.0.4
+  - @8medusa/telemetry@2.0.4
 
 ## 2.0.3
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.0.3
+  - @8medusa/telemetry@2.0.3
 
 ## 2.0.2
 
 ### Patch Changes
 
 - Updated dependencies [[`de228d209f30dfbb5b500d5cb49932b63e06f52a`](https://github.com/medusajs/medusa/commit/de228d209f30dfbb5b500d5cb49932b63e06f52a)]:
-  - @medusajs/telemetry@2.0.2
+  - @8medusa/telemetry@2.0.2
 
 ## 2.0.1
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/telemetry@2.0.1
+  - @8medusa/telemetry@2.0.1
 
 ## 2.0.0
 
@@ -163,7 +163,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`2e42e053d4c9d5445d227bdc268c66713aad8e2e`](https://github.com/medusajs/medusa/commit/2e42e053d4c9d5445d227bdc268c66713aad8e2e)]:
-  - @medusajs/telemetry@2.0.0
+  - @8medusa/telemetry@2.0.0
 
 ## 1.2.8
 
@@ -235,7 +235,7 @@
 
 ### Patch Changes
 
-- [#4733](https://github.com/medusajs/medusa/pull/4733) [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app, utils, medusa-cli): add database options + remove util from `@medusajs/utils`
+- [#4733](https://github.com/medusajs/medusa/pull/4733) [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app, utils, medusa-cli): add database options + remove util from `@8medusa/utils`
 
 ## 1.0.4
 
@@ -244,7 +244,7 @@
 - [#4567](https://github.com/medusajs/medusa/pull/4567) [`15e87a810`](https://github.com/medusajs/medusa/commit/15e87a8100c9fe66f6d120423ef0351f4c657e7e) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app): add `stable` option + add URI encoding to database string
 
 - Updated dependencies [[`131477faf`](https://github.com/medusajs/medusa/commit/131477faf0409c49d4aacf26ea591e33b2fa22fd)]:
-  - @medusajs/utils@1.9.3
+  - @8medusa/utils@1.9.3
 
 ## 1.0.3
 
@@ -261,7 +261,7 @@
 - [#4369](https://github.com/medusajs/medusa/pull/4369) [`d363da2b7`](https://github.com/medusajs/medusa/commit/d363da2b72820defe90b12b0dc741087f3b21090) Thanks [@adrien2p](https://github.com/adrien2p)! - chore(create-medusa-app): Cleanup the main script for readability and maintanability
 
 - Updated dependencies [[`499c3478c`](https://github.com/medusajs/medusa/commit/499c3478c910c8b922a15cc6f4d9fbad122a347f), [`9dcdc0041`](https://github.com/medusajs/medusa/commit/9dcdc0041a2b08cc0723343dd8d9127d9977b086), [`9760d4a96`](https://github.com/medusajs/medusa/commit/9760d4a96c27f6f89a8c3f3b6e73b17547f97f2a)]:
-  - @medusajs/utils@1.9.2
+  - @8medusa/utils@1.9.2
 
 ## 1.0.1
 
@@ -290,7 +290,7 @@
 - [#4247](https://github.com/medusajs/medusa/pull/4247) [`4b5b7b514`](https://github.com/medusajs/medusa/commit/4b5b7b51483bae8996235a37e75c0671f9e2994f) Thanks [@shahednasser](https://github.com/shahednasser)! - fix(create-medusa-app): remove seed command from create-medusa-app and improve success message
 
 - Updated dependencies [[`f98ba5bde`](https://github.com/medusajs/medusa/commit/f98ba5bde83ba785eead31b0c9eb9f135d664178), [`14c0f62f8`](https://github.com/medusajs/medusa/commit/14c0f62f84704a4c87beff3daaff60a52f5c88b8)]:
-  - @medusajs/utils@1.9.1
+  - @8medusa/utils@1.9.1
 
 ## 0.0.10
 

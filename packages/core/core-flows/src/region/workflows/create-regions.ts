@@ -1,12 +1,12 @@
-import { WorkflowTypes } from "@medusajs/framework/types"
-import { RegionWorkflowEvents } from "@medusajs/framework/utils"
+import { WorkflowTypes } from "@8medusa/framework/types"
+import { RegionWorkflowEvents } from "@8medusa/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { createPricePreferencesWorkflow } from "../../pricing"
 import { createRegionsStep } from "../steps"

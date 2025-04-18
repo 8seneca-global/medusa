@@ -1,6 +1,6 @@
-import LockingModule from "@medusajs/locking"
+import LockingModule from "@8medusa/locking"
 
-export * from "@medusajs/locking"
+export * from "@8medusa/locking"
 
 export default LockingModule
-export const discoveryPath = require.resolve("@medusajs/locking")
+export const discoveryPath = require.resolve("@8medusa/locking")

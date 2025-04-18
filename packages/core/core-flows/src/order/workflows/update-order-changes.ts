@@ -1,12 +1,12 @@
 import {
   OrderChangeDTO,
   UpdateOrderChangeActionDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { updateOrderChangesStep } from "../steps"
 
 export const updateOrderChangesWorkflowId = "update-order-change"

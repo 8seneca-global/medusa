@@ -1,8 +1,8 @@
-import { HttpTypes } from "@medusajs/types"
-import { Heading, Text, Tooltip, clx } from "@medusajs/ui"
+import { HttpTypes } from "@8medusa/types"
+import { Heading, Text, Tooltip, clx } from "@8medusa/ui"
 import ReactCountryFlag from "react-country-flag"
 
-import { ExclamationCircle, MapPin, Plus, Trash } from "@medusajs/icons"
+import { ExclamationCircle, MapPin, Plus, Trash } from "@8medusa/icons"
 import { ComponentPropsWithoutRef, ReactNode } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"

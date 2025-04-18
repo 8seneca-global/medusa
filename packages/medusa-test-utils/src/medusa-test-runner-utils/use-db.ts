@@ -1,9 +1,9 @@
-import type { MedusaAppLoader } from "@medusajs/framework"
-import { MedusaContainer } from "@medusajs/framework/types"
+import type { MedusaAppLoader } from "@8medusa/framework"
+import { MedusaContainer } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   getResolvedPlugins,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { join } from "path"
 
 /**
@@ -11,7 +11,7 @@ import { join } from "path"
  */
 export async function initDb() {
   const { pgConnectionLoader, featureFlagsLoader } = await import(
-    "@medusajs/framework"
+    "@8medusa/framework"
   )
 
   const pgConnection = pgConnectionLoader()
@@ -64,6 +64,6 @@ async function loadCustomLinks(directory: string, container: MedusaContainer) {
     join(plugin.resolve, "links")
   )
 
-  const { LinkLoader } = await import("@medusajs/framework")
+  const { LinkLoader } = await import("@8medusa/framework")
   await new LinkLoader(linksSourcePaths).load()
 }

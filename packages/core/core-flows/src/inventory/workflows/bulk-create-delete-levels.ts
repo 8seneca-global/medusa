@@ -1,12 +1,12 @@
 // TODO: Remove this workflow in a future release.
 
-import { InventoryLevelDTO, InventoryTypes } from "@medusajs/framework/types"
+import { InventoryLevelDTO, InventoryTypes } from "@8medusa/framework/types"
 import {
   createWorkflow,
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { createInventoryLevelsStep } from "../steps"
 import { deleteInventoryLevelsWorkflow } from "./delete-inventory-levels"
 

@@ -21,7 +21,7 @@ const {
   simpleOrderFactory,
   simpleCustomerFactory,
 } = require("../../../factories")
-const { OrderEditItemChangeType } = require("@medusajs/medusa")
+const { OrderEditItemChangeType } = require("@8medusa/medusa")
 const setupServer = require("../../../environment-helpers/setup-server")
 
 jest.setTimeout(30000)
@@ -39,7 +39,7 @@ describe("/store/order-edits", () => {
 
     await simpleCustomerFactory(dbConnection, {
       id: "customer",
-      email: "test@medusajs.com",
+      email: "test@8medusa.com",
     })
   })
 

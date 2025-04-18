@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { LoaderFunctionArgs } from "react-router-dom"
 import { regionsQueryKeys } from "../../../hooks/api/regions"
 import { sdk } from "../../../lib/client"

@@ -1,13 +1,13 @@
-import { IWorkflowEngineService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { IWorkflowEngineService } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
   transform,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@8medusa/framework/workflows-sdk"
+import { moduleIntegrationTestRunner } from "@8medusa/test-utils"
 import { setTimeout as setTimeoutSync } from "timers"
 import { setTimeout } from "timers/promises"
 import "../__fixtures__"

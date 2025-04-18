@@ -1,16 +1,16 @@
-import { updateStoresWorkflow } from "@medusajs/core-flows"
+import { updateStoresWorkflow } from "@8medusa/core-flows"
 import {
   ContainerRegistrationKeys,
   MedusaError,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { AdminGetStoreParamsType, AdminUpdateStoreType } from "../validators"
 import { refetchStore } from "../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@8medusa/framework/types"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<AdminGetStoreParamsType>,

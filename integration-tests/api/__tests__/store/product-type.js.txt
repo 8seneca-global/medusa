@@ -12,7 +12,7 @@ const {
   AllocationType,
   DiscountConditionType,
   DiscountConditionOperator,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 const { simpleDiscountFactory } = require("../../../factories")
 
 jest.setTimeout(50000)

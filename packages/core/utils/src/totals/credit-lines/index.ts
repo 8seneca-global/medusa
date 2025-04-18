@@ -1,4 +1,4 @@
-import { BigNumberInput } from "@medusajs/types"
+import { BigNumberInput } from "@8medusa/types"
 import { isDefined } from "../../common"
 import { BigNumber } from "../big-number"
 import { MathBN } from "../math"

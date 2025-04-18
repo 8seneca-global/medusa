@@ -5,7 +5,7 @@ import {
   CustomFieldModel,
   InjectionZone,
   NESTED_ROUTE_POSITIONS,
-} from "@medusajs/admin-shared"
+} from "@8medusa/admin-shared"
 import * as React from "react"
 import {
   createBrowserRouter,
@@ -127,7 +127,7 @@ export class DashboardApp {
       if (item.path.includes("/:")) {
         if (process.env.NODE_ENV === "development") {
           console.warn(
-            `[@medusajs/dashboard] Menu item for path "${item.path}" can't be added to the sidebar as it contains a parameter.`
+            `[@8medusa/dashboard] Menu item for path "${item.path}" can't be added to the sidebar as it contains a parameter.`
           )
         }
         return
@@ -143,7 +143,7 @@ export class DashboardApp {
       if (isSettingsPath && pathParts.length > 2) {
         if (process.env.NODE_ENV === "development") {
           console.warn(
-            `[@medusajs/dashboard] Nested settings menu item "${item.path}" can't be added to the sidebar. Only top-level settings items are allowed.`
+            `[@8medusa/dashboard] Nested settings menu item "${item.path}" can't be added to the sidebar. Only top-level settings items are allowed.`
           )
         }
         return // Skip this item entirely
@@ -162,7 +162,7 @@ export class DashboardApp {
       ) {
         if (process.env.NODE_ENV === "development") {
           console.warn(
-            `[@medusajs/dashboard] Nested menu item "${item.path}" can't be added to the sidebar as it is nested under "${parentItem.nested}".`
+            `[@8medusa/dashboard] Nested menu item "${item.path}" can't be added to the sidebar as it is nested under "${parentItem.nested}".`
           )
         }
         return

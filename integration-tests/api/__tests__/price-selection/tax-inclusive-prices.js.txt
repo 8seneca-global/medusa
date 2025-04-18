@@ -1,4 +1,4 @@
-const { Currency, Region } = require("@medusajs/medusa")
+const { Currency, Region } = require("@8medusa/medusa")
 const path = require("path")
 
 const startServerWithEnvironment =

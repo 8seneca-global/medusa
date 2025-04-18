@@ -20,7 +20,7 @@ vi.mock("fs/promises", () => ({
 
 const mockFileContents = [
   `
-    import { defineRouteConfig } from "@medusajs/admin-sdk"
+    import { defineRouteConfig } from "@8medusa/admin-sdk"
 
     const Page = () => {
         return <div>Page 1</div>
@@ -34,7 +34,7 @@ const mockFileContents = [
     export default Page
     `,
   `
-    import { defineRouteConfig } from "@medusajs/admin-sdk"
+    import { defineRouteConfig } from "@8medusa/admin-sdk"
 
     const Page = () => {
         return <div>Page 2</div>
@@ -47,7 +47,7 @@ const mockFileContents = [
     export default Page
   `,
   `
-    import { defineRouteConfig } from "@medusajs/admin-sdk"
+    import { defineRouteConfig } from "@8medusa/admin-sdk"
 
     const Page = () => {
         return <div>Page 2</div>

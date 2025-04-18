@@ -13,12 +13,12 @@ import path from "path"
 import prompts from "prompts"
 import { Pool } from "pg"
 import url from "url"
-import { track } from "@medusajs/telemetry"
+import { track } from "@8medusa/telemetry"
 // @ts-ignore
 import inquirer from "inquirer"
 import { createDatabase } from "pg-god"
 
-import { getNodeVersion, MIN_SUPPORTED_NODE_VERSION } from "@medusajs/utils"
+import { getNodeVersion, MIN_SUPPORTED_NODE_VERSION } from "@8medusa/utils"
 import reporter from "../reporter"
 import { PanicId } from "../reporter/panic-handler"
 import { clearProject } from "../util/clear-project"
@@ -442,7 +442,7 @@ const runMigrations = async (rootPath) => {
 
   const cliPath = sysPath.join(
     `node_modules`,
-    `@medusajs`,
+    `@8medusa`,
     `medusa-cli`,
     `cli.js`
   )

@@ -1,5 +1,5 @@
-import { ModuleJoinerConfig } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { ModuleJoinerConfig } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
 
 export const StoreCurrencies: ModuleJoinerConfig = {
   isLink: true,

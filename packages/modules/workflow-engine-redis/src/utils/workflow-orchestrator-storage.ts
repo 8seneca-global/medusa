@@ -9,8 +9,8 @@ import {
   TransactionFlow,
   TransactionOptions,
   TransactionStep,
-} from "@medusajs/framework/orchestration"
-import { Logger, ModulesSdkTypes } from "@medusajs/framework/types"
+} from "@8medusa/framework/orchestration"
+import { Logger, ModulesSdkTypes } from "@8medusa/framework/types"
 import {
   isDefined,
   isPresent,
@@ -18,7 +18,7 @@ import {
   promiseAll,
   TransactionState,
   TransactionStepState,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { WorkflowOrchestratorService } from "@services"
 import { Queue, RepeatOptions, Worker } from "bullmq"
 import Redis from "ioredis"

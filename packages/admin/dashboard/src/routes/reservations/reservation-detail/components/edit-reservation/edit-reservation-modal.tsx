@@ -1,5 +1,5 @@
-import { InventoryTypes } from "@medusajs/types"
-import { Heading } from "@medusajs/ui"
+import { InventoryTypes } from "@8medusa/types"
+import { Heading } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { useParams } from "react-router-dom"
 import { RouteDrawer } from "../../../../../components/modals"

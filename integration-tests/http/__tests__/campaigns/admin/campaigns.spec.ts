@@ -1,9 +1,9 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 import {
   CampaignBudgetType,
   PromotionStatus,
   PromotionType,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { createAdminUser } from "../../../../helpers/create-admin-user"
 
 jest.setTimeout(50000)

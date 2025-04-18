@@ -2,13 +2,13 @@ import {
   IPricingModuleService,
   PriceListDTO,
   UpdatePriceListDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   MedusaError,
   Modules,
   arrayDifference,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The IDs of price lists to validate that they exist.

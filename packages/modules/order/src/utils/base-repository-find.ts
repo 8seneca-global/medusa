@@ -1,5 +1,5 @@
-import { Constructor, Context, DAL } from "@medusajs/framework/types"
-import { toMikroORMEntity } from "@medusajs/framework/utils"
+import { Constructor, Context, DAL } from "@8medusa/framework/types"
+import { toMikroORMEntity } from "@8medusa/framework/utils"
 import { LoadStrategy } from "@mikro-orm/core"
 import { Order, OrderClaim } from "@models"
 import { mapRepositoryToOrderModel } from "."

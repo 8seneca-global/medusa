@@ -1,9 +1,9 @@
-import { Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@8medusa/framework/utils"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
 import {
   CreateShippingMethodAdjustmentDTO,
   IOrderModuleService,
-} from "@medusajs/types"
+} from "@8medusa/types"
 
 export const createDraftOrderShippingMethodAdjustmentsStepId =
   "create-draft-order-shipping-method-adjustments"

@@ -1,11 +1,11 @@
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@8medusa/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntities,
   refetchEntity,
-} from "@medusajs/framework/http"
-import { createPricePreferencesWorkflow } from "@medusajs/core-flows"
+} from "@8medusa/framework/http"
+import { createPricePreferencesWorkflow } from "@8medusa/core-flows"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<HttpTypes.AdminPricePreferenceListParams>,

@@ -2,8 +2,8 @@ import {
   FilterableCustomerAddressProps,
   ICustomerModuleService,
   UpdateCustomerAddressDTO,
-} from "@medusajs/framework/types"
-import { StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/types"
+import { StepResponse } from "@8medusa/framework/workflows-sdk"
 
 export const unsetForUpdate = async (
   data: {

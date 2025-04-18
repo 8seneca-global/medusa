@@ -1,11 +1,11 @@
-import type { SchedulerOptions } from "@medusajs/orchestration"
-import { MedusaContainer } from "@medusajs/types"
-import { isObject, MedusaError } from "@medusajs/utils"
+import type { SchedulerOptions } from "@8medusa/orchestration"
+import { MedusaContainer } from "@8medusa/types"
+import { isObject, MedusaError } from "@8medusa/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
-} from "@medusajs/workflows-sdk"
+} from "@8medusa/workflows-sdk"
 import { logger } from "../logger"
 import { ResourceLoader } from "../utils/resource-loader"
 

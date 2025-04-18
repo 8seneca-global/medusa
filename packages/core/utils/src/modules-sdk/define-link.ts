@@ -1,4 +1,4 @@
-import { LinkModulesExtraFields, ModuleJoinerConfig } from "@medusajs/types"
+import { LinkModulesExtraFields, ModuleJoinerConfig } from "@8medusa/types"
 import { camelToSnakeCase, isObject, pluralize, toPascalCase } from "../common"
 import { composeLinkName } from "../link/compose-link-name"
 

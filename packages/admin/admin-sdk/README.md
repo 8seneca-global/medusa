@@ -1,1 +1,1 @@
-# @medusajs/admin-sdk
+# @8medusa/admin-sdk

@@ -5,7 +5,7 @@ import type {
   IDmlEntity,
   Infer,
   PropertyType,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import { Entity, Filter } from "@mikro-orm/core"
 
 import {

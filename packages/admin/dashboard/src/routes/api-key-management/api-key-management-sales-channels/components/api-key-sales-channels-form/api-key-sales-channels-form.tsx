@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import {
   Button,
   Checkbox,
@@ -7,7 +7,7 @@ import {
   Hint,
   createDataTableColumnHelper,
   toast,
-} from "@medusajs/ui"
+} from "@8medusa/ui"
 import { keepPreviousData } from "@tanstack/react-query"
 import { RowSelectionState } from "@tanstack/react-table"
 import { useMemo, useState } from "react"

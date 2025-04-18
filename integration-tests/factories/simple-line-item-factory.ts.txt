@@ -1,4 +1,4 @@
-import { LineItem, LineItemAdjustment, LineItemTaxLine } from "@medusajs/medusa"
+import { LineItem, LineItemAdjustment, LineItemTaxLine } from "@8medusa/medusa"
 import faker from "faker"
 import { DataSource } from "typeorm"
 

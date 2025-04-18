@@ -2,7 +2,7 @@ import {
   IProductModuleService,
   ProductCategoryDTO,
   ProductTagDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   CommonEvents,
   composeMessage,
@@ -10,7 +10,7 @@ import {
   Modules,
   ProductEvents,
   ProductStatus,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   ProductImage,
   Product,
@@ -22,7 +22,7 @@ import {
 import {
   MockEventBusService,
   moduleIntegrationTestRunner,
-} from "@medusajs/test-utils"
+} from "@8medusa/test-utils"
 import { UpdateProductInput } from "@types"
 import {
   buildProductAndRelationsData,

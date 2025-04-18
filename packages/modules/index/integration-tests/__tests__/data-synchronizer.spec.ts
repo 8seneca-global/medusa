@@ -3,15 +3,15 @@ import {
   container,
   logger,
   MedusaAppLoader,
-} from "@medusajs/framework"
-import { MedusaAppOutput, MedusaModule } from "@medusajs/framework/modules-sdk"
-import { IndexTypes, InferEntityType } from "@medusajs/framework/types"
+} from "@8medusa/framework"
+import { MedusaAppOutput, MedusaModule } from "@8medusa/framework/modules-sdk"
+import { IndexTypes, InferEntityType } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   toMikroORMEntity,
-} from "@medusajs/framework/utils"
-import { initDb, TestDatabaseUtils } from "@medusajs/test-utils"
+} from "@8medusa/framework/utils"
+import { initDb, TestDatabaseUtils } from "@8medusa/test-utils"
 import { EntityManager } from "@mikro-orm/postgresql"
 import { IndexData, IndexRelation } from "@models"
 import { DataSynchronizer } from "@services"

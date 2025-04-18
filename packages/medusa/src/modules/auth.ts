@@ -1,6 +1,6 @@
-import AuthModule from "@medusajs/auth"
+import AuthModule from "@8medusa/auth"
 
-export * from "@medusajs/auth"
+export * from "@8medusa/auth"
 
 export default AuthModule
-export const discoveryPath = require.resolve("@medusajs/auth")
+export const discoveryPath = require.resolve("@8medusa/auth")

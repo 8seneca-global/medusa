@@ -1,7 +1,7 @@
-import { IInventoryService } from "@medusajs/framework/types"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { IInventoryService } from "@8medusa/framework/types"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@8medusa/framework/utils"
 
 /**
  * The IDs of inventory levels to delete.

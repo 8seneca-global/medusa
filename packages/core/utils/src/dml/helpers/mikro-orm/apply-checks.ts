@@ -1,5 +1,5 @@
 import { Check, CheckOptions } from "@mikro-orm/core"
-import { CheckConstraint, EntityConstructor } from "@medusajs/types"
+import { CheckConstraint, EntityConstructor } from "@8medusa/types"
 
 /**
  * Defines PostgreSQL constraints using the MikrORM's "@Check"

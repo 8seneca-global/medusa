@@ -1,10 +1,10 @@
-import { batchProductsWorkflow } from "@medusajs/core-flows"
+import { batchProductsWorkflow } from "@8medusa/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { refetchBatchProducts, remapProductResponse } from "../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@8medusa/framework/types"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<HttpTypes.AdminBatchProductRequest>,

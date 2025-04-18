@@ -1,4 +1,4 @@
-import { QueryContext } from "@medusajs/utils"
+import { QueryContext } from "@8medusa/utils"
 import { MedusaModule } from "../../medusa-module"
 import { getEntitiesMap } from "../__fixtures__/get-entities-map"
 import "../__fixtures__/parse-filters"

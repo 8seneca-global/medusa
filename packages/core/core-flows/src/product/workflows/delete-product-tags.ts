@@ -1,11 +1,11 @@
-import { ProductTagWorkflowEvents } from "@medusajs/framework/utils"
+import { ProductTagWorkflowEvents } from "@8medusa/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createHook,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { deleteProductTagsStep } from "../steps"
 

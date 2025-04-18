@@ -1,16 +1,16 @@
-import { PaymentCollectionDTO } from "@medusajs/framework/types"
+import { PaymentCollectionDTO } from "@8medusa/framework/types"
 import {
   MathBN,
   MedusaError,
   PaymentCollectionStatus,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   createWorkflow,
   transform,
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../common"
 import { updatePaymentCollectionStep } from "../../payment-collection"
 import { createOrderPaymentCollectionWorkflow } from "./create-order-payment-collection"

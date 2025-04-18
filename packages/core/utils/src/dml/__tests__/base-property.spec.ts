@@ -1,4 +1,4 @@
-import { PropertyMetadata } from "@medusajs/types"
+import { PropertyMetadata } from "@8medusa/types"
 import { expectTypeOf } from "expect-type"
 import { BaseProperty } from "../properties/base"
 import { TextProperty } from "../properties/text"

@@ -1,4 +1,4 @@
-import { clx } from "@medusajs/ui"
+import { clx } from "@8medusa/ui"
 import { PropsWithChildren } from "react"
 
 type DataTableStatusCellProps = PropsWithChildren<{

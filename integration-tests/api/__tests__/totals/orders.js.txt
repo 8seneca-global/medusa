@@ -64,7 +64,7 @@ describe("Order Totals", () => {
 
       const cart = await simpleCartFactory(dbConnection, {
         id: "test-cart",
-        email: "testnation@medusajs.com",
+        email: "testnation@8medusa.com",
         region: region.id,
         line_items: [],
       })
@@ -130,7 +130,7 @@ describe("Order Totals", () => {
 
       const cart = await simpleCartFactory(dbConnection, {
         id: "test-cart",
-        email: "testnation@medusajs.com",
+        email: "testnation@8medusa.com",
         region: region.id,
         line_items: [],
       })

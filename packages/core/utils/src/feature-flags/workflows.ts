@@ -1,4 +1,4 @@
-import { FeatureFlagTypes } from "@medusajs/types"
+import { FeatureFlagTypes } from "@8medusa/types"
 
 export const WorkflowsFeatureFlag: FeatureFlagTypes.FlagSettings = {
   key: "workflows",

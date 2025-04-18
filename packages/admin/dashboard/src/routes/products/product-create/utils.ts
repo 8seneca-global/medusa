@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { castNumber } from "../../../lib/cast-number"
 import { ProductCreateSchemaType } from "./types"
 

@@ -5,7 +5,7 @@ import {
   PromotionRuleOperator,
   PromotionStatus,
   PromotionType,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { z } from "zod"
 import { applyAndAndOrOperators } from "../../utils/common-validators"
 import {

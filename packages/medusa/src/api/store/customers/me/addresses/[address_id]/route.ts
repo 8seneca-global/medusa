@@ -1,17 +1,17 @@
 import {
   deleteCustomerAddressesWorkflow,
   updateCustomerAddressesWorkflow,
-} from "@medusajs/core-flows"
+} from "@8medusa/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes, MedusaContainer } from "@medusajs/framework/types"
+} from "@8medusa/framework/http"
+import { HttpTypes, MedusaContainer } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   MedusaError,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { refetchCustomer } from "../../../helpers"
 import {
   StoreGetCustomerAddressParamsType,

@@ -1,10 +1,10 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 
-import { addOrRemoveCampaignPromotionsWorkflow } from "@medusajs/core-flows"
-import { HttpTypes, LinkMethodRequest } from "@medusajs/framework/types"
+import { addOrRemoveCampaignPromotionsWorkflow } from "@8medusa/core-flows"
+import { HttpTypes, LinkMethodRequest } from "@8medusa/framework/types"
 import { refetchCampaign } from "../../helpers"
 
 export const POST = async (

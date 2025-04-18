@@ -1,15 +1,15 @@
-import { isDefined, ShippingOptionPriceType } from "@medusajs/framework/utils"
+import { isDefined, ShippingOptionPriceType } from "@8medusa/framework/utils"
 import {
   createWorkflow,
   parallelize,
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import {
   CalculateShippingOptionPriceDTO,
   ListShippingOptionsForCartWithPricingWorkflowInput,
-} from "@medusajs/types"
+} from "@8medusa/types"
 
 import { useQueryGraphStep, validatePresenceOfStep } from "../../common"
 import { useRemoteQueryStep } from "../../common/steps/use-remote-query"

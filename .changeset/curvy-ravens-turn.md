@@ -1,5 +1,5 @@
 ---
-"@medusajs/framework": patch
+"@8medusa/framework": patch
 ---
 
 fix: apply additional data validator using a global middleware

@@ -1,5 +1,5 @@
-import { Context, OrderTypes } from "@medusajs/framework/types"
-import { ChangeActionType } from "@medusajs/framework/utils"
+import { Context, OrderTypes } from "@8medusa/framework/types"
+import { ChangeActionType } from "@8medusa/framework/utils"
 
 export async function registerDelivery(
   this: any,

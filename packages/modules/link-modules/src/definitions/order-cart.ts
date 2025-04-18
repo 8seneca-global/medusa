@@ -1,5 +1,5 @@
-import { ModuleJoinerConfig } from "@medusajs/framework/types"
-import { LINKS, Modules } from "@medusajs/framework/utils"
+import { ModuleJoinerConfig } from "@8medusa/framework/types"
+import { LINKS, Modules } from "@8medusa/framework/utils"
 
 export const OrderCart: ModuleJoinerConfig = {
   serviceName: LINKS.OrderCart,

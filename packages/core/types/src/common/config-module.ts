@@ -795,7 +795,7 @@ export type ProjectConfigOptions = {
  *
  * :::
  *
- * `medusa-config.ts` exports the value returned by the `defineConfig` utility function imported from `@medusajs/framework/utils`.
+ * `medusa-config.ts` exports the value returned by the `defineConfig` utility function imported from `@8medusa/framework/utils`.
  *
  * `defineConfig` accepts as a parameter an object with the following properties:
  *

@@ -1,5 +1,5 @@
-const { ProductVariantMoneyAmount } = require("@medusajs/medusa")
-const { ProductOption } = require("@medusajs/medusa")
+const { ProductVariantMoneyAmount } = require("@8medusa/medusa")
+const { ProductOption } = require("@8medusa/medusa")
 const {
   Customer,
   Region,
@@ -19,7 +19,7 @@ const {
   CustomerGroup,
   PriceList,
   ShippingProfileType,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 
 module.exports = async (dataSource, data = {}) => {
   const salesChannelId = data?.sales_channel_id

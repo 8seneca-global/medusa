@@ -1,4 +1,4 @@
-import { OperatorMap } from "@medusajs/types"
+import { OperatorMap } from "@8medusa/types"
 
 export const FilterOperatorMap: { [K in keyof OperatorMap<string>]: string } = {
   $and: "$and",

@@ -3,11 +3,11 @@ import {
   container,
   logger,
   MedusaAppLoader,
-} from "@medusajs/framework"
-import { MedusaAppOutput, MedusaModule } from "@medusajs/framework/modules-sdk"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/framework/utils"
-import { initDb, TestDatabaseUtils } from "@medusajs/test-utils"
-import { IndexTypes, ModulesSdkTypes } from "@medusajs/types"
+} from "@8medusa/framework"
+import { MedusaAppOutput, MedusaModule } from "@8medusa/framework/modules-sdk"
+import { ContainerRegistrationKeys, Modules } from "@8medusa/framework/utils"
+import { initDb, TestDatabaseUtils } from "@8medusa/test-utils"
+import { IndexTypes, ModulesSdkTypes } from "@8medusa/types"
 import { Configuration } from "@utils"
 import { asValue } from "awilix"
 import path from "path"

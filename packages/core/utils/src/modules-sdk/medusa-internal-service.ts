@@ -8,7 +8,7 @@ import {
   ModulesSdkTypes,
   PerformedActions,
   UpsertWithReplaceConfig,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import type { EntityClass, EntitySchema } from "@mikro-orm/core"
 import {
   isDefined,

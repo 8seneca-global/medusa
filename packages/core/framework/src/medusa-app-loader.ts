@@ -7,7 +7,7 @@ import {
   MedusaAppOutput,
   ModulesDefinition,
   RegisterModuleJoinerConfig,
-} from "@medusajs/modules-sdk"
+} from "@8medusa/modules-sdk"
 import {
   CommonTypes,
   ConfigModule,
@@ -16,14 +16,14 @@ import {
   LoadedModule,
   ModuleDefinition,
   ModuleServiceInitializeOptions,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   ContainerRegistrationKeys,
   isBoolean,
   isObject,
   isPresent,
   upperCaseFirst,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { pgConnectionLoader } from "./database"
 
 import { aliasTo, asValue } from "awilix"

@@ -1,5 +1,5 @@
-import { ILockingProvider } from "@medusajs/framework/types"
-import { isDefined, MedusaService } from "@medusajs/framework/utils"
+import { ILockingProvider } from "@8medusa/framework/types"
+import { isDefined, MedusaService } from "@8medusa/framework/utils"
 import { EntityManager } from "@mikro-orm/core"
 import { Locking } from "@models"
 

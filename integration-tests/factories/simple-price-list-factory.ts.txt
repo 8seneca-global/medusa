@@ -4,12 +4,12 @@ import {
   PriceList,
   PriceListStatus,
   PriceListType,
-} from "@medusajs/medusa"
+} from "@8medusa/medusa"
 
 import { DataSource } from "typeorm"
 import faker from "faker"
 import { simpleCustomerGroupFactory } from "./simple-customer-group-factory"
-import { ProductVariantMoneyAmount } from "@medusajs/medusa"
+import { ProductVariantMoneyAmount } from "@8medusa/medusa"
 
 type ProductListPrice = {
   variant_id: string

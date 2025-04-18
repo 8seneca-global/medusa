@@ -20,7 +20,7 @@ import {
   PricingTypes,
   UpsertPricePreferenceDTO,
   UpsertPriceSetDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   arrayDifference,
   deduplicate,
@@ -41,7 +41,7 @@ import {
   removeNullish,
   simpleHash,
   upperCaseFirst,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 
 import {
   Price,

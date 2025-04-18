@@ -1,7 +1,7 @@
 import {
   NESTED_ROUTE_POSITIONS,
   NestedRoutePosition,
-} from "@medusajs/admin-shared"
+} from "@8medusa/admin-shared"
 import fs from "fs/promises"
 import { outdent } from "outdent"
 import {

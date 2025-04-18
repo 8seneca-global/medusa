@@ -1,6 +1,6 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { HttpTypes } from "@medusajs/types"
-import { ModuleRegistrationName } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
+import { HttpTypes } from "@8medusa/types"
+import { ModuleRegistrationName } from "@8medusa/utils"
 import {
   adminHeaders,
   createAdminUser,

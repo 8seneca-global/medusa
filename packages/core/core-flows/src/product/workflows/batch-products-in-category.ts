@@ -1,5 +1,5 @@
-import { ProductCategoryWorkflow } from "@medusajs/framework/types"
-import { WorkflowData, createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { ProductCategoryWorkflow } from "@8medusa/framework/types"
+import { WorkflowData, createWorkflow } from "@8medusa/framework/workflows-sdk"
 import { batchLinkProductsToCategoryStep } from "../steps/batch-link-products-in-category"
 
 export const batchLinkProductsToCategoryWorkflowId =

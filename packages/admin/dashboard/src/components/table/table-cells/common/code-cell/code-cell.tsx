@@ -1,4 +1,4 @@
-import { Badge } from "@medusajs/ui"
+import { Badge } from "@8medusa/ui"
 
 type CellProps = {
   code: string

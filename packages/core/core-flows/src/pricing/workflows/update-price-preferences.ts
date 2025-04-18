@@ -1,9 +1,9 @@
-import { PricingWorkflow } from "@medusajs/framework/types"
+import { PricingWorkflow } from "@8medusa/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { updatePricePreferencesStep } from "../steps"
 
 export const updatePricePreferencesWorkflowId = "update-price-preferences"

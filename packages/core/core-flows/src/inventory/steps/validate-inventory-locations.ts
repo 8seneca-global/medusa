@@ -2,10 +2,10 @@ import {
   arrayDifference,
   ContainerRegistrationKeys,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 
-import { InventoryTypes } from "@medusajs/framework/types"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { InventoryTypes } from "@8medusa/framework/types"
+import { createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The data to validate the inventory levels.

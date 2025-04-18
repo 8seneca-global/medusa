@@ -1,18 +1,18 @@
 import {
   deleteShippingOptionsWorkflow,
   updateShippingOptionsWorkflow,
-} from "@medusajs/core-flows"
-import { FulfillmentWorkflow, HttpTypes } from "@medusajs/framework/types"
+} from "@8medusa/core-flows"
+import { FulfillmentWorkflow, HttpTypes } from "@8medusa/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { refetchShippingOption } from "../helpers"
 import {
   AdminGetShippingOptionParamsType,
   AdminUpdateShippingOptionType,
 } from "../validators"
-import { MedusaError } from "@medusajs/framework/utils"
+import { MedusaError } from "@8medusa/framework/utils"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<AdminGetShippingOptionParamsType>,

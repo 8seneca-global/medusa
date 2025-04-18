@@ -1,12 +1,12 @@
-import { StoreProductTypeResponse } from "@medusajs/framework/types"
+import { StoreProductTypeResponse } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 
 import { StoreProductTypeParamsType } from "../validators"
 

@@ -1,4 +1,4 @@
-import { AdjustmentLineDTO, TaxLineDTO } from "@medusajs/types"
+import { AdjustmentLineDTO, TaxLineDTO } from "@8medusa/types"
 import { calculateAdjustmentTotal } from "../adjustment"
 import { BigNumber } from "../big-number"
 import { MathBN } from "../math"

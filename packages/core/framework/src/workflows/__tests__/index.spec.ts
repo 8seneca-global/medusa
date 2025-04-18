@@ -1,6 +1,6 @@
 import { join } from "path"
 import { WorkflowLoader } from "../workflow-loader"
-import { WorkflowManager } from "@medusajs/orchestration"
+import { WorkflowManager } from "@8medusa/orchestration"
 import { orderWorkflowId } from "../__fixtures__/workflows/order-notifier"
 import { productWorkflowId } from "../__fixtures__/workflows/deep-workflows/product-updater"
 

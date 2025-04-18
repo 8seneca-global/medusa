@@ -1,8 +1,8 @@
-import MemoryWorkflowEngineModule from "@medusajs/workflow-engine-inmemory"
+import MemoryWorkflowEngineModule from "@8medusa/workflow-engine-inmemory"
 
-export * from "@medusajs/workflow-engine-inmemory"
+export * from "@8medusa/workflow-engine-inmemory"
 
 export default MemoryWorkflowEngineModule
 export const discoveryPath = require.resolve(
-  "@medusajs/workflow-engine-inmemory"
+  "@8medusa/workflow-engine-inmemory"
 )

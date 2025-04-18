@@ -5,9 +5,9 @@ import {
   ItemTaxLineDTO,
   OrderDTO,
   ShippingTaxLineDTO,
-} from "@medusajs/framework/types"
-import { Modules, promiseAll } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/types"
+import { Modules, promiseAll } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The details of setting tax lines for an order's items and shipping methods.

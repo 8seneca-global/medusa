@@ -2,12 +2,12 @@ import {
   ICartModuleService,
   UpdateLineItemWithoutSelectorDTO,
   UpdateLineItemWithSelectorDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   Modules,
   getSelectsAndRelationsFromObjectArray,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The details of the line items to update.

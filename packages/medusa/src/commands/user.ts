@@ -1,7 +1,7 @@
-import { logger } from "@medusajs/framework/logger"
-import { Modules } from "@medusajs/framework/utils"
+import { logger } from "@8medusa/framework/logger"
+import { Modules } from "@8medusa/framework/utils"
 import express from "express"
-import { track } from "@medusajs/telemetry"
+import { track } from "@8medusa/telemetry"
 import loaders from "../loaders"
 
 export default async function ({

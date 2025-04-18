@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm"
 import faker from "faker"
-import { ProductTypeTaxRate, TaxRate } from "@medusajs/medusa"
+import { ProductTypeTaxRate, TaxRate } from "@8medusa/medusa"
 
 type RateFactoryData = {
   region_id: string

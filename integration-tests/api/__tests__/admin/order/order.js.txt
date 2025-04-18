@@ -6,7 +6,7 @@ const {
   CustomShippingOption,
   ShippingMethod,
   Fulfillment,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 const idMap = require("medusa-test-utils/src/id-map").default
 
 const setupServer = require("../../../../environment-helpers/setup-server")

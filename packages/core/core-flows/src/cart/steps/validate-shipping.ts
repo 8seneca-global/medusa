@@ -1,11 +1,11 @@
-import { MedusaError } from "@medusajs/framework/utils"
+import { MedusaError } from "@8medusa/framework/utils"
 import {
   CartLineItemDTO,
   CartWorkflowDTO,
   ProductVariantDTO,
   ShippingOptionDTO,
-} from "@medusajs/types"
-import { createStep, StepResponse } from "@medusajs/workflows-sdk"
+} from "@8medusa/types"
+import { createStep, StepResponse } from "@8medusa/workflows-sdk"
 
 /**
  * The data to validate shipping data when cart is completed.

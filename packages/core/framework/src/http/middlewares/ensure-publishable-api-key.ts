@@ -4,7 +4,7 @@ import {
   isPresent,
   MedusaError,
   PUBLISHABLE_KEY_HEADER,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import type {
   MedusaNextFunction,
   MedusaResponse,

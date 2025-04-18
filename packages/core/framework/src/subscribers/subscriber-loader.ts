@@ -1,5 +1,5 @@
-import { Event, IEventBusModuleService, Subscriber } from "@medusajs/types"
-import { kebabCase, Modules } from "@medusajs/utils"
+import { Event, IEventBusModuleService, Subscriber } from "@8medusa/types"
+import { kebabCase, Modules } from "@8medusa/utils"
 import { parse } from "path"
 
 import { configManager } from "../config"

@@ -1,10 +1,10 @@
-import { InviteWorkflow } from "@medusajs/framework/types"
-import { InviteWorkflowEvents } from "@medusajs/framework/utils"
+import { InviteWorkflow } from "@8medusa/framework/types"
+import { InviteWorkflowEvents } from "@8medusa/framework/utils"
 import {
   WorkflowData,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { deleteInvitesStep } from "../steps"
 

@@ -1,4 +1,4 @@
-const { ProductVariant } = require("@medusajs/medusa")
+const { ProductVariant } = require("@8medusa/medusa")
 const path = require("path")
 const setupServer = require("../../../environment-helpers/setup-server")
 const { useApi } = require("../../../environment-helpers/use-api")

@@ -6,7 +6,7 @@ import {
   PromotionRuleOperatorValues,
   PromotionStatusValues,
   PromotionTypeValues,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   Alert,
   Badge,
@@ -21,7 +21,7 @@ import {
   RadioGroup,
   Text,
   toast,
-} from "@medusajs/ui"
+} from "@8medusa/ui"
 import { useEffect, useMemo, useState } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { Trans, useTranslation } from "react-i18next"

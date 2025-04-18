@@ -1,4 +1,4 @@
-const { Region } = require("@medusajs/medusa")
+const { Region } = require("@8medusa/medusa")
 
 module.exports = async (dataSource, data = {}) => {
   const manager = dataSource.manager

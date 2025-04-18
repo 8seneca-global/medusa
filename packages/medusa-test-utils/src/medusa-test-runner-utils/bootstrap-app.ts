@@ -1,9 +1,9 @@
 import express from "express"
 import getPort from "get-port"
 import { resolve } from "path"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { MedusaContainer } from "@8medusa/framework/types"
 import { applyEnvVarsToProcess } from "./utils"
-import { promiseAll, GracefulShutdownServer } from "@medusajs/framework/utils"
+import { promiseAll, GracefulShutdownServer } from "@8medusa/framework/utils"
 
 async function bootstrapApp({
   cwd,
@@ -12,7 +12,7 @@ async function bootstrapApp({
   const app = express()
   applyEnvVarsToProcess(env)
 
-  const loaders = require("@medusajs/medusa/loaders/index").default
+  const loaders = require("@8medusa/medusa/loaders/index").default
 
   const { container, shutdown } = await loaders({
     directory: resolve(cwd || process.cwd()),

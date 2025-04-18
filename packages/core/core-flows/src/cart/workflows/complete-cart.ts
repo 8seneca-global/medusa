@@ -2,13 +2,13 @@ import {
   CartCreditLineDTO,
   CartWorkflowDTO,
   UsageComputedActions,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   isDefined,
   Modules,
   OrderStatus,
   OrderWorkflowEvents,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -17,7 +17,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import {
   createRemoteLinkStep,
   emitEventStep,

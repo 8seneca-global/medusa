@@ -1,5 +1,5 @@
 import { ConfigModule } from "./types"
-import { deepCopy, isDefined } from "@medusajs/utils"
+import { deepCopy, isDefined } from "@8medusa/utils"
 import { logger } from "../logger"
 
 export class ConfigManager {

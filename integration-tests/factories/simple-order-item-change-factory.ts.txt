@@ -1,4 +1,4 @@
-import { OrderEditItemChangeType, OrderItemChange } from "@medusajs/medusa"
+import { OrderEditItemChangeType, OrderItemChange } from "@8medusa/medusa"
 import { DataSource } from "typeorm"
 
 type OrderItemChangeData = {

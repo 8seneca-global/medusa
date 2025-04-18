@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 import {
   ICartModuleService,
   IFulfillmentModuleService,
@@ -9,8 +9,8 @@ import {
   ISalesChannelModuleService,
   IStockLocationServiceNext,
   ITaxModuleService,
-} from "@medusajs/types"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/utils"
+} from "@8medusa/types"
+import { ContainerRegistrationKeys, Modules } from "@8medusa/utils"
 import {
   adminHeaders,
   createAdminUser,

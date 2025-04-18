@@ -3,7 +3,7 @@ import {
   KnownDataTypes,
   PropertyMetadata,
   PropertyType,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   ArrayType,
   BeforeCreate,

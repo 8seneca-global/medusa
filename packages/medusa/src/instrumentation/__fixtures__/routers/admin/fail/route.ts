@@ -1,4 +1,4 @@
-import { MedusaError } from "@medusajs/framework/utils"
+import { MedusaError } from "@8medusa/framework/utils"
 import { Request, Response } from "express"
 
 export function GET(req: Request, res: Response) {

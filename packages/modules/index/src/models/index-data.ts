@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@8medusa/framework/utils"
 
 const IndexData = model.define("IndexData", {
   id: model.text().primaryKey(),

@@ -25,7 +25,7 @@ import {
   promiseAll,
   serializeError,
   TransactionStepState,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { EventEmitter } from "events"
 import {
   PermanentStepFailureError,

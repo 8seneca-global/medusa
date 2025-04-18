@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { createDataGridHelper } from "../../../../components/data-grid"

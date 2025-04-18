@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckMini, EllipseMiniSolid, XMark } from "@medusajs/icons"
+import { CheckMini, EllipseMiniSolid, XMark } from "@8medusa/icons"
 import * as React from "react"
 
 import { useDataTableContext } from "@/blocks/data-table/context/use-data-table-context"

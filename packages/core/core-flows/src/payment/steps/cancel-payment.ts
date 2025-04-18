@@ -1,10 +1,10 @@
-import { IPaymentModuleService, Logger } from "@medusajs/framework/types"
+import { IPaymentModuleService, Logger } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   promiseAll,
-} from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/utils"
+import { createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The data to cancel one or more payments.

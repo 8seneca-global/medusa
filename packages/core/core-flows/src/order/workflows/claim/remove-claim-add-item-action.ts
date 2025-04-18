@@ -5,8 +5,8 @@ import {
   OrderDTO,
   OrderPreviewDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
-import { ChangeActionType, OrderChangeStatus } from "@medusajs/framework/utils"
+} from "@8medusa/framework/types"
+import { ChangeActionType, OrderChangeStatus } from "@8medusa/framework/utils"
 import {
   createStep,
   createWorkflow,
@@ -14,7 +14,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import {
   deleteOrderChangeActionsStep,

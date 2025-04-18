@@ -1,6 +1,6 @@
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+import { MedusaRequest, MedusaResponse } from "@8medusa/framework/http"
+import { HttpTypes } from "@8medusa/framework/types"
+import { ContainerRegistrationKeys } from "@8medusa/framework/utils"
 import { isString } from "lodash"
 
 export const GET = async (

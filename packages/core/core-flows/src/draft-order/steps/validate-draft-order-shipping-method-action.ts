@@ -1,10 +1,10 @@
-import { ChangeActionType, MedusaError } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { ChangeActionType, MedusaError } from "@8medusa/framework/utils"
+import { createStep } from "@8medusa/framework/workflows-sdk"
 import {
   OrderChangeActionDTO,
   OrderChangeDTO,
   OrderWorkflow,
-} from "@medusajs/types"
+} from "@8medusa/types"
 
 export interface ValidateDraftOrderShippingMethodActionStepInput {
   input: OrderWorkflow.DeleteOrderEditShippingMethodWorkflowInput

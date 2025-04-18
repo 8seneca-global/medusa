@@ -12,7 +12,7 @@ const {
   LineItem,
   Discount,
   DiscountRule,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 
 const setupServer = require("../../../environment-helpers/setup-server")
 const { useApi } = require("../../../environment-helpers/use-api")

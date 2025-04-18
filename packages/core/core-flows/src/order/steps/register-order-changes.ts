@@ -1,9 +1,9 @@
 import {
   IOrderModuleService,
   RegisterOrderChangeDTO,
-} from "@medusajs/framework/types"
-import { ModuleRegistrationName } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/types"
+import { ModuleRegistrationName } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The input of the register order changes step.

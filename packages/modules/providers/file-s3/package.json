@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/file-s3",
+  "name": "@8medusa/file-s3",
   "version": "2.7.0",
   "description": "S3 protocol file storage for Medusa. Supports any S3-compatible storage provider",
   "main": "dist/index.js",
@@ -19,6 +19,9 @@
   },
   "author": "Medusa",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest --passWithNoTests src",
     "test:integration": "jest --forceExit -- integration-tests/__tests__/*.spec.ts",
@@ -26,7 +29,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "@medusajs/framework": "2.7.0",
+    "@8medusa/framework": "2.7.0",
     "@swc/core": "^1.7.28",
     "@swc/jest": "^0.2.36",
     "axios": "^1.6.8",
@@ -40,7 +43,7 @@
     "ulid": "^2.3.0"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.7.0"
+    "@8medusa/framework": "2.7.0"
   },
   "keywords": [
     "medusa-plugin",

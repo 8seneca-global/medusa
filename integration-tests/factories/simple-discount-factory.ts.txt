@@ -3,7 +3,7 @@ import {
   Discount,
   DiscountRule,
   DiscountRuleType,
-} from "@medusajs/medusa"
+} from "@8medusa/medusa"
 import faker from "faker"
 import { DataSource } from "typeorm"
 

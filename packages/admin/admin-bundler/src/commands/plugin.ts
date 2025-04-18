@@ -12,7 +12,7 @@ interface PluginOptions {
 export async function plugin(options: PluginOptions) {
   const vite = await import("vite")
   const react = (await import("@vitejs/plugin-react")).default
-  const medusa = (await import("@medusajs/admin-vite-plugin")).default
+  const medusa = (await import("@8medusa/admin-vite-plugin")).default
 
   const pkg = JSON.parse(
     readFileSync(path.resolve(options.root, "package.json"), "utf-8")
@@ -24,8 +24,8 @@ export async function plugin(options: PluginOptions) {
     "react",
     "react/jsx-runtime",
     "react-router-dom",
-    "@medusajs/js-sdk",
-    "@medusajs/admin-sdk",
+    "@8medusa/js-sdk",
+    "@8medusa/admin-sdk",
     "@tanstack/react-query",
   ])
 

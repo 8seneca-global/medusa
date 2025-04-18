@@ -1,9 +1,9 @@
-import { TaxRegionDTO, UpdateTaxRegionDTO } from "@medusajs/framework/types"
+import { TaxRegionDTO, UpdateTaxRegionDTO } from "@8medusa/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { updateTaxRegionsStep } from "../steps/update-tax-regions"
 
 /**

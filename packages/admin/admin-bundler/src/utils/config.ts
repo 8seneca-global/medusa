@@ -1,4 +1,4 @@
-import { VIRTUAL_MODULES } from "@medusajs/admin-shared"
+import { VIRTUAL_MODULES } from "@8medusa/admin-shared"
 import path from "path"
 import type { InlineConfig } from "vite"
 import { injectTailwindCSS } from "../plugins/inject-tailwindcss"
@@ -10,7 +10,7 @@ export async function getViteConfig(
 ): Promise<InlineConfig> {
   const { searchForWorkspaceRoot, mergeConfig } = await import("vite")
   const { default: react } = await import("@vitejs/plugin-react")
-  const { default: medusa } = await import("@medusajs/admin-vite-plugin")
+  const { default: medusa } = await import("@8medusa/admin-vite-plugin")
 
   const getPort = await import("get-port")
   const hmrPort = await getPort.default()
@@ -33,9 +33,9 @@ export async function getViteConfig(
         "react/jsx-runtime",
         "react-dom/client",
         "react-router-dom",
-        "@medusajs/ui",
-        "@medusajs/dashboard",
-        "@medusajs/js-sdk",
+        "@8medusa/ui",
+        "@8medusa/dashboard",
+        "@8medusa/js-sdk",
         "@tanstack/react-query",
       ],
       exclude: [...VIRTUAL_MODULES],

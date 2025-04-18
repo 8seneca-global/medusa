@@ -1,24 +1,24 @@
 import {
   DistributedTransactionType,
   WorkflowManager,
-} from "@medusajs/framework/orchestration"
+} from "@8medusa/framework/orchestration"
 import {
   Context,
   IWorkflowEngineService,
   RemoteQueryFunction,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   Module,
   Modules,
   TransactionHandlerType,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@8medusa/framework/workflows-sdk"
+import { moduleIntegrationTestRunner } from "@8medusa/test-utils"
 import { WorkflowsModuleService } from "@services"
 import { asFunction } from "awilix"
 import { setTimeout as setTimeoutSync } from "timers"

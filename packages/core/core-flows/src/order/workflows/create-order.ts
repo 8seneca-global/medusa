@@ -1,5 +1,5 @@
-import { AdditionalData, CreateOrderDTO } from "@medusajs/framework/types"
-import { MedusaError, isDefined, isPresent } from "@medusajs/framework/utils"
+import { AdditionalData, CreateOrderDTO } from "@8medusa/framework/types"
+import { MedusaError, isDefined, isPresent } from "@8medusa/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -8,7 +8,7 @@ import {
   parallelize,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { findOneOrAnyRegionStep } from "../../cart/steps/find-one-or-any-region"
 import { findOrCreateCustomerStep } from "../../cart/steps/find-or-create-customer"
 import { findSalesChannelStep } from "../../cart/steps/find-sales-channel"
@@ -143,8 +143,8 @@ export const createOrdersWorkflowId = "create-orders"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { createOrderWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { createOrderWorkflow } from "@8medusa/medusa/core-flows";
+ * import { StepResponse } from "@8medusa/workflows-sdk";
  * 
  * createOrderWorkflow.hooks.setPricingContext((
  *   { variantIds, region, customerData, additional_data }, { container }

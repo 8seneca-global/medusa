@@ -1,4 +1,4 @@
-import { FlagSettings } from "@medusajs/framework/feature-flags"
+import { FlagSettings } from "@8medusa/framework/feature-flags"
 
 const ProductCategoryFeatureFlag: FlagSettings = {
   key: "product_categories",

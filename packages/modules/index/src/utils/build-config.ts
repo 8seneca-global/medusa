@@ -1,15 +1,15 @@
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
+import { MedusaModule } from "@8medusa/framework/modules-sdk"
 import {
   IndexTypes,
   JoinerServiceConfigAlias,
   ModuleJoinerConfig,
   ModuleJoinerRelationship,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   buildModuleResourceEventName,
   CommonEvents,
   GraphQLUtils,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { schemaObjectRepresentationPropertiesToOmit } from "@types"
 
 export const CustomDirectives = {

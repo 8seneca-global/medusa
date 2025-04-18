@@ -4,15 +4,15 @@ import {
   OrderChangeDTO,
   OrderDTO,
   OrderPreviewDTO,
-} from "@medusajs/framework/types"
-import { ChangeActionType, OrderChangeStatus } from "@medusajs/framework/utils"
+} from "@8medusa/framework/types"
+import { ChangeActionType, OrderChangeStatus } from "@8medusa/framework/utils"
 import {
   WorkflowResponse,
   createHook,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import { previewOrderChangeStep } from "../../steps"
 import { createOrderShippingMethods } from "../../steps/create-order-shipping-methods"
@@ -129,8 +129,8 @@ export const createOrderEditShippingMethodWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { createOrderEditShippingMethodWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { createOrderEditShippingMethodWorkflow } from "@8medusa/medusa/core-flows";
+ * import { StepResponse } from "@8medusa/workflows-sdk";
  * 
  * createOrderEditShippingMethodWorkflow.hooks.setPricingContext((
  *   { order, shipping_option_id, additional_data }, { container }

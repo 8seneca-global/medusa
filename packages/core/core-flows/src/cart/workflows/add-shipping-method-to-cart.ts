@@ -1,4 +1,4 @@
-import { CartWorkflowEvents, MedusaError } from "@medusajs/framework/utils"
+import { CartWorkflowEvents, MedusaError } from "@8medusa/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -6,7 +6,7 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { useRemoteQueryStep } from "../../common/steps/use-remote-query"
 import {

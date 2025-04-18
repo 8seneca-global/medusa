@@ -1,13 +1,13 @@
 import {
   JoinerRelationship,
   ModuleJoinerConfig,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   composeTableName,
   mikroOrmSoftDeletableFilterOptions,
   simpleHash,
   SoftDeletableFilterKey,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 
 import { EntitySchema } from "@mikro-orm/core"
 import { compressName } from "./compress-name"

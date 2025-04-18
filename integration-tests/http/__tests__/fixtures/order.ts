@@ -4,7 +4,7 @@ import {
   AdminShippingProfile,
   AdminStockLocation,
   MedusaContainer,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   adminHeaders,
   generatePublishableKey,

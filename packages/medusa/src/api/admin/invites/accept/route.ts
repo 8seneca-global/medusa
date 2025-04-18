@@ -1,10 +1,10 @@
-import { acceptInviteWorkflow } from "@medusajs/core-flows"
-import { HttpTypes, InviteWorkflow } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { acceptInviteWorkflow } from "@8medusa/core-flows"
+import { HttpTypes, InviteWorkflow } from "@8medusa/framework/types"
+import { MedusaError } from "@8medusa/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { AdminInviteAcceptType } from "../validators"
 
 export const POST = async (

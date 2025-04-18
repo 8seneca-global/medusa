@@ -1,4 +1,4 @@
-const { User, Invite } = require("@medusajs/medusa")
+const { User, Invite } = require("@8medusa/medusa")
 import jwt from "jsonwebtoken"
 
 const generateToken = (data) => {

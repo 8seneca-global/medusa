@@ -2,8 +2,8 @@ import {
   MedusaError,
   OrderStatus,
   PromotionStatus,
-} from "@medusajs/framework/utils"
-import { OrderDTO, PromotionDTO } from "@medusajs/types"
+} from "@8medusa/framework/utils"
+import { OrderDTO, PromotionDTO } from "@8medusa/types"
 
 interface ThrowIfNotDraftOrderInput {
   order: OrderDTO

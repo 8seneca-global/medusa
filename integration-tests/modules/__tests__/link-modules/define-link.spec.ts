@@ -1,10 +1,10 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 
-import CurrencyModule from "@medusajs/currency"
-import { MedusaModule } from "@medusajs/modules-sdk"
-import ProductModule from "@medusajs/product"
-import RegionModule from "@medusajs/region"
-import { defineLink } from "@medusajs/utils"
+import CurrencyModule from "@8medusa/currency"
+import { MedusaModule } from "@8medusa/modules-sdk"
+import ProductModule from "@8medusa/product"
+import RegionModule from "@8medusa/region"
+import { defineLink } from "@8medusa/utils"
 
 jest.setTimeout(50000)
 

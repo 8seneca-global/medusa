@@ -1,9 +1,9 @@
-import { TriangleRightMini } from "@medusajs/icons"
-import { Container, Heading } from "@medusajs/ui"
+import { TriangleRightMini } from "@8medusa/icons"
+import { Container, Heading } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 
-import { ProductVariantDTO } from "@medusajs/types"
+import { ProductVariantDTO } from "@8medusa/types"
 import { Thumbnail } from "../../../../../components/common/thumbnail"
 
 type InventoryItemVariantsSectionProps = {

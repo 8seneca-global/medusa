@@ -1,10 +1,10 @@
-import { IProductModuleService, ProductTypes } from "@medusajs/framework/types"
+import { IProductModuleService, ProductTypes } from "@8medusa/framework/types"
 import {
   MedusaError,
   Modules,
   getSelectsAndRelationsFromObjectArray,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The details of the product variants update.

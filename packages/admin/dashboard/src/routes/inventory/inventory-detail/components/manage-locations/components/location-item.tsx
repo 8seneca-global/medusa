@@ -1,6 +1,6 @@
-import { Checkbox, Text, clx } from "@medusajs/ui"
+import { Checkbox, Text, clx } from "@8medusa/ui"
 
-import { StockLocationDTO } from "@medusajs/types"
+import { StockLocationDTO } from "@8medusa/types"
 
 type LocationItemProps = {
   selected: boolean

@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/ui-preset",
+  "name": "@8medusa/ui-preset",
   "version": "2.7.0",
   "description": "Medusa UI preset",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "url": "https://github.com/medusajs/medusa.git",
     "directory": "packages/design-system/ui-preset"
   },
-  "author": "Kasper Kristensen <kasper@medusajs.com>",
+  "author": "Kasper Kristensen <kasper@8medusa.com>",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -30,7 +30,7 @@
     "tailwindcss": ">=3.0.0"
   },
   "devDependencies": {
-    "@medusajs/toolbox": "2.7.0",
+    "@8medusa/toolbox": "2.7.0",
     "tailwindcss": "^3.4.1",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"

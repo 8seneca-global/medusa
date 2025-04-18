@@ -1,4 +1,4 @@
-import { dynamicImport, readDirRecursive } from "@medusajs/utils"
+import { dynamicImport, readDirRecursive } from "@8medusa/utils"
 import { join, parse, sep } from "path"
 import { logger } from "../logger"
 import { HTTP_METHODS, type RouteDescriptor, type RouteVerb } from "./types"

@@ -70,7 +70,10 @@
     "release:next": "chgstangeset publish --no-git-tags --snapshot --tag next",
     "version:next": "changeset version --snapshot next",
     "release": "changeset publish",
-    "version": "changeset version && yarn install --no-immutable"
+    "version": "changeset version && yarn install --no-immutable",
+    "publish:check-and-publish": "node scripts/publish-new-packages.js",
+    "publish:providers": "node scripts/publish-providers.js"
+
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",

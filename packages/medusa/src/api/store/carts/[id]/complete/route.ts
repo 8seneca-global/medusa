@@ -1,11 +1,11 @@
-import { completeCartWorkflow } from "@medusajs/core-flows"
-import { prepareRetrieveQuery } from "@medusajs/framework"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+import { completeCartWorkflow } from "@8medusa/core-flows"
+import { prepareRetrieveQuery } from "@8medusa/framework"
+import { MedusaRequest, MedusaResponse } from "@8medusa/framework/http"
+import { HttpTypes } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { refetchCart } from "../../helpers"
 import { defaultStoreCartFields } from "../../query-config"
 

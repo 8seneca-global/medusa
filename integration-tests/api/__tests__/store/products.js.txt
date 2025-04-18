@@ -13,7 +13,7 @@ const adminSeeder = require("../../../helpers/admin-seeder")
 const {
   allowedStoreProductsFields,
   defaultStoreProductsRelations,
-} = require("@medusajs/medusa")
+} = require("@8medusa/medusa")
 
 const adminHeaders = {
   headers: {

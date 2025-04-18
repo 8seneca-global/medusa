@@ -1,6 +1,6 @@
-import PromotionModule from "@medusajs/promotion"
+import PromotionModule from "@8medusa/promotion"
 
-export * from "@medusajs/promotion"
+export * from "@8medusa/promotion"
 
 export default PromotionModule
-export const discoveryPath = require.resolve("@medusajs/promotion")
+export const discoveryPath = require.resolve("@8medusa/promotion")

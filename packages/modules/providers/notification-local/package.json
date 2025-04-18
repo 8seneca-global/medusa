@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/notification-local",
+  "name": "@8medusa/notification-local",
   "version": "2.7.0",
   "description": "Local (logging) notification provider for Medusa, useful for testing purposes and log audits",
   "main": "dist/index.js",
@@ -19,6 +19,9 @@
   },
   "author": "Medusa",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest --passWithNoTests src",
     "test:integration": "jest --forceExit -- integration-tests/**/__tests__/**/*.spec.ts",
@@ -26,7 +29,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "@medusajs/framework": "2.7.0",
+    "@8medusa/framework": "2.7.0",
     "@swc/core": "^1.7.28",
     "@swc/jest": "^0.2.36",
     "jest": "^29.7.0",
@@ -34,7 +37,7 @@
     "typescript": "^5.6.2"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.7.0"
+    "@8medusa/framework": "2.7.0"
   },
   "keywords": [
     "medusa-provider",

@@ -1,7 +1,7 @@
-import { convertDraftOrderWorkflow } from "@medusajs/core-flows"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
-import { HttpTypes } from "@medusajs/types"
+import { convertDraftOrderWorkflow } from "@8medusa/core-flows"
+import { MedusaRequest, MedusaResponse } from "@8medusa/framework/http"
+import { ContainerRegistrationKeys } from "@8medusa/framework/utils"
+import { HttpTypes } from "@8medusa/types"
 
 export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)

@@ -1,7 +1,7 @@
-import { IStoreModuleService } from "@medusajs/framework/types"
-import { Module, Modules } from "@medusajs/framework/utils"
+import { IStoreModuleService } from "@8medusa/framework/types"
+import { Module, Modules } from "@8medusa/framework/utils"
 import { StoreModuleService } from "@services"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@8medusa/test-utils"
 import { createStoreFixture } from "../__fixtures__"
 
 jest.setTimeout(100000)

@@ -1,24 +1,24 @@
-import { MedusaModule } from "@medusajs/modules-sdk"
+import { MedusaModule } from "@8medusa/modules-sdk"
 import {
   DistributedTransactionEvents,
   DistributedTransactionType,
   LocalWorkflow,
   TransactionState,
-} from "@medusajs/orchestration"
+} from "@8medusa/orchestration"
 import {
   Context,
   IEventBusModuleService,
   LoadedModule,
   Logger,
   MedusaContainer,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   ContainerRegistrationKeys,
   isPresent,
   MedusaContextType,
   Modules,
   TransactionHandlerType,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { EOL } from "os"
 import { ulid } from "ulid"
 import { MedusaWorkflow } from "../medusa-workflow"

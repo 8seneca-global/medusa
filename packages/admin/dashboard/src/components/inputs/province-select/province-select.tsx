@@ -5,8 +5,8 @@ import {
   useRef,
 } from "react"
 
-import { TrianglesMini } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
+import { TrianglesMini } from "@8medusa/icons"
+import { clx } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { getCountryProvinceObjectByIso2 } from "../../../lib/data/country-states"
 

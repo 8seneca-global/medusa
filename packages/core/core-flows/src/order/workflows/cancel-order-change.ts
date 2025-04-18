@@ -1,5 +1,5 @@
-import { CancelOrderChangeDTO } from "@medusajs/framework/types"
-import { WorkflowData, createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { CancelOrderChangeDTO } from "@8medusa/framework/types"
+import { WorkflowData, createWorkflow } from "@8medusa/framework/workflows-sdk"
 import { cancelOrderChangeStep } from "../steps"
 
 export const cancelOrderChangeWorkflowId = "cancel-order-change"

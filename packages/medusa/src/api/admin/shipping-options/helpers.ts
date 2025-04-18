@@ -2,11 +2,11 @@ import {
   BatchMethodResponse,
   MedusaContainer,
   ShippingOptionRuleDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 
 export const refetchShippingOption = async (
   shippingOptionId: string,

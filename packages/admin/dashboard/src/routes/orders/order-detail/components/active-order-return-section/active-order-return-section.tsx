@@ -1,8 +1,8 @@
-import { ArrowUturnLeft } from "@medusajs/icons"
-import { Button, Container, Heading, Text, toast } from "@medusajs/ui"
+import { ArrowUturnLeft } from "@8medusa/icons"
+import { Button, Container, Heading, Text, toast } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { useNavigate } from "react-router-dom"
 import { useCancelReturnRequest } from "../../../../../hooks/api/returns"
 

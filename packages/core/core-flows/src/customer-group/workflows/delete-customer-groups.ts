@@ -1,4 +1,4 @@
-import { WorkflowData, createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { WorkflowData, createWorkflow } from "@8medusa/framework/workflows-sdk"
 import { deleteCustomerGroupStep } from "../steps"
 
 /**

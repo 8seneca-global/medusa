@@ -1,4 +1,4 @@
-import { Modules } from "@medusajs/utils"
+import { Modules } from "@8medusa/utils"
 import { asValue } from "awilix"
 import { join } from "path"
 import { container } from "../../container"

@@ -1,12 +1,12 @@
 import boxen from "boxen"
 import { ChildProcess, execSync, fork } from "child_process"
 import chokidar, { FSWatcher } from "chokidar"
-import { Store } from "@medusajs/telemetry"
+import { Store } from "@8medusa/telemetry"
 import { EOL } from "os"
 import path from "path"
 
-import { logger } from "@medusajs/framework/logger"
-import { MEDUSA_CLI_PATH } from "@medusajs/framework"
+import { logger } from "@8medusa/framework/logger"
+import { MEDUSA_CLI_PATH } from "@8medusa/framework"
 
 const defaultConfig = {
   padding: 5,

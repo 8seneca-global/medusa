@@ -1,5 +1,5 @@
-import { createCartCreditLinesWorkflow } from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { createCartCreditLinesWorkflow } from "@8medusa/core-flows"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 import {
   Modules,
   PriceListStatus,
@@ -7,7 +7,7 @@ import {
   PromotionRuleOperator,
   PromotionStatus,
   PromotionType,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import {
   createAdminUser,
   generatePublishableKey,

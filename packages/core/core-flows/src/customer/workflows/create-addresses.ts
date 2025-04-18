@@ -1,7 +1,7 @@
 import {
   AdditionalData,
   CreateCustomerAddressDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -9,7 +9,7 @@ import {
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import {
   createCustomerAddressesStep,
   maybeUnsetDefaultBillingAddressesStep,

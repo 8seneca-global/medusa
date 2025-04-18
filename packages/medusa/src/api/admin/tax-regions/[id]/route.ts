@@ -1,16 +1,16 @@
 import {
   deleteTaxRegionsWorkflow,
   updateTaxRegionsWorkflow,
-} from "@medusajs/core-flows"
+} from "@8medusa/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes, RemoteQueryFunction } from "@medusajs/framework/types"
+} from "@8medusa/framework/http"
+import { HttpTypes, RemoteQueryFunction } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { AdminUpdateTaxRegionType } from "../validators"
 
 export const GET = async (

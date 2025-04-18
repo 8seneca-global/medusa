@@ -1,13 +1,13 @@
-import { createProductsWorkflow } from "@medusajs/core-flows"
-import { featureFlagRouter } from "@medusajs/framework"
+import { createProductsWorkflow } from "@8medusa/core-flows"
+import { featureFlagRouter } from "@8medusa/framework"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntities,
   refetchEntity,
-} from "@medusajs/framework/http"
-import { AdditionalData, HttpTypes } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys, isPresent } from "@medusajs/framework/utils"
+} from "@8medusa/framework/http"
+import { AdditionalData, HttpTypes } from "@8medusa/framework/types"
+import { ContainerRegistrationKeys, isPresent } from "@8medusa/framework/utils"
 import IndexEngineFeatureFlag from "../../../loaders/feature-flags/index-engine"
 import { remapKeysForProduct, remapProductResponse } from "./helpers"
 

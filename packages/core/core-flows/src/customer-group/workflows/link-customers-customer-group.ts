@@ -1,5 +1,5 @@
-import { LinkWorkflowInput } from "@medusajs/framework/types"
-import { WorkflowData, createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { LinkWorkflowInput } from "@8medusa/framework/types"
+import { WorkflowData, createWorkflow } from "@8medusa/framework/workflows-sdk"
 import { linkCustomersToCustomerGroupStep } from "../steps"
 
 /**

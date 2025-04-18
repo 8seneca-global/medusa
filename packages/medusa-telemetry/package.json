@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/telemetry",
+  "name": "@8medusa/telemetry",
   "version": "2.7.0",
   "description": "Telemetry for Medusa",
   "main": "dist/index.js",

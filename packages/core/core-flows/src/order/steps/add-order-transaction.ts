@@ -1,6 +1,6 @@
-import { CreateOrderTransactionDTO } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { CreateOrderTransactionDTO } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The transaction(s) to add to the order.

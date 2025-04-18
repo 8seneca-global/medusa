@@ -3,7 +3,7 @@ import {
   isValidCustomFieldDisplayZone,
   type CustomFieldContainerZone,
   type CustomFieldModel,
-} from "@medusajs/admin-shared"
+} from "@8medusa/admin-shared"
 import fs from "fs/promises"
 import {
   ExportDefaultDeclaration,

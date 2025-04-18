@@ -1,4 +1,4 @@
-import { MathBN, isPresent } from "@medusajs/framework/utils"
+import { MathBN, isPresent } from "@8medusa/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -7,7 +7,7 @@ import {
   parallelize,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../common/steps/use-remote-query"
 import { updatePaymentCollectionStep } from "../../payment-collection"
 import { deletePaymentSessionsWorkflow } from "../../payment-collection/workflows/delete-payment-sessions"

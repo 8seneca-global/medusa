@@ -1,9 +1,9 @@
-import { CreateTaxRateDTO, TaxRateDTO } from "@medusajs/framework/types"
+import { CreateTaxRateDTO, TaxRateDTO } from "@8medusa/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { createTaxRatesStep } from "../steps"
 
 /**

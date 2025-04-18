@@ -3,8 +3,8 @@ import {
   IPricingModuleService,
   MedusaContainer,
   PriceSetDTO,
-} from "@medusajs/types"
-import { Modules } from "@medusajs/utils"
+} from "@8medusa/types"
+import { Modules } from "@8medusa/utils"
 
 const defaultPrices = [
   {

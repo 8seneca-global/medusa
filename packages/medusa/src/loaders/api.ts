@@ -1,9 +1,9 @@
 import { Express } from "express"
 import { join } from "path"
 import qs from "qs"
-import { ApiLoader } from "@medusajs/framework/http"
-import { MedusaContainer, PluginDetails } from "@medusajs/framework/types"
-import { ConfigModule } from "@medusajs/framework/config"
+import { ApiLoader } from "@8medusa/framework/http"
+import { MedusaContainer, PluginDetails } from "@8medusa/framework/types"
+import { ConfigModule } from "@8medusa/framework/config"
 
 type Options = {
   app: Express

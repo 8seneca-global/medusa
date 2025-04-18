@@ -2,9 +2,9 @@ import {
   ContainerRegistrationKeys,
   Modules,
   PromotionActions,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { IPromotionModuleService } from "@medusajs/types"
+} from "@8medusa/framework/utils"
+import { createStep, StepResponse } from "@8medusa/framework/workflows-sdk"
+import { IPromotionModuleService } from "@8medusa/types"
 
 export const updateDraftOrderPromotionsStepId = "update-draft-order-promotions"
 

@@ -47,7 +47,7 @@ jobs:
           node-version: 20
 
       - name: Install Medusa cli
-        run: npm i -g @medusajs/cli@latest
+        run: npm i -g @8medusa/cli@latest
 
       - name: Create Medusa project
         run: |

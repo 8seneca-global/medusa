@@ -1,4 +1,4 @@
-import { JoinerServiceConfig } from "@medusajs/types"
+import { JoinerServiceConfig } from "@8medusa/types"
 import { remoteJoinerData } from "./../../__fixtures__/joiner/data"
 
 export const serviceConfigs: JoinerServiceConfig[] = [

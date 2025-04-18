@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/admin-vite-plugin",
+  "name": "@8medusa/admin-vite-plugin",
   "version": "2.7.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -37,10 +37,10 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "@8medusa/admin-shared": "2.7.0",
     "@babel/parser": "7.25.6",
     "@babel/traverse": "7.25.6",
     "@babel/types": "7.25.6",
-    "@medusajs/admin-shared": "2.7.0",
     "chokidar": "3.5.3",
     "fdir": "6.1.1",
     "magic-string": "0.30.5",

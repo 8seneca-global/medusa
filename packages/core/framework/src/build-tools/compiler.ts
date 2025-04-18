@@ -1,5 +1,5 @@
-import type { AdminOptions, ConfigModule, Logger } from "@medusajs/types"
-import { FileSystem, getConfigFile, getResolvedPlugins } from "@medusajs/utils"
+import type { AdminOptions, ConfigModule, Logger } from "@8medusa/types"
+import { FileSystem, getConfigFile, getResolvedPlugins } from "@8medusa/utils"
 import chokidar from "chokidar"
 import { access, constants, copyFile, rm } from "fs/promises"
 import path from "path"
@@ -324,7 +324,7 @@ export class Compiler {
 
   /**
    * Builds the frontend source code of a Medusa application
-   * using the "@medusajs/admin-bundler" package.
+   * using the "@8medusa/admin-bundler" package.
    */
   async buildAppFrontend(
     adminOnly: boolean,

@@ -1,9 +1,9 @@
 import z from "zod"
-import { MedusaError } from "@medusajs/utils"
+import { MedusaError } from "@8medusa/utils"
 import { validateAndTransformQuery } from "../utils/validate-query"
 import { MedusaNextFunction, MedusaRequest, MedusaResponse } from "../types"
 import { RestrictedFields } from "../utils/restricted-fields"
-import { QueryConfig } from "@medusajs/types"
+import { QueryConfig } from "@8medusa/types"
 
 export const createSelectParams = () => {
   return z.object({

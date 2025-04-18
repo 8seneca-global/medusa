@@ -1,9 +1,9 @@
 import {
   removeDraftOrderActionShippingMethodWorkflow,
   updateDraftOrderActionShippingMethodWorkflow,
-} from "@medusajs/core-flows"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { HttpTypes } from "@medusajs/types"
+} from "@8medusa/core-flows"
+import { AuthenticatedMedusaRequest, MedusaResponse } from "@8medusa/framework"
+import { HttpTypes } from "@8medusa/types"
 import { AdminUpdateDraftOrderActionShippingMethodType } from "../../../../validators"
 
 export const POST = async (

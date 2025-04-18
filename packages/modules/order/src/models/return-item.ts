@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@8medusa/framework/utils"
 import { OrderLineItem } from "./line-item"
 import { Return } from "./return"
 import { ReturnReason } from "./return-reason"

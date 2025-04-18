@@ -1,4 +1,4 @@
-import { ModuleServiceInitializeOptions } from "@medusajs/types"
+import { ModuleServiceInitializeOptions } from "@8medusa/types"
 import { Filter as MikroORMFilter } from "@mikro-orm/core"
 import { TSMigrationGenerator } from "@mikro-orm/migrations"
 import { isString } from "../../common"

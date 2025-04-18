@@ -1,9 +1,9 @@
-import { MedusaAppOutput } from "@medusajs/framework/modules-sdk"
-import { ContainerLike, MedusaContainer } from "@medusajs/framework/types"
+import { MedusaAppOutput } from "@8medusa/framework/modules-sdk"
+import { ContainerLike, MedusaContainer } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   createMedusaContainer,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { asValue } from "awilix"
 import { dbTestUtilFactory, getDatabaseURL } from "./database"
 import {
@@ -105,7 +105,7 @@ export function medusaIntegrationTestRunner({
     applyEnvVarsToProcess(env)
 
     const { logger, container, MedusaAppLoader } = await import(
-      "@medusajs/framework"
+      "@8medusa/framework"
     )
 
     const appLoader = new MedusaAppLoader()
@@ -188,7 +188,7 @@ export function medusaIntegrationTestRunner({
     const copiedContainer = createMedusaContainer({}, container)
 
     try {
-      const { MedusaAppLoader } = await import("@medusajs/framework")
+      const { MedusaAppLoader } = await import("@8medusa/framework")
 
       const medusaAppLoader = new MedusaAppLoader({
         container: copiedContainer,

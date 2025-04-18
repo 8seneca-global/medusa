@@ -1,11 +1,11 @@
-import { Buildings, XCircle } from "@medusajs/icons"
+import { Buildings, XCircle } from "@8medusa/icons"
 import {
   AdminOrder,
   AdminOrderFulfillment,
   AdminOrderLineItem,
   HttpTypes,
   OrderLineItemDTO,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   Button,
   Container,
@@ -16,7 +16,7 @@ import {
   Tooltip,
   toast,
   usePrompt,
-} from "@medusajs/ui"
+} from "@8medusa/ui"
 import { format } from "date-fns"
 import { useTranslation } from "react-i18next"
 import { Link, useNavigate } from "react-router-dom"

@@ -9,7 +9,7 @@ import {
   SoftDeleteReturn,
   InferEntityType,
   InferEntityForModuleService,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import { DmlEntity } from "../../dml"
 
 export type BaseMethods =

@@ -1,6 +1,6 @@
-import { addToCartWorkflow } from "@medusajs/core-flows"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+import { addToCartWorkflow } from "@8medusa/core-flows"
+import { MedusaRequest, MedusaResponse } from "@8medusa/framework/http"
+import { HttpTypes } from "@8medusa/framework/types"
 import { refetchCart } from "../../helpers"
 import { StoreAddCartLineItemType } from "../../validators"
 

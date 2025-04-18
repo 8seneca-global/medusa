@@ -3,14 +3,14 @@ import {
   SchedulerOptions,
   WorkflowManager,
   WorkflowScheduler,
-} from "@medusajs/orchestration"
-import { IEventBusModuleService } from "@medusajs/types"
+} from "@8medusa/orchestration"
+import { IEventBusModuleService } from "@8medusa/types"
 import {
   composeMessage,
   createMedusaContainer,
   Modules,
   promiseAll,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { asValue } from "awilix"
 import {
   createStep,

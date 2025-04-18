@@ -1,4 +1,4 @@
-# @medusajs/dashboard
+# @8medusa/dashboard
 
 ## 2.7.0
 
@@ -33,10 +33,10 @@
 - [#11871](https://github.com/medusajs/medusa/pull/11871) [`5ab15a29889870411b719ebad3fb94786baee45e`](https://github.com/medusajs/medusa/commit/5ab15a29889870411b719ebad3fb94786baee45e) Thanks [@riqwan](https://github.com/riqwan)! - feat(dashboard,js-sdk,admin-shared): add customer addresses + layout change
 
 - Updated dependencies [[`c6f2f444ed0118b17ea970942d0256fe3bd4043a`](https://github.com/medusajs/medusa/commit/c6f2f444ed0118b17ea970942d0256fe3bd4043a), [`5ab15a29889870411b719ebad3fb94786baee45e`](https://github.com/medusajs/medusa/commit/5ab15a29889870411b719ebad3fb94786baee45e), [`cc4c5c86e227a6693d53ea6b5b9e62d0a7c57fa2`](https://github.com/medusajs/medusa/commit/cc4c5c86e227a6693d53ea6b5b9e62d0a7c57fa2), [`c3440e5e3812e3d1c6b82e9d4e41287398451611`](https://github.com/medusajs/medusa/commit/c3440e5e3812e3d1c6b82e9d4e41287398451611), [`0cc306bf562d8f1f1f1c09d9658463e2c8def465`](https://github.com/medusajs/medusa/commit/0cc306bf562d8f1f1f1c09d9658463e2c8def465), [`053326950d1e67bff1e39514527de3c6db33225b`](https://github.com/medusajs/medusa/commit/053326950d1e67bff1e39514527de3c6db33225b), [`c40fb01d9200283c5d69f3295e65fccc56a9a76f`](https://github.com/medusajs/medusa/commit/c40fb01d9200283c5d69f3295e65fccc56a9a76f), [`5ab15a29889870411b719ebad3fb94786baee45e`](https://github.com/medusajs/medusa/commit/5ab15a29889870411b719ebad3fb94786baee45e)]:
-  - @medusajs/js-sdk@2.7.0
-  - @medusajs/admin-shared@2.7.0
-  - @medusajs/icons@2.7.0
-  - @medusajs/ui@4.0.8
+  - @8medusa/js-sdk@2.7.0
+  - @8medusa/admin-shared@2.7.0
+  - @8medusa/icons@2.7.0
+  - @8medusa/ui@4.0.8
 
 ## 2.6.1
 
@@ -47,10 +47,10 @@
 - [#11738](https://github.com/medusajs/medusa/pull/11738) [`3b470f41427e487c68f89b8ee8155de716ffe861`](https://github.com/medusajs/medusa/commit/3b470f41427e487c68f89b8ee8155de716ffe861) Thanks [@olivermrbl](https://github.com/olivermrbl)! - chore: Remove ranges on Medusa packages
 
 - Updated dependencies [[`3b470f41427e487c68f89b8ee8155de716ffe861`](https://github.com/medusajs/medusa/commit/3b470f41427e487c68f89b8ee8155de716ffe861)]:
-  - @medusajs/icons@2.6.1
-  - @medusajs/ui@4.0.7
-  - @medusajs/js-sdk@2.6.1
-  - @medusajs/admin-shared@2.6.1
+  - @8medusa/icons@2.6.1
+  - @8medusa/ui@4.0.7
+  - @8medusa/js-sdk@2.6.1
+  - @8medusa/admin-shared@2.6.1
 
 ## 2.6.0
 
@@ -63,9 +63,9 @@
 - [#11664](https://github.com/medusajs/medusa/pull/11664) [`e23f204b7ca0f195e36fef2ba0bae7a686b8da4f`](https://github.com/medusajs/medusa/commit/e23f204b7ca0f195e36fef2ba0bae7a686b8da4f) Thanks [@fPolic](https://github.com/fPolic)! - fix(core-flows, dashboard, medusa): prevent creatiion of a fulfilment without items
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.6.0
-  - @medusajs/js-sdk@2.6.0
-  - @medusajs/icons@2.6.0
+  - @8medusa/admin-shared@2.6.0
+  - @8medusa/js-sdk@2.6.0
+  - @8medusa/icons@2.6.0
 
 ## 2.5.1
 
@@ -86,10 +86,10 @@
 - [#11414](https://github.com/medusajs/medusa/pull/11414) [`47edd01deec79b394552cea349f1e41b7b88723b`](https://github.com/medusajs/medusa/commit/47edd01deec79b394552cea349f1e41b7b88723b) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(admin-vite-plugin,admin-bundler,ui,icons,dashboard,framework,types): Update Vite dependencies
 
 - Updated dependencies [[`32ad13813bc267a04ea95d34a479efa5309b3051`](https://github.com/medusajs/medusa/commit/32ad13813bc267a04ea95d34a479efa5309b3051), [`38a57b1ddcaabeba78dba626b7ec7985df107d07`](https://github.com/medusajs/medusa/commit/38a57b1ddcaabeba78dba626b7ec7985df107d07), [`b53ea77658aa4f17b41bf52c9f51c5b7a425556b`](https://github.com/medusajs/medusa/commit/b53ea77658aa4f17b41bf52c9f51c5b7a425556b), [`3b4997840e624ef8da1a75744b4bfb5c5a371f7c`](https://github.com/medusajs/medusa/commit/3b4997840e624ef8da1a75744b4bfb5c5a371f7c), [`f00e6bf660ab96b9d41bc3d424c8d78c54eaa8e7`](https://github.com/medusajs/medusa/commit/f00e6bf660ab96b9d41bc3d424c8d78c54eaa8e7), [`47edd01deec79b394552cea349f1e41b7b88723b`](https://github.com/medusajs/medusa/commit/47edd01deec79b394552cea349f1e41b7b88723b)]:
-  - @medusajs/js-sdk@2.5.1
-  - @medusajs/ui@4.0.6
-  - @medusajs/icons@2.5.1
-  - @medusajs/admin-shared@2.5.1
+  - @8medusa/js-sdk@2.5.1
+  - @8medusa/ui@4.0.6
+  - @8medusa/icons@2.5.1
+  - @8medusa/admin-shared@2.5.1
 
 ## 2.5.0
 
@@ -114,10 +114,10 @@
 - [#11196](https://github.com/medusajs/medusa/pull/11196) [`51d2960a5717c41e79312dd2269fb87e3a4a5b4c`](https://github.com/medusajs/medusa/commit/51d2960a5717c41e79312dd2269fb87e3a4a5b4c) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard): Allow admins to update default Sales Channel and Stock Location
 
 - Updated dependencies [[`3dbef519d95cf694d06843cb694c0d2abdac2146`](https://github.com/medusajs/medusa/commit/3dbef519d95cf694d06843cb694c0d2abdac2146), [`fcd3e2226ee389e89cc5b03defda9852cf99f624`](https://github.com/medusajs/medusa/commit/fcd3e2226ee389e89cc5b03defda9852cf99f624), [`d00825485f14c1d13123046fdc8a18e9843b16ce`](https://github.com/medusajs/medusa/commit/d00825485f14c1d13123046fdc8a18e9843b16ce), [`65d8d6dc0eae23c7c969664d0c2d127511cc0bd9`](https://github.com/medusajs/medusa/commit/65d8d6dc0eae23c7c969664d0c2d127511cc0bd9), [`3cf430729698c5f62fb6e6d0ebf06ea930981653`](https://github.com/medusajs/medusa/commit/3cf430729698c5f62fb6e6d0ebf06ea930981653), [`3f6425badae771a62c98508f9e6ceab20cee9354`](https://github.com/medusajs/medusa/commit/3f6425badae771a62c98508f9e6ceab20cee9354), [`9822bd930b55f1dfe9429cc3dfc1c2d0d4edc754`](https://github.com/medusajs/medusa/commit/9822bd930b55f1dfe9429cc3dfc1c2d0d4edc754)]:
-  - @medusajs/icons@2.5.0
-  - @medusajs/ui@4.0.5
-  - @medusajs/js-sdk@2.5.0
-  - @medusajs/admin-shared@2.5.0
+  - @8medusa/icons@2.5.0
+  - @8medusa/ui@4.0.5
+  - @8medusa/js-sdk@2.5.0
+  - @8medusa/admin-shared@2.5.0
 
 ## 2.4.0
 
@@ -142,19 +142,19 @@
 - [#10024](https://github.com/medusajs/medusa/pull/10024) [`147c0e5a353b57d3a17db3b572334db58c830b3c`](https://github.com/medusajs/medusa/commit/147c0e5a353b57d3a17db3b572334db58c830b3c) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - feat(ui,dashboard): Add new DataTable block
 
 - Updated dependencies [[`7feb004600fdbf8bf32b13695fd7f41229d43b52`](https://github.com/medusajs/medusa/commit/7feb004600fdbf8bf32b13695fd7f41229d43b52), [`d4e042e9ad838cfc3b3c83c342afaf76adb281d2`](https://github.com/medusajs/medusa/commit/d4e042e9ad838cfc3b3c83c342afaf76adb281d2), [`147c0e5a353b57d3a17db3b572334db58c830b3c`](https://github.com/medusajs/medusa/commit/147c0e5a353b57d3a17db3b572334db58c830b3c)]:
-  - @medusajs/ui@4.0.4
-  - @medusajs/js-sdk@2.4.0
-  - @medusajs/admin-shared@2.4.0
-  - @medusajs/icons@2.4.0
+  - @8medusa/ui@4.0.4
+  - @8medusa/js-sdk@2.4.0
+  - @8medusa/admin-shared@2.4.0
+  - @8medusa/icons@2.4.0
 
 ## 2.3.1
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.3.1
-  - @medusajs/js-sdk@2.3.1
-  - @medusajs/icons@2.3.1
+  - @8medusa/admin-shared@2.3.1
+  - @8medusa/js-sdk@2.3.1
+  - @8medusa/icons@2.3.1
 
 ## 2.3.0
 
@@ -169,9 +169,9 @@
 - [#10961](https://github.com/medusajs/medusa/pull/10961) [`2a25b4d95f2b7a4d53138718c94124f47f041b36`](https://github.com/medusajs/medusa/commit/2a25b4d95f2b7a4d53138718c94124f47f041b36) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - chore(icons,dashboard): Pull latest icons and update branch icon in category tree
 
 - Updated dependencies [[`bc22b81cdf9591912744f448c74d45bcb0f11e0c`](https://github.com/medusajs/medusa/commit/bc22b81cdf9591912744f448c74d45bcb0f11e0c), [`2a25b4d95f2b7a4d53138718c94124f47f041b36`](https://github.com/medusajs/medusa/commit/2a25b4d95f2b7a4d53138718c94124f47f041b36)]:
-  - @medusajs/js-sdk@2.3.0
-  - @medusajs/icons@2.3.0
-  - @medusajs/admin-shared@2.3.0
+  - @8medusa/js-sdk@2.3.0
+  - @8medusa/icons@2.3.0
+  - @8medusa/admin-shared@2.3.0
 
 ## 2.2.0
 
@@ -180,19 +180,19 @@
 - [#10667](https://github.com/medusajs/medusa/pull/10667) [`47594192b79fbc798cfaf21821b60673745d1374`](https://github.com/medusajs/medusa/commit/47594192b79fbc798cfaf21821b60673745d1374) Thanks [@riqwan](https://github.com/riqwan)! - feat(dashboard,core-flows,types,utils,medusa,order): Order cancelations will refund payments
 
 - Updated dependencies [[`13ddf27c68fc2831b3661940bc5f27bab23ce8c0`](https://github.com/medusajs/medusa/commit/13ddf27c68fc2831b3661940bc5f27bab23ce8c0), [`f7aaf2c8bb243c8478a943285628ba8eb331feb6`](https://github.com/medusajs/medusa/commit/f7aaf2c8bb243c8478a943285628ba8eb331feb6), [`3253e19b3603adacd913b8cbb3e88c9beb0c931a`](https://github.com/medusajs/medusa/commit/3253e19b3603adacd913b8cbb3e88c9beb0c931a)]:
-  - @medusajs/js-sdk@2.2.0
-  - @medusajs/icons@2.2.0
-  - @medusajs/ui@4.0.3
-  - @medusajs/admin-shared@2.2.0
+  - @8medusa/js-sdk@2.2.0
+  - @8medusa/icons@2.2.0
+  - @8medusa/ui@4.0.3
+  - @8medusa/admin-shared@2.2.0
 
 ## 2.1.3
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.1.3
-  - @medusajs/js-sdk@2.1.3
-  - @medusajs/icons@2.1.3
+  - @8medusa/admin-shared@2.1.3
+  - @8medusa/js-sdk@2.1.3
+  - @8medusa/icons@2.1.3
 
 ## 2.1.2
 
@@ -203,9 +203,9 @@
 - [#10547](https://github.com/medusajs/medusa/pull/10547) [`dc5e73af4d2fe4eed8239660d74af6cd2a0994cd`](https://github.com/medusajs/medusa/commit/dc5e73af4d2fe4eed8239660d74af6cd2a0994cd) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard): Prevent fulfillment provider modal from rerendering before form submission is complete
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.1.2
-  - @medusajs/js-sdk@2.1.2
-  - @medusajs/icons@2.1.2
+  - @8medusa/admin-shared@2.1.2
+  - @8medusa/js-sdk@2.1.2
+  - @8medusa/icons@2.1.2
 
 ## 2.1.1
 
@@ -228,10 +228,10 @@
 - [#10457](https://github.com/medusajs/medusa/pull/10457) [`864f53011b892e1ed0abee2e241b662eccef7e6d`](https://github.com/medusajs/medusa/commit/864f53011b892e1ed0abee2e241b662eccef7e6d) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard,types): Fix TS errors
 
 - Updated dependencies [[`c9a66b19afcfcc626f9e2e4531771dc36f66a65e`](https://github.com/medusajs/medusa/commit/c9a66b19afcfcc626f9e2e4531771dc36f66a65e)]:
-  - @medusajs/ui@4.0.2
-  - @medusajs/admin-shared@2.1.1
-  - @medusajs/js-sdk@2.1.1
-  - @medusajs/icons@2.1.1
+  - @8medusa/ui@4.0.2
+  - @8medusa/admin-shared@2.1.1
+  - @8medusa/js-sdk@2.1.1
+  - @8medusa/icons@2.1.1
 
 ## 2.1.0
 
@@ -248,9 +248,9 @@
 - [#10430](https://github.com/medusajs/medusa/pull/10430) [`c6f955f0b51a795b4f6a1aeaa1de36205d2d32e5`](https://github.com/medusajs/medusa/commit/c6f955f0b51a795b4f6a1aeaa1de36205d2d32e5) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard): Add Shipping Profile metadata route
 
 - Updated dependencies [[`94f6265dfc074969f2f141a19f2fc33a6ab96af1`](https://github.com/medusajs/medusa/commit/94f6265dfc074969f2f141a19f2fc33a6ab96af1)]:
-  - @medusajs/icons@2.1.0
-  - @medusajs/admin-shared@2.1.0
-  - @medusajs/js-sdk@2.1.0
+  - @8medusa/icons@2.1.0
+  - @8medusa/admin-shared@2.1.0
+  - @8medusa/js-sdk@2.1.0
 
 ## 2.0.7
 
@@ -267,9 +267,9 @@
 - [#10285](https://github.com/medusajs/medusa/pull/10285) [`344a6c9ea05a1d59a3a7de5282ae7ecda141d6ae`](https://github.com/medusajs/medusa/commit/344a6c9ea05a1d59a3a7de5282ae7ecda141d6ae) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard): Add Metadata form to Variant page
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.0.7
-  - @medusajs/js-sdk@2.0.7
-  - @medusajs/icons@2.0.7
+  - @8medusa/admin-shared@2.0.7
+  - @8medusa/js-sdk@2.0.7
+  - @8medusa/icons@2.0.7
 
 ## 2.0.6
 
@@ -278,9 +278,9 @@
 - [#10254](https://github.com/medusajs/medusa/pull/10254) [`c28d0db1647a5c8edaf0ba0faba6426e8a740399`](https://github.com/medusajs/medusa/commit/c28d0db1647a5c8edaf0ba0faba6426e8a740399) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(product,dashboard): Avoid duplicating images
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.0.6
-  - @medusajs/js-sdk@2.0.6
-  - @medusajs/icons@2.0.6
+  - @8medusa/admin-shared@2.0.6
+  - @8medusa/js-sdk@2.0.6
+  - @8medusa/icons@2.0.6
 
 ## 2.0.5
 
@@ -299,9 +299,9 @@
 - [#10213](https://github.com/medusajs/medusa/pull/10213) [`60b13c191ed8164951e4743f19e1cdc1efd3b5fc`](https://github.com/medusajs/medusa/commit/60b13c191ed8164951e4743f19e1cdc1efd3b5fc) Thanks [@ederwii](https://github.com/ederwii)! - feat(dashboard): Add Spanish i18n
 
 - Updated dependencies [[`6680f69588332e25e6be2115248dd72fe18334b7`](https://github.com/medusajs/medusa/commit/6680f69588332e25e6be2115248dd72fe18334b7), [`a153bc477c421cd3cfc6f2cb7e30f2f3661f5922`](https://github.com/medusajs/medusa/commit/a153bc477c421cd3cfc6f2cb7e30f2f3661f5922), [`d6ff8d7aa16fe83a6cb15e9cc46360316625189e`](https://github.com/medusajs/medusa/commit/d6ff8d7aa16fe83a6cb15e9cc46360316625189e)]:
-  - @medusajs/js-sdk@2.0.5
-  - @medusajs/admin-shared@2.0.5
-  - @medusajs/icons@2.0.5
+  - @8medusa/js-sdk@2.0.5
+  - @8medusa/admin-shared@2.0.5
+  - @8medusa/icons@2.0.5
 
 ## 2.0.4
 
@@ -312,18 +312,18 @@
 - [#9770](https://github.com/medusajs/medusa/pull/9770) [`5c22c57cb8f549c9b16829ab313eb954339b1f6a`](https://github.com/medusajs/medusa/commit/5c22c57cb8f549c9b16829ab313eb954339b1f6a) Thanks [@nexthis](https://github.com/nexthis)! - feat(dashboard): Add Polish translation of admin dashboard
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.0.4
-  - @medusajs/js-sdk@2.0.4
-  - @medusajs/icons@2.0.4
+  - @8medusa/admin-shared@2.0.4
+  - @8medusa/js-sdk@2.0.4
+  - @8medusa/icons@2.0.4
 
 ## 2.0.3
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @medusajs/admin-shared@2.0.3
-  - @medusajs/js-sdk@2.0.3
-  - @medusajs/icons@2.0.3
+  - @8medusa/admin-shared@2.0.3
+  - @8medusa/js-sdk@2.0.3
+  - @8medusa/icons@2.0.3
 
 ## 2.0.2
 
@@ -332,9 +332,9 @@
 - [#9947](https://github.com/medusajs/medusa/pull/9947) [`b3cbc160eb94025402b5a0ef21653c207bbe8ccd`](https://github.com/medusajs/medusa/commit/b3cbc160eb94025402b5a0ef21653c207bbe8ccd) Thanks [@sradevski](https://github.com/sradevski)! - fix: Default to a relative path for backend URL in admin
 
 - Updated dependencies [[`30edc8fa40ff5ed6ecc8c55f555f9d975df497f5`](https://github.com/medusajs/medusa/commit/30edc8fa40ff5ed6ecc8c55f555f9d975df497f5)]:
-  - @medusajs/js-sdk@2.0.2
-  - @medusajs/admin-shared@2.0.2
-  - @medusajs/icons@2.0.2
+  - @8medusa/js-sdk@2.0.2
+  - @8medusa/admin-shared@2.0.2
+  - @8medusa/icons@2.0.2
 
 ## 2.0.1
 
@@ -347,10 +347,10 @@
 - [#9775](https://github.com/medusajs/medusa/pull/9775) [`59e6747800133e091d20c2c167f600981abc5c0d`](https://github.com/medusajs/medusa/commit/59e6747800133e091d20c2c167f600981abc5c0d) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard,ui): DateFilter should remain open
 
 - Updated dependencies [[`59e6747800133e091d20c2c167f600981abc5c0d`](https://github.com/medusajs/medusa/commit/59e6747800133e091d20c2c167f600981abc5c0d)]:
-  - @medusajs/ui@4.0.1
-  - @medusajs/admin-shared@2.0.1
-  - @medusajs/js-sdk@2.0.1
-  - @medusajs/icons@2.0.1
+  - @8medusa/ui@4.0.1
+  - @8medusa/admin-shared@2.0.1
+  - @8medusa/js-sdk@2.0.1
+  - @8medusa/icons@2.0.1
 
 ## 2.0.0
 
@@ -361,7 +361,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`2e42e053d4c9d5445d227bdc268c66713aad8e2e`](https://github.com/medusajs/medusa/commit/2e42e053d4c9d5445d227bdc268c66713aad8e2e)]:
-  - @medusajs/icons@2.0.0
-  - @medusajs/ui@4.0.0
-  - @medusajs/js-sdk@2.0.0
-  - @medusajs/admin-shared@2.0.0
+  - @8medusa/icons@2.0.0
+  - @8medusa/ui@4.0.0
+  - @8medusa/js-sdk@2.0.0
+  - @8medusa/admin-shared@2.0.0

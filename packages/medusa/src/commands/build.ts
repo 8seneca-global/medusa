@@ -1,5 +1,5 @@
-import { logger } from "@medusajs/framework/logger"
-import { Compiler } from "@medusajs/framework/build-tools"
+import { logger } from "@8medusa/framework/logger"
+import { Compiler } from "@8medusa/framework/build-tools"
 
 export default async function build({
   directory,
@@ -22,7 +22,7 @@ export default async function build({
     promises.push(compiler.buildAppBackend(tsConfig))
   }
 
-  const bundler = await import("@medusajs/admin-bundler")
+  const bundler = await import("@8medusa/admin-bundler")
   promises.push(compiler.buildAppFrontend(adminOnly, tsConfig, bundler))
   const responses = await Promise.all(promises)
 

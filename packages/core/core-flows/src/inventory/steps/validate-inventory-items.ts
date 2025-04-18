@@ -2,8 +2,8 @@ import {
   arrayDifference,
   ContainerRegistrationKeys,
   MedusaError,
-} from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/utils"
+import { createStep } from "@8medusa/framework/workflows-sdk"
 
 /**
  * The IDs of the inventory items to validate.

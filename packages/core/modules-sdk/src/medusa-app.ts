@@ -1,4 +1,4 @@
-import { RemoteFetchDataCallback } from "@medusajs/orchestration"
+import { RemoteFetchDataCallback } from "@8medusa/orchestration"
 import {
   ExternalModuleDeclaration,
   IIndexService,
@@ -12,7 +12,7 @@ import {
   ModuleJoinerConfig,
   ModuleServiceInitializeOptions,
   RemoteQueryFunction,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   ContainerRegistrationKeys,
   createMedusaContainer,
@@ -26,7 +26,7 @@ import {
   Modules,
   ModulesSdkUtils,
   promiseAll,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { asValue } from "awilix"
 import { Link } from "./link"
 import {

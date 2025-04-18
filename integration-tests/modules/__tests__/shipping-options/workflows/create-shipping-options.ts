@@ -1,4 +1,4 @@
-import { createShippingOptionsWorkflow } from "@medusajs/core-flows"
+import { createShippingOptionsWorkflow } from "@8medusa/core-flows"
 import {
   FulfillmentSetDTO,
   FulfillmentWorkflow,
@@ -6,14 +6,14 @@ import {
   IRegionModuleService,
   ServiceZoneDTO,
   ShippingProfileDTO,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   RuleOperator,
   remoteQueryObjectFromString,
-} from "@medusajs/utils"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@8medusa/utils"
+import { medusaIntegrationTestRunner } from "@8medusa/test-utils"
 
 jest.setTimeout(100000)
 

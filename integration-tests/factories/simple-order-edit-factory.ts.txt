@@ -1,4 +1,4 @@
-import { OrderEdit } from "@medusajs/medusa"
+import { OrderEdit } from "@8medusa/medusa"
 import { DataSource } from "typeorm"
 import { OrderFactoryData, simpleOrderFactory } from "./simple-order-factory"
 

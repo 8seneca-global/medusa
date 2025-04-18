@@ -4,15 +4,15 @@ import {
   CalculatedRMAShippingContext,
   CalculateShippingOptionPriceDTO,
   ShippingOptionDTO,
-} from "@medusajs/framework/types"
+} from "@8medusa/framework/types"
 import {
   WorkflowResponse,
   createHook,
   createWorkflow,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
-import { BigNumber, ShippingOptionPriceType } from "@medusajs/framework/utils"
+} from "@8medusa/framework/workflows-sdk"
+import { BigNumber, ShippingOptionPriceType } from "@8medusa/framework/utils"
 import { calculateShippingOptionsPricesStep } from "../../fulfillment/steps"
 import { useRemoteQueryStep } from "../../common"
 import { pricingContextResult } from "../../cart/utils/schemas"
@@ -134,8 +134,8 @@ export const fetchShippingOptionsForOrderWorkflowId = "fetch-shipping-option"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { fetchShippingOptionForOrderWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { fetchShippingOptionForOrderWorkflow } from "@8medusa/medusa/core-flows";
+ * import { StepResponse } from "@8medusa/workflows-sdk";
  * 
  * fetchShippingOptionForOrderWorkflow.hooks.setPricingContext((
  *   { shipping_option_id, currency_code, order_id, context, additional_data }, { container }

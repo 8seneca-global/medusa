@@ -30,7 +30,7 @@ An open source composable commerce engine built for developers.
     <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
   </a>
   <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
+    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@8medusa" alt="Follow @8medusa" />
   </a>
 </p>
 

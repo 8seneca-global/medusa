@@ -1,7 +1,7 @@
 import { Product } from "@models"
 
-import { Context, DAL } from "@medusajs/framework/types"
-import { DALUtils } from "@medusajs/framework/utils"
+import { Context, DAL } from "@8medusa/framework/types"
+import { DALUtils } from "@8medusa/framework/utils"
 import { SqlEntityManager } from "@mikro-orm/postgresql"
 
 // eslint-disable-next-line max-len

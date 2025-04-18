@@ -1,9 +1,9 @@
-import { FetchError } from "@medusajs/js-sdk"
+import { FetchError } from "@8medusa/js-sdk"
 import {
   AdminSalesChannelListResponse,
   AdminSalesChannelResponse,
   HttpTypes,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   QueryKey,
   UseMutationOptions,

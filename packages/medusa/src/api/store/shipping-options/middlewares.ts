@@ -1,8 +1,8 @@
 import {
   MiddlewareRoute,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
-import { validateAndTransformQuery } from "@medusajs/framework"
+} from "@8medusa/framework/http"
+import { validateAndTransformQuery } from "@8medusa/framework"
 import { listTransformQueryConfig } from "./query-config"
 import {
   StoreCalculateShippingOptionPrice,

@@ -11,7 +11,7 @@ import {
   ModuleProviderExports,
   ModuleProviderLoaderFunction,
   ModuleResolution,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   ContainerRegistrationKeys,
   createMedusaContainer,
@@ -24,7 +24,7 @@ import {
   MedusaModuleType,
   ModulesSdkUtils,
   toMikroOrmEntities,
-} from "@medusajs/utils"
+} from "@8medusa/utils"
 import { asFunction, asValue } from "awilix"
 import { statSync } from "fs"
 import { readdir } from "fs/promises"

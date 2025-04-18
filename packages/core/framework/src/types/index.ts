@@ -1,1 +1,1 @@
-export * from "@medusajs/types"
+export * from "@8medusa/types"

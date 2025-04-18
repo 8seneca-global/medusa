@@ -45,7 +45,7 @@ medusaIntegrationTestRunner({
         PriceList,
         MoneyAmount,
         ProductVariantMoneyAmount,
-      } = require("@medusajs/medusa"))
+      } = require("@8medusa/medusa"))
       ;({
         simpleCartFactory,
         simpleRegionFactory,
@@ -1119,7 +1119,7 @@ medusaIntegrationTestRunner({
       it("successfully passes customer conditions with `in` operator and applies discount", async () => {
         await simpleCustomerFactory(dbConnection, {
           id: "cus_1234",
-          email: "oli@medusajs.com",
+          email: "oli@8medusa.com",
           groups: [
             {
               id: "customer-group-1",
@@ -1320,7 +1320,7 @@ medusaIntegrationTestRunner({
       it("successfully passes customer conditions with `not_in` operator and applies discount", async () => {
         await simpleCustomerFactory(dbConnection, {
           id: "cus_1234",
-          email: "oli@medusajs.com",
+          email: "oli@8medusa.com",
           groups: [
             {
               id: "customer-group-2",
@@ -1396,7 +1396,7 @@ medusaIntegrationTestRunner({
       it("successfully applies discount in case no conditions is defined for group", async () => {
         await simpleCustomerFactory(dbConnection, {
           id: "cus_1234",
-          email: "oli@medusajs.com",
+          email: "oli@8medusa.com",
           groups: [
             {
               id: "customer-group-1",
@@ -1455,7 +1455,7 @@ medusaIntegrationTestRunner({
       it("fails to apply discount if customer group is part of `not_in` conditions", async () => {
         await simpleCustomerFactory(dbConnection, {
           id: "cus_1234",
-          email: "oli@medusajs.com",
+          email: "oli@8medusa.com",
           groups: [
             {
               id: "customer-group-1",
@@ -1519,7 +1519,7 @@ medusaIntegrationTestRunner({
       it("fails to apply discount if customer group is not part of `in` conditions", async () => {
         await simpleCustomerFactory(dbConnection, {
           id: "cus_1234",
-          email: "oli@medusajs.com",
+          email: "oli@8medusa.com",
           groups: [
             {
               id: "customer-group-2",

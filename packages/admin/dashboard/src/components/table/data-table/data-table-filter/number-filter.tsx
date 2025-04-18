@@ -1,5 +1,5 @@
-import { EllipseMiniSolid } from "@medusajs/icons"
-import { Input, Label, clx } from "@medusajs/ui"
+import { EllipseMiniSolid } from "@8medusa/icons"
+import { Input, Label, clx } from "@8medusa/ui"
 import { debounce } from "lodash"
 import {
   Popover as RadixPopover,

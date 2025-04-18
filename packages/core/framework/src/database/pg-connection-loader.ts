@@ -1,4 +1,4 @@
-import { ContainerRegistrationKeys, ModulesSdkUtils } from "@medusajs/utils"
+import { ContainerRegistrationKeys, ModulesSdkUtils } from "@8medusa/utils"
 import { asValue } from "awilix"
 import { container } from "../container"
 import { configManager } from "../config"

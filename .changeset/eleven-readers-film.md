@@ -1,5 +1,5 @@
 ---
-"@medusajs/core-flows": patch
+"@8medusa/core-flows": patch
 ---
 
 fix(core-flows): draft order reservations + emit order placedevent on convert

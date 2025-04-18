@@ -1,6 +1,6 @@
-import { CreateOrderDTO, IOrderModuleService } from "@medusajs/framework/types"
-import { ClaimType, Modules } from "@medusajs/framework/utils"
-import { SuiteOptions, moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { CreateOrderDTO, IOrderModuleService } from "@8medusa/framework/types"
+import { ClaimType, Modules } from "@8medusa/framework/utils"
+import { SuiteOptions, moduleIntegrationTestRunner } from "@8medusa/test-utils"
 
 jest.setTimeout(1000000)
 

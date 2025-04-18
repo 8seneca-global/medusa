@@ -1,6 +1,6 @@
 "use client"
 
-import { Eye, EyeSlash, MagnifyingGlassMini } from "@medusajs/icons"
+import { Eye, EyeSlash, MagnifyingGlassMini } from "@8medusa/icons"
 import { VariantProps, cva } from "cva"
 import * as React from "react"
 

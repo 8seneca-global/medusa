@@ -1,5 +1,5 @@
 const path = require("path")
-const { OrderEditItemChangeType, OrderEdit } = require("@medusajs/medusa")
+const { OrderEditItemChangeType, OrderEdit } = require("@8medusa/medusa")
 const { IdMap } = require("medusa-test-utils")
 
 const { useApi } = require("../../../../environment-helpers/use-api")

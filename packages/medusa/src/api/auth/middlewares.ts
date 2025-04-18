@@ -2,7 +2,7 @@ import {
   authenticate,
   MiddlewareRoute,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { validateScopeProviderAssociation } from "./utils/validate-scope-provider-association"
 import { validateToken } from "./utils/validate-token"
 import { ResetPasswordRequest } from "./validators"

@@ -1,5 +1,5 @@
-import { HttpTypes, PaymentProviderDTO } from "@medusajs/types"
-import { Button, Input, Select, Switch, Text, toast } from "@medusajs/ui"
+import { HttpTypes, PaymentProviderDTO } from "@8medusa/types"
+import { Button, Input, Select, Switch, Text, toast } from "@8medusa/ui"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import * as zod from "zod"

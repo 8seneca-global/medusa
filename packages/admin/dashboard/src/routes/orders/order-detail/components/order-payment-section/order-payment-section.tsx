@@ -1,5 +1,5 @@
-import { ArrowDownRightMini, DocumentText, XCircle } from "@medusajs/icons"
-import { AdminOrder, AdminPayment, HttpTypes } from "@medusajs/types"
+import { ArrowDownRightMini, DocumentText, XCircle } from "@8medusa/icons"
+import { AdminOrder, AdminPayment, HttpTypes } from "@8medusa/types"
 import {
   Badge,
   Button,
@@ -10,7 +10,7 @@ import {
   toast,
   Tooltip,
   usePrompt,
-} from "@medusajs/ui"
+} from "@8medusa/ui"
 import { format } from "date-fns"
 import { Trans, useTranslation } from "react-i18next"
 import { ActionMenu } from "../../../../../components/common/action-menu"

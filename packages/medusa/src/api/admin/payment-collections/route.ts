@@ -1,10 +1,10 @@
-import { createOrderPaymentCollectionWorkflow } from "@medusajs/core-flows"
-import { HttpTypes } from "@medusajs/framework/types"
+import { createOrderPaymentCollectionWorkflow } from "@8medusa/core-flows"
+import { HttpTypes } from "@8medusa/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntity,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { AdminCreatePaymentCollectionType } from "./validators"
 
 export const POST = async (

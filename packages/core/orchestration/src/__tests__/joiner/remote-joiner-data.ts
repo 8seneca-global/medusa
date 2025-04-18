@@ -2,8 +2,8 @@ import {
   IModuleService,
   MedusaContainer,
   RemoteExpandProperty,
-} from "@medusajs/types"
-import { lowerCaseFirst, toPascalCase } from "@medusajs/utils"
+} from "@8medusa/types"
+import { lowerCaseFirst, toPascalCase } from "@8medusa/utils"
 import { remoteJoinerData } from "../../__fixtures__/joiner/data"
 import { serviceConfigs, serviceMock } from "../../__mocks__/joiner/mock_data"
 import { RemoteJoiner } from "../../joiner"

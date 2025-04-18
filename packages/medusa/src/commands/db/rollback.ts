@@ -1,12 +1,12 @@
-import { MedusaAppLoader } from "@medusajs/framework"
-import { LinkLoader } from "@medusajs/framework/links"
-import { logger } from "@medusajs/framework/logger"
+import { MedusaAppLoader } from "@8medusa/framework"
+import { LinkLoader } from "@8medusa/framework/links"
+import { logger } from "@8medusa/framework/logger"
 import {
   ContainerRegistrationKeys,
   getResolvedPlugins,
   MedusaError,
   mergePluginModules,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { join } from "path"
 
 import { initializeContainer } from "../../loaders"

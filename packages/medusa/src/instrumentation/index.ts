@@ -4,12 +4,12 @@ import {
   MedusaRequest,
   MedusaResponse,
   Query,
-} from "@medusajs/framework"
-import { ApiLoader } from "@medusajs/framework/http"
-import { Tracer } from "@medusajs/framework/telemetry"
+} from "@8medusa/framework"
+import { ApiLoader } from "@8medusa/framework/http"
+import { Tracer } from "@8medusa/framework/telemetry"
 import type { SpanExporter } from "@opentelemetry/sdk-trace-node"
 import type { NodeSDKConfiguration } from "@opentelemetry/sdk-node"
-import { TransactionOrchestrator } from "@medusajs/framework/orchestration"
+import { TransactionOrchestrator } from "@8medusa/framework/orchestration"
 
 const EXCLUDED_RESOURCES = [".vite", "virtual:"]
 
@@ -25,7 +25,7 @@ function shouldExcludeResource(resource: string) {
  */
 export function instrumentHttpLayer() {
   const startCommand = require("../commands/start")
-  const HTTPTracer = new Tracer("@medusajs/http", "2.0.0")
+  const HTTPTracer = new Tracer("@8medusa/http", "2.0.0")
   const { SpanStatusCode } = require("@opentelemetry/api")
 
   startCommand.traceRequestHandler = async (
@@ -130,7 +130,7 @@ export function instrumentHttpLayer() {
  * Instrument the queries made using the remote query
  */
 export function instrumentRemoteQuery() {
-  const QueryTracer = new Tracer("@medusajs/query", "2.0.0")
+  const QueryTracer = new Tracer("@8medusa/query", "2.0.0")
   const { SpanStatusCode } = require("@opentelemetry/api")
 
   Query.instrument.graphQuery(async function (queryFn, queryOptions) {
@@ -222,7 +222,7 @@ export function instrumentRemoteQuery() {
  */
 export function instrumentWorkflows() {
   const WorkflowsTracer = new Tracer(
-    "@medusajs/framework/workflows-sdk",
+    "@8medusa/framework/workflows-sdk",
     "2.0.0"
   )
 

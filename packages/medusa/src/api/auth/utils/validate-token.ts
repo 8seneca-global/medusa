@@ -4,14 +4,14 @@ import {
   MedusaNextFunction,
   MedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { ConfigModule, IAuthModuleService } from "@medusajs/framework/types"
+} from "@8medusa/framework/http"
+import { ConfigModule, IAuthModuleService } from "@8medusa/framework/types"
 import {
   ContainerRegistrationKeys,
   MedusaError,
   Modules,
-} from "@medusajs/framework/utils"
-import { HttpTypes } from "@medusajs/types"
+} from "@8medusa/framework/utils"
+import { HttpTypes } from "@8medusa/types"
 
 export interface UpdateProviderJwtPayload {
   entity_id: string

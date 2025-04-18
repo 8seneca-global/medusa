@@ -1,4 +1,4 @@
-# @medusajs/admin-shared
+# @8medusa/admin-shared
 
 ## 2.7.0
 

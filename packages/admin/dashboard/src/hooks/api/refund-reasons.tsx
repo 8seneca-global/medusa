@@ -1,8 +1,8 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { QueryKey, useQuery, UseQueryOptions } from "@tanstack/react-query"
 import { sdk } from "../../lib/client"
 import { queryKeysFactory } from "../../lib/query-key-factory"
-import { FetchError } from "@medusajs/js-sdk"
+import { FetchError } from "@8medusa/js-sdk"
 
 const REFUND_REASON_QUERY_KEY = "refund-reason" as const
 export const refundReasonQueryKeys = queryKeysFactory(REFUND_REASON_QUERY_KEY)

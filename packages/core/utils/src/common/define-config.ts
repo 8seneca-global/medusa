@@ -3,7 +3,7 @@ import {
   InputConfig,
   InputConfigModules,
   InternalModuleDeclaration,
-} from "@medusajs/types"
+} from "@8medusa/types"
 import {
   MODULE_PACKAGE_NAMES,
   Modules,
@@ -157,7 +157,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/auth-emailpass",
+            resolve: "@8medusa/medusa/auth-emailpass",
             id: "emailpass",
           },
         ],
@@ -174,7 +174,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/fulfillment-manual",
+            resolve: "@8medusa/medusa/fulfillment-manual",
             id: "manual",
           },
         ],
@@ -185,7 +185,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/notification-local",
+            resolve: "@8medusa/medusa/notification-local",
             id: "local",
             options: {
               name: "Local Notification Provider",
@@ -209,7 +209,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/file-local",
+            resolve: "@8medusa/medusa/file-local",
             id: "local",
           },
         ],
@@ -254,7 +254,7 @@ function resolveModules(
         providers: [
           {
             id: "s3",
-            resolve: "@medusajs/medusa/file-s3",
+            resolve: "@8medusa/medusa/file-s3",
             options: {
               authentication_method: "s3-iam-role",
               file_url: process.env.S3_FILE_URL,

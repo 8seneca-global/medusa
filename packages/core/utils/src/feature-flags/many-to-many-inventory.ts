@@ -1,4 +1,4 @@
-import { FeatureFlagTypes } from "@medusajs/types"
+import { FeatureFlagTypes } from "@8medusa/types"
 
 export const ManyToManyInventoryFeatureFlag: FeatureFlagTypes.FlagSettings = {
   key: "many_to_many_inventory",

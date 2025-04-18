@@ -1,7 +1,7 @@
-import { FetchError } from "@medusajs/js-sdk"
+import { FetchError } from "@8medusa/js-sdk"
 import { LoaderFunctionArgs, redirect } from "react-router-dom"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@8medusa/types"
 import { stockLocationsQueryKeys } from "../../../hooks/api/stock-locations"
 import { sdk } from "../../../lib/client"
 import { queryClient } from "../../../lib/query-client"

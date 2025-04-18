@@ -1,4 +1,4 @@
-import { EntityConstructor } from "@medusajs/types"
+import { EntityConstructor } from "@8medusa/types"
 import { MetadataStorage, MikroORM } from "@mikro-orm/core"
 import { defineConfig } from "@mikro-orm/postgresql"
 import { join } from "path"

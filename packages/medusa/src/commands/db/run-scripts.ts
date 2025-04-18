@@ -1,16 +1,16 @@
-import { MedusaAppLoader } from "@medusajs/framework"
-import { LinkLoader } from "@medusajs/framework/links"
-import { logger } from "@medusajs/framework/logger"
-import { MigrationScriptsMigrator } from "@medusajs/framework/migrations"
+import { MedusaAppLoader } from "@8medusa/framework"
+import { LinkLoader } from "@8medusa/framework/links"
+import { logger } from "@8medusa/framework/logger"
+import { MigrationScriptsMigrator } from "@8medusa/framework/migrations"
 import {
   ContainerRegistrationKeys,
   getResolvedPlugins,
   mergePluginModules,
-} from "@medusajs/framework/utils"
+} from "@8medusa/framework/utils"
 import { dirname, join } from "path"
 
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
-import { MedusaContainer, PluginDetails } from "@medusajs/types"
+import { MedusaModule } from "@8medusa/framework/modules-sdk"
+import { MedusaContainer, PluginDetails } from "@8medusa/types"
 import { initializeContainer } from "../../loaders"
 import { ensureDbExists } from "../utils"
 
@@ -48,7 +48,7 @@ export async function runMigrationScripts({
     onApplicationShutdown = resources.onApplicationShutdown
 
     const scriptsSourcePaths = [
-      join(dirname(require.resolve("@medusajs/medusa")), "migration-scripts"),
+      join(dirname(require.resolve("@8medusa/medusa")), "migration-scripts"),
       ...plugins.map((plugin) => join(plugin.resolve, "migration-scripts")),
     ]
 

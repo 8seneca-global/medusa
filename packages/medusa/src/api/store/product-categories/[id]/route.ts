@@ -1,10 +1,10 @@
-import { StoreProductCategoryResponse } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { StoreProductCategoryResponse } from "@8medusa/framework/types"
+import { MedusaError } from "@8medusa/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntity,
-} from "@medusajs/framework/http"
+} from "@8medusa/framework/http"
 import { StoreProductCategoryParamsType } from "../validators"
 
 export const GET = async (

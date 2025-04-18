@@ -1,6 +1,6 @@
-import { IProductModuleService, ProductTypes } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { IProductModuleService, ProductTypes } from "@8medusa/framework/types"
+import { Modules } from "@8medusa/framework/utils"
+import { StepResponse, createStep } from "@8medusa/framework/workflows-sdk"
 
 export const createProductOptionsStepId = "create-product-options"
 /**

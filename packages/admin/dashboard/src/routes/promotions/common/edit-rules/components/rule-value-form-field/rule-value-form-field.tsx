@@ -1,5 +1,5 @@
-import { HttpTypes } from "@medusajs/types"
-import { Input } from "@medusajs/ui"
+import { HttpTypes } from "@8medusa/types"
+import { Input } from "@8medusa/ui"
 import { useWatch } from "react-hook-form"
 import { Form } from "../../../../../../components/common/form"
 import { Combobox } from "../../../../../../components/inputs/combobox"

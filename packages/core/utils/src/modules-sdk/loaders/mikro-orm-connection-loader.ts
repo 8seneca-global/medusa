@@ -1,4 +1,4 @@
-import { Logger, MedusaContainer, ModulesSdkTypes } from "@medusajs/types"
+import { Logger, MedusaContainer, ModulesSdkTypes } from "@8medusa/types"
 import { PostgreSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql"
 import { asValue } from "awilix"
 import { ContainerRegistrationKeys, MedusaError } from "../../common"

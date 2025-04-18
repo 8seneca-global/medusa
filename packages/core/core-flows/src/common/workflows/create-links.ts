@@ -1,9 +1,9 @@
-import { LinkDefinition } from "@medusajs/framework/types"
+import { LinkDefinition } from "@8medusa/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@8medusa/framework/workflows-sdk"
 import { createRemoteLinkStep } from "../steps/create-remote-links"
 
 export const createLinksWorkflowId = "create-link"
@@ -20,7 +20,7 @@ export const createLinksWorkflowId = "create-link"
  * .run({
  *   input: [
  *     {
- *       // import { Modules } from "@medusajs/framework/utils"
+ *       // import { Modules } from "@8medusa/framework/utils"
  *       [Modules.PRODUCT]: {
  *         product_id: "prod_123",
  *       },

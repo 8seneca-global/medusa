@@ -3,7 +3,7 @@ const startServerWithEnvironment =
 const path = require("path")
 const { useApi } = require("../../../../../environment-helpers/use-api")
 const { useDb } = require("../../../../../environment-helpers/use-db")
-const { GiftCard } = require("@medusajs/medusa")
+const { GiftCard } = require("@8medusa/medusa")
 
 const {
   simpleRegionFactory,
