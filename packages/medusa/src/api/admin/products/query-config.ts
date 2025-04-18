@@ -58,7 +58,6 @@ export const defaultAdminProductFields = [
   "status",
   "external_id",
   "description",
-  "long_description",
   "handle",
   "is_giftcard",
   "discountable",
