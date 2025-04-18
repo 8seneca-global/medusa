@@ -552,10 +552,6 @@
         "label": "Popis",
         "hint": "Dajte produktu krátky a jasný popis.<0/>120-160 znakov je odporúčaná dĺžka pre vyhľadávače."
       },
-      "long_description": {
-        "label": "Dlhý popis",
-        "hint": "Dajte produktu dlhší popis s viac detailmi."
-      },
       "discountable": {
         "label": "Zľaviteľný",
         "hint": "Keď nie je zaškrtnuté, nebude sa uplatňovať žiadne zľavy na tento produkt"

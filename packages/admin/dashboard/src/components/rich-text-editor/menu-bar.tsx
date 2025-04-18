@@ -1,6 +1,18 @@
 import { Button, Tooltip } from "@medusajs/ui"
 import "./styles.css"
 import { Editor } from "@tiptap/react"
+import {
+  ArrowLongDown,
+  ArrowLongLeft,
+  ArrowLongRight,
+  ArrowLongUp,
+  CaretMaximizeDiagonal,
+  CaretMinimizeDiagonal,
+  CircleHalfSolid,
+  ListBullet,
+  SquaresPlus,
+  Trash,
+} from "@medusajs/icons"
 
 type Props = {
   editor: Editor
@@ -23,198 +35,174 @@ export const MenuBar = ({ editor }: Props) => {
         <Button
           variant="secondary"
           size="small"
-          className={`p-1 ${editor.isActive("bold") ? "" : "opacity-50"}`}
+          type="button"
+          className={`px-2 py-1 ${editor.isActive("bold") ? "" : "opacity-50"}`}
           onClick={() => editor.chain().focus().toggleBold().run()}
         >
-          <p>Bold</p>
+          <p className="text-xs font-bold">B</p>
         </Button>
       </Tooltip>
       <Tooltip content="Italic">
         <Button
           variant="secondary"
           size="small"
-          className={`p-1 ${editor.isActive("italic") ? "" : "opacity-50"}`}
+          type="button"
+          className={`px-2 py-1 ${
+            editor.isActive("italic") ? "" : "opacity-50"
+          }`}
           onClick={() => editor.chain().focus().toggleItalic().run()}
         >
-          <p>Italic</p>
+          <p className="font-serif text-xs italic">I</p>
         </Button>
       </Tooltip>
-      <div className="h-5 w-[1.5px] bg-gray-200" />
-      {/* <Tooltip content="Heading 2">
-    <Button
-      variant="secondary"
-      size="small"
-      className={`p-1 ${
-        editor.isActive("heading", { level: 2 }) ? "" : "opacity-50"
-      }`}
-      onClick={() =>
-        editor.chain().focus().toggleHeading({ level: 2 }).run()
-      }
-    >
-      <PencilSquare />
-    </Button>
-  </Tooltip>
-  <Tooltip content="Heading 3">
-    <Button
-      variant="secondary"
-      size="small"
-      className={`p-1 ${
-        editor.isActive("heading", { level: 3 }) ? "" : "opacity-50"
-      }`}
-      onClick={() =>
-        editor.chain().focus().toggleHeading({ level: 3 }).run()
-      }
-    >
-      <PencilSquare />
-    </Button>
-  </Tooltip> */}
-      {/* <div className="h-5 w-[1.5px] bg-gray-200" /> */}
+      <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
       <Tooltip content="Bullet List">
         <Button
           variant="secondary"
           size="small"
-          className={`p-1 ${editor.isActive("bulletList") ? "" : "opacity-50"}`}
+          type="button"
+          className={`${editor.isActive("bulletList") ? "" : "opacity-50"}`}
           onClick={() => editor.chain().focus().toggleBulletList().run()}
         >
-          <p>Bullet List</p>
+          <ListBullet accentHeight={20} />
         </Button>
       </Tooltip>
       <Tooltip content="Ordered List">
         <Button
           variant="secondary"
           size="small"
-          className={`p-1 ${
-            editor.isActive("orderedList") ? "" : "opacity-50"
-          }`}
+          type="button"
+          className={`${editor.isActive("orderedList") ? "" : "opacity-50"}`}
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
         >
-          <p>Ordered List</p>
+          <p className="text-xs">1 2 3</p>
         </Button>
       </Tooltip>
-      <div className="h-5 w-[1.5px] bg-gray-200" />
-
+      <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
       {!isTableActive ? (
         <Tooltip content="Insert Table">
           <Button
             variant="secondary"
             size="small"
-            className="p-1"
+            type="button"
             onClick={insertTable}
           >
-            <p>Insert Table</p>
+            <SquaresPlus />
           </Button>
         </Tooltip>
       ) : (
         <div className="flex flex-wrap items-center gap-2">
           <div className="flex items-center gap-2">
+            <div className="text-ui-fg-muted text-sm">Cols:</div>
             <Tooltip content="Add Column Before">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().addColumnBefore().run()}
               >
-                <p>Col Before</p>
+                <ArrowLongLeft />
               </Button>
             </Tooltip>
             <Tooltip content="Add Column After">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().addColumnAfter().run()}
               >
-                <p>Col After</p>
+                <ArrowLongRight />
               </Button>
             </Tooltip>
             <Tooltip content="Delete Column">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().deleteColumn().run()}
               >
-                <p>Del Col</p>
+                <Trash />
               </Button>
             </Tooltip>
           </div>
-          <div className="h-5 w-[1.5px] bg-gray-200" />
+          <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
           <div className="flex items-center gap-2">
+            <div className="text-ui-fg-muted text-sm">Rows:</div>
             <Tooltip content="Add Row Before">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().addRowBefore().run()}
               >
-                <p>Row Before</p>
+                <ArrowLongUp />
               </Button>
             </Tooltip>
             <Tooltip content="Add Row After">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().addRowAfter().run()}
               >
-                <p>Row After</p>
+                <ArrowLongDown />
               </Button>
             </Tooltip>
             <Tooltip content="Delete Row">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().deleteRow().run()}
               >
-                <p>Del Row</p>
+                <Trash />
               </Button>
             </Tooltip>
           </div>
-          <div className="h-5 w-[1.5px] bg-gray-200" />
+          <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
           <div className="flex items-center gap-2">
             <Tooltip content="Merge Cells">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().mergeCells().run()}
                 disabled={!editor.can().mergeCells()}
               >
-                <p>Merge Cells</p>
+                <CaretMaximizeDiagonal />
               </Button>
             </Tooltip>
             <Tooltip content="Split Cell">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().splitCell().run()}
                 disabled={!editor.can().splitCell()}
               >
-                <p>Split Cell</p>
+                <CaretMinimizeDiagonal />
               </Button>
             </Tooltip>
             <Tooltip content="Toggle Header Cell">
               <Button
                 variant="secondary"
                 size="small"
-                className="p-1"
+                type="button"
                 onClick={() => editor.chain().focus().toggleHeaderCell().run()}
               >
-                <p>Toggle Header</p>
+                <CircleHalfSolid />
               </Button>
             </Tooltip>
           </div>
-          <div className="h-5 w-[1.5px] bg-gray-200" />
+          <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
           <Tooltip content="Delete Table">
             <Button
               variant="secondary"
               size="small"
-              className="p-1"
+              type="button"
               onClick={() => editor.chain().focus().deleteTable().run()}
             >
-              <p>Delete Table</p>
+              <Trash />
             </Button>
           </Tooltip>
         </div>

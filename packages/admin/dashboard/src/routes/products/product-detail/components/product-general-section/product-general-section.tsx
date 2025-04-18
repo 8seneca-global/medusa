@@ -1,6 +1,5 @@
-import { StatusBadge, usePrompt } from "@medusajs/ui"
+import { Container, Heading, StatusBadge, usePrompt } from "@medusajs/ui"
 import { HttpTypes } from "@medusajs/types"
-import { Container, Heading } from "@medusajs/ui"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import * as zod from "zod"
@@ -36,7 +35,6 @@ const EditProductSchema = zod.object({
   handle: zod.string().min(1),
   material: zod.string().optional(),
   description: zod.string().optional(),
-  long_description: zod.string().optional(),
   discountable: zod.boolean(),
 })
 
@@ -60,11 +58,10 @@ export const ProductGeneralSection = ({
     defaultValues: {
       status: product.status,
       title: product.title,
-      material: product.material || "",
-      subtitle: product.subtitle || "",
-      handle: product.handle || "",
-      description: product.description || "",
-      long_description: product.long_description || "",
+      material: product.material ?? "",
+      subtitle: product.subtitle ?? "",
+      handle: product.handle ?? "",
+      description: product.description ?? "",
       discountable: product.discountable,
     },
     schema: EditProductSchema,
@@ -101,11 +98,10 @@ export const ProductGeneralSection = ({
       form.reset({
         status: product.status,
         title: product.title,
-        material: product.material || "",
-        subtitle: product.subtitle || "",
+        material: product.material ?? "",
+        subtitle: product.subtitle ?? "",
         handle: product.handle || "",
-        description: product.description || "",
-        long_description: product.long_description || "",
+        description: product.description ?? "",
         discountable: product.discountable,
       })
     }
@@ -155,17 +151,6 @@ export const ProductGeneralSection = ({
           <SectionRow
             title={t("fields.description")}
             value={product.description}
-          />
-          <SectionRow
-            title={"Long Description"}
-            value={
-              product.long_description && (
-                <div
-                  dangerouslySetInnerHTML={{ __html: product.long_description }}
-                  className="prose dark:prose-invert"
-                />
-              )
-            }
           />
           <SectionRow title={t("fields.subtitle")} value={product.subtitle} />
           <SectionRow title={t("fields.handle")} value={`/${product.handle}`} />
