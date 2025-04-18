@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/medusa",
-  "version": "2.7.2",
+  "version": "2.7.7",
   "description": "Building blocks for digital commerce",
   "main": "dist/index.js",
   "exports": {
@@ -65,7 +65,7 @@
     "yalc": "1.0.0-pre.53"
   },
   "dependencies": {
-    "@8medusa/admin-bundler": "2.7.1",
+    "@8medusa/admin-bundler": "2.7.7",
     "@8medusa/api-key": "2.7.0",
     "@8medusa/auth": "2.7.0",
     "@8medusa/auth-emailpass": "2.7.0",
