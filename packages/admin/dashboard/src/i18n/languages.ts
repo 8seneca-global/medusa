@@ -21,21 +21,28 @@ import {
   ru,
   el,
   lt,
+  sk,
 } from "date-fns/locale"
 import { Language } from "./types"
 
 export const languages: Language[] = [
   {
-    code: "bg",
-    display_name: "Български",
+    code: "sk",
+    display_name: "Slovenčina",
     ltr: true,
-    date_locale: bg,
+    date_locale: sk,
   },
   {
     code: "en",
     display_name: "English",
     ltr: true,
     date_locale: enUS,
+  },
+  {
+    code: "bg",
+    display_name: "Български",
+    ltr: true,
+    date_locale: bg,
   },
   {
     code: "es",

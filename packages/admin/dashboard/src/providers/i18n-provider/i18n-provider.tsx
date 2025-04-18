@@ -13,7 +13,7 @@ export const I18nProvider = ({ children }: I18nProviderProps) => {
   const { i18n } = useTranslation()
 
   const locale =
-    languages.find((lan) => lan.code === i18n.language)?.code ||
+    languages.find((lan) => lan.code === i18n.language)?.code ??
     languages[0].code
 
   return <Provider locale={formatLocaleCode(locale)}>{children}</Provider>

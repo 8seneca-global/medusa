@@ -6,10 +6,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom"
 import * as z from "zod"
 
 import { Form } from "../../components/common/form"
-import AvatarBox from "../../components/common/logo-box/avatar-box"
+// import AvatarBox from "../../components/common/logo-box/avatar-box"
 import { useSignInWithEmailPass } from "../../hooks/api"
 import { isFetchError } from "../../lib/is-fetch-error"
 import { useExtension } from "../../providers/extension-provider"
+import lyraDarkLogo from "../../assets/images/lyra-dark.png"
+import lyraLightLogo from "../../assets/images/lyra-light.png"
+
+import { useTheme } from "../../providers/theme-provider"
 
 const LoginSchema = z.object({
   email: z.string().email(),
@@ -21,8 +25,9 @@ export const Login = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { getWidgets } = useExtension()
+  const { theme } = useTheme()
 
-  const from = location.state?.from?.pathname || "/orders"
+  const from = location.state?.from?.pathname ?? "/orders"
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -67,13 +72,18 @@ export const Login = () => {
 
   const serverError = form.formState.errors?.root?.serverError?.message
   const validationError =
-    form.formState.errors.email?.message ||
+    form.formState.errors.email?.message ??
     form.formState.errors.password?.message
 
   return (
     <div className="bg-ui-bg-subtle flex min-h-dvh w-dvw items-center justify-center">
       <div className="m-4 flex w-full max-w-[280px] flex-col items-center">
-        <AvatarBox />
+        {/* <AvatarBox /> */}
+        <img
+          src={theme === "dark" ? lyraDarkLogo : lyraLightLogo}
+          alt="Lyra Chocolate"
+          className="mb-5 h-32 w-32 rounded-lg p-3"
+        />
         <div className="mb-4 flex flex-col items-center">
           <Heading>{t("login.title")}</Heading>
           <Text size="small" className="text-ui-fg-subtle text-center">
