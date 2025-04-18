@@ -72,7 +72,8 @@
     "release": "changeset publish",
     "version": "changeset version && yarn install --no-immutable",
     "publish:check-and-publish": "node scripts/publish-new-packages.js",
-    "publish:providers": "node scripts/publish-providers.js"
+    "publish:providers": "node scripts/publish-providers.js",
+    "release:core": "node scripts/release-core-packages.js"
 
   },
   "dependencies": {

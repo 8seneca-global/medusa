@@ -13,7 +13,7 @@ export const OrderList = () => {
       }}
       hasOutlet={false}
     >
-      <div>Test sync code</div>
+      <div>Test publish</div>
       <OrderListTable />
     </SingleColumnPage>
   )

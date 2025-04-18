@@ -1,9 +1,10 @@
-import { getOrdersListWorkflow } from "@8medusa/core-flows"
-import { HttpTypes, OrderDTO } from "@8medusa/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
 } from "@8medusa/framework/http"
+import { HttpTypes, OrderDTO } from "@8medusa/framework/types"
+
+import { getOrdersListWorkflow } from "@8medusa/core-flows"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<HttpTypes.AdminOrderFilters>,
@@ -33,6 +34,6 @@ export const GET = async (
     orders: rows as unknown as HttpTypes.AdminOrder[],
     count: metadata.count,
     offset: metadata.skip,
-    limit: metadata.take,
+    limit: 4,
   })
 }
