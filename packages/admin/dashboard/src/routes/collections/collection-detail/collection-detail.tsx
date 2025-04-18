@@ -7,6 +7,7 @@ import { useExtension } from "../../../providers/extension-provider"
 import { CollectionGeneralSection } from "./components/collection-general-section"
 import { CollectionProductSection } from "./components/collection-product-section"
 import { collectionLoader } from "./loader"
+import { CollectionAdditionalInfoSection } from "./components/collection-additional-info-section/collection-additional-information"
 
 export const CollectionDetail = () => {
   const initialData = useLoaderData() as Awaited<
@@ -28,6 +29,8 @@ export const CollectionDetail = () => {
     throw error
   }
 
+  console.log(123, collection)
+
   return (
     <SingleColumnPage
       widgets={{
@@ -39,6 +42,9 @@ export const CollectionDetail = () => {
       data={collection}
     >
       <CollectionGeneralSection collection={collection} />
+      <CollectionAdditionalInfoSection
+        collection_addition={(collection as any)?.collection_addition}
+      />
       <CollectionProductSection collection={collection} />
     </SingleColumnPage>
   )

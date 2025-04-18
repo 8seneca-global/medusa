@@ -149,3 +149,27 @@ export const useDeleteCollection = (
     ...options,
   })
 }
+
+export const useCollectionAddition = (
+  id: string,
+  options?: Omit<
+    UseQueryOptions<
+      { collection: HttpTypes.AdminCollection },
+      FetchError,
+      { collection: HttpTypes.AdminCollection },
+      QueryKey
+    >,
+    "queryFn" | "queryKey"
+  >
+) => {
+  const { data, ...rest } = useQuery({
+    queryKey: ["collection_addition", id],
+    queryFn: async () =>
+      sdk.admin.productCollection.retrieve(id, {
+        fields: "*collection_addition",
+      }),
+    ...options,
+  })
+
+  return { ...data, ...rest }
+}
