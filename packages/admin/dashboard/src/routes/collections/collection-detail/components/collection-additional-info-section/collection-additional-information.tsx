@@ -16,7 +16,6 @@ export const CollectionAdditionalInfoSection = ({
   const { id } = useParams()
   const { t } = useTranslation()
 
-  console.log(collection_addition)
   return (
     <Container className="divide-y p-0">
       <div className="flex items-center justify-between px-6 py-4">
@@ -28,7 +27,7 @@ export const CollectionAdditionalInfoSection = ({
                 {
                   icon: <PencilSquare />,
                   label: t("actions.edit"),
-                  to: `/collections/${id}/edit-addition-info`,
+                  to: `/collections/${id}/addition-info/edit`,
                   disabled: !id,
                 },
               ],

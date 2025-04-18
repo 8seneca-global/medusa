@@ -548,6 +548,13 @@ export function getRouteMap({
                       lazy: () =>
                         import("../../routes/collections/collection-metadata"),
                     },
+                    {
+                      path: "addition-info/edit",
+                      lazy: () =>
+                        import(
+                          "../../routes/collections/collection-edit-addition-info"
+                        ),
+                    },
                   ],
                 },
               ],

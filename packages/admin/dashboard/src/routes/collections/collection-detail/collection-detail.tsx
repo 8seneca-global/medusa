@@ -29,8 +29,6 @@ export const CollectionDetail = () => {
     throw error
   }
 
-  console.log(123, collection)
-
   return (
     <SingleColumnPage
       widgets={{
