@@ -36,7 +36,7 @@ export const MenuBar = ({ editor }: Props) => {
           variant="secondary"
           size="small"
           type="button"
-          className={`p-1 ${editor.isActive("bold") ? "" : "opacity-50"}`}
+          className={`px-2 py-1 ${editor.isActive("bold") ? "" : "opacity-50"}`}
           onClick={() => editor.chain().focus().toggleBold().run()}
         >
           <p className="text-xs font-bold">B</p>
@@ -47,51 +47,24 @@ export const MenuBar = ({ editor }: Props) => {
           variant="secondary"
           size="small"
           type="button"
-          className={`p-1 ${editor.isActive("italic") ? "" : "opacity-50"}`}
+          className={`px-2 py-1 ${
+            editor.isActive("italic") ? "" : "opacity-50"
+          }`}
           onClick={() => editor.chain().focus().toggleItalic().run()}
         >
           <p className="font-serif text-xs italic">I</p>
         </Button>
       </Tooltip>
-      <div className="h-5 w-[1.5px] bg-gray-200" />
-      {/* <Tooltip content="Heading 2">
-    <Button
-      variant="secondary"
-      size="small"
-      className={`p-1 ${
-        editor.isActive("heading", { level: 2 }) ? "" : "opacity-50"
-      }`}
-      onClick={() =>
-        editor.chain().focus().toggleHeading({ level: 2 }).run()
-      }
-    >
-      <PencilSquare />
-    </Button>
-  </Tooltip>
-  <Tooltip content="Heading 3">
-    <Button
-      variant="secondary"
-      size="small"
-      className={`p-1 ${
-        editor.isActive("heading", { level: 3 }) ? "" : "opacity-50"
-      }`}
-      onClick={() =>
-        editor.chain().focus().toggleHeading({ level: 3 }).run()
-      }
-    >
-      <PencilSquare />
-    </Button>
-  </Tooltip> */}
-      {/* <div className="h-5 w-[1.5px] bg-gray-200" /> */}
+      <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
       <Tooltip content="Bullet List">
         <Button
           variant="secondary"
           size="small"
           type="button"
-          className={`p-1 ${editor.isActive("bulletList") ? "" : "opacity-50"}`}
+          className={`${editor.isActive("bulletList") ? "" : "opacity-50"}`}
           onClick={() => editor.chain().focus().toggleBulletList().run()}
         >
-          <ListBullet />
+          <ListBullet accentHeight={20} />
         </Button>
       </Tooltip>
       <Tooltip content="Ordered List">
@@ -99,23 +72,19 @@ export const MenuBar = ({ editor }: Props) => {
           variant="secondary"
           size="small"
           type="button"
-          className={`p-1 ${
-            editor.isActive("orderedList") ? "" : "opacity-50"
-          }`}
+          className={`${editor.isActive("orderedList") ? "" : "opacity-50"}`}
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
         >
           <p className="text-xs">1 2 3</p>
         </Button>
       </Tooltip>
-      <div className="h-5 w-[1.5px] bg-gray-200" />
-
+      <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
       {!isTableActive ? (
         <Tooltip content="Insert Table">
           <Button
             variant="secondary"
             size="small"
             type="button"
-            className="p-1"
             onClick={insertTable}
           >
             <SquaresPlus />
@@ -130,7 +99,6 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().addColumnBefore().run()}
               >
                 <ArrowLongLeft />
@@ -141,7 +109,6 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().addColumnAfter().run()}
               >
                 <ArrowLongRight />
@@ -152,14 +119,13 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().deleteColumn().run()}
               >
                 <Trash />
               </Button>
             </Tooltip>
           </div>
-          <div className="h-5 w-[1.5px] bg-gray-200" />
+          <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
           <div className="flex items-center gap-2">
             <div className="text-ui-fg-muted text-sm">Rows:</div>
             <Tooltip content="Add Row Before">
@@ -167,7 +133,6 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().addRowBefore().run()}
               >
                 <ArrowLongUp />
@@ -178,7 +143,6 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().addRowAfter().run()}
               >
                 <ArrowLongDown />
@@ -189,25 +153,23 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().deleteRow().run()}
               >
                 <Trash />
               </Button>
             </Tooltip>
           </div>
-          <div className="h-5 w-[1.5px] bg-gray-200" />
+          <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
           <div className="flex items-center gap-2">
             <Tooltip content="Merge Cells">
               <Button
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().mergeCells().run()}
                 disabled={!editor.can().mergeCells()}
               >
-                <CaretMinimizeDiagonal />
+                <CaretMaximizeDiagonal />
               </Button>
             </Tooltip>
             <Tooltip content="Split Cell">
@@ -215,11 +177,10 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().splitCell().run()}
                 disabled={!editor.can().splitCell()}
               >
-                <CaretMaximizeDiagonal />
+                <CaretMinimizeDiagonal />
               </Button>
             </Tooltip>
             <Tooltip content="Toggle Header Cell">
@@ -227,20 +188,18 @@ export const MenuBar = ({ editor }: Props) => {
                 variant="secondary"
                 size="small"
                 type="button"
-                className="p-1"
                 onClick={() => editor.chain().focus().toggleHeaderCell().run()}
               >
                 <CircleHalfSolid />
               </Button>
             </Tooltip>
           </div>
-          <div className="h-5 w-[1.5px] bg-gray-200" />
+          <div className="border-r-1 bg-ui-tag-neutral-bg-hover h-5 w-[1px]" />
           <Tooltip content="Delete Table">
             <Button
               variant="secondary"
               size="small"
               type="button"
-              className="p-1"
               onClick={() => editor.chain().focus().deleteTable().run()}
             >
               <Trash />

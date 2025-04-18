@@ -52,7 +52,7 @@ export const RichTextEditor = ({ value, onChange }: RichTextEditorProps) => {
   }
 
   return (
-    <div className="rounded-md border bg-[#2A2A2D]">
+    <div className="rounded-md border bg-white dark:bg-[#2A2A2D]">
       <MenuBar editor={editor} />
       <EditorContent editor={editor} />
     </div>

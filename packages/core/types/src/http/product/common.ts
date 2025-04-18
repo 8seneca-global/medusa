@@ -29,10 +29,6 @@ export interface BaseProduct {
    */
   description: string | null
   /**
-   * The product's long description.
-   */
-  long_description: string | null
-  /**
    * Whether the product is a gift card.
    */
   is_giftcard: boolean

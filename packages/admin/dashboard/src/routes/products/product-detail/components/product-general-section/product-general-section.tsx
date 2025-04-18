@@ -34,7 +34,6 @@ const EditProductSchema = zod.object({
   handle: zod.string().min(1),
   material: zod.string().optional(),
   description: zod.string().optional(),
-  long_description: zod.string().optional(),
   discountable: zod.boolean(),
 })
 

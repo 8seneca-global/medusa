@@ -12,6 +12,7 @@ import { useExtension } from "../../../providers/extension-provider"
 import { UseFormReturn } from "react-hook-form"
 import { RichTextEditor } from "../../../components/rich-text-editor"
 import { AdminExtendedProduct } from "../../../types/extended-product.types"
+import { useMemo } from "react"
 
 type EditProductFormProps = {
   product: AdminExtendedProduct
@@ -27,7 +28,6 @@ const EditProductSchema = zod.object({
   handle: zod.string().min(1),
   material: zod.string().optional(),
   description: zod.string().optional(),
-  long_description: zod.string().optional(),
   discountable: zod.boolean(),
 })
 
@@ -43,6 +43,31 @@ export const EditProductForm = ({
   const fields = getFormFields("product", "edit")
 
   const { mutateAsync: updateProduct, isPending } = useUpdateProduct(product.id)
+
+  const isDirty = useMemo(() => {
+    // Watch all form values to make the comparison reactive
+    const formValues = form.watch()
+
+    const isValueChanged = (formValue: any, productValue: any) => {
+      if (formValue === undefined && productValue === null) {
+        return false
+      }
+      if (formValue === "" && productValue !== null && productValue !== "") {
+        return true
+      }
+      return formValue !== productValue
+    }
+
+    return (
+      isValueChanged(formValues.status, product.status) ||
+      isValueChanged(formValues.title, product.title) ||
+      isValueChanged(formValues.subtitle, product.subtitle) ||
+      isValueChanged(formValues.handle, product.handle) ||
+      isValueChanged(formValues.material, product.material) ||
+      isValueChanged(formValues.description, product.description) ||
+      isValueChanged(formValues.discountable, product.discountable)
+    )
+  }, [form, product])
 
   const handleSubmit = form.handleSubmit(async (data) => {
     const { title, discountable, handle, status, ...optional } = data
@@ -236,7 +261,12 @@ export const EditProductForm = ({
             <Button size="small" variant="secondary" onClick={toggleEdit}>
               {t("actions.cancel")}
             </Button>
-            <Button size="small" type="submit" isLoading={isPending}>
+            <Button
+              size="small"
+              type="submit"
+              isLoading={isPending}
+              disabled={!isDirty || isPending}
+            >
               {t("actions.save")}
             </Button>
           </div>

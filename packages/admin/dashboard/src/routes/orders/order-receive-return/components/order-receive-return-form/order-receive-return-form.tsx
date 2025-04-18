@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ArrowRight } from "@8medusa/icons"
+import { ArrowRightMini } from "@8medusa/icons"
 import { AdminOrder, AdminReturn } from "@8medusa/types"
 import { Alert, Button, Input, Switch, Text, toast } from "@8medusa/ui"
 import { useEffect, useMemo } from "react"
@@ -219,7 +219,7 @@ export function OrderReceiveReturnForm({
             <div>
               {stock_location && (
                 <div className="flex items-center gap-2">
-                  <ArrowRight className="text-ui-fg-subtle" />{" "}
+                  <ArrowRightMini className="text-ui-fg-subtle" />{" "}
                   <span className="text-ui-fg-base txt-small font-medium">
                     {stock_location.name}
                   </span>

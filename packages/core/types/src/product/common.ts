@@ -34,10 +34,6 @@ export interface ProductDTO {
    */
   description: string | null
   /**
-   * The long description of the product.
-   */
-  long_description: string | null
-  /**
    * Whether the product is a gift card.
    */
   is_giftcard: boolean
@@ -1472,10 +1468,6 @@ export interface CreateProductDTO {
    */
   description?: string
   /**
-   * The long description of the product.
-   */
-  long_description?: string
-  /**
    * Whether the product is a gift card.
    */
   is_giftcard?: boolean
@@ -1595,10 +1587,6 @@ export interface UpdateProductDTO {
    * The description of the product.
    */
   description?: string | null
-  /**
-   * The long description of the product.
-   */
-  long_description?: string | null
   /**
    * Whether the product is a gift card.
    */

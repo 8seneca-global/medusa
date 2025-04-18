@@ -43,7 +43,7 @@
 
 .ProseMirror table td,
 .ProseMirror table th {
-  border: 1px solid #ddd;
+  border: 1px solid #bbb;
   box-sizing: border-box;
   min-width: 1em;
   padding: 8px;
@@ -52,7 +52,8 @@
 }
 
 .ProseMirror table th {
-  background-color: black;
+  background-color: #ddd;
+  color: #000;
   font-weight: 600;
   text-align: left;
 }
