@@ -552,6 +552,10 @@
         "label": "Description",
         "hint": "Give your product a short and clear description.<0/>120-160 characters is the recommended length for search engines."
       },
+      "long_description": {
+        "label": "Long Description",
+        "hint": "Give your product a longer description with more details."
+      },
       "discountable": {
         "label": "Discountable",
         "hint": "When unchecked, discounts will not be applied to this product"

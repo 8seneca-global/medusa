@@ -41,10 +41,6 @@ export const EditProfileForm = ({ user }: EditProfileProps) => {
     await i18n.changeLanguage(code)
   }
 
-  const sortedLanguages = languages.sort((a, b) =>
-    a.display_name.localeCompare(b.display_name)
-  )
-
   const { mutateAsync, isPending } = useUpdateUser(user.id!)
 
   const handleSubmit = form.handleSubmit(async (values) => {
@@ -54,10 +50,7 @@ export const EditProfileForm = ({ user }: EditProfileProps) => {
         last_name: values.last_name,
       },
       {
-        onError: (error) => {
-          toast.error(error.message)
-          return
-        },
+        onError: (error) => toast.error(error.message),
       }
     )
 
@@ -117,7 +110,7 @@ export const EditProfileForm = ({ user }: EditProfileProps) => {
                             placeholder={t("profile.edit.languagePlaceholder")}
                           >
                             {
-                              sortedLanguages.find(
+                              languages.find(
                                 (language) => language.code === field.value
                               )?.display_name
                             }

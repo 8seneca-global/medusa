@@ -1,13 +1,16 @@
-import { PencilSquare, Trash } from "@8medusa/icons"
-import { HttpTypes } from "@8medusa/types"
-import { Container, Heading, StatusBadge, usePrompt } from "@8medusa/ui"
+import { StatusBadge, usePrompt, Container, Heading } from "@8medusa/ui"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
-
+import * as zod from "zod"
 import { ActionMenu } from "../../../../../components/common/action-menu"
 import { SectionRow } from "../../../../../components/common/section"
 import { useDeleteProduct } from "../../../../../hooks/api/products"
 import { useExtension } from "../../../../../providers/extension-provider"
+import { useExtendableForm } from "../../../../../dashboard-app/forms/hooks"
+import { useState } from "react"
+import { PencilSquare, Trash } from "@8medusa/icons"
+import { EditProductForm } from "../../../product-edit/edit-product-form"
+import { AdminExtendedProduct } from "../../../../../types/extended-product.types"
 
 const productStatusColor = (status: string) => {
   switch (status) {
@@ -24,8 +27,19 @@ const productStatusColor = (status: string) => {
   }
 }
 
+const EditProductSchema = zod.object({
+  status: zod.enum(["draft", "published", "proposed", "rejected"]),
+  title: zod.string().min(1),
+  subtitle: zod.string().optional(),
+  handle: zod.string().min(1),
+  material: zod.string().optional(),
+  description: zod.string().optional(),
+  long_description: zod.string().optional(),
+  discountable: zod.boolean(),
+})
+
 type ProductGeneralSectionProps = {
-  product: HttpTypes.AdminProduct
+  product: AdminExtendedProduct
 }
 
 export const ProductGeneralSection = ({
@@ -34,11 +48,29 @@ export const ProductGeneralSection = ({
   const { t } = useTranslation()
   const prompt = usePrompt()
   const navigate = useNavigate()
-  const { getDisplays } = useExtension()
+  const { getDisplays, getFormConfigs } = useExtension()
+  const [isEditing, setIsEditing] = useState(false)
 
   const displays = getDisplays("product", "general")
+  const configs = getFormConfigs("product", "edit")
 
-  const { mutateAsync } = useDeleteProduct(product.id)
+  const form = useExtendableForm({
+    defaultValues: {
+      status: product.status,
+      title: product.title,
+      material: product.material ?? "",
+      subtitle: product.subtitle ?? "",
+      handle: product.handle ?? "",
+      description: product.description ?? "",
+      long_description: product.product_addition?.long_description ?? "",
+      discountable: product.discountable,
+    },
+    schema: EditProductSchema,
+    configs: configs,
+    data: product,
+  })
+
+  const { mutateAsync: deleteProduct } = useDeleteProduct(product.id)
 
   const handleDelete = async () => {
     const res = await prompt({
@@ -54,11 +86,27 @@ export const ProductGeneralSection = ({
       return
     }
 
-    await mutateAsync(undefined, {
+    await deleteProduct(undefined, {
       onSuccess: () => {
         navigate("..")
       },
     })
+  }
+
+  const toggleEdit = () => {
+    setIsEditing(!isEditing)
+    if (!isEditing) {
+      form.reset({
+        status: product.status,
+        title: product.title,
+        material: product.material ?? "",
+        subtitle: product.subtitle ?? "",
+        handle: product.handle ?? "",
+        description: product.description ?? "",
+        long_description: product.product_addition?.long_description ?? "",
+        discountable: product.discountable,
+      })
+    }
   }
 
   return (
@@ -74,8 +122,8 @@ export const ProductGeneralSection = ({
               {
                 actions: [
                   {
-                    label: t("actions.edit"),
-                    to: "edit",
+                    label: isEditing ? t("actions.cancel") : t("actions.edit"),
+                    onClick: toggleEdit,
                     icon: <PencilSquare />,
                   },
                 ],
@@ -93,17 +141,44 @@ export const ProductGeneralSection = ({
           />
         </div>
       </div>
-
-      <SectionRow title={t("fields.description")} value={product.description} />
-      <SectionRow title={t("fields.subtitle")} value={product.subtitle} />
-      <SectionRow title={t("fields.handle")} value={`/${product.handle}`} />
-      <SectionRow
-        title={t("fields.discountable")}
-        value={product.discountable ? t("fields.true") : t("fields.false")}
-      />
-      {displays.map((Component, index) => {
-        return <Component key={index} data={product} />
-      })}
+      {isEditing ? (
+        <EditProductForm
+          product={product}
+          setIsEditing={setIsEditing}
+          toggleEdit={toggleEdit}
+          form={form}
+        />
+      ) : (
+        <>
+          <SectionRow
+            title={t("fields.description")}
+            value={product.description}
+          />
+          <SectionRow
+            title={t("fields.long_description", "Long Description")}
+            value={
+              product.product_addition?.long_description && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: product.product_addition?.long_description,
+                  }}
+                  className="prose dark:prose-invert"
+                />
+              )
+            }
+          />
+          <SectionRow title={t("fields.subtitle")} value={product.subtitle} />
+          <SectionRow title={t("fields.handle")} value={`/${product.handle}`} />
+          <SectionRow title={t("fields.material")} value={product.material} />
+          <SectionRow
+            title={t("fields.discountable")}
+            value={product.discountable ? t("fields.true") : t("fields.false")}
+          />
+          {displays.map((Component, index) => {
+            return <Component key={product.id} data={product} />
+          })}
+        </>
+      )}
     </Container>
   )
 }

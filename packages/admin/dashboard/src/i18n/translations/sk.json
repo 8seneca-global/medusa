@@ -1,0 +1,3008 @@
+{
+  "$schema": "./$schema.json",
+  "general": {
+    "ascending": "Vzostupne",
+    "descending": "Zostupne",
+    "add": "Pridať",
+    "start": "Začať",
+    "end": "Koniec",
+    "open": "Otvoriť",
+    "close": "Zatvoriť",
+    "apply": "Použiť",
+    "range": "Rozsah",
+    "search": "Hľadať",
+    "of": "z",
+    "results": "výsledky",
+    "pages": "stránky",
+    "next": "Ďalej",
+    "prev": "Predchádzajúci",
+    "is": "je",
+    "timeline": "Časová os",
+    "success": "Úspech",
+    "warning": "Varovanie",
+    "tip": "Tip",
+    "error": "Chyba",
+    "select": "Vybrať",
+    "selected": "Vybrané",
+    "enabled": "Povolené",
+    "disabled": "Zakázané",
+    "expired": "Exspirované",
+    "active": "Aktívne",
+    "revoked": "Zrušené",
+    "new": "Nové",
+    "modified": "Upravené",
+    "added": "Pridané",
+    "removed": "Odstránené",
+    "admin": "Admin",
+    "store": "Obchod",
+    "details": "Podrobnosti",
+    "items_one": "{{count}} položka",
+    "items_other": "{{count}} položiek",
+    "countSelected": "{{count}} vybrané",
+    "countOfTotalSelected": "{{count}} z {{total}} vybrané",
+    "plusCount": "+ {{count}}",
+    "plusCountMore": "+ {{count}} viac",
+    "areYouSure": "Ste si istý?",
+    "areYouSureDescription": "Chystáte sa odstrániť {{entity}} {{title}}. Táto akcia je nevratná.",
+    "noRecordsFound": "Žiadne záznamy",
+    "typeToConfirm": "Napíšte {val} na potvrdenie:",
+    "noResultsTitle": "Žiadne výsledky",
+    "noResultsMessage": "Skúste zmeniť filtre alebo hľadaný výraz",
+    "noSearchResults": "Žiadne výsledky vyhľadávania",
+    "noSearchResultsFor": "Žiadne výsledky pre <0>'{{query}}'</0>",
+    "noRecordsTitle": "Žiadne záznamy",
+    "noRecordsMessage": "Nie sú k dispozícii žiadne záznamy",
+    "unsavedChangesTitle": "Chcete opustiť formulár?",
+    "unsavedChangesDescription": "Máte neuložené zmeny, ktoré budú stratené.",
+    "includesTaxTooltip": "Ceny v tomto stĺpci sú vrátane DPH.",
+    "excludesTaxTooltip": "Ceny v tomto stĺpci sú bez DPH.",
+    "noMoreData": "Žiadne ďalšie dáta"
+  },
+  "json": {
+    "header": "JSON",
+    "numberOfKeys_one": "{{count}} kľúč",
+    "numberOfKeys_other": "{{count}} kľúčov",
+    "drawer": {
+      "header_one": "JSON <0>· {{count}} kľúč</0>",
+      "header_other": "JSON <0>· {{count}} kľúčov</0>",
+      "description": "Zobraziť JSON dáta pre tento objekt."
+    }
+  },
+  "metadata": {
+    "header": "Metadáta",
+    "numberOfKeys_one": "{{count}} kľúč",
+    "numberOfKeys_other": "{{count}} kľúčov",
+    "edit": {
+      "header": "Upraviť metadáta",
+      "description": "Upravte metadáta tohto objektu.",
+      "successToast": "Metadáta boli úspešne aktualizované.",
+      "actions": {
+        "insertRowAbove": "Vložiť riadok nad",
+        "insertRowBelow": "Vložiť riadok pod",
+        "deleteRow": "Odstrániť riadok"
+      },
+      "labels": {
+        "key": "Kľúč",
+        "value": "Hodnota"
+      },
+      "complexRow": {
+        "label": "Niektoré riadky sú zakázané",
+        "description": "Tento objekt obsahuje neprimárne metadáta, ako napr. polia alebo objekty, ktoré tu nemožno upraviť. Na ich úpravu použite priamo API.",
+        "tooltip": "Tento riadok je zakázaný, pretože obsahuje neprimárne dáta."
+      }
+    }
+  },
+  "validation": {
+    "mustBeInt": "Hodnota musí byť celé číslo.",
+    "mustBePositive": "Hodnota musí byť kladné číslo."
+  },
+  "actions": {
+    "save": "Uložiť",
+    "saveAsDraft": "Uložiť ako koncept",
+    "copy": "Kopírovať",
+    "copied": "Skopírované",
+    "duplicate": "Duplikovať",
+    "publish": "Publikovať",
+    "create": "Vytvoriť",
+    "delete": "Odstrániť",
+    "remove": "Odstrániť",
+    "revoke": "Zrušiť",
+    "cancel": "Zrušiť",
+    "forceConfirm": "Vynútiť potvrdenie",
+    "continueEdit": "Pokračovať v úpravách",
+    "enable": "Povoliť",
+    "disable": "Zakázať",
+    "undo": "Späť",
+    "complete": "Dokončiť",
+    "viewDetails": "Zobraziť podrobnosti",
+    "back": "Späť",
+    "close": "Zavrieť",
+    "showMore": "Zobraziť viac",
+    "continue": "Pokračovať",
+    "continueWithEmail": "Pokračovať s e-mailom",
+    "idCopiedToClipboard": "ID bolo skopírované do schránky",
+    "addReason": "Pridať dôvod",
+    "addNote": "Pridať poznámku",
+    "reset": "Resetovať",
+    "confirm": "Potvrdiť",
+    "edit": "Upraviť",
+    "addItems": "Pridať položky",
+    "download": "Stiahnuť",
+    "clear": "Vyčistiť",
+    "clearAll": "Vyčistiť všetko",
+    "apply": "Použiť",
+    "add": "Pridať",
+    "select": "Vybrať",
+    "browse": "Prehľadávať",
+    "logout": "Odhlásiť sa",
+    "hide": "Skryť",
+    "export": "Exportovať",
+    "import": "Importovať",
+    "cannotUndo": "Túto akciu nie je možné vrátiť späť"
+  },
+  "operators": {
+    "in": "V"
+  },
+  "app": {
+    "search": {
+      "label": "Hľadať",
+      "title": "Hľadať",
+      "description": "Hľadať všetko v obchode, vrátane objednávok, produktov, zákazníkov a ďalších.",
+      "allAreas": "Všetky oblasti",
+      "navigation": "Navigácia",
+      "openResult": "Otvoriť výsledok",
+      "showMore": "Zobraziť viac",
+      "placeholder": "Prejsť alebo hľadať nič...",
+      "noResultsTitle": "Žiadne výsledky",
+      "noResultsMessage": "Nepodarilo sa nájsť nič, čo by zodpovedalo vašim hľadaniam.",
+      "emptySearchTitle": "Hľadať",
+      "emptySearchMessage": "Zadajte hľadaný výraz alebo frázu.",
+      "loadMore": "Načítať {{count}} ďalších",
+      "groups": {
+        "all": "Všetky oblasti",
+        "customer": "Zákazníci",
+        "customerGroup": "Skupiny zákazníkov",
+        "product": "Produkty",
+        "productVariant": "Varianty produktov",
+        "inventory": "Inventár",
+        "reservation": "Rezervácie",
+        "category": "Kategórie",
+        "collection": "Kolekcie",
+        "order": "Objednávky",
+        "promotion": "Akcie",
+        "campaign": "Kampane",
+        "priceList": "Cenníky",
+        "user": "Užívatelia",
+        "region": "Regiony",
+        "taxRegion": "Daňové regiony",
+        "returnReason": "Dôvody vrátenia",
+        "salesChannel": "Predajné kanály",
+        "productType": "Typy produktov",
+        "productTag": "Tagy produktov",
+        "location": "Miesta",
+        "shippingProfile": "Dopravné profily",
+        "publishableApiKey": "Verejné API kľúče",
+        "secretApiKey": "Tajné API kľúče",
+        "command": "Příkazy",
+        "navigation": "Navigácia"
+      }
+    },
+    "keyboardShortcuts": {
+      "pageShortcut": "Prejsť na",
+      "settingShortcut": "Nastavenia",
+      "commandShortcut": "Příkazy",
+      "then": "potom",
+      "navigation": {
+        "goToOrders": "Objednávky",
+        "goToProducts": "Produkty",
+        "goToCollections": "Kolekcie",
+        "goToCategories": "Kategórie",
+        "goToCustomers": "Zákazníci",
+        "goToCustomerGroups": "Skupiny zákazníkov",
+        "goToInventory": "Inventár",
+        "goToReservations": "Rezervácie",
+        "goToPriceLists": "Cenníky",
+        "goToPromotions": "Akcie",
+        "goToCampaigns": "Kampane"
+      },
+      "settings": {
+        "goToSettings": "Nastavenia",
+        "goToStore": "Obchod",
+        "goToUsers": "Užívatelia",
+        "goToRegions": "Regiony",
+        "goToTaxRegions": "Daňové regiony",
+        "goToSalesChannels": "Predajné kanály",
+        "goToProductTypes": "Typy produktov",
+        "goToLocations": "Miesta",
+        "goToPublishableApiKeys": "Verejné API kľúče",
+        "goToSecretApiKeys": "Tajné API kľúče",
+        "goToWorkflows": "Workflowy",
+        "goToProfile": "Profil",
+        "goToReturnReasons": "Dôvody vrátenia"
+      }
+    },
+    "menus": {
+      "user": {
+        "documentation": "Dokumentácia",
+        "changelog": "Zmienky",
+        "shortcuts": "Skratky",
+        "profileSettings": "Nastavenia profilu",
+        "theme": {
+          "label": "Téma",
+          "dark": "Tmavé",
+          "light": "Svietiace",
+          "system": "Systém"
+        }
+      },
+      "store": {
+        "label": "Obchod",
+        "storeSettings": "Nastavenia obchodu"
+      },
+      "actions": {
+        "logout": "Odhlásiť sa"
+      }
+    },
+    "nav": {
+      "accessibility": {
+        "title": "Navigácia",
+        "description": "Navigačné menu pre dashboard."
+      },
+      "common": {
+        "extensions": "Rozšírenia"
+      },
+      "main": {
+        "store": "Obchod",
+        "storeSettings": "Nastavenia obchodu"
+      },
+      "settings": {
+        "header": "Nastavenia",
+        "general": "Všeobecné",
+        "developer": "Vývojár",
+        "myAccount": "Môj účet"
+      }
+    }
+  },
+  "dataGrid": {
+    "columns": {
+      "view": "Zobraziť",
+      "resetToDefault": "Reset na východisko",
+      "disabled": "Menenie viditeľnosti stĺpcov je zakázané."
+    },
+    "shortcuts": {
+      "label": "Skratky",
+      "commands": {
+        "undo": "Späť",
+        "redo": "Opäť",
+        "copy": "Kopírovať",
+        "paste": "Vložiť",
+        "edit": "Upraviť",
+        "delete": "Odstrániť",
+        "clear": "Vyčistiť",
+        "moveUp": "Posunúť hore",
+        "moveDown": "Posunúť dole",
+        "moveLeft": "Posunúť vľavo",
+        "moveRight": "Posunúť vpravo",
+        "moveTop": "Posunúť na vrch",
+        "moveBottom": "Posunúť na dno",
+        "selectDown": "Vybrať dole",
+        "selectUp": "Vybrať hore",
+        "selectColumnDown": "Vybrať stĺpec dole",
+        "selectColumnUp": "Vybrať stĺpec hore",
+        "focusToolbar": "Zamerať sa na panel",
+        "focusCancel": "Zamerať sa na odstránenie"
+      }
+    },
+    "errors": {
+      "fixError": "Opraviť chybu",
+      "count_one": "{{count}} chyba",
+      "count_other": "{{count}} chyby"
+    }
+  },
+  "filters": {
+    "sortLabel": "Uložiť",
+    "filterLabel": "Filter",
+    "searchLabel": "Hľadať",
+    "date": {
+      "today": "Dnes",
+      "lastSevenDays": "Posledných 7 dní",
+      "lastThirtyDays": "Posledných 30 dní",
+      "lastNinetyDays": "Posledných 90 dní",
+      "lastTwelveMonths": "Posledných 12 mesiacov",
+      "custom": "Vlastný",
+      "from": "Od",
+      "to": "Do",
+      "starting": "Začínajúci",
+      "ending": "Končiaci"
+    },
+    "compare": {
+      "lessThan": "Menej ako",
+      "greaterThan": "Viac ako",
+      "exact": "Presný",
+      "range": "Rozsah",
+      "lessThanLabel": "menej ako {{value}}",
+      "greaterThanLabel": "väčší ako {{value}}",
+      "andLabel": "a"
+    },
+    "sorting": {
+      "alphabeticallyAsc": "A to Z",
+      "alphabeticallyDesc": "Z to A",
+      "dateAsc": "Najnovšie najskôr",
+      "dateDesc": "Najstaršie najskôr"
+    },
+    "radio": {
+      "yes": "Áno",
+      "no": "Nie",
+      "true": "Áno",
+      "false": "Nie"
+    },
+    "addFilter": "Pridať filter"
+  },
+  "errorBoundary": {
+    "badRequestTitle": "400 - Nespravilý požiadavka",
+    "badRequestMessage": "Požiadavka nebola pochopiteľná z dôvodu nesprávnej syntaxe.",
+    "notFoundTitle": "404 - Nie je stránka na tejto adrese",
+    "notFoundMessage": "Skontrolujte URL a skúste znova, alebo použite vyhľadávanie na nájdenie toho, čo hľadáte.",
+    "internalServerErrorTitle": "500 - Interná serverová chyba",
+    "internalServerErrorMessage": "Vyskytla sa neočakávaná chyba na serveri. Prosím, skúste to znova neskôr.",
+    "defaultTitle": "Vyskytla sa chyba",
+    "defaultMessage": "Vyskytla sa neočakávaná chyba pri renderovaní tejto stránky.",
+    "noMatchMessage": "Stránka, ktorú hľadáte, neexistuje.",
+    "backToDashboard": "Späť na dashboard"
+  },
+  "addresses": {
+    "title": "Adresy",
+    "shippingAddress": {
+      "header": "Dopravná adresa",
+      "editHeader": "Upraviť dopravnú adresu",
+      "editLabel": "Dopravná adresa",
+      "label": "Dopravná adresa"
+    },
+    "billingAddress": {
+      "header": "Fakturačná adresa",
+      "editHeader": "Upraviť fakturačnú adresu",
+      "editLabel": "Fakturačná adresa",
+      "label": "Fakturačná adresa",
+      "sameAsShipping": "Rovnaká ako dopravná adresa"
+    },
+    "contactHeading": "Kontakt",
+    "locationHeading": "Miesto"
+  },
+  "email": {
+    "editHeader": "Upraviť email",
+    "editLabel": "Email",
+    "label": "Email"
+  },
+  "transferOwnership": {
+    "header": "Pretransferovať vlastníctvo",
+    "label": "Pretransferovať vlastníctvo",
+    "details": {
+      "order": "Podrobnosti objednávky",
+      "draft": "Podrobnosti návrhu"
+    },
+    "currentOwner": {
+      "label": "Aktuálny vlastník",
+      "hint": "Aktuálny vlastník objednávky."
+    },
+    "newOwner": {
+      "label": "Nový vlastník",
+      "hint": "Nový vlastník, na ktorého chcete objednávku pretransferovať."
+    },
+    "validation": {
+      "mustBeDifferent": "Nový vlastník musí byť iný ako aktuálny vlastník.",
+      "required": "Nový vlastník je povinný."
+    }
+  },
+  "sales_channels": {
+    "availableIn": "Dostupné v <0>{{x}}</0> z <1>{{y}}</1> predajných kanálov"
+  },
+  "products": {
+    "domain": "Produkty",
+    "list": {
+      "noRecordsMessage": "Vytvorte svoj prvý produkt na začiatok predaja."
+    },
+    "edit": {
+      "header": "Upraviť produkt",
+      "description": "Upravte podrobnosti produktu.",
+      "successToast": "Produkt {{title}} bol úspešne aktualizovaný."
+    },
+    "create": {
+      "title": "Vytvoriť produkt",
+      "description": "Vytvorte nový produkt.",
+      "header": "Všeobecné",
+      "tabs": {
+        "details": "Podrobnosti",
+        "organize": "Organizovať",
+        "variants": "Varianty",
+        "inventory": "Inventár"
+      },
+      "errors": {
+        "variants": "Vyberte aspoň jeden variant.",
+        "options": "Vytvorte aspoň jednu možnosť.",
+        "uniqueSku": "SKU musí byť jedinečný."
+      },
+      "inventory": {
+        "heading": "Inventárne kity",
+        "label": "Pridať inventárne položky do inventárneho kitu.",
+        "itemPlaceholder": "Vyberte inventárnu položku",
+        "quantityPlaceholder": "Koľko je potrebných pre kito?"
+      },
+      "variants": {
+        "header": "Varianty",
+        "subHeadingTitle": "Áno, to je produkt s variantami",
+        "subHeadingDescription": "Keď je nezaškrtnuté, vytvoríme pre vás východiskový variant",
+        "optionTitle": {
+          "placeholder": "Veľkosť"
+        },
+        "optionValues": {
+          "placeholder": "Malý, Stredný, Veľký"
+        },
+        "productVariants": {
+          "label": "Produkt varianty",
+          "hint": "Toto nastavenie ovplyvní poradie variantov v predajnom mieste.",
+          "alert": "Pridať možnosti na vytvorenie variantov.",
+          "tip": "Varianty, ktoré sú nezaškrtnuté, nebude vytvorených. Môžete si ich vždy vytvoriť a upraviť neskôr, ale tento zoznam zodpovedá variáciám v produktových možnostiach."
+        },
+        "productOptions": {
+          "label": "Produkt možnosti",
+          "hint": "Definujte možnosti produktu, napríklad farbu, veľkosť, atď."
+        }
+      },
+      "successToast": "Produkt {{title}} bol úspešne vytvorený."
+    },
+    "export": {
+      "header": "Export produktového zoznamu",
+      "description": "Exportujte produktový zoznam do CSV súboru.",
+      "success": {
+        "title": "Spracovávame váš export",
+        "description": "Exportovanie údajov môže trvať niekoľko minút. Ozveme sa vám, keď budeme hotoví."
+      },
+      "filters": {
+        "title": "Filtr",
+        "description": "Použite filtre v tabuľkovom prehľade na upravenie tejto zobrazovania"
+      },
+      "columns": {
+        "title": "Stĺpce",
+        "description": "Prispôsobte exportované údaje na konkrétne potreby"
+      }
+    },
+    "import": {
+      "header": "Import produktového zoznamu",
+      "uploadLabel": "Import produktov",
+      "uploadHint": "Presuňte a upúšťajte CSV súbor alebo kliknite na nahradenie",
+      "description": "Importujte produkty poskytnutím CSV súboru v preddefinovanom formáte",
+      "template": {
+        "title": "Neviete, ako organizovať svoj zoznam?",
+        "description": "Stiahnite si šablónu nižšie, aby ste zabezpečili, že nasledujete správny formát."
+      },
+      "upload": {
+        "title": "Nahrajte CSV súbor",
+        "description": "Importom môžete pridať alebo aktualizovať produkty. Aby ste aktualizovali existujúce produkty, musíte použiť existujúci handle a ID, a pre aktualizáciu existujúcich variantov musíte použiť existujúce ID. Pred importom produktov vás požiadame o potvrdenie.",
+        "preprocessing": "Spracovanie...",
+        "productsToCreate": "Produkty budú vytvorené",
+        "productsToUpdate": "Produkty budú aktualizované"
+      },
+      "success": {
+        "title": "Spracovávame váš import",
+        "description": "Importovanie údajov môže trvať niekoľko minút. Ozveme sa vám, keď budeme hotoví."
+      }
+    },
+    "deleteWarning": "Vymazanie produktu {{title}} je nevratné.",
+    "variants": {
+      "header": "Varianty",
+      "empty": {
+        "heading": "Žiadne varianty",
+        "description": "Žiadne varianty na zobrazenie."
+      },
+      "filtered": {
+        "heading": "Žiadne výsledky",
+        "description": "Žiadne varianty nezodpovedajú aktuálnym kritériám filtra."
+      }
+    },
+    "attributes": "Atribúty",
+    "editAttributes": "Upraviť atribúty",
+    "editOptions": "Upraviť možnosti",
+    "editPrices": "Upraviť ceny",
+    "media": {
+      "label": "Média",
+      "editHint": "Pridať média k produktu na zobrazenie v predajnom mieste.",
+      "makeThumbnail": "Uložiť ako hlavné",
+      "uploadImagesLabel": "Nahrať obrázky",
+      "uploadImagesHint": "Presuňte a upúšťajte obrázky sem alebo kliknite na nahradenie.",
+      "invalidFileType": "'{{name}}' nie je podporovaný typ súboru. Podporované typy súborov sú: {{types}}.",
+      "failedToUpload": "Nepodarilo sa nahrať pridané média. Prosím, skúste to znova.",
+      "deleteWarning_one": "Vymazanie {{count}} obrázku je nevratné.",
+      "deleteWarning_other": "Vymazanie {{count}} obrázkov je nevratné.",
+      "deleteWarningWithThumbnail_one": "Vymazanie {{count}} obrázku vrátane hlavného obrázku je nevratné.",
+      "deleteWarningWithThumbnail_other": "Vymazanie {{count}} obrázkov vrátane hlavného obrázku je nevratné.",
+      "thumbnailTooltip": "Hlavný obrázok",
+      "galleryLabel": "Galéria",
+      "downloadImageLabel": "Stiahnuť aktuálny obrázok",
+      "deleteImageLabel": "Odstrániť aktuálny obrázok",
+      "emptyState": {
+        "header": "Žiadne média",
+        "description": "Pridať média k produktu na zobrazenie v predajnom mieste.",
+        "action": "Pridať média"
+      },
+      "successToast": "Média bolo úspešne aktualizované."
+    },
+    "discountableHint": "Keď nie je zaškrtnuté, nebude sa uplatňovať žiadne zľavy na tento produkt.",
+    "noSalesChannels": "Nie je dostupné v žiadnom predajnom kanále",
+    "variantCount_one": "{{count}} variant",
+    "variantCount_other": "{{count}} varianty",
+    "deleteVariantWarning": "Vymazanie variantu {{title}} je nevratné.",
+    "productStatus": {
+      "draft": "Návrh",
+      "published": "Publikovaný",
+      "proposed": "Navrhnutý",
+      "rejected": "Odmietnutý"
+    },
+    "fields": {
+      "title": {
+        "label": "Názov",
+        "hint": "Dajte produktu krátky a jasný názov.<0/>50-60 znakov je odporúčaná dĺžka pre vyhľadávače."
+      },
+      "subtitle": {
+        "label": "Podnázov"
+      },
+      "handle": {
+        "label": "Handle",
+        "tooltip": "Handle je použitý na odkazovanie na produkt v predajnom mieste. Ak nie je špecifikovaný, handle bude generovaný z názvu produktu."
+      },
+      "description": {
+        "label": "Popis",
+        "hint": "Dajte produktu krátky a jasný popis.<0/>120-160 znakov je odporúčaná dĺžka pre vyhľadávače."
+      },
+      "long_description": {
+        "label": "Dlhý popis",
+        "hint": "Dajte produktu dlhší popis s viac detailmi."
+      },
+      "discountable": {
+        "label": "Zľaviteľný",
+        "hint": "Keď nie je zaškrtnuté, nebude sa uplatňovať žiadne zľavy na tento produkt"
+      },
+      "shipping_profile": {
+        "label": "Doprava",
+        "hint": "Pripojte produkt k dopravnému profilu"
+      },
+      "type": {
+        "label": "Typ"
+      },
+      "collection": {
+        "label": "Kolekcia"
+      },
+      "categories": {
+        "label": "Kategórie"
+      },
+      "tags": {
+        "label": "Tagy"
+      },
+      "sales_channels": {
+        "label": "Predajné kanály",
+        "hint": "Tento produkt bude dostupný len v prednastavenom predajnom kanáli, ak nie je ponechaný nezmenený."
+      },
+      "countryOrigin": {
+        "label": "Krajina pôvodu"
+      },
+      "material": {
+        "label": "Materiál"
+      },
+      "width": {
+        "label": "Šírka"
+      },
+      "length": {
+        "label": "Dĺžka"
+      },
+      "height": {
+        "label": "Výška"
+      },
+      "weight": {
+        "label": "Hmotnosť"
+      },
+      "options": {
+        "label": "Produkt možnosti",
+        "hint": "Možnosti sú použité na definovanie farby, veľkosti atď. produktu",
+        "add": "Pridať možnosť",
+        "optionTitle": "Názov možnosti",
+        "optionTitlePlaceholder": "Farba",
+        "variations": "Variácie (oddelené čiarkami)",
+        "variantionsPlaceholder": "Červená, Modrá, Zelená"
+      },
+      "variants": {
+        "label": "Produkt varianty",
+        "hint": "Variácie, ktoré sú nezaškrtnuté, nebude vytvorených. Môžete si ich vždy vytvoriť a upraviť neskôr, ale tento zoznam zodpovedá variáciám v produktových možnostiach."
+      },
+      "mid_code": {
+        "label": "Mid kód"
+      },
+      "hs_code": {
+        "label": "HS kód"
+      }
+    },
+    "variant": {
+      "edit": {
+        "header": "Upraviť variant",
+        "success": "Produkt variant úspešne upravený"
+      },
+      "create": {
+        "header": "Podrobnosti variantu"
+      },
+      "deleteWarning": "Ste si istí, že chcete odstrániť tento variant?",
+      "pricesPagination": "1 - {{current}} of {{total}} cien",
+      "tableItemAvailable": "{{availableCount}} dostupné",
+      "tableItem_one": "{{availableCount}} dostupné na {{locationCount}} miesto",
+      "tableItem_other": "{{availableCount}} dostupné na {{locationCount}} miest",
+      "inventory": {
+        "notManaged": "Nie je spravované",
+        "manageItems": "Spravovať inventár",
+        "notManagedDesc": "Inventár nie je spravovaný pre tento variant. Zapnite 'Spravovať inventár' na správu inventáru tohto variantu.",
+        "manageKit": "Spravovať inventárny kit",
+        "navigateToItem": "Prejsť na inventárnu položku",
+        "actions": {
+          "inventoryItems": "Prejsť na inventárnu položku",
+          "inventoryKit": "Zobraziť inventárnu položku"
+        },
+        "inventoryKit": "Inventárny kit",
+        "inventoryKitHint": "Tento variant obsahuje niekoľko inventárnych položiek?",
+        "validation": {
+          "itemId": "Prosím, vyberte inventárnu položku.",
+          "quantity": "Množstvo je povinné. Prosím, zadajte kladné číslo."
+        },
+        "header": "Sklad a inventár",
+        "editItemDetails": "Upraviť podrobnosti položky",
+        "manageInventoryLabel": "Spravovať inventár",
+        "manageInventoryHint": "Keď je zapnuté, upravíme inventárnu množstvo pre vás pri objednávkach a návratoch.",
+        "allowBackordersLabel": "Povoliť rezervácie",
+        "allowBackordersHint": "Keď je zapnuté, zákazníci môžu kúpiť tento variant aj keď nie je dostupné množstvo.",
+        "toast": {
+          "levelsBatch": "Inventár úspešne aktualizovaný.",
+          "update": "Inventárna položka úspešne aktualizovaná.",
+          "updateLevel": "Inventárny úroveň úspešne aktualizovaná.",
+          "itemsManageSuccess": "Inventárne položky úspešne aktualizované."
+        }
+      }
+    },
+    "options": {
+      "header": "Možnosti",
+      "edit": {
+        "header": "Upraviť možnosť",
+        "successToast": "Možnosť {{title}} úspešne aktualizovaná."
+      },
+      "create": {
+        "header": "Vytvoriť možnosť",
+        "successToast": "Možnosť {{title}} úspešne vytvorená."
+      },
+      "deleteWarning": "Ste si istí, že chcete odstrániť túto možnosť: {{title}}. Táto akcia je nevratná."
+    },
+    "organization": {
+      "header": "Organizácia",
+      "edit": {
+        "header": "Upraviť organizáciu",
+        "toasts": {
+          "success": "Organizácia {{title}} úspešne aktualizovaná."
+        }
+      }
+    },
+    "stock": {
+      "heading": "Spravovať skladové úrovne a miesta",
+      "description": "Aktualizujte skladové úrovne všetkých variantov produktu.",
+      "loading": "Čakajte, to môže trvať chvilu...",
+      "tooltips": {
+        "alreadyManaged": "Táto inventárna položka je už upraviteľná pod {{title}}.",
+        "alreadyManagedWithSku": "Táto inventárna položka je už upraviteľná pod {{title}} ({{sku}})."
+      }
+    },
+    "shippingProfile": {
+      "header": "Konfigurácia dopravy",
+      "edit": {
+        "header": "Konfigurácia dopravy",
+        "toasts": {
+          "success": "Konfigurácia dopravy {{title}} úspešne aktualizovaná."
+        }
+      },
+      "create": {
+        "errors": {
+          "required": "Dopravný profil je povinný"
+        }
+      }
+    },
+    "toasts": {
+      "delete": {
+        "success": {
+          "header": "Produkt odstránený",
+          "description": "{{title}} bol úspešne odstránený."
+        },
+        "error": {
+          "header": "Nepodarilo sa odstrániť produkt"
+        }
+      }
+    }
+  },
+  "collections": {
+    "domain": "Kolekcie",
+    "subtitle": "Organizujte produkty do kolekcií.",
+    "createCollection": "Vytvoriť kolekciu",
+    "createCollectionHint": "Vytvoriť novú kolekciu na organizovanie produktov.",
+    "createSuccess": "Kolekcia úspešne vytvorená.",
+    "editCollection": "Upraviť kolekciu",
+    "handleTooltip": "Handle je použitý na odkazovanie na kolekciu v predajnom mieste. Ak nie je špecifikovaný, handle bude generovaný z názvu kolekcie.",
+    "deleteWarning": "Ste si istí, že chcete odstrániť kolekciu {{title}}. Táto akcia je nevratná.",
+    "removeSingleProductWarning": "Ste si istí, že chcete odstrániť produkt {{title}} z kolekcie. Táto akcia je nevratná.",
+    "removeProductsWarning_one": "Ste si istí, že chcete odstrániť {{count}} produkt z kolekcie. Táto akcia je nevratná.",
+    "removeProductsWarning_other": "Ste si istí, že chcete odstrániť {{count}} produktov z kolekcie. Táto akcia je nevratná.",
+    "products": {
+      "list": {
+        "noRecordsMessage": "V kolekcii nie sú žiadne produkty."
+      },
+      "add": {
+        "successToast_one": "Produkt bol úspešne pridaný do kolekcie.",
+        "successToast_other": "Produkty boli úspešne pridané do kolekcie."
+      },
+      "remove": {
+        "successToast_one": "Produkt bol úspešne odstránený z kolekcie.",
+        "successToast_other": "Produkty boli úspešne odstránené z kolekcie."
+      }
+    }
+  },
+  "categories": {
+    "domain": "Kategórie",
+    "subtitle": "Organizujte produkty do kategórií, a spravujte ich poradie a hierarchiu.",
+    "create": {
+      "header": "Vytvoriť kategóriu",
+      "hint": "Vytvoriť novú kategóriu na organizovanie produktov.",
+      "tabs": {
+        "details": "Podrobnosti",
+        "organize": "Organizovať poradie"
+      },
+      "successToast": "Kategória {{name}} úspešne vytvorená."
+    },
+    "edit": {
+      "header": "Upraviť kategóriu",
+      "description": "Upraviť kategóriu na aktualizáciu jej podrobností.",
+      "successToast": "Kategória úspešne aktualizovaná."
+    },
+    "delete": {
+      "confirmation": "Ste si istí, že chcete odstrániť kategóriu {{name}}. Táto akcia je nevratná.",
+      "successToast": "Kategória {{name}} úspešne odstránená."
+    },
+    "products": {
+      "add": {
+        "disabledTooltip": "Produkt je už v tejto kategórii.",
+        "successToast_one": "Pridaný {{count}} produkt do kategórie.",
+        "successToast_other": "Pridané {{count}} produktov do kategórie."
+      },
+      "remove": {
+        "confirmation_one": "Ste si istí, že chcete odstrániť {{count}} produkt z kategórie. Táto akcia je nevratná.",
+        "confirmation_other": "Ste si istí, že chcete odstrániť {{count}} produktov z kategórie. Táto akcia je nevratná.",
+        "successToast_one": "Odstránený {{count}} produkt z kategórie.",
+        "successToast_other": "Odstránené {{count}} produktov z kategórie."
+      },
+      "list": {
+        "noRecordsMessage": "V kategórii nie sú žiadne produkty."
+      }
+    },
+    "organize": {
+      "header": "Organizovať",
+      "action": "Upraviť poradie"
+    },
+    "fields": {
+      "visibility": {
+        "label": "Viditeľnosť",
+        "internal": "Interné",
+        "public": "Verejné"
+      },
+      "status": {
+        "label": "Stav",
+        "active": "Aktívne",
+        "inactive": "Neaktívne"
+      },
+      "path": {
+        "label": "Cesta",
+        "tooltip": "Zobraziť celú cestu kategórie."
+      },
+      "children": {
+        "label": "Detské"
+      },
+      "new": {
+        "label": "Nový"
+      }
+    }
+  },
+  "inventory": {
+    "domain": "Inventár",
+    "subtitle": "Spravujte svoje inventárne položky",
+    "reserved": "Rezervované",
+    "available": "Dostupné",
+    "locationLevels": "Miesta",
+    "associatedVariants": "Súvisiace varianty",
+    "manageLocations": "Spravovať miesta",
+    "manageLocationQuantity": "Spravovať množstvo miesta",
+    "deleteWarning": "Ste si istí, že chcete odstrániť inventárnu položku. Táto akcia je nevratná.",
+    "editItemDetails": "Upraviť podrobnosti položky",
+    "create": {
+      "title": "Vytvoriť inventárnu položku",
+      "details": "Podrobnosti",
+      "availability": "Dostupnosť",
+      "locations": "Miesta",
+      "attributes": "Atribúty",
+      "requiresShipping": "Vyžaduje doručenie",
+      "requiresShippingHint": "Vyžaduje doručenie inventárnej položky?",
+      "successToast": "Inventárna položka úspešne vytvorená."
+    },
+    "reservation": {
+      "header": "Rezervácia {{itemName}}",
+      "editItemDetails": "Upraviť rezerváciu",
+      "lineItemId": "ID položky",
+      "orderID": "ID objednávky",
+      "description": "Popis",
+      "location": "Miesto",
+      "inStockAtLocation": "V sklade na tomto mieste",
+      "availableAtLocation": "Dostupné na tomto mieste",
+      "reservedAtLocation": "Rezervované na tomto mieste",
+      "reservedAmount": "Rezervované množstvo",
+      "create": "Vytvoriť rezerváciu",
+      "itemToReserve": "Položka na rezerváciu",
+      "quantityPlaceholder": "Koľko chcete rezervovať?",
+      "descriptionPlaceholder": "Aký druh rezervácie je to?",
+      "successToast": "Rezervácia úspešne vytvorená.",
+      "updateSuccessToast": "Rezervácia úspešne aktualizovaná.",
+      "deleteSuccessToast": "Rezervácia úspešne odstránená.",
+      "errors": {
+        "noAvaliableQuantity": "Miesto skladu nemá dostupné množstvo.",
+        "quantityOutOfRange": "Minimálne množstvo je 1 a maximálne množstvo je {{max}}"
+      }
+    },
+    "adjustInventory": {
+      "errors": {
+        "stockedQuantity": "Množstvo skladu nemôže byť aktualizované na menšie ako rezervované množstvo {{quantity}}."
+      }
+    },
+    "toast": {
+      "updateLocations": "Miesta aktualizované úspešne.",
+      "updateLevel": "Inventárny úroveň aktualizovaná úspešne.",
+      "updateItem": "Inventárna položka aktualizovaná úspešne."
+    },
+    "stock": {
+      "title": "Aktualizovať inventárny úroveň",
+      "description": "Aktualizovať množstvo skladu pre vybrané inventárne položky.",
+      "action": "Upraviť množstvo skladu",
+      "placeholder": "Nie je zapnuté",
+      "disablePrompt_one": "Ste si istí, že chcete odstrániť {{count}} miesto úrovne. Táto akcia je nevratná.",
+      "disablePrompt_other": "Ste si istí, že chcete odstrániť {{count}} miest úrovne. Táto akcia je nevratná.",
+      "disabledToggleTooltip": "Nemôže byť odstránené: vymazať prichádzajúce a/alebo rezervované množstvo pred odstránením.",
+      "successToast": "Inventárny úroveň aktualizovaná úspešne."
+    }
+  },
+  "giftCards": {
+    "domain": "Dárkové karty",
+    "editGiftCard": "Upraviť dárkovú kartu",
+    "createGiftCard": "Vytvoriť dárkovú kartu",
+    "createGiftCardHint": "Vytvoriť ručne dárkovú kartu, ktorá môže byť použitá ako platobný spôsob v predajnom mieste.",
+    "selectRegionFirst": "Vyberte najprv región",
+    "deleteGiftCardWarning": "Ste si istí, že chcete odstrániť dárkovú kartu {{code}}. Táto akcia je nevratná.",
+    "balanceHigherThanValue": "Množstvo nemôže byť vyššie ako pôvodná suma.",
+    "balanceLowerThanZero": "Množstvo nemôže byť záporné.",
+    "expiryDateHint": "Krajiny majú rôzne zákony týkajúce sa dárkových kariet. Uistite sa, že ste kontrolovali miestne zákony pred nastavením dátumu vypršania.",
+    "regionHint": "Změna regionu dárkové karty tiež zmení jej meny, čo môže ovplyvniť jej finančnú hodnotu.",
+    "enabledHint": "Určiť, či je dárková karta zapnutá alebo vypnutá.",
+    "balance": "Množstvo",
+    "currentBalance": "Aktuálne množstvo",
+    "initialBalance": "Pôvodné množstvo",
+    "personalMessage": "Osobná správa",
+    "recipient": "Príjemca"
+  },
+  "customers": {
+    "domain": "Zákazníci",
+    "list": {
+      "noRecordsMessage": "Vaši zákazníci sa tu zobrazia."
+    },
+    "create": {
+      "header": "Vytvoriť zákazníka",
+      "hint": "Vytvoriť nového zákazníka a spravovať ich podrobnosti.",
+      "successToast": "Zákazník {{email}} bol úspešne vytvorený."
+    },
+    "groups": {
+      "label": "Skupiny zákazníkov",
+      "remove": "Ste si istí, že chcete odstrániť zákazníka z \"{{name}}\" skupiny zákazníkov?",
+      "removeMany": "Ste si istí, že chcete odstrániť zákazníka z nasledujúcich skupín zákazníkov: {{groups}}?",
+      "alreadyAddedTooltip": "Zákazník je už v tejto skupine zákazníkov.",
+      "list": {
+        "noRecordsMessage": "Tento zákazník nepatrí do žiadnej skupiny."
+      },
+      "add": {
+        "success": "Zákazník bol pridaný do: {{groups}}.",
+        "list": {
+          "noRecordsMessage": "Najprv vytvorte skupinu zákazníkov."
+        }
+      },
+      "removed": {
+        "success": "Zákazník odstránený z: {{groups}}.",
+        "list": {
+          "noRecordsMessage": "Najprv vytvorte skupinu zákazníkov."
+        }
+      }
+    },
+    "edit": {
+      "header": "Upraviť zákazníka",
+      "emailDisabledTooltip": "Emailová adresa nemôže byť zmenená pre registrovaných zákazníkov.",
+      "successToast": "Zákazník {{email}} bol úspešne aktualizovaný."
+    },
+    "delete": {
+      "title": "Odstrániť zákazníka",
+      "description": "Ste si istí, že chcete odstrániť zákazníka {{email}}. Táto akcia je nevratná.",
+      "successToast": "Zákazník {{email}} bol úspešne odstránený."
+    },
+    "fields": {
+      "guest": "Host",
+      "registered": "Registrovaný",
+      "groups": "Skupiny"
+    },
+    "registered": "Registrovaný",
+    "guest": "Host",
+    "hasAccount": "Má účet",
+    "addresses": {
+      "title": "Adresy",
+      "fields": {
+        "addressName": "Název adresy",
+        "address1": "Adresa 1",
+        "address2": "Adresa 2",
+        "city": "Město",
+        "province": "Provincie",
+        "postalCode": "PSČ",
+        "country": "Krajina",
+        "phone": "Telefón",
+        "company": "Firma",
+        "countryCode": "Kód krajiny",
+        "provinceCode": "Kód provincie"
+      },
+      "create": {
+        "header": "Vytvoriť adresu",
+        "hint": "Vytvoriť novú adresu pre zákazníka.",
+        "successToast": "Adresa úspešne vytvorená."
+      }
+    }
+  },
+  "customerGroups": {
+    "domain": "Skupiny zákazníkov",
+    "subtitle": "Organizovať zákazníkov do skupín. Skupiny môžu mať rôzne ponuky a ceny.",
+    "list": {
+      "empty": {
+        "heading": "Žiadne skupiny zákazníkov",
+        "description": "Žiadne skupiny zákazníkov na zobrazenie."
+      },
+      "filtered": {
+        "heading": "Žiadne výsledky",
+        "description": "Žiadne skupiny zákazníkov nezodpovedajú aktuálnym kritériám filtrovania."
+      }
+    },
+    "create": {
+      "header": "Vytvoriť skupinu zákazníkov",
+      "hint": "Vytvoriť novú skupinu zákazníkov na segmentáciu vašich zákazníkov.",
+      "successToast": "Skupina zákazníkov {{name}} úspešne vytvorená."
+    },
+    "edit": {
+      "header": "Upraviť skupinu zákazníkov",
+      "successToast": "Skupina zákazníkov {{name}} úspešne aktualizovaná."
+    },
+    "delete": {
+      "title": "Odstrániť skupinu zákazníkov",
+      "description": "Ste si istí, že chcete odstrániť skupinu zákazníkov {{name}}. Táto akcia je nevratná.",
+      "successToast": "Skupina zákazníkov {{name}} úspešne odstránená."
+    },
+    "customers": {
+      "alreadyAddedTooltip": "Zákazník je už v tejto skupine.",
+      "add": {
+        "successToast_one": "Zákazník bol úspešne pridaný do skupiny.",
+        "successToast_other": "Zákazníci boli úspešne pridaní do skupiny.",
+        "list": {
+          "noRecordsMessage": "Vytvoriť najprv zákazníka."
+        }
+      },
+      "remove": {
+        "title_one": "Odstrániť zákazníka",
+        "title_other": "Odstrániť zákazníkov",
+        "description_one": "Ste si istí, že chcete odstrániť {{count}} zákazníka z tejto skupiny. Táto akcia je nevratná.",
+        "description_other": "Ste si istí, že chcete odstrániť {{count}} zákazníkov z tejto skupiny. Táto akcia je nevratná."
+      },
+      "list": {
+        "noRecordsMessage": "Táto skupina nemá žiadnych zákazníkov."
+      }
+    }
+  },
+  "orders": {
+    "domain": "Objednávky",
+    "claim": "Vyžiadanie",
+    "exchange": "Výmena",
+    "return": "Vrátenie",
+    "cancelWarning": "Ste si istí, že chcete odstrániť objednávku {{id}}. Táto akcia je nevratná.",
+    "orderCanceled": "Objednávka úspešne odstránená",
+    "onDateFromSalesChannel": "{{date}} z {{salesChannel}}",
+    "list": {
+      "noRecordsMessage": "Vaše objednávky sa tu zobrazia."
+    },
+    "status": {
+      "not_paid": "Nezaplatené",
+      "pending": "Čakajúce",
+      "completed": "Dokončené",
+      "draft": "Návrh",
+      "archived": "Archivované",
+      "canceled": "Odstránené",
+      "requires_action": "Vyžaduje akciu"
+    },
+    "summary": {
+      "requestReturn": "Vyžiadať vrátenie",
+      "allocateItems": "Alokovať položky",
+      "editOrder": "Upraviť objednávku",
+      "editOrderContinue": "Pokračovať v úprave objednávky",
+      "inventoryKit": "Skladá sa z {{count}}x inventárnych položiek",
+      "itemTotal": "Celková cena položky",
+      "shippingTotal": "Celková cena dopravy",
+      "discountTotal": "Celková cena zľavy",
+      "taxTotalIncl": "Celková cena dane (zahrnutá)",
+      "itemSubtotal": "Celková cena položky",
+      "shippingSubtotal": "Celková cena dopravy",
+      "discountSubtotal": "Celková cena zľavy",
+      "taxTotal": "Celková cena dane"
+    },
+    "transfer": {
+      "title": "Pretransferovať vlastníctvo",
+      "requestSuccess": "Žiadosť o prevod objednávky bola odoslaná na: {{email}}.",
+      "currentOwner": "Súčasný vlastník",
+      "newOwner": "Nový vlastník",
+      "currentOwnerDescription": "Zákazník, ktorý je aktuálne priradený k tejto objednávke.",
+      "newOwnerDescription": "Zákazník, na ktorého sa má táto objednávka previesť."
+    },
+    "payment": {
+      "title": "Platby",
+      "isReadyToBeCaptured": "Platba <0/> je pripravená na zachytenie.",
+      "totalPaidByCustomer": "Celková suma zaplatená zákazníkom",
+      "capture": "Zachytiť platbu",
+      "capture_short": "Zachytiť",
+      "refund": "Vrátenie platby",
+      "markAsPaid": "Označiť ako zaplatené",
+      "statusLabel": "Štatút platby",
+      "statusTitle": "Štatút platby",
+      "status": {
+        "notPaid": "Nezaplatené",
+        "authorized": "Autorizované",
+        "partiallyAuthorized": "Čiastočne autorizované",
+        "awaiting": "Čaká na spracovanie",
+        "captured": "Zachytené",
+        "partiallyRefunded": "Čiastočne vrátené",
+        "partiallyCaptured": "Čiastočne zachytené",
+        "refunded": "Vrátené",
+        "canceled": "Zrušené",
+        "requiresAction": "Vyžaduje akciu"
+      },
+      "capturePayment": "Platba vo výške {{amount}} bude zachytená.",
+      "capturePaymentSuccess": "Platba vo výške {{amount}} bola úspešne zachytená",
+      "markAsPaidPayment": "Platba vo výške {{amount}} bude označená ako zaplatená.",
+      "markAsPaidPaymentSuccess": "Platba vo výške {{amount}} bola úspešne označená ako zaplatená",
+      "createRefund": "Vytvoriť vrátenie platby",
+      "refundPaymentSuccess": "Vrátenie platby vo výške {{amount}} úspešné",
+      "createRefundWrongQuantity": "Množstvo by malo byť číslo medzi 1 a {{number}}",
+      "refundAmount": "Vrátiť {{amount}}",
+      "paymentLink": "Skopírovať platobný odkaz na {{amount}}",
+      "selectPaymentToRefund": "Vyberte platbu na vrátenie"
+    },
+    "edits": {
+      "title": "Upraviť objednávku",
+      "confirm": "Potvrdiť úpravu",
+      "confirmText": "Chystáte sa potvrdiť úpravu objednávky. Táto akcia je nevratná.",
+      "cancel": "Zrušiť úpravu",
+      "currentItems": "Aktuálne položky",
+      "currentItemsDescription": "Upravte množstvo položiek alebo ich odstráňte.",
+      "addItemsDescription": "Môžete pridať nové položky do objednávky.",
+      "addItems": "Pridať položky",
+      "amountPaid": "Zaplatená suma",
+      "newTotal": "Nový celkový súčet",
+      "differenceDue": "Rozdiel na zaplatenie",
+      "create": "Upraviť objednávku",
+      "currentTotal": "Aktuálny celkový súčet",
+      "noteHint": "Pridať internú poznámku k úprave",
+      "cancelSuccessToast": "Úprava objednávky zrušená",
+      "createSuccessToast": "Žiadosť o úpravu objednávky vytvorená",
+      "activeChangeError": "Na objednávke už prebieha aktívna zmena (vrátenie, reklamácia, výmena atď.). Prosím, dokončite alebo zrušte túto zmenu pred úpravou objednávky.",
+      "panel": {
+        "title": "Úprava objednávky požiadaná",
+        "titlePending": "Úprava objednávky čaká"
+      },
+      "toast": {
+        "canceledSuccessfully": "Úprava objednávky zrušená",
+        "confirmedSuccessfully": "Úprava objednávky potvrdená"
+      },
+      "validation": {
+        "quantityLowerThanFulfillment": "Množstvo nemôže byť menšie alebo rovné splnenej kvóte"
+      }
+    },
+    "edit": {
+      "email": {
+        "title": "Upraviť e-mail",
+        "requestSuccess": "E-mail objednávky bol aktualizovaný na {{email}}."
+      },
+      "shippingAddress": {
+        "title": "Upraviť dodaciu adresu",
+        "requestSuccess": "Dodacia adresa objednávky bola aktualizovaná."
+      },
+      "billingAddress": {
+        "title": "Upraviť fakturačnú adresu",
+        "requestSuccess": "Fakturačná adresa objednávky bola aktualizovaná."
+      }
+    },
+    "returns": {
+      "create": "Create Return",
+      "confirm": "Confirm Return",
+      "confirmText": "You are about to confirm a Return. This action cannot be undone.",
+      "inbound": "Inbound",
+      "outbound": "Outbound",
+      "sendNotification": "Send notification",
+      "sendNotificationHint": "Notify customer about return.",
+      "returnTotal": "Return total",
+      "inboundTotal": "Inbound total",
+      "estDifference": "Estimated difference",
+      "outstandingAmount": "Outstanding amount",
+      "reason": "Reason",
+      "reasonHint": "Choose why the customer want to return items.",
+      "note": "Note",
+      "noInventoryLevel": "No inventory level",
+      "noInventoryLevelDesc": "The selected location does not have an inventory level for the selected items. The return can be requested but can't be received until an inventory level is created for the selected location.",
+      "noteHint": "You can type freely if you want to specify something.",
+      "location": "Location",
+      "locationHint": "Choose which location you want to return the items to.",
+      "inboundShipping": "Return shipping",
+      "inboundShippingHint": "Choose which method you want to use.",
+      "returnableQuantityLabel": "Returnable quantity",
+      "refundableAmountLabel": "Refundable amount",
+      "returnRequestedInfo": "{{requestedItemsCount}}x items return requested",
+      "returnReceivedInfo": "{{requestedItemsCount}}x items return received",
+      "itemReceived": "Items received",
+      "returnRequested": "Return requested",
+      "damagedItemReceived": "Damaged items received",
+      "damagedItemsReturned": "{{quantity}}x damaged items returned",
+      "activeChangeError": "There is an active order change in progress on this order. Please finish or discard the change first.",
+      "cancel": {
+        "title": "Cancel Return",
+        "description": "Are you sure you want to cancel the return request?"
+      },
+      "placeholders": {
+        "noReturnShippingOptions": {
+          "title": "No return shipping options found",
+          "hint": "No return shipping options were created for the location. You can create one at <LinkComponent>Location & Shipping</LinkComponent>."
+        },
+        "outboundShippingOptions": {
+          "title": "No outbound shipping options found",
+          "hint": "No outbound shipping options were created for the location. You can create one at <LinkComponent>Location & Shipping</LinkComponent>."
+        }
+      },
+      "receive": {
+        "action": "Prijmiť položky",
+        "receiveItems": "{{ returnType }} {{ id }}",
+        "restockAll": "Obnoviť všetky položky",
+        "itemsLabel": "Prijaté položky",
+        "title": "Prijmiť položky pre #{{returnId}}",
+        "sendNotificationHint": "Oznámiť zákazníka o prijatých vrátených položkách.",
+        "inventoryWarning": "Prosím, poznamenajte, že automaticky upravíme úrovne inventáru na základe vašich vstupných údajov.",
+        "writeOffInputLabel": "Koľko z týchto položiek je poškodených?",
+        "toast": {
+          "success": "Vrátenie úspešne prijaté.",
+          "errorLargeValue": "Množstvo je väčšie ako požadované množstvo položky.",
+          "errorNegativeValue": "Množstvo nemôže byť záporné.",
+          "errorLargeDamagedValue": "Množstvo poškodených položiek + množstvo prijatých nepoškodených položiek presahuje celkové množstvo položiek na vrátení. Prosím, znížte množstvo nepoškodených položiek."
+        }
+      },
+      "toast": {
+        "canceledSuccessfully": "Vrátenie úspešne zrušené.",
+        "confirmedSuccessfully": "Vrátenie úspešne potvrdené."
+      },
+      "panel": {
+        "title": "Vrátenie iniciované",
+        "description": "Existuje otvorená žiadosť o vrátenie na dokončenie"
+      }
+    },
+    "claims": {
+      "create": "Vytvoriť žiadosť",
+      "confirm": "Potvrdiť žiadosť",
+      "confirmText": "Ste si istí, že chcete potvrdiť žiadosť? Táto akcia je nevratná.",
+      "manage": "Spravovať žiadosť",
+      "outbound": "Výstupné",
+      "outboundItemAdded": "{{itemsCount}}x pridané cez žiadosť",
+      "outboundTotal": "Celková cena výstupu",
+      "outboundShipping": "Doprava výstupu",
+      "outboundShippingHint": "Vyberte, ktorú metódu chcete použiť.",
+      "refundAmount": "Odhadnutý rozdiel",
+      "activeChangeError": "Na objednávke už prebieha aktívna zmena (vrátenie, reklamácia, výmena atď.). Prosím, dokončite alebo zrušte túto zmenu pred úpravou objednávky.",
+      "actions": {
+        "cancelClaim": {
+          "successToast": "Žiadosť úspešne zrušená."
+        }
+      },
+      "cancel": {
+        "title": "Zrušiť žiadosť",
+        "description": "Ste si istí, že chcete zrušiť žiadosť?"
+      },
+      "tooltips": {
+        "onlyReturnShippingOptions": "Táto lista bude obsahovať len vrátenie dopravy."
+      },
+      "toast": {
+        "canceledSuccessfully": "Žiadosť úspešne zrušená.",
+        "confirmedSuccessfully": "Žiadosť úspešne potvrdená."
+      },
+      "panel": {
+        "title": "Žiadosť iniciovaná",
+        "description": "Existuje otvorená žiadosť na dokončenie"
+      }
+    },
+    "exchanges": {
+      "create": "Vytvoriť výmenu",
+      "manage": "Spravovať výmenu",
+      "confirm": "Potvrdiť výmenu",
+      "confirmText": "Ste si istí, že chcete potvrdiť výmenu? Táto akcia je nevratná.",
+      "outbound": "Výstupné",
+      "outboundItemAdded": "{{itemsCount}}x pridané cez výmenu",
+      "outboundTotal": "Celková cena výstupu",
+      "outboundShipping": "Doprava výstupu",
+      "outboundShippingHint": "Vyberte, ktorú metódu chcete použiť.",
+      "refundAmount": "Odhadnutý rozdiel",
+      "activeChangeError": "Na objednávke už prebieha aktívna zmena (vrátenie, reklamácia, výmena atď.). Prosím, dokončite alebo zrušte túto zmenu pred úpravou objednávky.",
+      "actions": {
+        "cancelExchange": {
+          "successToast": "Výmena úspešne zrušená."
+        }
+      },
+      "cancel": {
+        "title": "Zrušiť výmenu",
+        "description": "Ste si istí, že chcete zrušiť výmenu?"
+      },
+      "tooltips": {
+        "onlyReturnShippingOptions": "Táto lista bude obsahovať len vrátenie dopravy."
+      },
+      "toast": {
+        "canceledSuccessfully": "Výmena úspešne zrušená.",
+        "confirmedSuccessfully": "Výmena úspešne potvrdená."
+      },
+      "panel": {
+        "title": "Výmena iniciovaná",
+        "description": "Existuje otvorená žiadosť na dokončenie"
+      }
+    },
+    "reservations": {
+      "allocatedLabel": "Alokované",
+      "notAllocatedLabel": "Nie je alokované"
+    },
+    "allocateItems": {
+      "action": "Alokovať položky",
+      "title": "Alokovať položky objednávky",
+      "locationDescription": "Vyberte, ktorú lokáciu chcete alokovať z.",
+      "itemsToAllocate": "Položky na alokáciu",
+      "itemsToAllocateDesc": "Vyberte počet položiek, ktoré chcete alokovať",
+      "search": "Hľadať položky",
+      "consistsOf": "Skladá sa z {{num}}x inventárnych položiek",
+      "requires": "Vyžaduje {{num}} na variant",
+      "toast": {
+        "created": "Položky úspešne alokované"
+      },
+      "error": {
+        "quantityNotAllocated": "Existujú nealokované položky."
+      }
+    },
+    "shipment": {
+      "title": "Označiť dopravu",
+      "trackingNumber": "Číslo sledovania",
+      "addTracking": "Pridať číslo sledovania",
+      "sendNotification": "Odoslať oznámenie",
+      "sendNotificationHint": "Oznámiť zákazníka o tejto doprave.",
+      "toastCreated": "Doprava úspešne vytvorená."
+    },
+    "fulfillment": {
+      "cancelWarning": "Ste si istí, že chcete zrušiť dopravu? Táto akcia je nevratná.",
+      "markAsDeliveredWarning": "Ste si istí, že chcete označiť dopravu ako doručenú? Táto akcia je nevratná.",
+      "differentOptionSelected": "Vybraná doprava je iná ako ta, ktorú zákazník vybral.",
+      "disabledItemTooltip": "Vybraná doprava neumožňuje splnenie tejto položky",
+      "unfulfilledItems": "Nesplnené položky",
+      "statusLabel": "Stav dopravy",
+      "statusTitle": "Stav dopravy",
+      "fulfillItems": "Splniť položky",
+      "awaitingFulfillmentBadge": "Čaká na splnenie",
+      "requiresShipping": "Vyžaduje dopravu",
+      "number": "Doprava #{{number}}",
+      "itemsToFulfill": "Položky na splnenie",
+      "create": "Vytvoriť dopravu",
+      "available": "Dostupné",
+      "inStock": "V sklade",
+      "markAsShipped": "Označiť ako odoslané",
+      "markAsPickedUp": "Označiť ako vybrané",
+      "markAsDelivered": "Označiť ako doručené",
+      "itemsToFulfillDesc": "Vyberte položky a množstva na splnenie",
+      "locationDescription": "Vyberte, ktorú lokáciu chcete splniť položky z.",
+      "sendNotificationHint": "Oznámiť zákazníka o vytvorených dopravách.",
+      "methodDescription": "Vyberte inú dopravu ako ta, ktorú zákazník vybral",
+      "error": {
+        "wrongQuantity": "K dispozícii je len jedna položka na splnenie",
+        "wrongQuantity_other": "Množstvo by malo byť medzi 1 a {{number}}",
+        "noItems": "Nie sú žiadne položky na splnenie.",
+        "noShippingOption": "Vyžaduje dopravu",
+        "noLocation": "Vyžaduje lokáciu"
+      },
+      "status": {
+        "notFulfilled": "Nesplnené",
+        "partiallyFulfilled": "Čiastočne splnené",
+        "fulfilled": "Splnené",
+        "partiallyShipped": "Čiastočne odoslané",
+        "shipped": "Odoslané",
+        "delivered": "Doručené",
+        "partiallyDelivered": "Čiastočne doručené",
+        "partiallyReturned": "Čiastočne vrátené",
+        "returned": "Vrátené",
+        "canceled": "Zrušené",
+        "requiresAction": "Vyžaduje akciu"
+      },
+      "toast": {
+        "created": "Doprava úspešne vytvorená",
+        "canceled": "Doprava úspešne zrušená",
+        "fulfillmentShipped": "Nemožno zrušiť dopravu, ktorá je už odoslaná",
+        "fulfillmentDelivered": "Doprava úspešne označená ako doručená",
+        "fulfillmentPickedUp": "Doprava úspešne označená ako vybraná"
+      },
+      "trackingLabel": "Číslo sledovania",
+      "shippingFromLabel": "Doprava z",
+      "itemsLabel": "Položky"
+    },
+    "refund": {
+      "title": "Vytvoriť vrátenie",
+      "sendNotificationHint": "Oznámiť zákazníka o vytvorenom vrátení.",
+      "systemPayment": "Systémová platba",
+      "systemPaymentDesc": "Jedna alebo viac vašich platieb je systémová platba. Upozornenie, že úhrada a vrátenie nie sú spracované Medusou pre takéto platby.",
+      "error": {
+        "amountToLarge": "Nemožno vrátiť viac ako pôvodná objednávka.",
+        "amountNegative": "Čiastka vrátenia musí byť kladné číslo.",
+        "reasonRequired": "Prosím, vyberte dôvod vrátenia."
+      }
+    },
+    "customer": {
+      "contactLabel": "Kontakt",
+      "editEmail": "Upraviť email",
+      "transferOwnership": "Prejsť vlastníctvo",
+      "editBillingAddress": "Upraviť fakturačnú adresu",
+      "editShippingAddress": "Upraviť dodacia adresu"
+    },
+    "activity": {
+      "header": "Aktivita",
+      "showMoreActivities_one": "Zobraziť {{count}} ďalšiu aktivitu",
+      "showMoreActivities_other": "Zobraziť {{count}} ďalších aktivít",
+      "comment": {
+        "label": "Komentár",
+        "placeholder": "Pridať komentár",
+        "addButtonText": "Pridať komentár",
+        "deleteButtonText": "Odstrániť komentár"
+      },
+      "from": "Od",
+      "to": "Do",
+      "events": {
+        "common": {
+          "toReturn": "Na vrátenie",
+          "toSend": "Na odoslanie"
+        },
+        "placed": {
+          "title": "Objednávka umiestnená",
+          "fromSalesChannel": "z {{salesChannel}}"
+        },
+        "canceled": {
+          "title": "Objednávka zrušená"
+        },
+        "payment": {
+          "awaiting": "Čaká na platbu",
+          "captured": "Platba uhradená",
+          "canceled": "Platba zrušená",
+          "refunded": "Platba vrátená"
+        },
+        "fulfillment": {
+          "created": "Položky splnené",
+          "canceled": "Doprava zrušená",
+          "shipped": "Položky odoslané",
+          "delivered": "Položky doručené",
+          "items_one": "{{count}} položka",
+          "items_other": "{{count}} položky"
+        },
+        "return": {
+          "created": "Požiadavka na vrátenie #{{returnId}} bola zadaná",
+          "canceled": "Vrátenie #{{returnId}} zrušené",
+          "received": "Vrátenie #{{returnId}} prijaté",
+          "items_one": "{{count}} položka vrátená",
+          "items_other": "{{count}} položky vrátené"
+        },
+        "note": {
+          "comment": "Komentár",
+          "byLine": "od {{author}}"
+        },
+        "claim": {
+          "created": "Reklamácia #{{claimId}} bola zadaná",
+          "canceled": "Reklamácia #{{claimId}} zrušená",
+          "itemsInbound": "{{count}} položka na vrátenie",
+          "itemsOutbound": "{{count}} položka na odoslanie"
+        },
+        "exchange": {
+          "created": "Výmena #{{exchangeId}} bola zadaná",
+          "canceled": "Výmena #{{exchangeId}} zrušená",
+          "itemsInbound": "{{count}} položka na vrátenie",
+          "itemsOutbound": "{{count}} položka na odoslanie"
+        },
+        "edit": {
+          "requested": "Požiadavka na úpravu objednávky #{{editId}} bola zadaná",
+          "confirmed": "Úprava objednávky #{{editId}} potvrdená"
+        },
+        "transfer": {
+          "requested": "Požiadavka na prevod objednávky #{{transferId}} bola zadaná",
+          "confirmed": "Prevod objednávky #{{transferId}} potvrdený",
+          "declined": "Prevod objednávky #{{transferId}} zamietnutý"
+        },
+        "update_order": {
+          "shipping_address": "Dodacia adresa bola aktualizovaná",
+          "billing_address": "Fakturačná adresa bola aktualizovaná",
+          "email": "E-mail bol aktualizovaný"
+        }
+      }
+    },
+    "fields": {
+      "displayId": "Zobrazovacie ID",
+      "refundableAmount": "Suma na vrátenie",
+      "returnableQuantity": "Množstvo na vrátenie"
+    }
+  },
+  "draftOrders": {
+    "domain": "Konceptové objednávky",
+    "deleteWarning": "Chystáte sa odstrániť konceptovú objednávku {{id}}. Táto akcia je nevratná.",
+    "paymentLinkLabel": "Platobný odkaz",
+    "cartIdLabel": "ID košíka",
+    "markAsPaid": {
+      "label": "Označiť ako zaplatené",
+      "warningTitle": "Označiť ako zaplatené",
+      "warningDescription": "Chystáte sa označiť konceptovú objednávku ako zaplatenú. Táto akcia je nevratná a neskôr nebude možné vybrať platbu."
+    },
+    "status": {
+      "open": "Otvorené",
+      "completed": "Dokončené"
+    },
+    "create": {
+      "createDraftOrder": "Vytvoriť konceptovú objednávku",
+      "createDraftOrderHint": "Vytvorte novú konceptovú objednávku na správu detailov objednávky pred jej odoslaním.",
+      "chooseRegionHint": "Vyberte región",
+      "existingItemsLabel": "Existujúce položky",
+      "existingItemsHint": "Pridajte existujúce produkty do konceptovej objednávky.",
+      "customItemsLabel": "Vlastné položky",
+      "customItemsHint": "Pridajte vlastné položky do konceptovej objednávky.",
+      "addExistingItemsAction": "Pridať existujúce položky",
+      "addCustomItemAction": "Pridať vlastnú položku",
+      "noCustomItemsAddedLabel": "Zatiaľ neboli pridané žiadne vlastné položky",
+      "noExistingItemsAddedLabel": "Zatiaľ neboli pridané žiadne existujúce položky",
+      "chooseRegionTooltip": "Najprv vyberte región",
+      "useExistingCustomerLabel": "Použiť existujúceho zákazníka",
+      "addShippingMethodsAction": "Pridať spôsoby dopravy",
+      "unitPriceOverrideLabel": "Prepis jednotkovej ceny",
+      "shippingOptionLabel": "Možnosť dopravy",
+      "shippingOptionHint": "Vyberte spôsob dopravy pre konceptovú objednávku.",
+      "shippingPriceOverrideLabel": "Prepis ceny dopravy",
+      "shippingPriceOverrideHint": "Prepisujte cenu dopravy pre konceptovú objednávku.",
+      "sendNotificationLabel": "Odoslať notifikáciu",
+      "sendNotificationHint": "Odošlite notifikáciu zákazníkovi, keď bude konceptová objednávka vytvorená."
+    },
+    "validation": {
+      "requiredEmailOrCustomer": "E-mail alebo zákazník je povinný.",
+      "requiredItems": "Vyžaduje sa aspoň jedna položka.",
+      "invalidEmail": "E-mail musí byť platná e-mailová adresa."
+    }
+  },
+  "stockLocations": {
+    "domain": "Lokalizácie a doprava",
+    "list": {
+      "description": "Spravujte skladové lokality a možnosti dopravy vášho obchodu."
+    },
+    "create": {
+      "header": "Vytvoriť skladovú lokalitu",
+      "hint": "Skladová lokalita je fyzická lokalita, kde sú produkty skladované a odosielané.",
+      "successToast": "Lokalita {{name}} bola úspešne vytvorená."
+    },
+    "edit": {
+      "header": "Upraviť skladovú lokalitu",
+      "viewInventory": "Zobraziť zásoby",
+      "successToast": "Lokalita {{name}} bola úspešne aktualizovaná."
+    },
+    "delete": {
+      "confirmation": "Chystáte sa odstrániť skladovú lokalitu \"{{name}}\". Táto akcia je nevratná."
+    },
+    "fulfillmentProviders": {
+      "header": "Poskytovatelia plnenia",
+      "shippingOptionsTooltip": "Tento zoznam obsahuje len poskytovateľov povolených pre túto lokalitu. Pridajte ich do lokality, ak je tento zoznam zakázaný.",
+      "label": "Pripojení poskytovatelia plnenia",
+      "connectedTo": "Pripojené k {{count}} z {{total}} poskytovateľov plnenia",
+      "noProviders": "Táto skladová lokalita nie je pripojená k žiadnym poskytovateľom plnenia.",
+      "action": "Pripojiť poskytovateľov",
+      "successToast": "Poskytovatelia plnenia pre skladovú lokalitu boli úspešne aktualizovaní."
+    },
+    "fulfillmentSets": {
+      "pickup": {
+        "header": "Osobný odber"
+      },
+      "shipping": {
+        "header": "Doprava"
+      },
+      "disable": {
+        "confirmation": "Ste si istí, že chcete deaktivovať \"{{name}}\"? Týmto sa odstránia všetky pridružené zóny služieb a možnosti dopravy, a táto akcia nie je vratná.",
+        "pickup": "Osobný odber bol úspešne deaktivovaný.",
+        "shipping": "Doprava bola úspešne deaktivovaná."
+      },
+      "enable": {
+        "pickup": "Osobný odber bol úspešne aktivovaný.",
+        "shipping": "Doprava bola úspešne aktivovaná."
+      }
+    },
+    "sidebar": {
+      "header": "Konfigurácia dopravy",
+      "shippingProfiles": {
+        "label": "Profil dopravy",
+        "description": "Zoskupte produkty podľa požiadaviek na dopravu"
+      }
+    },
+    "salesChannels": {
+      "header": "Predajné kanály",
+      "hint": "Spravujte predajné kanály, ktoré sú pripojené k tejto lokalite.",
+      "label": "Pripojené predajné kanály",
+      "connectedTo": "Pripojené k {{count}} z {{total}} predajných kanálov",
+      "noChannels": "Lokalita nie je pripojená k žiadnym predajným kanálom.",
+      "action": "Pripojiť predajné kanály",
+      "successToast": "Predajné kanály boli úspešne aktualizované."
+    },
+    "pickupOptions": {
+      "edit": {
+        "header": "Upraviť možnosť osobného odberu"
+      }
+    },
+    "shippingOptions": {
+      "create": {
+        "shipping": {
+          "header": "Vytvoriť možnosť dopravy pre {{zone}}",
+          "hint": "Vytvorte novú možnosť dopravy na definovanie spôsobu, akým sa produkty odosielajú z tejto lokality.",
+          "label": "Možnosti dopravy",
+          "successToast": "Možnosť dopravy {{name}} bola úspešne vytvorená."
+        },
+        "pickup": {
+          "header": "Vytvoriť možnosť osobného odberu pre {{zone}}",
+          "hint": "Vytvorte novú možnosť osobného odberu na definovanie spôsobu, akým sa produkty vyzdvihujú z tejto lokality.",
+          "label": "Možnosti osobného odberu",
+          "successToast": "Možnosť osobného odberu {{name}} bola úspešne vytvorená."
+        },
+        "returns": {
+          "header": "Vytvoriť možnosť vrátenia pre {{zone}}",
+          "hint": "Vytvorte novú možnosť vrátenia na definovanie spôsobu, akým sa produkty vracajú do tejto lokality.",
+          "label": "Možnosti vrátenia",
+          "successToast": "Možnosť vrátenia {{name}} bola úspešne vytvorená."
+        },
+        "tabs": {
+          "details": "Detaily",
+          "prices": "Ceny"
+        },
+        "action": "Vytvoriť možnosť"
+      },
+      "delete": {
+        "confirmation": "Chystáte sa odstrániť možnosť dopravy \"{{name}}\". Táto akcia je nevratná.",
+        "successToast": "Možnosť dopravy {{name}} bola úspešne odstránená."
+      },
+      "edit": {
+        "header": "Upraviť možnosť dopravy",
+        "action": "Upraviť možnosť",
+        "successToast": "Možnosť dopravy {{name}} bola úspešne aktualizovaná."
+      },
+      "pricing": {
+        "action": "Upraviť ceny"
+      },
+      "conditionalPrices": {
+        "header": "Podmienené ceny pre {{name}}",
+        "description": "Spravujte podmienené ceny pre túto možnosť dopravy podľa celkovej hodnoty položiek v košíku.",
+        "attributes": {
+          "cartItemTotal": "Celková suma položiek v košíku"
+        },
+        "summaries": {
+          "range": "Ak <0>{{attribute}}</0> je medzi <1>{{gte}}</1> a <2>{{lte}}</2>",
+          "greaterThan": "Ak <0>{{attribute}}</0> ≥ <1>{{gte}}</1>",
+          "lessThan": "Ak <0>{{attribute}}</0> ≤ <1>{{lte}}</1>"
+        },
+        "actions": {
+          "addPrice": "Pridať cenu",
+          "manageConditionalPrices": "Spravovať podmienené ceny"
+        },
+        "rules": {
+          "amount": "Cena možnosti dopravy",
+          "gte": "Minimálna suma položiek v košíku",
+          "lte": "Maximálna suma položiek v košíku"
+        },
+        "customRules": {
+          "label": "Vlastné pravidlá",
+          "tooltip": "Táto podmienená cena má pravidlá, ktoré nie je možné spravovať v dashboarde.",
+          "eq": "Celková suma položiek v košíku musí byť rovná",
+          "gt": "Celková suma položiek v košíku musí byť väčšia ako",
+          "lt": "Celková suma položiek v košíku musí byť menšia ako"
+        },
+        "errors": {
+          "amountRequired": "Cena možnosti dopravy je povinná",
+          "minOrMaxRequired": "Musí byť poskytnutá minimálna alebo maximálna suma položiek v košíku",
+          "minGreaterThanMax": "Minimálna suma položiek v košíku musí byť menšia alebo rovná maximálnej sume",
+          "duplicateAmount": "Cena možnosti dopravy musí byť jedinečná pre každú podmienku",
+          "overlappingConditions": "Podmienky musia byť jedinečné v rámci všetkých pravidiel cien"
+        }
+      },
+      "fields": {
+        "count": {
+          "shipping_one": "{{count}} možnosť dopravy",
+          "shipping_other": "{{count}} možnosti dopravy",
+          "pickup_one": "{{count}} možnosť osobného odberu",
+          "pickup_other": "{{count}} možnosti osobného odberu",
+          "returns_one": "{{count}} možnosť vrátenia",
+          "returns_other": "{{count}} možnosti vrátenia"
+        },
+        "priceType": {
+          "label": "Typ ceny",
+          "options": {
+            "fixed": {
+              "label": "Fixná",
+              "hint": "Cena možnosti dopravy je fixná a nezávisí od obsahu objednávky."
+            },
+            "calculated": {
+              "label": "Vypočítaná",
+              "hint": "Cena možnosti dopravy je vypočítaná poskytovateľom plnenia počas dokončovania objednávky."
+            }
+          }
+        },
+        "enableInStore": {
+          "label": "Povoliť v obchode",
+          "hint": "Zistite, či môžu zákazníci túto možnosť použiť počas dokončovania objednávky."
+        },
+        "provider": "Poskytovateľ plnenia",
+        "profile": "Profil dopravy",
+        "fulfillmentOption": "Možnosť plnenia"
+      }
+    },
+    "serviceZones": {
+      "create": {
+        "headerPickup": "Vytvoriť služobnú zónu pre osobný odber z {{location}}",
+        "headerShipping": "Vytvoriť služobnú zónu pre dopravu z {{location}}",
+        "action": "Vytvoriť služobnú zónu",
+        "successToast": "Služobná zóna {{name}} bola úspešne vytvorená."
+      },
+      "edit": {
+        "header": "Upraviť služobnú zónu",
+        "successToast": "Služobná zóna {{name}} bola úspešne aktualizovaná."
+      },
+      "delete": {
+        "confirmation": "Chystáte sa odstrániť služobnú zónu \"{{name}}\". Táto akcia je nevratná.",
+        "successToast": "Služobná zóna {{name}} bola úspešne odstránená."
+      },
+      "manageAreas": {
+        "header": "Spravovať oblasti pre {{name}}",
+        "action": "Spravovať oblasti",
+        "label": "Oblasti",
+        "hint": "Vyberte geografické oblasti, ktoré služobná zóna pokrýva.",
+        "successToast": "Oblasti pre {{name}} boli úspešne aktualizované."
+      },
+      "fields": {
+        "noRecords": "Neexistujú žiadne služobné zóny, do ktorých by sa dali pridať možnosti dopravy.",
+        "tip": "Služobná zóna je súbor geografických zón alebo oblastí. Používa sa na obmedzenie dostupných možností dopravy na definovaný súbor lokalít."
+      }
+    }
+  },
+  "shippingProfile": {
+    "domain": "Profily dopravy",
+    "subtitle": "Zoskupte produkty s podobnými požiadavkami na dopravu do profilov.",
+    "create": {
+      "header": "Vytvoriť profil dopravy",
+      "hint": "Vytvorte nový profil dopravy na zoskupenie produktov s podobnými požiadavkami na dopravu.",
+      "successToast": "Profil dopravy {{name}} bol úspešne vytvorený."
+    },
+    "delete": {
+      "title": "Odstrániť profil dopravy",
+      "description": "Chystáte sa odstrániť profil dopravy {{name}}. Táto akcia je nevratná.",
+      "successToast": "Profil dopravy {{name}} bol úspešne odstránený."
+    },
+    "tooltip": {
+      "type": "Zadajte typ profilu dopravy, napríklad: Ťažké, Nadrozmerné, Len na prepravu, atď."
+    }
+  },
+  "taxRegions": {
+    "domain": "Daňové regióny",
+    "list": {
+      "hint": "Spravujte, čo účtujete svojim zákazníkom pri nákupoch z rôznych krajín a regiónov."
+    },
+    "delete": {
+      "confirmation": "Chystáte sa odstrániť daňový región. Táto akcia je nevratná.",
+      "successToast": "Daňový región bol úspešne odstránený."
+    },
+    "create": {
+      "header": "Vytvoriť daňový región",
+      "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétnu krajinu.",
+      "errors": {
+        "rateIsRequired": "Daňová sadzba je povinná pri vytváraní predvolenej daňovej sadzby.",
+        "nameIsRequired": "Názov je povinný pri vytváraní predvolenej daňovej sadzby."
+      },
+      "successToast": "Daňový región bol úspešne vytvorený."
+    },
+    "province": {
+      "header": "Provincie",
+      "create": {
+        "header": "Vytvoriť daňový región pre provincii",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétnu provincii."
+      }
+    },
+    "state": {
+      "header": "Štáty",
+      "create": {
+        "header": "Vytvoriť daňový región pre štát",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny štát."
+      }
+    },
+    "stateOrTerritory": {
+      "header": "Štáty alebo územia",
+      "create": {
+        "header": "Vytvoriť daňový región pre štát/územie",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny štát/územie."
+      }
+    },
+    "county": {
+      "header": "Okresy",
+      "create": {
+        "header": "Vytvoriť daňový región pre okres",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny okres."
+      }
+    },
+    "region": {
+      "header": "Regióny",
+      "create": {
+        "header": "Vytvoriť daňový región pre región",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny región."
+      }
+    },
+    "department": {
+      "header": "Oddelenia",
+      "create": {
+        "header": "Vytvoriť daňový región pre oddelenie",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétne oddelenie."
+      }
+    },
+    "territory": {
+      "header": "Územia",
+      "create": {
+        "header": "Vytvoriť daňový región pre územie",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétne územie."
+      }
+    },
+    "prefecture": {
+      "header": "Prefektúry",
+      "create": {
+        "header": "Vytvoriť daňový región pre prefektúru",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétnu prefektúru."
+      }
+    },
+    "district": {
+      "header": "Okresy",
+      "create": {
+        "header": "Vytvoriť daňový región pre okres",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny okres."
+      }
+    },
+    "governorate": {
+      "header": "Guvernoráty",
+      "create": {
+        "header": "Vytvoriť daňový región pre guvernorát",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny guvernorát."
+      }
+    },
+    "canton": {
+      "header": "Kantóny",
+      "create": {
+        "header": "Vytvoriť daňový región pre kantón",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny kantón."
+      }
+    },
+    "emirate": {
+      "header": "Emiráty",
+      "create": {
+        "header": "Vytvoriť daňový región pre emirát",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétny emirát."
+      }
+    },
+    "sublevel": {
+      "header": "Subúrovne",
+      "create": {
+        "header": "Vytvoriť daňový región pre subúroveň",
+        "hint": "Vytvorte nový daňový región na definovanie daňových sadzieb pre konkrétnu subúroveň."
+      }
+    },
+    "taxOverrides": {
+      "header": "Prepisy",
+      "create": {
+        "header": "Vytvoriť prepis",
+        "hint": "Vytvorte daňovú sadzbu, ktorá prepíše predvolené daňové sadzby pre vybrané podmienky."
+      },
+      "edit": {
+        "header": "Upraviť prepis",
+        "hint": "Upraviť daňovú sadzbu, ktorá prepíše predvolené daňové sadzby pre vybrané podmienky."
+      }
+    },
+    "taxRates": {
+      "create": {
+        "header": "Vytvoriť daňovú sadzbu",
+        "hint": "Vytvorte novú daňovú sadzbu na definovanie daňovej sadzby pre región.",
+        "successToast": "Daňová sadzba bola úspešne vytvorená."
+      },
+      "edit": {
+        "header": "Upraviť daňovú sadzbu",
+        "hint": "Upraviť daňovú sadzbu na definovanie daňovej sadzby pre región.",
+        "successToast": "Daňová sadzba bola úspešne aktualizovaná."
+      },
+      "delete": {
+        "confirmation": "Chystáte sa odstrániť daňovú sadzbu \"{{name}}\". Táto akcia je nevratná.",
+        "successToast": "Daňová sadzba bola úspešne odstránená."
+      }
+    },
+    "fields": {
+      "isCombinable": {
+        "label": "Kombinovateľné",
+        "hint": "Či sa táto daňová sadzba môže kombinovať s predvolenou sadzbou z daňového regiónu.",
+        "true": "Kombinovateľné",
+        "false": "Nekombinovateľné"
+      },
+      "defaultTaxRate": {
+        "label": "Predvolená daňová sadzba",
+        "tooltip": "Predvolená daňová sadzba pre tento región. Príkladom je štandardná sadzba DPH pre krajinu alebo región.",
+        "action": "Vytvoriť predvolenú daňovú sadzbu"
+      },
+      "taxRate": "Daňová sadzba",
+      "taxCode": "Daňový kód",
+      "targets": {
+        "label": "Ciele",
+        "hint": "Vyberte ciele, na ktoré sa táto daňová sadzba bude vzťahovať.",
+        "options": {
+          "product": "Produkty",
+          "productCollection": "Kolekcie produktov",
+          "productTag": "Štítky produktov",
+          "productType": "Typy produktov",
+          "customerGroup": "Skupiny zákazníkov"
+        },
+        "operators": {
+          "in": "v",
+          "on": "na",
+          "and": "a"
+        },
+        "placeholders": {
+          "product": "Hľadajte produkty",
+          "productCollection": "Hľadajte kolekcie produktov",
+          "productTag": "Hľadajte štítky produktov",
+          "productType": "Hľadajte typy produktov",
+          "customerGroup": "Hľadajte skupiny zákazníkov"
+        },
+        "tags": {
+          "product": "Produkt",
+          "productCollection": "Kolekcia produktov",
+          "productTag": "Štítok produktov",
+          "productType": "Typ produktu",
+          "customerGroup": "Skupina zákazníkov"
+        },
+        "modal": {
+          "header": "Pridať ciele"
+        },
+        "values_one": "{{count}} hodnota",
+        "values_other": "{{count}} hodnoty",
+        "numberOfTargets_one": "{{count}} cieľ",
+        "numberOfTargets_other": "{{count}} ciele",
+        "additionalValues_one": "a {{count}} ďalšia hodnota",
+        "additionalValues_other": "a {{count}} ďalších hodnôt",
+        "action": "Pridať cieľ"
+      },
+      "sublevels": {
+        "labels": {
+          "province": "Provincia",
+          "state": "Štát",
+          "region": "Región",
+          "stateOrTerritory": "Štát/Územie",
+          "department": "Oddelenie",
+          "county": "Okres",
+          "territory": "Územie",
+          "prefecture": "Prefektúra",
+          "district": "Okres",
+          "governorate": "Guvernorát",
+          "emirate": "Emirát",
+          "canton": "Kantón",
+          "sublevel": "Kód subúrovne"
+        },
+        "placeholders": {
+          "province": "Vyberte provinciu",
+          "state": "Vyberte štát",
+          "region": "Vyberte región",
+          "stateOrTerritory": "Vyberte štát/územie",
+          "department": "Vyberte oddelenie",
+          "county": "Vyberte okres",
+          "territory": "Vyberte územie",
+          "prefecture": "Vyberte prefektúru",
+          "district": "Vyberte okres",
+          "governorate": "Vyberte guvernorát",
+          "emirate": "Vyberte emirát",
+          "canton": "Vyberte kantón"
+        },
+        "tooltips": {
+          "sublevel": "Zadajte kód ISO 3166-2 pre daňový región subúrovne.",
+          "notPartOfCountry": "{{province}} sa nezdá byť súčasťou {{country}}. Skontrolujte, či je to správne."
+        },
+        "alert": {
+          "header": "Subúrovne sú pre tento daňový región zakázané",
+          "description": "Subúrovne sú pre tento región predvolene zakázané. Môžete ich povoliť na vytvorenie subúrovní ako provincie, štáty alebo územia.",
+          "action": "Povoliť subúrovne"
+        }
+      },
+      "noDefaultRate": {
+        "label": "Žiadna predvolená sadzba",
+        "tooltip": "Tento daňový región nemá predvolenú daňovú sadzbu. Ak existuje štandardná sadzba, ako je DPH krajiny, pridajte ju do tohto regiónu."
+      }
+    }
+  },
+  "promotions": {
+    "domain": "Promoakcie",
+    "sections": {
+      "details": "Detaily promoakcie"
+    },
+    "tabs": {
+      "template": "Typ",
+      "details": "Detaily",
+      "campaign": "Kampaň"
+    },
+    "fields": {
+      "type": "Typ",
+      "value_type": "Typ hodnoty",
+      "value": "Hodnota",
+      "campaign": "Kampaň",
+      "method": "Metóda",
+      "allocation": "Alokácia",
+      "addCondition": "Pridať podmienku",
+      "clearAll": "Vymazať všetko",
+      "amount": {
+        "tooltip": "Vyberte kód meny, aby ste mohli nastaviť sumu"
+      },
+      "conditions": {
+        "rules": {
+          "title": "Kto môže použiť tento kód?",
+          "description": "Ktorý zákazník môže použiť promo kód? Promo kód môžu použiť všetci zákazníci, ak nie je upravený."
+        },
+        "target-rules": {
+          "title": "Na aké položky bude promoakcia aplikovaná?",
+          "description": "Promoakcia bude aplikovaná na položky, ktoré spĺňajú nasledujúce podmienky."
+        },
+        "buy-rules": {
+          "title": "Čo musí byť v košíku na odomknutie promoakcie?",
+          "description": "Ak tieto podmienky platia, aktivujeme promoakciu na cieľové položky."
+        }
+      }
+    },
+    "tooltips": {
+      "campaignType": "Kód meny musí byť vybraný v promoakcii, aby ste mohli nastaviť rozpočet na nákupy."
+    },
+    "errors": {
+      "requiredField": "Povinné pole",
+      "promotionTabError": "Opraviť chyby v záložke Promoakcia pred pokračovaním"
+    },
+    "toasts": {
+      "promotionCreateSuccess": "Promoakcia ({{code}}) bola úspešne vytvorená."
+    },
+    "create": {},
+    "edit": {
+      "title": "Upraviť detaily promoakcie",
+      "rules": {
+        "title": "Upraviť podmienky používania"
+      },
+      "target-rules": {
+        "title": "Upraviť podmienky položiek"
+      },
+      "buy-rules": {
+        "title": "Upraviť podmienky nákupu"
+      }
+    },
+    "campaign": {
+      "header": "Kampaň",
+      "edit": {
+        "header": "Upraviť kampaň",
+        "successToast": "Kampaň promoakcie bola úspešne aktualizovaná."
+      },
+      "actions": {
+        "goToCampaign": "Prejsť na kampaň"
+      }
+    },
+    "campaign_currency": {
+      "tooltip": "Toto je mena promoakcie. Zmeňte ju v záložke Detaily."
+    },
+    "form": {
+      "required": "Povinné",
+      "and": "A",
+      "selectAttribute": "Vyberte atribút",
+      "campaign": {
+        "existing": {
+          "title": "Existujúca kampaň",
+          "description": "Pridajte promoakciu do existujúcej kampane.",
+          "placeholder": {
+            "title": "Žiadne existujúce kampane",
+            "desc": "Môžete vytvoriť novú, aby ste sledovali viacero promoakcií a nastavili rozpočtové limity."
+          }
+        },
+        "new": {
+          "title": "Nová kampaň",
+          "description": "Vytvorte novú kampaň pre túto promoakciu."
+        },
+        "none": {
+          "title": "Bez kampane",
+          "description": "Pokračujte bez priradenia promoakcie k kampani"
+        }
+      },
+      "status": {
+        "label": "Štátus",
+        "draft": {
+          "title": "Koncept",
+          "description": "Zákazníci nebudú môcť kód ešte použiť"
+        },
+        "active": {
+          "title": "Aktívne",
+          "description": "Zákazníci budú môcť kód použiť"
+        },
+        "inactive": {
+          "title": "Neaktívne",
+          "description": "Zákazníci už nebudú môcť kód použiť"
+        }
+      },
+      "method": {
+        "label": "Metóda",
+        "code": {
+          "title": "Promo kód",
+          "description": "Zákazníci musia zadať tento kód pri pokladni"
+        },
+        "automatic": {
+          "title": "Automatické",
+          "description": "Zákazníci uvidia túto promoakciu pri pokladni"
+        }
+      },
+      "max_quantity": {
+        "title": "Maximálne množstvo",
+        "description": "Maximálne množstvo položiek, na ktoré sa promoakcia vzťahuje."
+      },
+      "type": {
+        "standard": {
+          "title": "Štandardné",
+          "description": "Štandardná promoakcia"
+        },
+        "buyget": {
+          "title": "Kúp X, získaj Y",
+          "description": "Kúp X a získaj Y promoakciu"
+        }
+      },
+      "allocation": {
+        "each": {
+          "title": "Každá",
+          "description": "Aplikuje hodnotu na každú položku"
+        },
+        "across": {
+          "title": "Cez",
+          "description": "Aplikuje hodnotu na všetky položky"
+        }
+      },
+      "code": {
+        "title": "Kód",
+        "description": "Kód, ktorý zákazníci zadávajú pri pokladni."
+      },
+      "value": {
+        "title": "Hodnota promoakcie"
+      },
+      "value_type": {
+        "fixed": {
+          "title": "Fixná suma",
+          "description": "Suma, ktorá bude zľavnená. napr. 100"
+        },
+        "percentage": {
+          "title": "Percentuálny podiel",
+          "description": "Percentuálny podiel, ktorý bude zľavnený. napr. 8%"
+        }
+      }
+    },
+    "deleteWarning": "Chystáte sa odstrániť promoakciu {{code}}. Táto akcia je nevratná.",
+    "createPromotionTitle": "Vytvoriť promoakciu",
+    "type": "Typ promoakcie",
+    "conditions": {
+      "add": "Pridať podmienku",
+      "list": {
+        "noRecordsMessage": "Pridajte podmienku na obmedzenie položiek, na ktoré sa promoakcia vzťahuje."
+      }
+    }
+  },
+  "campaigns": {
+    "domain": "Kampane",
+    "details": "Detaily kampane",
+    "status": {
+      "active": "Aktívne",
+      "expired": "Exspirované",
+      "scheduled": "Naplánované"
+    },
+    "delete": {
+      "title": "Ste si istí?",
+      "description": "Chystáte sa odstrániť kampaň '{{name}}'. Táto akcia je nevratná.",
+      "successToast": "Kampaň '{{name}}' bola úspešne odstránená."
+    },
+    "edit": {
+      "header": "Upraviť kampaň",
+      "description": "Upravte detaily kampane.",
+      "successToast": "Kampaň '{{name}}' bola úspešne aktualizovaná."
+    },
+    "configuration": {
+      "header": "Konfigurácia",
+      "edit": {
+        "header": "Upraviť konfiguráciu kampane",
+        "description": "Upravte konfiguráciu kampane.",
+        "successToast": "Konfigurácia kampane bola úspešne aktualizovaná."
+      }
+    },
+    "create": {
+      "title": "Vytvoriť kampaň",
+      "description": "Vytvorte promoakciu.",
+      "hint": "Vytvorte promoakciu.",
+      "header": "Vytvoriť kampaň",
+      "successToast": "Kampaň '{{name}}' bola úspešne vytvorená."
+    },
+    "fields": {
+      "name": "Názov",
+      "identifier": "Identifikátor",
+      "start_date": "Dátum začiatku",
+      "end_date": "Dátum ukončenia",
+      "total_spend": "Celková vynaložená suma",
+      "total_used": "Celková využitá suma",
+      "budget_limit": "Limit rozpočtu",
+      "campaign_id": {
+        "hint": "V zozname sa zobrazujú len kampane s rovnakým kódom meny ako promoakcia."
+      }
+    },
+    "budget": {
+      "create": {
+        "hint": "Vytvorte rozpočet pre kampaň.",
+        "header": "Rozpočet kampane"
+      },
+      "details": "Rozpočet kampane",
+      "fields": {
+        "type": "Typ",
+        "currency": "Mena",
+        "limit": "Limit",
+        "used": "Použité"
+      },
+      "type": {
+        "spend": {
+          "title": "Výdavky",
+          "description": "Nastavte limit na celkovú zľavnenú sumu všetkých využití promoakcie."
+        },
+        "usage": {
+          "title": "Použitie",
+          "description": "Nastavte limit na počet využití promoakcie."
+        }
+      },
+      "edit": {
+        "header": "Upraviť rozpočet kampane"
+      }
+    },
+    "promotions": {
+      "remove": {
+        "title": "Odstrániť promoakciu z kampane",
+        "description": "Chystáte sa odstrániť {{count}} promoakciu(y) z kampane. Táto akcia je nevratná."
+      },
+      "alreadyAdded": "Táto promoakcia už bola pridaná do kampane.",
+      "alreadyAddedDiffCampaign": "Táto promoakcia už bola pridaná do inej kampane ({{name}}).",
+      "currencyMismatch": "Mena promoakcie a kampane sa nezhodujú",
+      "toast": {
+        "success": "Úspešne pridané {{count}} promoakciu(y) do kampane"
+      },
+      "add": {
+        "list": {
+          "noRecordsMessage": "Najprv vytvorte promoakciu."
+        }
+      },
+      "list": {
+        "noRecordsMessage": "V kampani nie sú žiadne promoakcie."
+      }
+    },
+    "deleteCampaignWarning": "Chystáte sa odstrániť kampaň {{name}}. Táto akcia je nevratná.",
+    "totalSpend": "<0>{{amount}}</0> <1>{{currency}}</1>"
+  },
+  "priceLists": {
+    "domain": "Cenníky",
+    "subtitle": "Vytvorte cenníky alebo prepíšte ceny pre konkrétne podmienky.",
+    "delete": {
+      "confirmation": "Chystáte sa odstrániť cenník \"{{title}}\". Táto akcia je nevratná.",
+      "successToast": "Cenník \"{{title}}\" bol úspešne odstránený."
+    },
+    "create": {
+      "header": "Vytvoriť cenník",
+      "subheader": "Vytvorte nový cenník na správu cien vašich produktov.",
+      "tabs": {
+        "details": "Detaily",
+        "products": "Produkty",
+        "prices": "Ceny"
+      },
+      "successToast": "Cenník {{title}} bol úspešne vytvorený.",
+      "products": {
+        "list": {
+          "noRecordsMessage": "Najprv vytvorte produkt."
+        }
+      }
+    },
+    "edit": {
+      "header": "Upraviť cenník",
+      "successToast": "Cenník {{title}} bol úspešne aktualizovaný."
+    },
+    "configuration": {
+      "header": "Konfigurácia",
+      "edit": {
+        "header": "Upraviť konfiguráciu cenníka",
+        "description": "Upravte konfiguráciu cenníka.",
+        "successToast": "Konfigurácia cenníka bola úspešne aktualizovaná."
+      }
+    },
+    "products": {
+      "header": "Produkty",
+      "actions": {
+        "addProducts": "Pridať produkty",
+        "editPrices": "Upraviť ceny"
+      },
+      "delete": {
+        "confirmation_one": "Chystáte sa odstrániť ceny pre {{count}} produkt v cenníku. Táto akcia je nevratná.",
+        "confirmation_other": "Chystáte sa odstrániť ceny pre {{count}} produkty v cenníku. Táto akcia je nevratná.",
+        "successToast_one": "Ceny pre {{count}} produkt boli úspešne odstránené.",
+        "successToast_other": "Ceny pre {{count}} produkty boli úspešne odstránené."
+      },
+      "add": {
+        "successToast": "Ceny boli úspešne pridané do cenníka."
+      },
+      "edit": {
+        "successToast": "Ceny boli úspešne aktualizované."
+      }
+    },
+    "fields": {
+      "priceOverrides": {
+        "label": "Prepísanie cien",
+        "header": "Prepísania cien"
+      },
+      "status": {
+        "label": "Štátus",
+        "options": {
+          "active": "Aktívne",
+          "draft": "Koncept",
+          "expired": "Exspirované",
+          "scheduled": "Naplánované"
+        }
+      },
+      "type": {
+        "label": "Typ",
+        "hint": "Vyberte typ cenníka, ktorý chcete vytvoriť.",
+        "options": {
+          "sale": {
+            "label": "Výpredaj",
+            "description": "Ceny výpredaja sú dočasné zmeny cien produktov."
+          },
+          "override": {
+            "label": "Prepísanie",
+            "description": "Prepísania sa zvyčajne používajú na vytvorenie cien špecifických pre zákazníka."
+          }
+        }
+      },
+      "startsAt": {
+        "label": "Cenník má dátum začiatku?",
+        "hint": "Naplánujte aktiváciu cenníka v budúcnosti."
+      },
+      "endsAt": {
+        "label": "Cenník má dátum exspirácie?",
+        "hint": "Naplánujte deaktiváciu cenníka v budúcnosti."
+      },
+      "customerAvailability": {
+        "header": "Vyberte skupiny zákazníkov",
+        "label": "Dostupnosť pre zákazníkov",
+        "hint": "Vyberte, na ktoré skupiny zákazníkov sa cenník bude vzťahovať.",
+        "placeholder": "Vyhľadajte skupiny zákazníkov",
+        "attribute": "Skupiny zákazníkov"
+      }
+    }
+  },
+  "profile": {
+    "domain": "Profil",
+    "manageYourProfileDetails": "Spravujte detaily svojho profilu.",
+    "fields": {
+      "languageLabel": "Jazyk",
+      "usageInsightsLabel": "Prehľad o používaní"
+    },
+    "edit": {
+      "header": "Upraviť profil",
+      "languageHint": "Jazyk, ktorý chcete použiť v administračnom paneli. Týmto sa nezmení jazyk vášho obchodu.",
+      "languagePlaceholder": "Vyberte jazyk",
+      "usageInsightsHint": "Zdieľajte prehľad o používaní a pomôžte nám vylepšiť Medusa. Viac informácií o tom, čo zbierame a ako to používame, nájdete v našej <0>dokumentácii</0>."
+    },
+    "toast": {
+      "edit": "Zmeny profilu boli uložené"
+    }
+  },
+  "users": {
+    "domain": "Používatelia",
+    "editUser": "Upraviť používateľa",
+    "inviteUser": "Pozvať používateľa",
+    "inviteUserHint": "Pozvite nového používateľa do vášho obchodu.",
+    "sendInvite": "Poslať pozvánku",
+    "pendingInvites": "Čakajúce pozvánky",
+    "deleteInviteWarning": "Chystáte sa odstrániť pozvánku pre {{email}}. Táto akcia je nevratná.",
+    "resendInvite": "Znovu poslať pozvánku",
+    "copyInviteLink": "Skopírovať odkaz na pozvánku",
+    "expiredOnDate": "Exspirované dňa {{date}}",
+    "validFromUntil": "Platné od <0>{{from}}</0> - <1>{{until}}</1>",
+    "acceptedOnDate": "Akceptované dňa {{date}}",
+    "inviteStatus": {
+      "accepted": "Akceptované",
+      "pending": "Čaká na akceptovanie",
+      "expired": "Exspirované"
+    },
+    "roles": {
+      "admin": "Admin",
+      "developer": "Developer",
+      "member": "Člen"
+    },
+    "list": {
+      "empty": {
+        "heading": "Žiadni používatelia nenájdení",
+        "description": "Po tom, ako používateľ dostane pozvánku, objaví sa tu."
+      },
+      "filtered": {
+        "heading": "Žiadne výsledky",
+        "description": "Žiadni používatelia nevyhovujú aktuálnym kritériám filtra."
+      }
+    },
+    "deleteUserWarning": "Chystáte sa odstrániť používateľa {{name}}. Táto akcia je nevratná.",
+    "deleteUserSuccess": "Používateľ {{name}} bol úspešne odstránený",
+    "invite": "Pozvať"
+  },
+  "store": {
+    "domain": "Obchod",
+    "manageYourStoresDetails": "Spravujte detaily svojho obchodu",
+    "editStore": "Upraviť obchod",
+    "defaultCurrency": "Predvolená mena",
+    "defaultRegion": "Predvolený región",
+    "defaultSalesChannel": "Predvolený predajný kanál",
+    "defaultLocation": "Predvolená lokalita",
+    "swapLinkTemplate": "Šablóna odkazu na výmenu",
+    "paymentLinkTemplate": "Šablóna platobného odkazu",
+    "inviteLinkTemplate": "Šablóna pozvánky",
+    "currencies": "Meny",
+    "addCurrencies": "Pridať meny",
+    "enableTaxInclusivePricing": "Povoliť ceny vrátane dane",
+    "disableTaxInclusivePricing": "Zakázať ceny vrátane dane",
+    "removeCurrencyWarning_one": "Chystáte sa odstrániť {{count}} menu z vášho obchodu. Pred pokračovaním sa uistite, že ste odstránili všetky ceny používajúce túto menu.",
+    "removeCurrencyWarning_other": "Chystáte sa odstrániť {{count}} mien z vášho obchodu. Pred pokračovaním sa uistite, že ste odstránili všetky ceny používajúce tieto meny.",
+    "currencyAlreadyAdded": "Mena už bola pridaná do vášho obchodu.",
+    "edit": {
+      "header": "Upraviť obchod"
+    },
+    "toast": {
+      "update": "Obchod bol úspešne aktualizovaný",
+      "currenciesUpdated": "Meny boli úspešne aktualizované",
+      "currenciesRemoved": "Meny boli úspešne odstránené z obchodu",
+      "updatedTaxInclusivitySuccessfully": "Ceny vrátane dane boli úspešne aktualizované"
+    }
+  },
+  "regions": {
+    "domain": "Regióny",
+    "subtitle": "Región je oblasť, v ktorej predávate produkty. Môže pokrývať viacero krajín a má rôzne daňové sadzby, poskytovateľov a meny.",
+    "createRegion": "Vytvoriť región",
+    "createRegionHint": "Spravujte daňové sadzby a poskytovateľov pre súbor krajín.",
+    "addCountries": "Pridať krajiny",
+    "editRegion": "Upraviť región",
+    "countriesHint": "Pridajte krajiny zahrnuté v tomto regióne.",
+    "deleteRegionWarning": "Chystáte sa odstrániť región {{name}}. Táto akcia je nevratná.",
+    "removeCountriesWarning_one": "Chystáte sa odstrániť {{count}} krajinu z regiónu. Táto akcia je nevratná.",
+    "removeCountriesWarning_other": "Chystáte sa odstrániť {{count}} krajiny z regiónu. Táto akcia je nevratná.",
+    "removeCountryWarning": "Chystáte sa odstrániť krajinu {{name}} z regiónu. Táto akcia je nevratná.",
+    "automaticTaxesHint": "Ak je povolené, dane budú vypočítané iba pri pokladni na základe adresy doručenia.",
+    "taxInclusiveHint": "Ak je povolené, ceny v regióne budú vrátane dane.",
+    "providersHint": "Pridajte poskytovateľov platieb dostupných v tomto regióne.",
+    "shippingOptions": "Možnosti dopravy",
+    "deleteShippingOptionWarning": "Chystáte sa odstrániť možnosť dopravy {{name}}. Táto akcia je nevratná.",
+    "return": "Vrátenie",
+    "outbound": "Outbound",
+    "priceType": "Typ ceny",
+    "flatRate": "Fixná cena",
+    "calculated": "Vypočítané",
+    "list": {
+      "noRecordsMessage": "Vytvorte región pre oblasti, v ktorých predávate."
+    },
+    "toast": {
+      "delete": "Región bol úspešne odstránený",
+      "edit": "Úpravy regiónu boli uložené",
+      "create": "Región bol úspešne vytvorený",
+      "countries": "Krajiny regiónu boli úspešne aktualizované"
+    },
+    "shippingOption": {
+      "createShippingOption": "Vytvoriť možnosť dopravy",
+      "createShippingOptionHint": "Vytvorte novú možnosť dopravy pre región.",
+      "editShippingOption": "Upraviť možnosť dopravy",
+      "fulfillmentMethod": "Spôsob plnenia",
+      "type": {
+        "outbound": "Outbound",
+        "outboundHint": "Použite toto, ak vytvárate možnosť dopravy na odosielanie produktov zákazníkovi.",
+        "return": "Vrátenie",
+        "returnHint": "Použite toto, ak vytvárate možnosť dopravy na vrátenie produktov zákazníkom."
+      },
+      "priceType": {
+        "label": "Typ ceny",
+        "flatRate": "Fixná cena",
+        "calculated": "Vypočítaná"
+      },
+      "availability": {
+        "adminOnly": "Iba administrátor",
+        "adminOnlyHint": "Ak je povolené, možnosť dopravy bude dostupná iba v administračnom paneli, nie v obchode."
+      },
+      "taxInclusiveHint": "Ak je povolené, cena možnosti dopravy bude vrátane dane.",
+      "requirements": {
+        "label": "Požiadavky",
+        "hint": "Špecifikujte požiadavky na možnosť dopravy."
+      }
+    }
+  },
+  "taxes": {
+    "domain": "Daňové regióny",
+    "domainDescription": "Spravujte svoj daňový región",
+    "countries": {
+      "taxCountriesHint": "Daňové nastavenia sa vzťahujú na uvedené krajiny."
+    },
+    "settings": {
+      "editTaxSettings": "Upraviť nastavenia dane",
+      "taxProviderLabel": "Poskytovateľ dane",
+      "systemTaxProviderLabel": "Systémový poskytovateľ dane",
+      "calculateTaxesAutomaticallyLabel": "Vypočítať dane automaticky",
+      "calculateTaxesAutomaticallyHint": "Ak je povolené, daňové sadzby budú automaticky vypočítané a aplikované na košíky. Ak je zakázané, dane musia byť vypočítané ručne pri pokladni. Ručné dane sú odporúčané pri používaní externých poskytovateľov daní.",
+      "applyTaxesOnGiftCardsLabel": "Aplikovať dane na darčekové karty",
+      "applyTaxesOnGiftCardsHint": "Ak je povolené, dane budú aplikované na darčekové karty pri pokladni. V niektorých krajinách daňové predpisy vyžadujú uplatnenie daní na darčekové karty pri nákupe.",
+      "defaultTaxRateLabel": "Predvolená daňová sadzba",
+      "defaultTaxCodeLabel": "Predvolený daňový kód"
+    },
+    "defaultRate": {
+      "sectionTitle": "Predvolená daňová sadzba"
+    },
+    "taxRate": {
+      "sectionTitle": "Daňové sadzby",
+      "createTaxRate": "Vytvoriť daňovú sadzbu",
+      "createTaxRateHint": "Vytvorte novú daňovú sadzbu pre región.",
+      "deleteRateDescription": "Chystáte sa odstrániť daňovú sadzbu {{name}}. Táto akcia je nevratná.",
+      "editTaxRate": "Upraviť daňovú sadzbu",
+      "editRateAction": "Upraviť sadzbu",
+      "editOverridesAction": "Upraviť prepísania",
+      "editOverridesTitle": "Upraviť prepísania daňovej sadzby",
+      "editOverridesHint": "Špecifikujte prepísania pre daňovú sadzbu.",
+      "deleteTaxRateWarning": "Chystáte sa odstrániť daňovú sadzbu {{name}}. Táto akcia je nevratná.",
+      "productOverridesLabel": "Prepísania pre produkty",
+      "productOverridesHint": "Špecifikujte prepísania produktov pre daňovú sadzbu.",
+      "addProductOverridesAction": "Pridať prepísania pre produkty",
+      "productTypeOverridesLabel": "Prepísania pre typy produktov",
+      "productTypeOverridesHint": "Špecifikujte prepísania typov produktov pre daňovú sadzbu.",
+      "addProductTypeOverridesAction": "Pridať prepísania pre typy produktov",
+      "shippingOptionOverridesLabel": "Prepísania pre možnosti dopravy",
+      "shippingOptionOverridesHint": "Špecifikujte prepísania pre možnosti dopravy pre daňovú sadzbu.",
+      "addShippingOptionOverridesAction": "Pridať prepísania pre možnosti dopravy",
+      "productOverridesHeader": "Produkty",
+      "productTypeOverridesHeader": "Typy produktov",
+      "shippingOptionOverridesHeader": "Možnosti dopravy"
+    }
+  },
+  "locations": {
+    "domain": "Lokalizácie",
+    "editLocation": "Upraviť lokalitu",
+    "addSalesChannels": "Pridať predajné kanály",
+    "noLocationsFound": "Žiadne lokalizácie nenájdené",
+    "selectLocations": "Vyberte lokalizácie, ktoré majú tento produkt na sklade.",
+    "deleteLocationWarning": "Chystáte sa odstrániť lokalitu {{name}}. Táto akcia je nevratná.",
+    "removeSalesChannelsWarning_one": "Chystáte sa odstrániť {{count}} predajný kanál z lokality.",
+    "removeSalesChannelsWarning_other": "Chystáte sa odstrániť {{count}} predajné kanály z lokality.",
+    "toast": {
+      "create": "Lokalita bola úspešne vytvorená",
+      "update": "Lokalita bola úspešne aktualizovaná",
+      "removeChannel": "Predajný kanál bol úspešne odstránený"
+    }
+  },
+  "reservations": {
+    "domain": "Rezervácie",
+    "subtitle": "Spravujte rezervované množstvá skladových položiek.",
+    "deleteWarning": "Chystáte sa odstrániť rezerváciu. Táto akcia je nevratná."
+  },
+  "salesChannels": {
+    "domain": "Predajné kanály",
+    "subtitle": "Spravujte online a offline kanály, na ktorých predávate produkty.",
+    "list": {
+      "empty": {
+        "heading": "Žiadne predajné kanály nenájdené",
+        "description": "Po vytvorení predajného kanála sa tu zobrazí."
+      },
+      "filtered": {
+        "heading": "Žiadne výsledky",
+        "description": "Žiadne predajné kanály nevyhovujú aktuálnym kritériám filtra."
+      }
+    },
+    "createSalesChannel": "Vytvoriť predajný kanál",
+    "createSalesChannelHint": "Vytvorte nový predajný kanál na predaj vašich produktov.",
+    "enabledHint": "Určte, či je predajný kanál povolený.",
+    "removeProductsWarning_one": "Chystáte sa odstrániť {{count}} produkt z {{sales_channel}}.",
+    "removeProductsWarning_other": "Chystáte sa odstrániť {{count}} produkty z {{sales_channel}}.",
+    "addProducts": "Pridať produkty",
+    "editSalesChannel": "Upraviť predajný kanál",
+    "productAlreadyAdded": "Produkt už bol pridaný do predajného kanála.",
+    "deleteSalesChannelWarning": "Chystáte sa odstrániť predajný kanál {{name}}. Táto akcia je nevratná.",
+    "toast": {
+      "create": "Predajný kanál bol úspešne vytvorený",
+      "update": "Predajný kanál bol úspešne aktualizovaný",
+      "delete": "Predajný kanál bol úspešne odstránený"
+    },
+    "tooltip": {
+      "cannotDeleteDefault": "Nie je možné odstrániť predvolený predajný kanál"
+    },
+    "products": {
+      "list": {
+        "noRecordsMessage": "V predajnom kanáli nie sú žiadne produkty."
+      },
+      "add": {
+        "list": {
+          "noRecordsMessage": "Najprv vytvorte produkt."
+        }
+      }
+    }
+  },
+  "apiKeyManagement": {
+    "domain": {
+      "publishable": "Zverejnené API kľúče",
+      "secret": "Tajné API kľúče"
+    },
+    "subtitle": {
+      "publishable": "Spravujte API kľúče používané v obchode na obmedzenie rozsahu požiadaviek na konkrétne predajné kanály.",
+      "secret": "Spravujte API kľúče používané na autentifikáciu administrátorov v administratívnych aplikáciách."
+    },
+    "status": {
+      "active": "Aktívny",
+      "revoked": "Zrušený"
+    },
+    "type": {
+      "publishable": "Zverejnený",
+      "secret": "Tajný"
+    },
+    "create": {
+      "createPublishableHeader": "Vytvoriť zverejnený API kľúč",
+      "createPublishableHint": "Vytvorte nový zverejnený API kľúč na obmedzenie rozsahu požiadaviek na konkrétne predajné kanály.",
+      "createSecretHeader": "Vytvoriť tajný API kľúč",
+      "createSecretHint": "Vytvorte nový tajný API kľúč na prístup k Medusa API ako autentifikovaný administrátor.",
+      "secretKeyCreatedHeader": "Tajný kľúč bol vytvorený",
+      "secretKeyCreatedHint": "Váš nový tajný kľúč bol vygenerovaný. Skopírujte ho a bezpečne si ho uložte. Toto je jediné zobrazenie kľúča.",
+      "copySecretTokenSuccess": "Tajný kľúč bol skopírovaný do schránky.",
+      "copySecretTokenFailure": "Nepodarilo sa skopírovať tajný kľúč do schránky.",
+      "successToast": "API kľúč bol úspešne vytvorený."
+    },
+    "edit": {
+      "header": "Upraviť API kľúč",
+      "description": "Upraviť názov API kľúča.",
+      "successToast": "API kľúč {{title}} bol úspešne aktualizovaný."
+    },
+    "salesChannels": {
+      "title": "Pridať predajné kanály",
+      "description": "Pridajte predajné kanály, ktoré by mal API kľúč obmedzovať.",
+      "successToast_one": "{{count}} predajný kanál bol úspešne pridaný k API kľúču.",
+      "successToast_other": "{{count}} predajné kanály boli úspešne pridané k API kľúču.",
+      "alreadyAddedTooltip": "Predajný kanál už bol pridaný k API kľúču.",
+      "list": {
+        "noRecordsMessage": "V zverejnenom API kľúči nie sú žiadne predajné kanály."
+      }
+    },
+    "delete": {
+      "warning": "Chystáte sa odstrániť API kľúč {{title}}. Táto akcia je nevratná.",
+      "successToast": "API kľúč {{title}} bol úspešne odstránený."
+    },
+    "revoke": {
+      "warning": "Chystáte sa zrušiť API kľúč {{title}}. Táto akcia je nevratná.",
+      "successToast": "API kľúč {{title}} bol úspešne zrušený."
+    },
+    "addSalesChannels": {
+      "list": {
+        "noRecordsMessage": "Najprv vytvorte predajný kanál."
+      }
+    },
+    "removeSalesChannel": {
+      "warning": "Chystáte sa odstrániť predajný kanál {{name}} z API kľúča. Táto akcia je nevratná.",
+      "warningBatch_one": "Chystáte sa odstrániť {{count}} predajný kanál z API kľúča. Táto akcia je nevratná.",
+      "warningBatch_other": "Chystáte sa odstrániť {{count}} predajné kanály z API kľúča. Táto akcia je nevratná.",
+      "successToast": "Predajný kanál bol úspešne odstránený z API kľúča.",
+      "successToastBatch_one": "{{count}} predajný kanál bol úspešne odstránený z API kľúča.",
+      "successToastBatch_other": "{{count}} predajné kanály boli úspešne odstránené z API kľúča."
+    },
+    "actions": {
+      "revoke": "Zrušiť API kľúč",
+      "copy": "Skopírovať API kľúč",
+      "copySuccessToast": "API kľúč bol skopírovaný do schránky."
+    },
+    "table": {
+      "lastUsedAtHeader": "Posledné použitie",
+      "createdAtHeader": "Vytvorené"
+    },
+    "fields": {
+      "lastUsedAtLabel": "Posledné použitie",
+      "revokedByLabel": "Zrušené používateľom",
+      "revokedAtLabel": "Zrušené dňa",
+      "createdByLabel": "Vytvorené používateľom"
+    }
+  },
+  "returnReasons": {
+    "domain": "Dôvody vrátenia",
+    "subtitle": "Spravujte dôvody pre vrátené položky.",
+    "calloutHint": "Spravujte dôvody na kategorizáciu vrátení.",
+    "editReason": "Upraviť dôvod vrátenia",
+    "create": {
+      "header": "Pridať dôvod vrátenia",
+      "subtitle": "Špecifikujte najbežnejšie dôvody vrátení.",
+      "hint": "Vytvorte nový dôvod vrátenia na kategorizáciu vrátení.",
+      "successToast": "Dôvod vrátenia {{label}} bol úspešne vytvorený."
+    },
+    "edit": {
+      "header": "Upraviť dôvod vrátenia",
+      "subtitle": "Upraviť hodnotu dôvodu vrátenia.",
+      "successToast": "Dôvod vrátenia {{label}} bol úspešne aktualizovaný."
+    },
+    "delete": {
+      "confirmation": "Chystáte sa odstrániť dôvod vrátenia \"{{label}}\". Táto akcia je nevratná.",
+      "successToast": "Dôvod vrátenia \"{{label}}\" bol úspešne odstránený."
+    },
+    "fields": {
+      "value": {
+        "label": "Hodnota",
+        "placeholder": "nesprávna_velkosť",
+        "tooltip": "Hodnota by mala byť jedinečný identifikátor pre dôvod vrátenia."
+      },
+      "label": { "label": "Názov", "placeholder": "Nesprávna veľkosť" },
+      "description": {
+        "label": "Popis",
+        "placeholder": "Zákazník dostal nesprávnu veľkosť"
+      }
+    }
+  },
+  "login": {
+    "forgotPassword": "Zabudli ste heslo? - <0>Obnovte ho</0>",
+    "title": "Vitajte v Meduse",
+    "hint": "Prihláste sa na prístup do oblasti účtu"
+  },
+  "invite": {
+    "title": "Vitajte v Meduse",
+    "hint": "Vytvorte si účet nižšie",
+    "backToLogin": "Späť na prihlásenie",
+    "createAccount": "Vytvoriť účet",
+    "alreadyHaveAccount": "Už máte účet? - <0>Prihláste sa</0>",
+    "emailTooltip": "Vašu e-mailovú adresu nie je možné zmeniť. Ak chcete použiť iný e-mail, musí byť odoslaná nová pozvánka.",
+    "invalidInvite": "Pozvánka je neplatná alebo vypršala.",
+    "successTitle": "Váš účet bol zaregistrovaný",
+    "successHint": "Začnite okamžite s Medusa Admin.",
+    "successAction": "Začnite s Medusa Admin",
+    "invalidTokenTitle": "Váš pozvánkový token je neplatný",
+    "invalidTokenHint": "Skúste požiadať o nový odkaz na pozvánku.",
+    "passwordMismatch": "Heslá sa nezhodujú",
+    "toast": {
+      "accepted": "Pozvánka bola úspešne prijatá"
+    }
+  },
+  "resetPassword": {
+    "title": "Obnoviť heslo",
+    "hint": "Zadajte svoj e-mail nižšie a pošleme vám pokyny, ako obnoviť vaše heslo.",
+    "email": "E-mail",
+    "sendResetInstructions": "Odoslať pokyny na obnovenie",
+    "backToLogin": "<0>Späť na prihlásenie</0>",
+    "newPasswordHint": "Vyberte nové heslo nižšie.",
+    "invalidTokenTitle": "Váš resetovací token je neplatný",
+    "invalidTokenHint": "Skúste požiadať o nový resetovací odkaz.",
+    "expiredTokenTitle": "Váš resetovací token vypršal",
+    "goToResetPassword": "Prejsť na obnovenie hesla",
+    "resetPassword": "Obnoviť heslo",
+    "newPassword": "Nové heslo",
+    "repeatNewPassword": "Opakujte nové heslo",
+    "tokenExpiresIn": "Token vyprší za <0>{{time}}</0> minút",
+    "successfulRequestTitle": "Úspešne sme vám poslali e-mail",
+    "successfulRequest": "Poslali sme vám e-mail, ktorý môžete použiť na obnovenie hesla. Skontrolujte priečinok spam, ak ste ho nedostali po niekoľkých minútach.",
+    "successfulResetTitle": "Obnovenie hesla bolo úspešné",
+    "successfulReset": "Prosím, prihláste sa na prihlasovacej stránke.",
+    "passwordMismatch": "Heslá sa nezhodujú",
+    "invalidLinkTitle": "Váš resetovací odkaz je neplatný",
+    "invalidLinkHint": "Skúste znova obnoviť svoje heslo."
+  },
+  "workflowExecutions": {
+    "domain": "Pracovné postupy",
+    "subtitle": "Zobraziť a sledovať vykonávanie pracovných postupov v aplikácii Medusa.",
+    "transactionIdLabel": "ID transakcie",
+    "workflowIdLabel": "ID pracovného postupu",
+    "progressLabel": "Postup",
+    "stepsCompletedLabel_one": "{{completed}} z {{count}} kroku",
+    "stepsCompletedLabel_other": "{{completed}} z {{count}} krokov",
+    "list": {
+      "noRecordsMessage": "Žiadne pracovné postupy ešte neboli vykonané."
+    },
+    "history": {
+      "sectionTitle": "História",
+      "runningState": "Prebieha...",
+      "awaitingState": "Čaká sa",
+      "failedState": "Zlyhalo",
+      "skippedState": "Preskočené",
+      "skippedFailureState": "Preskočené (Zlyhanie)",
+      "definitionLabel": "Definícia",
+      "outputLabel": "Výstup",
+      "compensateInputLabel": "Kompenzovať vstup",
+      "revertedLabel": "Zvrátené",
+      "errorLabel": "Chyba"
+    },
+    "state": {
+      "done": "Hotovo",
+      "failed": "Zlyhalo",
+      "reverted": "Zvrátené",
+      "invoking": "Vyvoláva sa",
+      "compensating": "Kompenzovanie",
+      "notStarted": "Nezapočaté"
+    },
+    "transaction": {
+      "state": {
+        "waitingToCompensate": "Čaká sa na kompenzáciu"
+      }
+    },
+    "step": {
+      "state": {
+        "skipped": "Preskočené",
+        "skippedFailure": "Preskočené (Zlyhanie)",
+        "dormant": "Spiaci",
+        "timeout": "Časový limit"
+      }
+    }
+  },
+  "productTypes": {
+    "domain": "Typy produktov",
+    "subtitle": "Organizujte svoje produkty do typov.",
+    "create": {
+      "header": "Vytvoriť typ produktu",
+      "hint": "Vytvorte nový typ produktu na kategorizáciu vašich produktov.",
+      "successToast": "Typ produktu {{value}} bol úspešne vytvorený."
+    },
+    "edit": {
+      "header": "Upraviť typ produktu",
+      "successToast": "Typ produktu {{value}} bol úspešne aktualizovaný."
+    },
+    "delete": {
+      "confirmation": "Chystáte sa odstrániť typ produktu \"{{value}}\". Táto akcia je nevratná.",
+      "successToast": "Typ produktu \"{{value}}\" bol úspešne odstránený."
+    },
+    "fields": {
+      "value": "Hodnota"
+    }
+  },
+  "productTags": {
+    "domain": "Štítky produktov",
+    "create": {
+      "header": "Vytvoriť štítok produktu",
+      "subtitle": "Vytvorte nový štítok produktu na kategorizáciu vašich produktov.",
+      "successToast": "Štítok produktu {{value}} bol úspešne vytvorený."
+    },
+    "edit": {
+      "header": "Upraviť štítok produktu",
+      "subtitle": "Upraviť hodnotu štítku produktu.",
+      "successToast": "Štítok produktu {{value}} bol úspešne aktualizovaný."
+    },
+    "delete": {
+      "confirmation": "Chystáte sa odstrániť štítok produktu {{value}}. Táto akcia je nevratná.",
+      "successToast": "Štítok produktu {{value}} bol úspešne odstránený."
+    },
+    "fields": {
+      "value": "Hodnota"
+    }
+  },
+  "notifications": {
+    "domain": "Oznámenia",
+    "emptyState": {
+      "title": "Žiadne oznámenia",
+      "description": "Momentálne nemáte žiadne oznámenia, ale keď nejaké dostanete, budú tu zobrazené."
+    },
+    "accessibility": {
+      "description": "Oznámenia o aktivitách v Meduse budú tu zobrazené."
+    }
+  },
+  "errors": {
+    "serverError": "Chyba servera - Skúste to znova neskôr.",
+    "invalidCredentials": "Nesprávny e-mail alebo heslo"
+  },
+  "statuses": {
+    "scheduled": "Naplánované",
+    "expired": "Exspirované",
+    "active": "Aktívne",
+    "inactive": "Neaktívne",
+    "draft": "Koncept",
+    "enabled": "Povolené",
+    "disabled": "Zakázané"
+  },
+  "labels": {
+    "productVariant": "Variant produktu",
+    "prices": "Ceny",
+    "available": "Dostupné",
+    "inStock": "Na sklade",
+    "added": "Pridané",
+    "removed": "Odstránené",
+    "from": "Od",
+    "to": "Do",
+    "beaware": "Buďte opatrní",
+    "loading": "Načítavanie"
+  },
+  "fields": {
+    "amount": "Množstvo",
+    "refundAmount": "Množstvo na vrátenie",
+    "name": "Meno",
+    "default": "Predvolený",
+    "lastName": "Priezvisko",
+    "firstName": "Meno",
+    "title": "Titul",
+    "customTitle": "Vlastný titul",
+    "manageInventory": "Spravovať inventár",
+    "inventoryKit": "Má inventárny kit",
+    "inventoryItems": "Položky inventára",
+    "inventoryItem": "Položka inventára",
+    "requiredQuantity": "Požadované množstvo",
+    "description": "Popis",
+    "email": "E-mail",
+    "password": "Heslo",
+    "repeatPassword": "Opakujte heslo",
+    "confirmPassword": "Potvrdiť heslo",
+    "newPassword": "Nové heslo",
+    "repeatNewPassword": "Opakujte nové heslo",
+    "categories": "Kategórie",
+    "shippingMethod": "Metóda dopravy",
+    "configurations": "Konfigurácie",
+    "conditions": "Podmienky",
+    "category": "Kategória",
+    "collection": "Kolekcia",
+    "discountable": "Zľavovateľné",
+    "handle": "Identifikátor",
+    "subtitle": "Podnadpis",
+    "by": "Autor",
+    "item": "Položka",
+    "qty": "množ.",
+    "limit": "Limit",
+    "tags": "Štítky",
+    "type": "Typ",
+    "reason": "Dôvod",
+    "none": "žiadne",
+    "all": "všetky",
+    "search": "Hľadať",
+    "percentage": "Percento",
+    "sales_channels": "Predajné kanály",
+    "customer_groups": "Skupiny zákazníkov",
+    "product_tags": "Štítky produktov",
+    "product_types": "Typy produktov",
+    "product_collections": "Kolekcie produktov",
+    "status": "Stav",
+    "code": "Kód",
+    "value": "Hodnota",
+    "disabled": "Zakázané",
+    "dynamic": "Dynamické",
+    "normal": "Normálne",
+    "years": "Roky",
+    "months": "Mesiace",
+    "days": "Dni",
+    "hours": "Hodiny",
+    "minutes": "Minúty",
+    "totalRedemptions": "Celkové uplatnenia",
+    "countries": "Krajiny",
+    "paymentProviders": "Poskytovatelia platieb",
+    "refundReason": "Dôvod vrátenia",
+    "fulfillmentProviders": "Poskytovatelia plnenia",
+    "fulfillmentProvider": "Poskytovateľ plnenia",
+    "providers": "Poskytovatelia",
+    "availability": "Dostupnosť",
+    "inventory": "Inventár",
+    "optional": "Voliteľné",
+    "note": "Poznámka",
+    "automaticTaxes": "Automatické dane",
+    "taxInclusivePricing": "Ceny vrátane dane",
+    "currency": "Mena",
+    "address": "Adresa",
+    "address2": "Byt, suit, atď.",
+    "city": "Mesto",
+    "postalCode": "PSČ",
+    "country": "Krajina",
+    "state": "Štát",
+    "province": "Provincie",
+    "company": "Spoločnosť",
+    "phone": "Telefón",
+    "metadata": "Metadáta",
+    "selectCountry": "Vyberte krajinu",
+    "products": "Produkty",
+    "variants": "Varianty",
+    "orders": "Objednávky",
+    "account": "Účet",
+    "total": "Celková cena objednávky",
+    "paidTotal": "Celková zaplatená suma",
+    "totalExclTax": "Celková suma bez dane",
+    "subtotal": "Medzisúčet",
+    "shipping": "Doprava",
+    "outboundShipping": "Odchádzajúca doprava",
+    "returnShipping": "Doprava pri vrátení",
+    "tax": "Daň",
+    "created": "Vytvorené",
+    "key": "Kľúč",
+    "customer": "Zákazník",
+    "date": "Dátum",
+    "order": "Objednávka",
+    "fulfillment": "Plnenie",
+    "provider": "Poskytovateľ",
+    "payment": "Platba",
+    "items": "Položky",
+    "salesChannel": "Predajný kanál",
+    "region": "Región",
+    "discount": "Zľava",
+    "role": "Rola",
+    "sent": "Odoslané",
+    "salesChannels": "Predajné kanály",
+    "product": "Produkt",
+    "createdAt": "Vytvorené",
+    "updatedAt": "Aktualizované",
+    "revokedAt": "Zrušené dňa",
+    "true": "Pravda",
+    "false": "Nepravda",
+    "giftCard": "Darčeková karta",
+    "tag": "Štítok",
+    "dateIssued": "Dátum vydania",
+    "issuedDate": "Dátum vydania",
+    "expiryDate": "Dátum expirácie",
+    "price": "Cena",
+    "priceTemplate": "Cena {{regionOrCurrency}}",
+    "height": "Výška",
+    "width": "Šírka",
+    "length": "Dĺžka",
+    "weight": "Hmotnosť",
+    "midCode": "MID kód",
+    "hsCode": "HS kód",
+    "ean": "EAN",
+    "upc": "UPC",
+    "inventoryQuantity": "Množstvo v inventári",
+    "barcode": "Čiarový kód",
+    "countryOfOrigin": "Krajina pôvodu",
+    "material": "Materiál",
+    "thumbnail": "Náhľad",
+    "sku": "SKU",
+    "managedInventory": "Spravovaný inventár",
+    "allowBackorder": "Povoliť predobjednávky",
+    "inStock": "Na sklade",
+    "location": "Lokalita",
+    "quantity": "Množstvo",
+    "variant": "Variant",
+    "id": "ID",
+    "parent": "Rodič",
+    "minSubtotal": "Min. medzisúčet",
+    "maxSubtotal": "Max. medzisúčet",
+    "shippingProfile": "Profily dopravy",
+    "summary": "Zhrnutie",
+    "details": "Detaily",
+    "label": "Štítok",
+    "rate": "Sadzba",
+    "requiresShipping": "Vyžaduje dopravu",
+    "unitPrice": "Cena za jednotku",
+    "startDate": "Dátum začiatku",
+    "endDate": "Dátum ukončenia",
+    "draft": "Koncept",
+    "values": "Hodnoty"
+  },
+  "dateTime": {
+    "years_one": "Rok",
+    "years_other": "Roky",
+    "months_one": "Mesiac",
+    "months_other": "Mesiace",
+    "weeks_one": "Týždeň",
+    "weeks_other": "Týždne",
+    "days_one": "Deň",
+    "days_other": "Dni",
+    "hours_one": "Hodina",
+    "hours_other": "Hodiny",
+    "minutes_one": "Minúta",
+    "minutes_other": "Minúty",
+    "seconds_one": "Sekunda",
+    "seconds_other": "Sekundy"
+  }
+}

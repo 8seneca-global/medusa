@@ -7,13 +7,16 @@ export const normalizeProductFormValues = (
     status: HttpTypes.AdminProductStatus
     regionsCurrencyMap: Record<string, string>
   }
-): HttpTypes.AdminCreateProduct => {
+) => {
   const thumbnail = values.media?.find((media) => media.isThumbnail)?.url
   const images = values.media
     ?.filter((media) => !media.isThumbnail)
     .map((media) => ({ url: media.url }))
 
   return {
+    additional_data: {
+      long_description: values.long_description,
+    },
     status: values.status,
     is_giftcard: false,
     tags: values?.tags?.length

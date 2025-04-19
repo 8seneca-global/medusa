@@ -74,7 +74,6 @@
     "publish:check-and-publish": "node scripts/publish-new-packages.js",
     "publish:providers": "node scripts/publish-providers.js",
     "release:core": "node scripts/release-core-packages.js"
-
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
