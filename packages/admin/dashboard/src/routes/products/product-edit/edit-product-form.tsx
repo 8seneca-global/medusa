@@ -32,6 +32,16 @@ const EditProductSchema = zod.object({
   discountable: zod.boolean(),
 })
 
+const isValueChanged = (formValue: any, productValue: any) => {
+  if (formValue === "" && productValue === null) {
+    return false
+  }
+  if (formValue === "" && productValue !== null && productValue !== "") {
+    return true
+  }
+  return formValue !== productValue
+}
+
 export const EditProductForm = ({
   product,
   setIsEditing,
@@ -46,19 +56,7 @@ export const EditProductForm = ({
   const { mutateAsync: updateProduct, isPending } = useUpdateProduct(product.id)
 
   const isDirty = useMemo(() => {
-    // Watch all form values to make the comparison reactive
     const formValues = form.watch()
-
-    const isValueChanged = (formValue: any, productValue: any) => {
-      if (formValue === undefined && productValue === null) {
-        return false
-      }
-      if (formValue === "" && productValue !== null && productValue !== "") {
-        return true
-      }
-      return formValue !== productValue
-    }
-
     return (
       isValueChanged(formValues.status, product.status) ||
       isValueChanged(formValues.title, product.title) ||
@@ -68,11 +66,12 @@ export const EditProductForm = ({
       isValueChanged(formValues.description, product.description) ||
       isValueChanged(
         formValues.long_description,
-        product.product_addition.long_description
+        product?.product_addition?.long_description
       ) ||
       isValueChanged(formValues.discountable, product.discountable)
     )
-  }, [form, product])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [form, product, form.watch()])
 
   const handleSubmit = form.handleSubmit(async (data) => {
     const { title, discountable, handle, status, ...optional } = data
@@ -82,7 +81,7 @@ export const EditProductForm = ({
       ...nullableData,
       long_description: undefined,
       additional_data: {
-        product_addition_id: product.product_addition?.id,
+        product_addition_id: product?.product_addition?.id,
         long_description: nullableData.long_description,
       },
     }

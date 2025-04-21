@@ -552,6 +552,10 @@
         "label": "Description",
         "hint": "Give your product a short and clear description.<0/>120-160 characters is the recommended length for search engines."
       },
+      "longDescription": {
+        "label": "Long Description",
+        "hint": "Give your product a long and detailed description."
+      },
       "discountable": {
         "label": "Discountable",
         "hint": "When unchecked, discounts will not be applied to this product"
@@ -2843,6 +2847,7 @@
     "inventoryItem": "Inventory item",
     "requiredQuantity": "Required quantity",
     "description": "Description",
+    "longDescription": "Long description",
     "email": "Email",
     "password": "Password",
     "repeatPassword": "Repeat Password",

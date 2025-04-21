@@ -552,6 +552,10 @@
         "label": "Popis",
         "hint": "Dajte produktu krátky a jasný popis.<0/>120-160 znakov je odporúčaná dĺžka pre vyhľadávače."
       },
+      "longDescription": {
+        "label": "Dĺhky popis",
+        "hint": "Dajte produktu dĺhky a podrobný popis."
+      },
       "discountable": {
         "label": "Zľaviteľný",
         "hint": "Keď nie je zaškrtnuté, nebude sa uplatňovať žiadne zľavy na tento produkt"
@@ -814,6 +818,7 @@
     "manageLocationQuantity": "Spravovať množstvo miesta",
     "deleteWarning": "Ste si istí, že chcete odstrániť inventárnu položku. Táto akcia je nevratná.",
     "editItemDetails": "Upraviť podrobnosti položky",
+    "quantityAcrossLocations": "{{quantity}} na {{locations}} miest",
     "create": {
       "title": "Vytvoriť inventárnu položku",
       "details": "Podrobnosti",
@@ -2842,6 +2847,7 @@
     "inventoryItem": "Položka inventára",
     "requiredQuantity": "Požadované množstvo",
     "description": "Popis",
+    "longDescription": "Dĺhky popis",
     "email": "E-mail",
     "password": "Heslo",
     "repeatPassword": "Opakujte heslo",

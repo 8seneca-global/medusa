@@ -155,12 +155,12 @@ export const ProductGeneralSection = ({
             value={product.description}
           />
           <SectionRow
-            title={t("fields.long_description", "Long Description")}
+            title={t("fields.longDescription", "Long Description")}
             value={
-              product.product_addition?.long_description && (
+              product?.product_addition?.long_description && (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: product.product_addition?.long_description,
+                    __html: product?.product_addition?.long_description,
                   }}
                   className="prose dark:prose-invert"
                 />
@@ -174,7 +174,7 @@ export const ProductGeneralSection = ({
             title={t("fields.discountable")}
             value={product.discountable ? t("fields.true") : t("fields.false")}
           />
-          {displays.map((Component, index) => {
+          {displays.map((Component) => {
             return <Component key={product.id} data={product} />
           })}
         </>

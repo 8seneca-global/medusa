@@ -2074,6 +2074,19 @@
               "required": ["label", "hint"],
               "additionalProperties": false
             },
+            "longDescription": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "hint": {
+                  "type": "string"
+                }
+              },
+              "required": ["label", "hint"],
+              "additionalProperties": false
+            },
             "discountable": {
               "type": "object",
               "properties": {
@@ -10582,6 +10595,9 @@
         "description": {
           "type": "string"
         },
+        "longDescription": {
+          "type": "string"
+        },
         "email": {
           "type": "string"
         },
@@ -11024,6 +11040,7 @@
         "inventoryItem",
         "requiredQuantity",
         "description",
+        "longDescription",
         "email",
         "password",
         "repeatPassword",
