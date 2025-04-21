@@ -162,7 +162,7 @@ export const ProductGeneralSection = ({
                   dangerouslySetInnerHTML={{
                     __html: product?.product_addition?.long_description,
                   }}
-                  className="prose dark:prose-invert"
+                  className="ProseMirror !py-0 !pl-0"
                 />
               )
             }
