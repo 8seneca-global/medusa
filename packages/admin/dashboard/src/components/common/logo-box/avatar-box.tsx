@@ -7,11 +7,10 @@ const LyraLightLogo =
 
 export default function AvatarBox({ checked }: { checked?: boolean }) {
   const { theme } = useTheme()
-
   return (
     <div className="relative">
       <img
-        src={theme === "dark" ? LyraDarkLogo : LyraLightLogo}
+        src={theme === "light" ? LyraLightLogo : LyraDarkLogo}
         alt="Lyra Chocolate"
         className="mb-5 h-32 w-32 rounded-lg p-3"
       />

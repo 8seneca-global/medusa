@@ -13,7 +13,6 @@ export const OrderList = () => {
       }}
       hasOutlet={false}
     >
-      <div>Test release core packages, ok?</div>
       <OrderListTable />
     </SingleColumnPage>
   )
