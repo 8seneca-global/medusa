@@ -144,17 +144,9 @@ export const ProductCreateForm = ({
       }
     }
 
-    const payloadWithoutLongDescription = {
-      ...payload,
-      long_description: undefined,
-      additional_data: {
-        long_description: payload.long_description,
-      },
-    }
-
     await mutateAsync(
       normalizeProductFormValues({
-        ...payloadWithoutLongDescription,
+        ...payload,
         media: uploadedMedia,
         status: (isDraftSubmission ? "draft" : "published") as any,
         regionsCurrencyMap,

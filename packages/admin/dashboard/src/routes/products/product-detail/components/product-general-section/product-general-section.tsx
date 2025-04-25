@@ -155,7 +155,7 @@ export const ProductGeneralSection = ({
             value={product.description}
           />
           <SectionRow
-            title={t("fields.longDescription", "Long Description")}
+            title={t("fields.longDescription")}
             value={
               product?.product_addition?.long_description && (
                 <div

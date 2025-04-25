@@ -241,7 +241,9 @@ export const EditProductForm = ({
               render={({ field }) => {
                 return (
                   <Form.Item>
-                    <Form.Label optional>{"Long Description"}</Form.Label>
+                    <Form.Label optional>
+                      {t("fields.longDescription")}
+                    </Form.Label>
                     <Form.Control>
                       <RichTextEditor
                         value={field.value ?? ""}
