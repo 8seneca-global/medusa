@@ -757,11 +757,11 @@
     "clear_all": "Clear All"
   },
   "categories": {
-    "domain": "Product group",
+    "domain": "Product Group",
     "subtitle": "Organize products into groups, and manage those groups' ranking and hierarchy.",
     "create": {
-      "header": "Create Category",
-      "hint": "Create a new category to organize your products.",
+      "header": "Create Product Groups",
+      "hint": "Create a new groups to organize your products.",
       "tabs": {
         "details": "Details",
         "organize": "Organize Ranking"
