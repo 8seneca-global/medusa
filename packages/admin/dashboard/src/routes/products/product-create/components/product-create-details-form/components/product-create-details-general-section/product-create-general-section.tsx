@@ -97,7 +97,7 @@ export const ProductCreateGeneralSection = ({
           return (
             <Form.Item>
               <Form.Label optional>
-                {t("products.fields.longDescription")}
+                {t("products.fields.longDescription.label")}
               </Form.Label>
               <Form.Control>
                 <RichTextEditor
