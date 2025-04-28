@@ -129,6 +129,35 @@ export const CreateCategoryDetails = ({ form }: CreateCategoryDetailsProps) => {
             }}
           />
         </div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Form.Field
+            control={form.control}
+            name="type"
+            render={({ field: { ref, onChange, ...field } }) => {
+              return (
+                <Form.Item>
+                  <Form.Label>{t("categories.fields.type.label")}</Form.Label>
+                  <Form.Control>
+                    <Select {...field} onValueChange={onChange}>
+                      <Select.Trigger ref={ref}>
+                        <Select.Value />
+                      </Select.Trigger>
+                      <Select.Content>
+                        <Select.Item value="category">
+                          {t("categories.fields.type.category")}
+                        </Select.Item>
+                        <Select.Item value="collection">
+                          {t("categories.fields.type.collection")}
+                        </Select.Item>
+                      </Select.Content>
+                    </Select>
+                  </Form.Control>
+                  <Form.ErrorMessage />
+                </Form.Item>
+              )
+            }}
+          />
+        </div>
       </div>
     </div>
   )

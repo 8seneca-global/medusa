@@ -11,6 +11,7 @@ import { sdk } from "../../lib/client"
 import { queryClient } from "../../lib/query-client"
 import { queryKeysFactory } from "../../lib/query-key-factory"
 import { productsQueryKeys } from "./products"
+import { CreateCategoryPayload } from "../../types/category"
 
 const CATEGORIES_QUERY_KEY = "categories" as const
 export const categoriesQueryKeys = queryKeysFactory(CATEGORIES_QUERY_KEY)
@@ -62,7 +63,7 @@ export const useCreateProductCategory = (
   options?: UseMutationOptions<
     HttpTypes.AdminProductCategoryResponse,
     FetchError,
-    HttpTypes.AdminCreateProductCategory
+    CreateCategoryPayload
   >
 ) => {
   return useMutation({

@@ -743,9 +743,22 @@
       }
     }
   },
+  "collection_condition": {
+    "title": "Collection Conditions",
+    "description": "Add conditions to determine which products should be included in this collection",
+    "add": "Add Condition",
+    "product_tags": "Product Tags",
+    "product_price": "Product Price",
+    "equals": "Equals",
+    "contains": "Contains",
+    "greater_than": "Greater than",
+    "less_than": "Less than",
+    "select_tag": "Select Tag",
+    "clear_all": "Clear All"
+  },
   "categories": {
-    "domain": "Categories",
-    "subtitle": "Organize products into categories, and manage those categories' ranking and hierarchy.",
+    "domain": "Product group",
+    "subtitle": "Organize products into groups, and manage those groups' ranking and hierarchy.",
     "create": {
       "header": "Create Category",
       "hint": "Create a new category to organize your products.",
@@ -804,6 +817,11 @@
       },
       "new": {
         "label": "New"
+      },
+      "type": {
+        "label": "Type",
+        "category": "Category",
+        "collection": "Collection"
       }
     }
   },
@@ -2854,7 +2872,7 @@
     "confirmPassword": "Confirm Password",
     "newPassword": "New Password",
     "repeatNewPassword": "Repeat New Password",
-    "categories": "Categories",
+    "categories": "Groups",
     "shippingMethod": "Shipping method",
     "configurations": "Configurations",
     "conditions": "Conditions",

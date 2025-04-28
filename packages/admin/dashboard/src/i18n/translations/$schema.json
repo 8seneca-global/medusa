@@ -2797,6 +2797,44 @@
       ],
       "additionalProperties": false
     },
+    "collection_condition": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "add": {
+          "type": "string"
+        },
+        "product_tags":{
+          "type": "string"
+        },
+        "product_price": {
+          "type": "string"
+        },
+        "equals": {
+          "type": "string"
+        },
+        "contains": {
+          "type": "string"
+        },
+        "greater_than": {
+          "type": "string"
+        },
+        "less_than":{
+          "type": "string"
+        },
+        "select_tag": {
+          "type": "string"
+        },
+        "clear_all": {
+          "type": "string"
+        }
+      }
+    },
     "categories": {
       "type": "object",
       "properties": {
@@ -2973,6 +3011,22 @@
               "required": ["label", "active", "inactive"],
               "additionalProperties": false
             },
+            "type": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "collection": {
+                  "type": "string"
+                }
+              },
+              "required": ["label", "category", "collection"],
+              "additionalProperties": false
+            },
             "path": {
               "type": "object",
               "properties": {
@@ -3007,7 +3061,7 @@
               "additionalProperties": false
             }
           },
-          "required": ["visibility", "status", "path", "children", "new"],
+          "required": ["visibility", "status", "type", "path", "children", "new"],
           "additionalProperties": false
         }
       },

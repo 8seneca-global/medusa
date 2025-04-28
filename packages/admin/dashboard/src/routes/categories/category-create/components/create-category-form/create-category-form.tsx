@@ -14,6 +14,12 @@ import { transformNullableFormData } from "../../../../../lib/form-helpers"
 import { CreateCategoryDetails } from "./create-category-details"
 import { CreateCategoryNesting } from "./create-category-nesting"
 import { CreateCategoryDetailsSchema, CreateCategorySchema } from "./schema"
+import { CreateCategoryPayload } from "../../../../../types/category"
+import { CollectionConditionForm } from "./collection-condition-form"
+import {
+  CollectionConditionSchema,
+  CollectionConditionSchemaType,
+} from "./collection-condition-schema"
 
 type CreateCategoryFormProps = {
   parentCategoryId: string | null
@@ -22,6 +28,7 @@ type CreateCategoryFormProps = {
 enum Tab {
   DETAILS = "details",
   ORGANIZE = "organize",
+  COLLECTION_CONDITION = "collection_condition",
 }
 
 export const CreateCategoryForm = ({
@@ -41,15 +48,27 @@ export const CreateCategoryForm = ({
       handle: "",
       status: "active",
       visibility: "public",
+      type: "category",
       rank: parentCategoryId ? 0 : null,
       parent_category_id: parentCategoryId,
     },
     resolver: zodResolver(CreateCategorySchema),
   })
 
+  const collectionConditionForm = useForm<CollectionConditionSchemaType>({
+    defaultValues: {
+      conditions: [],
+    },
+    resolver: zodResolver(CollectionConditionSchema),
+  })
+
+  const type = form.watch("type")
+  const isCollection = type === "collection"
+
   const handleTabChange = (tab: Tab) => {
-    if (tab === Tab.ORGANIZE) {
-      const { name, handle, description, status, visibility } = form.getValues()
+    if (tab === Tab.ORGANIZE || tab === Tab.COLLECTION_CONDITION) {
+      const { name, handle, description, status, visibility, type } =
+        form.getValues()
 
       const result = CreateCategoryDetailsSchema.safeParse({
         name,
@@ -57,6 +76,7 @@ export const CreateCategoryForm = ({
         description,
         status,
         visibility,
+        type,
       })
 
       if (!result.success) {
@@ -80,10 +100,22 @@ export const CreateCategoryForm = ({
   const { mutateAsync, isPending } = useCreateProductCategory()
 
   const handleSubmit = form.handleSubmit((data) => {
-    const { visibility, status, parent_category_id, rank, name, ...rest } = data
+    const {
+      visibility,
+      status,
+      parent_category_id,
+      rank,
+      name,
+      type,
+      ...rest
+    } = data
     const parsedData = transformNullableFormData(rest, false)
 
     setShouldFreeze(true)
+
+    const collectionConditions = isCollection
+      ? collectionConditionForm.getValues().conditions
+      : undefined
 
     mutateAsync(
       {
@@ -93,7 +125,11 @@ export const CreateCategoryForm = ({
         rank: rank ?? undefined,
         is_active: status === "active",
         is_internal: visibility === "internal",
-      },
+        additional_data: {
+          type: type,
+          conditions: collectionConditions,
+        },
+      } as CreateCategoryPayload,
       {
         onSuccess: ({ product_category }) => {
           toast.success(
@@ -123,6 +159,12 @@ export const CreateCategoryForm = ({
     ? "completed"
     : "in-progress"
 
+  const collectionConditionStatus: ProgressStatus = isCollection
+    ? activeTab === Tab.COLLECTION_CONDITION
+      ? "in-progress"
+      : "not-started"
+    : "not-started"
+
   return (
     <RouteFocusModal.Form form={form}>
       <KeyboundForm
@@ -137,7 +179,7 @@ export const CreateCategoryForm = ({
           <RouteFocusModal.Header>
             <div className="flex w-full items-center justify-between">
               <div className="-my-2 w-full max-w-[400px] border-l">
-                <ProgressTabs.List className="grid w-full grid-cols-2">
+                <ProgressTabs.List className="grid w-full grid-cols-3">
                   <ProgressTabs.Trigger
                     value={Tab.DETAILS}
                     status={detailsStatus}
@@ -156,6 +198,17 @@ export const CreateCategoryForm = ({
                       {t("categories.create.tabs.organize")}
                     </span>
                   </ProgressTabs.Trigger>
+                  {isCollection && (
+                    <ProgressTabs.Trigger
+                      value={Tab.COLLECTION_CONDITION}
+                      status={collectionConditionStatus}
+                      className="w-full min-w-0 overflow-hidden"
+                    >
+                      <span className="truncate">
+                        {t("collection_condition.title")}
+                      </span>
+                    </ProgressTabs.Trigger>
+                  )}
                 </ProgressTabs.List>
               </div>
             </div>
@@ -170,6 +223,16 @@ export const CreateCategoryForm = ({
             >
               <CreateCategoryNesting form={form} shouldFreeze={shouldFreeze} />
             </ProgressTabs.Content>
+            {isCollection && (
+              <ProgressTabs.Content
+                value={Tab.COLLECTION_CONDITION}
+                className="bg-ui-bg-subtle flex-1"
+              >
+                <div className="p-16">
+                  <CollectionConditionForm form={collectionConditionForm} />
+                </div>
+              </ProgressTabs.Content>
+            )}
           </RouteFocusModal.Body>
           <RouteFocusModal.Footer>
             <div className="flex items-center justify-end gap-x-2">
@@ -179,6 +242,28 @@ export const CreateCategoryForm = ({
                 </Button>
               </RouteFocusModal.Close>
               {activeTab === Tab.ORGANIZE ? (
+                isCollection ? (
+                  <Button
+                    key="continue-btn"
+                    size="small"
+                    variant="primary"
+                    type="button"
+                    onClick={() => handleTabChange(Tab.COLLECTION_CONDITION)}
+                  >
+                    {t("actions.continue")}
+                  </Button>
+                ) : (
+                  <Button
+                    key="submit-btn"
+                    size="small"
+                    variant="primary"
+                    type="submit"
+                    isLoading={isPending}
+                  >
+                    {t("actions.save")}
+                  </Button>
+                )
+              ) : activeTab === Tab.COLLECTION_CONDITION ? (
                 <Button
                   key="submit-btn"
                   size="small"

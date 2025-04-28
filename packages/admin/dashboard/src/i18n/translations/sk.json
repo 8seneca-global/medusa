@@ -743,12 +743,25 @@
       }
     }
   },
+  "collection_condition": {
+    "title": "Podmienky odberu",
+    "description": "Pridajte podmienky, aby ste určili, ktoré produkty by mali byť zahrnuté do tejto kolekcie",
+    "add": "Pridať podmienku",
+    "product_tags": "Štítky produktu",
+    "product_price": "Cena produktu",
+    "equals": "Rovná sa",
+    "contains": "Obsahuje",
+    "greater_than": "Väčšie ako",
+    "less_than": "Menej ako",
+    "select_tag": "Vyberte položku Tag",
+    "clear_all": "Vymazať všetko"
+  },
   "categories": {
     "domain": "Kategórie",
     "subtitle": "Organizujte produkty do kategórií, a spravujte ich poradie a hierarchiu.",
     "create": {
-      "header": "Vytvoriť kategóriu",
-      "hint": "Vytvoriť novú kategóriu na organizovanie produktov.",
+      "header": "Vytvorte skupinu produktov",
+      "hint": "Vytvorte novú skupinu produktov na usporiadanie produktov.",
       "tabs": {
         "details": "Podrobnosti",
         "organize": "Organizovať poradie"
@@ -804,6 +817,11 @@
       },
       "new": {
         "label": "Nový"
+      },
+      "type": {
+        "label": "Typ",
+        "category": "Kategória",
+        "collection": "Zbierka"
       }
     }
   },
@@ -2854,7 +2872,7 @@
     "confirmPassword": "Potvrdiť heslo",
     "newPassword": "Nové heslo",
     "repeatNewPassword": "Opakujte nové heslo",
-    "categories": "Kategórie",
+    "categories": "Skupiny",
     "shippingMethod": "Metóda dopravy",
     "configurations": "Konfigurácie",
     "conditions": "Podmienky",
