@@ -571,7 +571,7 @@
         "label": "Kolekcia"
       },
       "categories": {
-        "label": "Kategórie"
+        "label": "Skupina produktov"
       },
       "tags": {
         "label": "Tagy"
@@ -753,6 +753,8 @@
     "contains": "Obsahuje",
     "greater_than": "Väčšie ako",
     "less_than": "Menej ako",
+    "less_than_eq": "Menšie alebo rovnaké",
+    "greater_than_eq": "Greater than or equal",
     "select_tag": "Vyberte položku Tag",
     "clear_all": "Vymazať všetko"
   },

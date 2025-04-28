@@ -2827,6 +2827,12 @@
         "less_than":{
           "type": "string"
         },
+        "less_than_eq":{
+          "type": "string"
+        },
+        "greater_than_eq":{
+          "type": "string"
+        },
         "select_tag": {
           "type": "string"
         },

@@ -571,7 +571,7 @@
         "label": "Collection"
       },
       "categories": {
-        "label": "Categories"
+        "label": "Product Group"
       },
       "tags": {
         "label": "Tags"
@@ -753,6 +753,8 @@
     "contains": "Contains",
     "greater_than": "Greater than",
     "less_than": "Less than",
+    "less_than_eq": "Less than or equal",
+    "greater_than_eq": "Greater than or equal",
     "select_tag": "Select Tag",
     "clear_all": "Clear All"
   },

@@ -57,6 +57,8 @@ export const CollectionConditionForm = ({
         { label:t('collection_condition.equals'), value: "eq" },
         { label: t('collection_condition.greater_than'), value: "gt" },
         { label: t('collection_condition.less_than'), value: "lt" },
+        { label: t('collection_condition.less_than_eq'), value: "lte" },
+        { label: t('collection_condition.greater_than_eq'), value: "gte" },
       ],
     },
   ]
