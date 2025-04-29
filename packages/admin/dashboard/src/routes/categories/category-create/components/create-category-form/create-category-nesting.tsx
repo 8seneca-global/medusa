@@ -4,7 +4,7 @@ import { useMemo, useState } from "react"
 import { UseFormReturn, useWatch } from "react-hook-form"
 
 import { useTranslation } from "react-i18next"
-import { useProductCategories } from "../../../../../hooks/api/categories"
+import { useGetProductCategoriesAddition } from "../../../../../hooks/api/categories"
 import { CategoryTree } from "../../../common/components/category-tree"
 import { CategoryTreeItem } from "../../../common/types"
 import { insertCategoryTreeItem } from "../../../common/utils"
@@ -24,13 +24,21 @@ export const CreateCategoryNesting = ({
   const { t } = useTranslation()
   const [snapshot, setSnapshot] = useState<CategoryTreeItem[]>([])
 
-  const { product_categories, isPending, isError, error } =
-    useProductCategories({
-      parent_category_id: "null",
-      limit: 9999,
-      fields: "id,name,parent_category_id,rank,category_children,rank",
-      include_descendants_tree: true,
-    })
+  const type = useWatch({
+    control: form.control,
+    name: "type",
+  })
+
+  const {
+    product_categories: categories,
+    isPending,
+    isError,
+    error,
+  } = useGetProductCategoriesAddition(type)
+
+  const product_categories = useMemo(() => {
+    return categories
+  }, [categories])
 
   const parentCategoryId = useWatch({
     control: form.control,

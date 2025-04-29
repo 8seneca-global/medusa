@@ -1,35 +1,33 @@
 import { useMutation } from "@tanstack/react-query"
-
+import { useParams } from "react-router-dom"
 import { UniqueIdentifier } from "@dnd-kit/core"
 import { Spinner } from "@8medusa/icons"
 import { FetchError } from "@8medusa/js-sdk"
-import { HttpTypes } from "@8medusa/types"
 import { toast } from "@8medusa/ui"
 import { useState } from "react"
 import { RouteFocusModal } from "../../../../../components/modals"
-import {
-  categoriesQueryKeys,
-  useProductCategories,
-} from "../../../../../hooks/api/categories"
+import { useGetProductCategoriesAdditionById } from "../../../../../hooks/api/categories"
 import { sdk } from "../../../../../lib/client"
 import { queryClient } from "../../../../../lib/query-client"
 import { CategoryTree } from "../../../common/components/category-tree"
 import { CategoryTreeItem } from "../../../common/types"
 
-const QUERY = {
-  fields: "id,name,parent_category_id,rank,*category_children",
-  parent_category_id: "null",
-  include_descendants_tree: true,
-  limit: 9999,
-}
+// const QUERY = {
+//   fields:
+//     "id,name,parent_category_id,rank,*category_children,*category_addition",
+//   parent_category_id: "null",
+//   include_descendants_tree: true,
+//   limit: 9999,
+// }
 
 export const OrganizeCategoryForm = () => {
+  const { id } = useParams()
   const {
     product_categories,
     isPending,
     isError,
     error: fetchError,
-  } = useProductCategories(QUERY)
+  } = useGetProductCategoriesAdditionById(id || "")
 
   const [snapshot, setSnapshot] = useState<CategoryTreeItem[]>([])
 
@@ -50,40 +48,37 @@ export const OrganizeCategoryForm = () => {
       })
     },
     onMutate: async (update) => {
-      // Cancel any outgoing refetches (so they don't overwrite our optimistic update)
+      // Cancel any outgoing refetches
       await queryClient.cancelQueries({
-        queryKey: categoriesQueryKeys.list(QUERY),
+        queryKey: [`categories-addition-by-id-${id}`],
       })
 
       // Snapshot the previous value
-      const previousValue:
-        | HttpTypes.AdminProductCategoryListResponse
-        | undefined = queryClient.getQueryData(categoriesQueryKeys.list(QUERY))
-
-      const nextValue = {
-        ...previousValue,
-        product_categories: update.arr,
-      }
+      const previousValue = queryClient.getQueryData([
+        `categories-addition-by-id-${id}`,
+      ])
 
       // Optimistically update to the new value
-      queryClient.setQueryData(categoriesQueryKeys.list(QUERY), nextValue)
+      queryClient.setQueryData([`categories-addition-by-id-${id}`], {
+        ...(previousValue as Record<string, any>),
+        product_categories: update.arr,
+      })
 
-      return {
-        previousValue,
-      }
+      return { previousValue }
     },
     onError: (error: FetchError, _newValue, context) => {
       // Roll back to the previous value
       queryClient.setQueryData(
-        categoriesQueryKeys.list(QUERY),
+        [`categories-addition-by-id-${id}`],
         context?.previousValue
       )
 
       toast.error(error.message)
     },
-    onSettled: async () => {
-      await queryClient.invalidateQueries({
-        queryKey: categoriesQueryKeys.all,
+    onSuccess: () => {
+      // Refetch the data after successful update
+      queryClient.invalidateQueries({
+        queryKey: [`categories-addition-by-id-${id}`],
       })
     },
   })

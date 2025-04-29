@@ -38,6 +38,60 @@ export const useProductCategory = (
   return { ...data, ...rest }
 }
 
+export const useGetProductCategoriesAddition = (
+  type: "collection" | "category",
+  options?: Omit<
+    UseQueryOptions<
+      HttpTypes.AdminProductCategoryListResponse,
+      FetchError,
+      HttpTypes.AdminProductCategoryListResponse,
+      QueryKey
+    >,
+    "queryFn" | "queryKey"
+  >
+) => {
+  const { data, ...rest } = useQuery({
+    queryKey: [`categories-addition-${type}`],
+    queryFn: async () => {
+      const response =
+        await sdk.client.fetch<HttpTypes.AdminProductCategoryListResponse>(
+          `/admin/category-addition?type=${type}`
+        )
+      return response
+    },
+    ...options,
+  })
+
+  return { ...data, ...rest }
+}
+
+export const useGetProductCategoriesAdditionById = (
+  id: string,
+  options?: Omit<
+    UseQueryOptions<
+      HttpTypes.AdminProductCategoryListResponse,
+      FetchError,
+      HttpTypes.AdminProductCategoryListResponse,
+      QueryKey
+    >,
+    "queryFn" | "queryKey"
+  >
+) => {
+  const { data, ...rest } = useQuery({
+    queryKey: [`categories-addition-by-id-${id}`],
+    queryFn: async () => {
+      const response =
+        await sdk.client.fetch<HttpTypes.AdminProductCategoryListResponse>(
+          `/admin/category-addition?id=${id}`
+        )
+      return response
+    },
+    ...options,
+  })
+
+  return { ...data, ...rest }
+}
+
 export const useProductCategories = (
   query?: HttpTypes.AdminProductCategoryListParams,
   options?: Omit<
