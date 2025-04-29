@@ -9,7 +9,10 @@ import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import { ActionMenu } from "../../../../../components/common/action-menu"
 import { _DataTable } from "../../../../../components/table/data-table"
-import { useProductCategories } from "../../../../../hooks/api/categories"
+import {
+  useGetAllProductCategoriesAddition,
+  useProductCategories,
+} from "../../../../../hooks/api/categories"
 import { useDataTable } from "../../../../../hooks/use-data-table"
 import { useDeleteProductCategoryAction } from "../../../common/hooks/use-delete-product-category-action"
 import { useCategoryTableColumns } from "./use-category-table-columns"
@@ -137,11 +140,23 @@ const columnHelper =
   createColumnHelper<AdminProductCategoryResponse["product_category"]>()
 
 const useColumns = () => {
+  const { t } = useTranslation()
+  const { product_categories } = useGetAllProductCategoriesAddition()
   const base = useCategoryTableColumns()
-
   return useMemo(
     () => [
       ...base,
+      columnHelper.display({
+        id: "type",
+        header: t("products.fields.type.label"),
+        cell: ({ row }) => {
+          const selectedProduct = product_categories?.find(
+            (cate) => cate.id === row.id
+          )
+          const type = (selectedProduct as any)?.category_addition?.type
+          return <div>{type}</div>
+        },
+      }),
       columnHelper.display({
         id: "actions",
         cell: ({ row }) => {
@@ -149,6 +164,6 @@ const useColumns = () => {
         },
       }),
     ],
-    [base]
+    [base, product_categories, t]
   )
 }

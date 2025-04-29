@@ -92,6 +92,32 @@ export const useGetProductCategoriesAdditionById = (
   return { ...data, ...rest }
 }
 
+export const useGetAllProductCategoriesAddition = (
+  options?: Omit<
+    UseQueryOptions<
+      HttpTypes.AdminProductCategoryListResponse,
+      FetchError,
+      HttpTypes.AdminProductCategoryListResponse,
+      QueryKey
+    >,
+    "queryFn" | "queryKey"
+  >
+) => {
+  const { data, ...rest } = useQuery({
+    queryKey: [`categories-addition`],
+    queryFn: async () => {
+      const response =
+        await sdk.client.fetch<HttpTypes.AdminProductCategoryListResponse>(
+          `/admin/category-addition`
+        )
+      return response
+    },
+    ...options,
+  })
+
+  return { ...data, ...rest }
+}
+
 export const useProductCategories = (
   query?: HttpTypes.AdminProductCategoryListParams,
   options?: Omit<
@@ -124,6 +150,7 @@ export const useCreateProductCategory = (
     mutationFn: (payload) => sdk.admin.productCategory.create(payload),
     onSuccess: (data, variables, context) => {
       queryClient.invalidateQueries({ queryKey: categoriesQueryKeys.lists() })
+      queryClient.invalidateQueries({ queryKey: [`categories-addition`] })
 
       options?.onSuccess?.(data, variables, context)
     },
