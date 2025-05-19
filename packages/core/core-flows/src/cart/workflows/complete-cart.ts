@@ -32,6 +32,7 @@ import {
   validateCartPaymentsStep,
   validateShippingStep,
 } from "../steps"
+import { compensatePaymentIfNeededStep } from "../steps/compensate-payment-if-needed"
 import { reserveInventoryStep } from "../steps/reserve-inventory"
 import { completeCartFields } from "../utils/fields"
 import { prepareConfirmInventoryInput } from "../utils/prepare-confirm-inventory-input"
@@ -41,7 +42,6 @@ import {
   PrepareLineItemDataInput,
   prepareTaxLinesData,
 } from "../utils/prepare-line-item-data"
-import { compensatePaymentIfNeededStep } from "../steps/compensate-payment-if-needed"
 /**
  * The data to complete a cart and place an order.
  */
@@ -376,8 +376,12 @@ export const completeCartWorkflow = createWorkflow(
       return { id: order?.id ?? orderId } as CompleteCartWorkflowOutput
     })
 
+    const cartCompleted = createHook("cartCompleted", {
+      order_id: result,
+    })
+
     return new WorkflowResponse(result, {
-      hooks: [validate],
+      hooks: [validate, cartCompleted],
     })
   }
 )
