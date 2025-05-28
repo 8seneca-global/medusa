@@ -665,6 +665,9 @@
                 "productTag": {
                   "type": "string"
                 },
+                "productIngredient": {
+                  "type": "string"
+                },
                 "location": {
                   "type": "string"
                 },
@@ -705,6 +708,7 @@
                 "salesChannel",
                 "productType",
                 "productTag",
+                "productIngredient",
                 "location",
                 "shippingProfile",
                 "publishableApiKey",
@@ -2143,6 +2147,16 @@
               "required": ["label"],
               "additionalProperties": false
             },
+            "ingredients": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": ["label"],
+              "additionalProperties": false
+            },
             "tags": {
               "type": "object",
               "properties": {
@@ -2306,6 +2320,7 @@
             "type",
             "collection",
             "categories",
+            "ingredients",
             "tags",
             "sales_channels",
             "countryOrigin",
@@ -2810,6 +2825,9 @@
           "type": "string"
         },
         "product_tags":{
+          "type": "string"
+        },
+        "product_ingredients": {
           "type": "string"
         },
         "product_price": {
@@ -6992,6 +7010,9 @@
                     "productTag": {
                       "type": "string"
                     },
+                    "productIngredient": {
+                      "type": "string"
+                    },
                     "productType": {
                       "type": "string"
                     },
@@ -7003,6 +7024,7 @@
                     "product",
                     "productCollection",
                     "productTag",
+                    "productIngredient",
                     "productType",
                     "customerGroup"
                   ],
@@ -7036,6 +7058,9 @@
                     "productTag": {
                       "type": "string"
                     },
+                    "productIngredient": {
+                      "type": "string"
+                    },
                     "productType": {
                       "type": "string"
                     },
@@ -7047,6 +7072,7 @@
                     "product",
                     "productCollection",
                     "productTag",
+                    "productIngredient",
                     "productType",
                     "customerGroup"
                   ],
@@ -7064,6 +7090,9 @@
                     "productTag": {
                       "type": "string"
                     },
+                    "productIngredient": {
+                      "type": "string"
+                    },  
                     "productType": {
                       "type": "string"
                     },
@@ -7075,6 +7104,7 @@
                     "product",
                     "productCollection",
                     "productTag",
+                    "productIngredient",
                     "productType",
                     "customerGroup"
                   ],
@@ -10417,8 +10447,12 @@
     },
     "productTags": {
       "type": "object",
+
       "properties": {
         "domain": {
+          "type": "string"
+        },
+        "productIngredient": {
           "type": "string"
         },
         "create": {
@@ -10427,14 +10461,23 @@
             "header": {
               "type": "string"
             },
+            "header_ingredient": {
+              "type": "string"
+            },
             "subtitle": {
+              "type": "string"
+            },
+            "subtitle_ingredient": {
               "type": "string"
             },
             "successToast": {
               "type": "string"
-            }
+            },
+            "successToast_ingredient": {
+              "type": "string"
+            } 
           },
-          "required": ["header", "subtitle", "successToast"],
+          "required": ["header", "header_ingredient", "subtitle", "subtitle_ingredient", "successToast", "successToast_ingredient"],
           "additionalProperties": false
         },
         "edit": {
@@ -10443,14 +10486,23 @@
             "header": {
               "type": "string"
             },
+            "header_ingredient": {
+              "type": "string"
+            },
             "subtitle": {
+              "type": "string"
+            },
+            "subtitle_ingredient": {
               "type": "string"
             },
             "successToast": {
               "type": "string"
+            },
+            "successToast_ingredient": {
+              "type": "string"
             }
           },
-          "required": ["header", "subtitle", "successToast"],
+          "required": ["header", "header_ingredient", "subtitle", "subtitle_ingredient", "successToast", "successToast_ingredient"],
           "additionalProperties": false
         },
         "delete": {
@@ -10459,11 +10511,17 @@
             "confirmation": {
               "type": "string"
             },
+            "confirmation_ingredient": {
+              "type": "string"
+            },
             "successToast": {
+              "type": "string"
+            },
+            "successToast_ingredient": {
               "type": "string"
             }
           },
-          "required": ["confirmation", "successToast"],
+          "required": ["confirmation", "confirmation_ingredient", "successToast", "successToast_ingredient"],
           "additionalProperties": false
         },
         "fields": {
@@ -10477,7 +10535,7 @@
           "additionalProperties": false
         }
       },
-      "required": ["domain", "create", "edit", "delete", "fields"],
+      "required": ["domain", "productIngredient", "create", "edit", "delete", "fields"],
       "additionalProperties": false
     },
     "notifications": {
@@ -10715,6 +10773,9 @@
         "limit": {
           "type": "string"
         },
+        "ingredients": {
+          "type": "string"
+        },
         "tags": {
           "type": "string"
         },
@@ -10743,6 +10804,9 @@
           "type": "string"
         },
         "product_tags": {
+          "type": "string"
+        },
+        "product_ingredients": {
           "type": "string"
         },
         "product_types": {
@@ -10964,6 +11028,9 @@
         "tag": {
           "type": "string"
         },
+        "ingredient": {
+          "type": "string"
+        },
         "dateIssued": {
           "type": "string"
         },
@@ -11120,6 +11187,7 @@
         "item",
         "qty",
         "limit",
+        "ingredients",
         "tags",
         "type",
         "reason",
@@ -11130,6 +11198,7 @@
         "sales_channels",
         "customer_groups",
         "product_tags",
+        "product_ingredients",
         "product_types",
         "product_collections",
         "status",
@@ -11203,6 +11272,7 @@
         "false",
         "giftCard",
         "tag",
+        "ingredient",
         "dateIssued",
         "issuedDate",
         "expiryDate",

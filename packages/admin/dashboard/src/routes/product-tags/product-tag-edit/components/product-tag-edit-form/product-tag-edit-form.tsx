@@ -35,7 +35,7 @@ export const ProductTagEditForm = ({ productTag }: ProductTagEditFormProps) => {
     await mutateAsync(data, {
       onSuccess: ({ product_tag }) => {
         toast.success(
-          t("productTags.edit.successToast", {
+          t("productTags.edit.successToast_ingredient", {
             value: product_tag.value,
           })
         )

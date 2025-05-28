@@ -21,10 +21,10 @@ export const ProductTagEdit = () => {
     <RouteDrawer>
       <RouteDrawer.Header>
         <RouteDrawer.Title asChild>
-          <Heading>{t("productTags.edit.header")}</Heading>
+          <Heading>{t("productTags.edit.header_ingredient")}</Heading>
         </RouteDrawer.Title>
         <RouteDrawer.Description className="sr-only">
-          {t("productTags.edit.subtitle")}
+          {t("productTags.edit.subtitle_ingredient")}
         </RouteDrawer.Description>
       </RouteDrawer.Header>
       {ready && <ProductTagEditForm productTag={product_tag} />}

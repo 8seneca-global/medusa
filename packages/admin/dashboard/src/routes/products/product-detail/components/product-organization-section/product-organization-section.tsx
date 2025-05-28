@@ -37,7 +37,7 @@ export const ProductOrganizationSection = ({
       </div>
 
       <SectionRow
-        title={t("fields.tags")}
+        title={t("fields.ingredients")}
         value={
           product.tags?.length
             ? product.tags.map((tag) => (

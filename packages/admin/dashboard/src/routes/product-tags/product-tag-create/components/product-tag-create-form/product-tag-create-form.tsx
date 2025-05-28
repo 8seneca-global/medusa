@@ -32,7 +32,7 @@ export const ProductTagCreateForm = () => {
     await mutateAsync(data, {
       onSuccess: ({ product_tag }) => {
         toast.success(
-          t("productTags.create.successToast", {
+          t("productTags.create.successToast_ingredient", {
             value: product_tag.value,
           })
         )
@@ -55,11 +55,11 @@ export const ProductTagCreateForm = () => {
           <div className="flex w-full max-w-[720px] flex-col gap-y-8">
             <div className="flex flex-col gap-y-1">
               <RouteFocusModal.Title asChild>
-                <Heading>{t("productTags.create.header")}</Heading>
+                <Heading>{t("productTags.create.header_ingredient")}</Heading>
               </RouteFocusModal.Title>
               <RouteFocusModal.Description asChild>
                 <Text size="small" className="text-ui-fg-subtle">
-                  {t("productTags.create.subtitle")}
+                  {t("productTags.create.subtitle_ingredient")}
                 </Text>
               </RouteFocusModal.Description>
             </div>

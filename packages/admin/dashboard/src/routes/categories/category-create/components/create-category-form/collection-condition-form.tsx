@@ -41,11 +41,11 @@ export const CollectionConditionForm = ({
     {
       id: "product.tags",
       value: "product.tags",
-      label: t("collection_condition.product_tags"),
+      label: t("collection_condition.product_ingredients"),
       field_type: "select",
       operators: [
-        { label: t('collection_condition.equals'), value: "eq" },
-        { label: t('collection_condition.contains'), value: "contains" },
+        { label: t("collection_condition.equals"), value: "eq" },
+        { label: t("collection_condition.contains"), value: "contains" },
       ],
     },
     {
@@ -54,11 +54,11 @@ export const CollectionConditionForm = ({
       label: t("collection_condition.product_price"),
       field_type: "number",
       operators: [
-        { label:t('collection_condition.equals'), value: "eq" },
-        { label: t('collection_condition.greater_than'), value: "gt" },
-        { label: t('collection_condition.less_than'), value: "lt" },
-        { label: t('collection_condition.less_than_eq'), value: "lte" },
-        { label: t('collection_condition.greater_than_eq'), value: "gte" },
+        { label: t("collection_condition.equals"), value: "eq" },
+        { label: t("collection_condition.greater_than"), value: "gt" },
+        { label: t("collection_condition.less_than"), value: "lt" },
+        { label: t("collection_condition.less_than_eq"), value: "lte" },
+        { label: t("collection_condition.greater_than_eq"), value: "gte" },
       ],
     },
   ]
@@ -229,7 +229,11 @@ export const CollectionConditionForm = ({
                                   ref={ref}
                                   className="bg-ui-bg-base"
                                 >
-                                  <Select.Value placeholder={t('collection_condition.select_tag')} />
+                                  <Select.Value
+                                    placeholder={t(
+                                      "collection_condition.select_ingredient"
+                                    )}
+                                  />
                                 </Select.Trigger>
 
                                 <Select.Content>
@@ -363,7 +367,7 @@ export const CollectionConditionForm = ({
             className="text-ui-fg-muted hover:text-ui-fg-subtle ml-2 inline-block"
             onClick={() => remove()}
           >
-            {t('collection_condition.clear_all')}
+            {t("collection_condition.clear_all")}
           </Button>
         )}
       </div>

@@ -1286,7 +1286,7 @@ export function getRouteMap({
               errorElement: <ErrorBoundary />,
               element: <Outlet />,
               handle: {
-                breadcrumb: () => t("productTags.domain"),
+                breadcrumb: () => t("productTags.productIngredient"),
               },
               children: [
                 {

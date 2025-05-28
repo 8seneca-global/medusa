@@ -154,7 +154,7 @@ export const ProductCreateOrganizationSection = ({
             return (
               <Form.Item>
                 <Form.Label optional>
-                  {t("products.fields.tags.label")}
+                  {t("products.fields.ingredients.label")}
                 </Form.Label>
                 <Form.Control>
                   <Combobox

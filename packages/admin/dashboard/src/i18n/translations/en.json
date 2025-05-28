@@ -179,6 +179,7 @@
         "salesChannel": "Sales Channels",
         "productType": "Product Types",
         "productTag": "Product Tags",
+        "productIngredient": "Product Ingredients",
         "location": "Locations",
         "shippingProfile": "Shipping Profiles",
         "publishableApiKey": "Publishable API Keys",
@@ -573,6 +574,9 @@
       "categories": {
         "label": "Product Group"
       },
+      "ingredients": {
+        "label": "Ingredients"
+      },
       "tags": {
         "label": "Tags"
       },
@@ -748,6 +752,7 @@
     "description": "Add conditions to determine which products should be included in this collection",
     "add": "Add Condition",
     "product_tags": "Product Tags",
+    "product_ingredients": "Product Ingredients",
     "product_price": "Product Price",
     "equals": "Equals",
     "contains": "Contains",
@@ -756,6 +761,7 @@
     "less_than_eq": "Less than or equal",
     "greater_than_eq": "Greater than or equal",
     "select_tag": "Select Tag",
+    "select_ingredient": "Select Ingredient",
     "clear_all": "Clear All"
   },
   "categories": {
@@ -1882,6 +1888,7 @@
           "product": "Products",
           "productCollection": "Product collections",
           "productTag": "Product tags",
+          "productIngredient": "Product ingredients",
           "productType": "Product types",
           "customerGroup": "Customer groups"
         },
@@ -1894,6 +1901,7 @@
           "product": "Search for products",
           "productCollection": "Search for product collections",
           "productTag": "Search for product tags",
+          "productIngredient": "Search for product ingredients",
           "productType": "Search for product types",
           "customerGroup": "Search for customer groups"
         },
@@ -1901,6 +1909,7 @@
           "product": "Product",
           "productCollection": "Product collection",
           "productTag": "Product tag",
+          "productIngredient": "Product ingredient",
           "productType": "Product type",
           "customerGroup": "Customer group"
         },
@@ -2799,19 +2808,28 @@
   },
   "productTags": {
     "domain": "Product Tags",
+    "productIngredient": "Product Ingredients",
     "create": {
       "header": "Create Product Tag",
+      "header_ingredient": "Create Product Ingredient",
       "subtitle": "Create a new product tag to categorize your products.",
-      "successToast": "Product tag {{value}} was successfully created."
+      "subtitle_ingredient": "Create a new product ingredient to categorize your products.",
+      "successToast": "Product tag {{value}} was successfully created.",
+      "successToast_ingredient": "Product ingredient {{value}} was successfully created."
     },
     "edit": {
       "header": "Edit Product Tag",
+      "header_ingredient": "Edit Product Ingredient",
       "subtitle": "Edit the value of the product tag.",
-      "successToast": "Product tag {{value}} was successfully updated."
+      "subtitle_ingredient": "Edit the value of the product ingredient.",
+      "successToast": "Product tag {{value}} was successfully updated.",
+      "successToast_ingredient": "Product ingredient {{value}} was successfully updated."
     },
     "delete": {
       "confirmation": "You are about to delete the product tag {{value}}. This action cannot be undone.",
-      "successToast": "Product tag {{value}} was successfully deleted."
+      "confirmation_ingredient": "You are about to delete the product ingredient {{value}}. This action cannot be undone.",
+      "successToast": "Product tag {{value}} was successfully deleted.",
+      "successToast_ingredient": "Product ingredient {{value}} was successfully deleted."
     },
     "fields": {
       "value": "Value"
@@ -2887,6 +2905,7 @@
     "item": "Item",
     "qty": "qty.",
     "limit": "Limit",
+    "ingredients": "Ingredients",
     "tags": "Tags",
     "type": "Type",
     "reason": "Reason",
@@ -2896,6 +2915,7 @@
     "percentage": "Percentage",
     "sales_channels": "Sales Channels",
     "customer_groups": "Customer Groups",
+    "product_ingredients": "Product Ingredients",
     "product_tags": "Product Tags",
     "product_types": "Product Types",
     "product_collections": "Product Collections",
@@ -2970,6 +2990,7 @@
     "false": "False",
     "giftCard": "Gift Card",
     "tag": "Tag",
+    "ingredient": "Ingredient",
     "dateIssued": "Date issued",
     "issuedDate": "Issued date",
     "expiryDate": "Expiry date",

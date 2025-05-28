@@ -96,7 +96,7 @@ export const useProductTableFilters = (
   if (product_tags && !isProductTagExcluded) {
     const tagFilter: Filter = {
       key: "tag_id",
-      label: t("fields.tag"),
+      label: t("fields.ingredient"),
       type: "select",
       multiple: true,
       options: product_tags.map((t) => ({

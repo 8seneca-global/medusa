@@ -52,7 +52,7 @@ const useSettingRoutes = (): INavItem[] => {
         to: "/settings/product-types",
       },
       {
-        label: t("productTags.domain"),
+        label: t("productTags.productIngredient"),
         to: "/settings/product-tags",
       },
       {

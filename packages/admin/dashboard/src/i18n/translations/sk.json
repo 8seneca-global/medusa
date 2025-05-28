@@ -179,6 +179,7 @@
         "salesChannel": "Predajné kanály",
         "productType": "Typy produktov",
         "productTag": "Tagy produktov",
+        "productIngredient": "Ingrediencie produktu",
         "location": "Miesta",
         "shippingProfile": "Dopravné profily",
         "publishableApiKey": "Verejné API kľúče",
@@ -573,6 +574,9 @@
       "categories": {
         "label": "Skupina produktov"
       },
+      "ingredients": {
+        "label": "Ingrediencie"
+      },
       "tags": {
         "label": "Tagy"
       },
@@ -748,6 +752,7 @@
     "description": "Pridajte podmienky, aby ste určili, ktoré produkty by mali byť zahrnuté do tejto kolekcie",
     "add": "Pridať podmienku",
     "product_tags": "Štítky produktu",
+    "product_ingredients": "Ingrediencie produktu",
     "product_price": "Cena produktu",
     "equals": "Rovná sa",
     "contains": "Obsahuje",
@@ -1882,6 +1887,7 @@
           "product": "Produkty",
           "productCollection": "Kolekcie produktov",
           "productTag": "Štítky produktov",
+          "productIngredient": "Ingrediencie produktu",
           "productType": "Typy produktov",
           "customerGroup": "Skupiny zákazníkov"
         },
@@ -1894,6 +1900,7 @@
           "product": "Hľadajte produkty",
           "productCollection": "Hľadajte kolekcie produktov",
           "productTag": "Hľadajte štítky produktov",
+          "productIngredient": "Hľadajte ingrediencie produktu",
           "productType": "Hľadajte typy produktov",
           "customerGroup": "Hľadajte skupiny zákazníkov"
         },
@@ -1901,6 +1908,7 @@
           "product": "Produkt",
           "productCollection": "Kolekcia produktov",
           "productTag": "Štítok produktov",
+          "productIngredient": "Ingrediencie produktu",
           "productType": "Typ produktu",
           "customerGroup": "Skupina zákazníkov"
         },
@@ -2799,19 +2807,28 @@
   },
   "productTags": {
     "domain": "Štítky produktov",
+    "productIngredient": "Ingrediencie produktu",
     "create": {
       "header": "Vytvoriť štítok produktu",
+      "header_ingredient": "Vytvoriť ingredienciu produktu",
       "subtitle": "Vytvorte nový štítok produktu na kategorizáciu vašich produktov.",
-      "successToast": "Štítok produktu {{value}} bol úspešne vytvorený."
+      "subtitle_ingredient": "Vytvorte novú ingredienciu produktu na kategorizáciu vašich produktov.",
+      "successToast": "Štítok produktu {{value}} bol úspešne vytvorený.",
+      "successToast_ingredient": "Ingredienciu produktu {{value}} bol úspešne vytvorený."
     },
     "edit": {
       "header": "Upraviť štítok produktu",
+      "header_ingredient": "Upraviť ingredienciu produktu",
       "subtitle": "Upraviť hodnotu štítku produktu.",
-      "successToast": "Štítok produktu {{value}} bol úspešne aktualizovaný."
+      "subtitle_ingredient": "Upraviť hodnotu ingrediencie produktu.",
+      "successToast": "Štítok produktu {{value}} bol úspešne aktualizovaný.",
+      "successToast_ingredient": "Ingredienciu produktu {{value}} bol úspešne aktualizovaný."
     },
     "delete": {
       "confirmation": "Chystáte sa odstrániť štítok produktu {{value}}. Táto akcia je nevratná.",
-      "successToast": "Štítok produktu {{value}} bol úspešne odstránený."
+      "confirmation_ingredient": "Chystáte sa odstrániť ingredienciu produktu {{value}}. Táto akcia je nevratná.",
+      "successToast": "Štítok produktu {{value}} bol úspešne odstránený.",
+      "successToast_ingredient": "Ingredienciu produktu {{value}} bol úspešne odstránený."
     },
     "fields": {
       "value": "Hodnota"
@@ -2887,6 +2904,7 @@
     "item": "Položka",
     "qty": "množ.",
     "limit": "Limit",
+    "ingredients": "Ingrediencie",
     "tags": "Štítky",
     "type": "Typ",
     "reason": "Dôvod",
@@ -2897,6 +2915,7 @@
     "sales_channels": "Predajné kanály",
     "customer_groups": "Skupiny zákazníkov",
     "product_tags": "Štítky produktov",
+    "product_ingredients": "Ingrediencie produktu",
     "product_types": "Typy produktov",
     "product_collections": "Kolekcie produktov",
     "status": "Stav",
@@ -2970,6 +2989,7 @@
     "false": "Nepravda",
     "giftCard": "Darčeková karta",
     "tag": "Štítok",
+    "ingredient": "Ingrediencie",
     "dateIssued": "Dátum vydania",
     "issuedDate": "Dátum vydania",
     "expiryDate": "Dátum expirácie",

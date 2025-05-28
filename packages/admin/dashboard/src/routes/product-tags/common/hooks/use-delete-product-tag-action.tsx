@@ -20,7 +20,7 @@ export const useDeleteProductTagAction = ({
   const handleDelete = async () => {
     const confirmed = await prompt({
       title: t("general.areYouSure"),
-      description: t("productTags.delete.confirmation", {
+      description: t("productTags.delete.confirmation_ingredient", {
         value: productTag.value,
       }),
       confirmText: t("actions.delete"),
@@ -34,7 +34,7 @@ export const useDeleteProductTagAction = ({
     await mutateAsync(undefined, {
       onSuccess: () => {
         toast.success(
-          t("productTags.delete.successToast", {
+          t("productTags.delete.successToast_ingredient", {
             value: productTag.value,
           })
         )
