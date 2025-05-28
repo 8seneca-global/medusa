@@ -299,7 +299,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/core-flows@2.7.0, @8medusa/core-flows@workspace:*, @8medusa/core-flows@workspace:^, @8medusa/core-flows@workspace:packages/core/core-flows":
+"@8medusa/core-flows@2.9.8, @8medusa/core-flows@workspace:*, @8medusa/core-flows@workspace:^, @8medusa/core-flows@workspace:packages/core/core-flows":
   version: 0.0.0-use.local
   resolution: "@8medusa/core-flows@workspace:packages/core/core-flows"
   dependencies:
@@ -322,6 +322,18 @@ __metadata:
     awilix: ^8.0.1
   languageName: unknown
   linkType: soft
+
+"@8medusa/core-flows@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@8medusa/core-flows@npm:2.7.0"
+  dependencies:
+    json-2-csv: ^5.5.4
+  peerDependencies:
+    "@8medusa/framework": 2.7.0
+    awilix: ^8.0.1
+  checksum: 3fb70fb0f62bc85bd65ff1cd0ae6f8e13cab76a7f049fbb212529b2245e0255e242ecc0716cb9275eb6a3487307302aae641081a2ea8322c59f128a4fdd1fb62
+  languageName: node
+  linkType: hard
 
 "@8medusa/currency@2.7.0, @8medusa/currency@workspace:^, @8medusa/currency@workspace:packages/modules/currency":
   version: 0.0.0-use.local
@@ -998,7 +1010,7 @@ __metadata:
     "@8medusa/cache-inmemory": 2.7.0
     "@8medusa/cache-redis": 2.7.0
     "@8medusa/cart": 2.7.0
-    "@8medusa/core-flows": 2.7.0
+    "@8medusa/core-flows": 2.9.8
     "@8medusa/currency": 2.7.0
     "@8medusa/customer": 2.7.0
     "@8medusa/event-bus-local": 2.7.0
