@@ -74,7 +74,7 @@
     "@8medusa/cache-inmemory": "2.7.0",
     "@8medusa/cache-redis": "2.7.0",
     "@8medusa/cart": "2.7.0",
-    "@8medusa/core-flows": "2.7.0",
+    "@8medusa/core-flows": "2.9.6",
     "@8medusa/currency": "2.7.0",
     "@8medusa/customer": "2.7.0",
     "@8medusa/event-bus-local": "2.7.0",
