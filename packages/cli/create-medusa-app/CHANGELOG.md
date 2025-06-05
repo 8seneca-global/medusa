@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.9.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @8medusa/telemetry@2.9.11
+
 ## 2.7.0
 
 ### Patch Changes

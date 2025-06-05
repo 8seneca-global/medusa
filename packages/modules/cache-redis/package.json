@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/cache-redis",
-  "version": "2.7.0",
+  "version": "2.9.11",
   "description": "Redis Cache Module for Medusa",
   "main": "dist/index.js",
   "repository": {
@@ -23,7 +23,7 @@
   "author": "Medusa",
   "license": "MIT",
   "devDependencies": {
-    "@8medusa/framework": "2.7.0",
+    "@8medusa/framework": "2.9.11",
     "@swc/core": "^1.7.28",
     "@swc/jest": "^0.2.36",
     "jest": "^29.7.0",
@@ -39,7 +39,7 @@
     "ioredis": "^5.4.1"
   },
   "peerDependencies": {
-    "@8medusa/framework": "2.7.0",
+    "@8medusa/framework": "2.9.11",
     "awilix": "^8.0.1"
   }
 }

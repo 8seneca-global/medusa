@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/ui",
-  "version": "4.0.8",
+  "version": "4.0.9",
   "author": "Kasper Kristensen <kasper@8medusa.com>",
   "license": "MIT",
   "repository": {
@@ -42,7 +42,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@8medusa/ui-preset": "2.7.0",
+    "@8medusa/ui-preset": "2.9.11",
     "@faker-js/faker": "^9.2.0",
     "@storybook/addon-essentials": "^8.3.5",
     "@storybook/addon-interactions": "^8.3.5",
@@ -81,7 +81,7 @@
     "vitest": "^3.0.5"
   },
   "dependencies": {
-    "@8medusa/icons": "2.7.0",
+    "@8medusa/icons": "2.9.11",
     "@tanstack/react-table": "8.20.5",
     "clsx": "^1.2.1",
     "copy-to-clipboard": "^3.3.3",

@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/cli",
-  "version": "2.7.0",
+  "version": "2.9.11",
   "description": "Command Line interface for Medusa Commerce",
   "main": "dist/index.js",
   "bin": {
@@ -46,8 +46,8 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@8medusa/telemetry": "2.7.0",
-    "@8medusa/utils": "2.7.0",
+    "@8medusa/telemetry": "2.9.11",
+    "@8medusa/utils": "2.9.11",
     "@types/express": "^4.17.17",
     "chalk": "^4.0.0",
     "configstore": "5.0.1",

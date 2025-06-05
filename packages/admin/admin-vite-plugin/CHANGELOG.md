@@ -1,5 +1,12 @@
 # @8medusa/admin-vite-plugin
 
+## 2.9.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @8medusa/admin-shared@2.9.11
+
 ## 2.7.0
 
 ### Patch Changes

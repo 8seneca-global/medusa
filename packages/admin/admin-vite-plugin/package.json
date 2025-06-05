@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/admin-vite-plugin",
-  "version": "2.7.0",
+  "version": "2.9.11",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -37,7 +37,7 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
-    "@8medusa/admin-shared": "2.7.0",
+    "@8medusa/admin-shared": "2.9.11",
     "@babel/parser": "7.25.6",
     "@babel/traverse": "7.25.6",
     "@babel/types": "7.25.6",
