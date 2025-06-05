@@ -2,11 +2,7 @@ import {
   AdditionalData,
   UpdateCartWorkflowInputDTO,
 } from "@8medusa/framework/types"
-import {
-  CartWorkflowEvents,
-  isDefined,
-  MedusaError,
-} from "@8medusa/framework/utils"
+import { CartWorkflowEvents, isDefined } from "@8medusa/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -164,20 +160,9 @@ export const updateCartWorkflow = createWorkflow(
         const shippingAddress = data.input.shipping_address
 
         if (shippingAddress?.country_code) {
-          const country = data.region.countries.find(
-            (c) => c.iso_2 === shippingAddress.country_code
-          )
-
-          if (!country) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
-              `Country with code ${shippingAddress.country_code} is not within region ${data.region.name}`
-            )
-          }
-
           data_.shipping_address = {
             ...shippingAddress,
-            country_code: country.iso_2,
+            country_code: shippingAddress.country_code,
           }
         }
 
