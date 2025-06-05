@@ -2854,6 +2854,9 @@
         "select_tag": {
           "type": "string"
         },
+        "select_ingredient": {
+          "type": "string"
+        },
         "clear_all": {
           "type": "string"
         }

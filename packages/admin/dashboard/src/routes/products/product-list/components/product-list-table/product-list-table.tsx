@@ -1,4 +1,4 @@
-import { PencilSquare, Trash } from "@8medusa/icons"
+import { Trash } from "@8medusa/icons"
 import { Button, Container, Heading, toast, usePrompt } from "@8medusa/ui"
 import { keepPreviousData } from "@tanstack/react-query"
 import { createColumnHelper } from "@tanstack/react-table"
@@ -136,15 +136,15 @@ const ProductActions = ({ product }: { product: HttpTypes.AdminProduct }) => {
   return (
     <ActionMenu
       groups={[
-        {
-          actions: [
-            {
-              icon: <PencilSquare />,
-              label: t("actions.edit"),
-              to: `/products/${product.id}/edit`,
-            },
-          ],
-        },
+        // {
+        //   actions: [
+        //     {
+        //       icon: <PencilSquare />,
+        //       label: t("actions.edit"),
+        //       to: `/products/${product.id}/edit`,
+        //     },
+        //   ],
+        // },
         {
           actions: [
             {
