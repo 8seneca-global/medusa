@@ -2824,7 +2824,7 @@
         "add": {
           "type": "string"
         },
-        "product_tags":{
+        "product_tags": {
           "type": "string"
         },
         "product_ingredients": {
@@ -2842,13 +2842,13 @@
         "greater_than": {
           "type": "string"
         },
-        "less_than":{
+        "less_than": {
           "type": "string"
         },
-        "less_than_eq":{
+        "less_than_eq": {
           "type": "string"
         },
-        "greater_than_eq":{
+        "greater_than_eq": {
           "type": "string"
         },
         "select_tag": {
@@ -3088,7 +3088,14 @@
               "additionalProperties": false
             }
           },
-          "required": ["visibility", "status", "type", "path", "children", "new"],
+          "required": [
+            "visibility",
+            "status",
+            "type",
+            "path",
+            "children",
+            "new"
+          ],
           "additionalProperties": false
         }
       },
@@ -6316,6 +6323,9 @@
                 },
                 "fulfillmentOption": {
                   "type": "string"
+                },
+                "heliosId": {
+                  "type": "string"
                 }
               },
               "required": [
@@ -7095,7 +7105,7 @@
                     },
                     "productIngredient": {
                       "type": "string"
-                    },  
+                    },
                     "productType": {
                       "type": "string"
                     },
@@ -10478,9 +10488,16 @@
             },
             "successToast_ingredient": {
               "type": "string"
-            } 
+            }
           },
-          "required": ["header", "header_ingredient", "subtitle", "subtitle_ingredient", "successToast", "successToast_ingredient"],
+          "required": [
+            "header",
+            "header_ingredient",
+            "subtitle",
+            "subtitle_ingredient",
+            "successToast",
+            "successToast_ingredient"
+          ],
           "additionalProperties": false
         },
         "edit": {
@@ -10505,7 +10522,14 @@
               "type": "string"
             }
           },
-          "required": ["header", "header_ingredient", "subtitle", "subtitle_ingredient", "successToast", "successToast_ingredient"],
+          "required": [
+            "header",
+            "header_ingredient",
+            "subtitle",
+            "subtitle_ingredient",
+            "successToast",
+            "successToast_ingredient"
+          ],
           "additionalProperties": false
         },
         "delete": {
@@ -10524,7 +10548,12 @@
               "type": "string"
             }
           },
-          "required": ["confirmation", "confirmation_ingredient", "successToast", "successToast_ingredient"],
+          "required": [
+            "confirmation",
+            "confirmation_ingredient",
+            "successToast",
+            "successToast_ingredient"
+          ],
           "additionalProperties": false
         },
         "fields": {
@@ -10538,7 +10567,14 @@
           "additionalProperties": false
         }
       },
-      "required": ["domain", "productIngredient", "create", "edit", "delete", "fields"],
+      "required": [
+        "domain",
+        "productIngredient",
+        "create",
+        "edit",
+        "delete",
+        "fields"
+      ],
       "additionalProperties": false
     },
     "notifications": {

@@ -1,6 +1,6 @@
-import { zodResolver } from "@hookform/resolvers/zod"
 import { HttpTypes } from "@8medusa/types"
 import { Button, Divider, Input, RadioGroup, toast } from "@8medusa/ui"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import * as zod from "zod"
@@ -31,6 +31,7 @@ const EditShippingOptionSchema = zod.object({
   price_type: zod.nativeEnum(ShippingOptionPriceType),
   enabled_in_store: zod.boolean().optional(),
   shipping_profile_id: zod.string(),
+  helios_id: zod.string().optional(),
 })
 
 export const EditShippingOptionForm = ({
@@ -60,6 +61,7 @@ export const EditShippingOptionForm = ({
       price_type: shippingOption.price_type as ShippingOptionPriceType,
       enabled_in_store: isOptionEnabledInStore(shippingOption),
       shipping_profile_id: shippingOption.shipping_profile_id,
+      helios_id: shippingOption.data?.helios_id as string | undefined,
     },
     resolver: zodResolver(EditShippingOptionSchema),
   })
@@ -91,6 +93,9 @@ export const EditShippingOptionForm = ({
         name: values.name,
         price_type: values.price_type,
         shipping_profile_id: values.shipping_profile_id,
+        data: {
+          helios_id: values.helios_id,
+        },
         rules,
       },
       {
@@ -194,6 +199,24 @@ export const EditShippingOptionForm = ({
                             }
                             disabled={shippingProfiles.disabled}
                           />
+                        </Form.Control>
+                        <Form.ErrorMessage />
+                      </Form.Item>
+                    )
+                  }}
+                />
+
+                <Form.Field
+                  control={form.control}
+                  name="helios_id"
+                  render={({ field }) => {
+                    return (
+                      <Form.Item>
+                        <Form.Label>
+                          {t("stockLocations.shippingOptions.fields.heliosId")}
+                        </Form.Label>
+                        <Form.Control>
+                          <Input {...field} />
                         </Form.Control>
                         <Form.ErrorMessage />
                       </Form.Item>
