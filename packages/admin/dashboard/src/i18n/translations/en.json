@@ -2240,7 +2240,7 @@
   },
   "priceLists": {
     "domain": "Price Lists",
-    "subtitle": "Create sales or override prices for specific conditions.",
+    "subtitle": "Create sales or override prices for specific conditions. Price lists are created from Helios.",
     "delete": {
       "confirmation": "You are about to delete the price list \"{{title}}\". This action cannot be undone.",
       "successToast": "Price list \"{{title}}\" was successfully deleted."

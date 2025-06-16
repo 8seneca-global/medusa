@@ -2239,7 +2239,7 @@
   },
   "priceLists": {
     "domain": "Cenníky",
-    "subtitle": "Vytvorte cenníky alebo prepíšte ceny pre konkrétne podmienky.",
+    "subtitle": "Vytvorte cenníky alebo prepíšte ceny pre konkrétne podmienky. Cenníky sú vytvárané z Helios.",
     "delete": {
       "confirmation": "Chystáte sa odstrániť cenník \"{{title}}\". Táto akcia je nevratná.",
       "successToast": "Cenník \"{{title}}\" bol úspešne odstránený."

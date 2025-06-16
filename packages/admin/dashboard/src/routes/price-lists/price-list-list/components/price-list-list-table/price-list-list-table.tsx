@@ -1,7 +1,6 @@
-import { Button, Container, Heading, Text } from "@8medusa/ui"
+import { Container, Heading, Text } from "@8medusa/ui"
 import { keepPreviousData } from "@tanstack/react-query"
 import { useTranslation } from "react-i18next"
-import { Link } from "react-router-dom"
 import { _DataTable } from "../../../../../components/table/data-table"
 import { usePriceLists } from "../../../../../hooks/api/price-lists"
 import { useDataTable } from "../../../../../hooks/use-data-table"
@@ -49,9 +48,9 @@ export const PriceListListTable = () => {
             {t("priceLists.subtitle")}
           </Text>
         </div>
-        <Button size="small" variant="secondary" asChild>
+        {/* <Button size="small" variant="secondary" asChild>
           <Link to="create">{t("actions.create")}</Link>
-        </Button>
+        </Button> */}
       </div>
       <_DataTable
         table={table}
