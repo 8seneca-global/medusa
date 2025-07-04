@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/core-flows",
-  "version": "2.9.11",
+  "version": "2.9.14",
   "description": "Set of workflow definitions for Medusa",
   "main": "dist/index.js",
   "exports": {
@@ -8,6 +8,7 @@
   },
   "repository": {
     "type": "git",
+    "watch": "tsc --build --watch",
     "url": "https://github.com/medusajs/medusa",
     "directory": "packages/core-flows"
   },

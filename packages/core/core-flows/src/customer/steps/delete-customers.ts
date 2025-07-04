@@ -16,7 +16,8 @@ export const deleteCustomersStep = createStep(
   async (ids: DeleteCustomersStepInput, { container }) => {
     const service = container.resolve<ICustomerModuleService>(Modules.CUSTOMER)
 
-    await service.softDeleteCustomers(ids)
+    console.log("22222222222222222222222deleteCustomersStep", ids)
+    await service.deleteCustomers(ids)
 
     return new StepResponse(void 0, ids)
   },

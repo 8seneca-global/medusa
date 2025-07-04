@@ -6,7 +6,7 @@ import {
   transform,
   when,
 } from "@8medusa/framework/workflows-sdk"
-import { setAuthAppMetadataStep } from "../../auth"
+import { deleteAuthIdentityStep } from "../../auth"
 import { useRemoteQueryStep } from "../../common"
 import { deleteCustomersWorkflow } from "./delete-customers"
 
@@ -90,11 +90,15 @@ export const removeCustomerAccountWorkflow = createWorkflow(
         }
       )
 
-      setAuthAppMetadataStep({
-        authIdentityId: authIdentity.id,
-        actorType: "customer",
-        value: null,
+      deleteAuthIdentityStep({
+        id: authIdentity.id,
       })
+
+      // setAuthAppMetadataStep({
+      //   authIdentityId: authIdentity.id,
+      //   actorType: "customer",
+      //   value: null,
+      // })
     })
 
     return new WorkflowResponse(input.customerId)

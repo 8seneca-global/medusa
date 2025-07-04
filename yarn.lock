@@ -5,13 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8c0
 
-"@8medusa/admin-bundler@2.9.12, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
+"@8medusa/admin-bundler@2.9.13, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
   version: 0.0.0-use.local
   resolution: "@8medusa/admin-bundler@workspace:packages/admin/admin-bundler"
   dependencies:
     "@8medusa/admin-shared": 2.7.0
     "@8medusa/admin-vite-plugin": 2.7.0
-    "@8medusa/dashboard": 2.9.12
+    "@8medusa/dashboard": 2.9.13
     "@8medusa/types": 2.7.0
     "@types/compression": ^1.7.5
     "@vitejs/plugin-react": ^4.2.1
@@ -299,7 +299,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/core-flows@2.9.11, @8medusa/core-flows@workspace:*, @8medusa/core-flows@workspace:^, @8medusa/core-flows@workspace:packages/core/core-flows":
+"@8medusa/core-flows@2.9.14, @8medusa/core-flows@workspace:*, @8medusa/core-flows@workspace:^, @8medusa/core-flows@workspace:packages/core/core-flows":
   version: 0.0.0-use.local
   resolution: "@8medusa/core-flows@workspace:packages/core/core-flows"
   dependencies:
@@ -385,7 +385,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/dashboard@2.9.12, @8medusa/dashboard@workspace:packages/admin/dashboard":
+"@8medusa/dashboard@2.9.13, @8medusa/dashboard@workspace:packages/admin/dashboard":
   version: 0.0.0-use.local
   resolution: "@8medusa/dashboard@workspace:packages/admin/dashboard"
   dependencies:
@@ -1001,7 +1001,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@8medusa/medusa@workspace:packages/medusa"
   dependencies:
-    "@8medusa/admin-bundler": 2.9.12
+    "@8medusa/admin-bundler": 2.9.13
     "@8medusa/api-key": 2.7.0
     "@8medusa/auth": 2.7.0
     "@8medusa/auth-emailpass": 2.7.0
@@ -1010,7 +1010,7 @@ __metadata:
     "@8medusa/cache-inmemory": 2.7.0
     "@8medusa/cache-redis": 2.7.0
     "@8medusa/cart": 2.7.0
-    "@8medusa/core-flows": 2.9.11
+    "@8medusa/core-flows": 2.9.14
     "@8medusa/currency": 2.7.0
     "@8medusa/customer": 2.7.0
     "@8medusa/event-bus-local": 2.7.0

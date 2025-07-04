@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/medusa",
-  "version": "2.9.13",
+  "version": "2.9.14",
   "description": "Building blocks for digital commerce",
   "main": "dist/index.js",
   "exports": {
@@ -74,7 +74,7 @@
     "@8medusa/cache-inmemory": "2.7.0",
     "@8medusa/cache-redis": "2.7.0",
     "@8medusa/cart": "2.7.0",
-    "@8medusa/core-flows": "2.9.11",
+    "@8medusa/core-flows": "2.9.14",
     "@8medusa/currency": "2.7.0",
     "@8medusa/customer": "2.7.0",
     "@8medusa/event-bus-local": "2.7.0",
