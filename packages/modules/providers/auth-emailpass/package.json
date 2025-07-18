@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/auth-emailpass",
-  "version": "2.9.18",
+  "version": "2.9.19",
   "description": "Email and password credential authentication provider for Medusa",
   "main": "dist/index.js",
   "repository": {

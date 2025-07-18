@@ -19,7 +19,7 @@ type InjectedDependencies = {
 }
 
 interface LocalServiceConfig extends EmailPassAuthProviderOptions {
-  hashAlgorithm?: "sha512" | "scrypt"
+  hashAlgorithm?: string
 }
 
 export class EmailPassAuthService extends AbstractAuthModuleProvider {
@@ -108,6 +108,21 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     return copy
   }
 
+  private async verifyPassword(password: string, passwordHash: string) {
+    const hashAlgorithm = this.config_.hashAlgorithm
+
+    if (hashAlgorithm === "sha512") {
+      return (
+        crypto.createHash("sha512").update(password).digest("base64") ===
+        passwordHash
+      )
+    }
+
+    // default: scrypt
+    const buf = Buffer.from(passwordHash as string, "base64")
+    return Scrypt.verify(buf, password)
+  }
+
   async authenticate(
     userData: AuthenticationInput,
     authIdentityService: AuthIdentityProviderService
@@ -151,8 +166,7 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     const passwordHash = providerIdentity.provider_metadata?.password
 
     if (isString(passwordHash)) {
-      const buf = Buffer.from(passwordHash as string, "base64")
-      const success = await Scrypt.verify(buf, password)
+      const success = await this.verifyPassword(password, passwordHash)
 
       if (success) {
         const copy = JSON.parse(JSON.stringify(authIdentity))
