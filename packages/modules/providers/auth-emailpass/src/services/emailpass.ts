@@ -11,13 +11,16 @@ import {
   isString,
   MedusaError,
 } from "@8medusa/framework/utils"
+import * as crypto from "crypto"
 import Scrypt from "scrypt-kdf"
 
 type InjectedDependencies = {
   logger: Logger
 }
 
-interface LocalServiceConfig extends EmailPassAuthProviderOptions {}
+interface LocalServiceConfig extends EmailPassAuthProviderOptions {
+  hashAlgorithm?: "sha512" | "scrypt"
+}
 
 export class EmailPassAuthService extends AbstractAuthModuleProvider {
   static identifier = "emailpass"
@@ -36,7 +39,14 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     this.logger_ = logger
   }
 
-  protected async hashPassword(password: string) {
+  protected async hashPassword(password: string): Promise<string> {
+    const hashAlgorithm = this.config_.hashAlgorithm
+
+    if (hashAlgorithm === "sha512") {
+      return crypto.createHash("sha512").update(password).digest("base64")
+    }
+
+    // default: scrypt
     const hashConfig = this.config_.hashConfig ?? { logN: 15, r: 8, p: 1 }
     const passwordHash = await Scrypt.kdf(password, hashConfig)
     return passwordHash.toString("base64")
