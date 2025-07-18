@@ -74,7 +74,8 @@
     "publish:check-and-publish": "node scripts/publish-new-packages.js",
     "publish:providers": "node scripts/publish-providers.js",
     "release:core": "node scripts/release-core-packages.js",
-    "release:core-flows": "node scripts/release-workflow.js"
+    "release:core-flows": "node scripts/release-workflow.js",
+    "release:emailpass": "node scripts/release-emailpass.js"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
