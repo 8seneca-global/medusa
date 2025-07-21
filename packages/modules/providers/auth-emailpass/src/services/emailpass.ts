@@ -11,6 +11,7 @@ import {
   isString,
   MedusaError,
 } from "@8medusa/framework/utils"
+import bcrypt from "bcrypt"
 import * as crypto from "crypto"
 import Scrypt from "scrypt-kdf"
 
@@ -43,7 +44,11 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     const hashAlgorithm = this.config_.hashAlgorithm
 
     if (hashAlgorithm === "sha512") {
-      return crypto.createHash("sha512").update(password).digest("base64")
+      const sha512Hash = crypto.createHash("sha512").update(password).digest()
+      const base64Encoded = sha512Hash.toString("base64")
+      const bcryptHash = await bcrypt.hash(base64Encoded, 10)
+
+      return bcryptHash
     }
 
     // default: scrypt
@@ -108,18 +113,20 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     return copy
   }
 
-  private async verifyPassword(password: string, passwordHash: string) {
+  private async verifyPassword(
+    password: string,
+    passwordHash: string
+  ): Promise<boolean> {
     const hashAlgorithm = this.config_.hashAlgorithm
 
     if (hashAlgorithm === "sha512") {
-      return (
-        crypto.createHash("sha512").update(password).digest("base64") ===
-        passwordHash
-      )
+      const sha512Hash = crypto.createHash("sha512").update(password).digest()
+      const base64Encoded = sha512Hash.toString("base64")
+      return await bcrypt.compare(base64Encoded, passwordHash)
     }
 
     // default: scrypt
-    const buf = Buffer.from(passwordHash as string, "base64")
+    const buf = Buffer.from(passwordHash, "base64")
     return Scrypt.verify(buf, password)
   }
 
