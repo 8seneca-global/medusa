@@ -11,13 +11,17 @@ import {
   isString,
   MedusaError,
 } from "@8medusa/framework/utils"
+import bcrypt from "bcrypt"
+import * as crypto from "crypto"
 import Scrypt from "scrypt-kdf"
 
 type InjectedDependencies = {
   logger: Logger
 }
 
-interface LocalServiceConfig extends EmailPassAuthProviderOptions {}
+interface LocalServiceConfig extends EmailPassAuthProviderOptions {
+  hashAlgorithm?: string
+}
 
 export class EmailPassAuthService extends AbstractAuthModuleProvider {
   static identifier = "emailpass"
@@ -36,7 +40,18 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     this.logger_ = logger
   }
 
-  protected async hashPassword(password: string) {
+  protected async hashPassword(password: string): Promise<string> {
+    const hashAlgorithm = this.config_.hashAlgorithm
+
+    if (hashAlgorithm === "sha512") {
+      const sha512Hash = crypto.createHash("sha512").update(password).digest()
+      const base64Encoded = sha512Hash.toString("base64")
+      const bcryptHash = await bcrypt.hash(base64Encoded, 10)
+
+      return bcryptHash
+    }
+
+    // default: scrypt
     const hashConfig = this.config_.hashConfig ?? { logN: 15, r: 8, p: 1 }
     const passwordHash = await Scrypt.kdf(password, hashConfig)
     return passwordHash.toString("base64")
@@ -98,6 +113,23 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     return copy
   }
 
+  private async verifyPassword(
+    password: string,
+    passwordHash: string
+  ): Promise<boolean> {
+    const hashAlgorithm = this.config_.hashAlgorithm
+
+    if (hashAlgorithm === "sha512") {
+      const sha512Hash = crypto.createHash("sha512").update(password).digest()
+      const base64Encoded = sha512Hash.toString("base64")
+      return await bcrypt.compare(base64Encoded, passwordHash)
+    }
+
+    // default: scrypt
+    const buf = Buffer.from(passwordHash, "base64")
+    return Scrypt.verify(buf, password)
+  }
+
   async authenticate(
     userData: AuthenticationInput,
     authIdentityService: AuthIdentityProviderService
@@ -141,8 +173,7 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
     const passwordHash = providerIdentity.provider_metadata?.password
 
     if (isString(passwordHash)) {
-      const buf = Buffer.from(passwordHash as string, "base64")
-      const success = await Scrypt.verify(buf, password)
+      const success = await this.verifyPassword(password, passwordHash)
 
       if (success) {
         const copy = JSON.parse(JSON.stringify(authIdentity))

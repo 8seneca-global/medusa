@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/auth-emailpass",
-  "version": "2.7.0",
+  "version": "2.9.20",
   "description": "Email and password credential authentication provider for Medusa",
   "main": "dist/index.js",
   "repository": {
@@ -37,6 +37,8 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "bcrypt": "^6.0.0",
     "scrypt-kdf": "^2.0.1"
   },
   "peerDependencies": {
