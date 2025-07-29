@@ -86,4 +86,53 @@ export const templates = [
       },
     },
   },
+  {
+    id: "spend_threshold_discount",
+    type: "standard",
+    title: "Spend Threshold Discount",
+    description: "Get a discount when order total exceeds a set amount",
+    hiddenFields: [...commonHiddenFields],
+    defaults: {
+      is_automatic: "false",
+      type: "standard",
+      application_method: {
+        allocation: "across",
+        target_type: "order",
+        type: "percentage",
+      },
+    },
+  },
+  {
+    id: "price_range_gift",
+    type: "standard",
+    title: "Buy in price range, get gift product",
+    description:
+      "Get a gift product when the order total is within a specific price range",
+    hiddenFields: [...commonHiddenFields],
+    defaults: {
+      is_automatic: "false",
+      type: "standard",
+      application_method: {
+        allocation: "across",
+        target_type: "order",
+        type: "fixed",
+      },
+    },
+  },
+  {
+    id: "buy_x_get_percentage_off",
+    type: "standard",
+    title: "Buy X get percentage off",
+    description: "Buy X product(s), get a percentage off each product",
+    hiddenFields: [...commonHiddenFields, "rules"],
+    defaults: {
+      is_automatic: "false",
+      type: "buyget",
+      application_method: {
+        type: "percentage",
+        apply_to_quantity: 1,
+        max_quantity: 1,
+      },
+    },
+  },
 ]

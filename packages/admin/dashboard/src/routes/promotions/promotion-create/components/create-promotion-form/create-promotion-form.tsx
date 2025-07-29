@@ -21,6 +21,7 @@ import {
   RadioGroup,
   Text,
   toast,
+  Select,
 } from "@8medusa/ui"
 import { useEffect, useMemo, useState } from "react"
 import { useForm, useWatch } from "react-hook-form"
@@ -34,7 +35,10 @@ import {
 } from "../../../../../components/modals"
 import { KeyboundForm } from "../../../../../components/utilities/keybound-form"
 import { useCampaigns } from "../../../../../hooks/api/campaigns"
-import { useCreatePromotion } from "../../../../../hooks/api/promotions"
+import {
+  useCreatePromotion,
+  useCreateThresholdPromotion,
+} from "../../../../../hooks/api/promotions"
 import { getCurrencySymbol } from "../../../../../lib/data/currencies"
 import { DEFAULT_CAMPAIGN_VALUES } from "../../../../campaigns/common/constants"
 import { RulesFormField } from "../../../common/edit-rules/components/rules-form-field"
@@ -42,6 +46,7 @@ import { AddCampaignPromotionFields } from "../../../promotion-add-campaign/comp
 import { Tab } from "./constants"
 import { CreatePromotionSchema } from "./form-schema"
 import { templates } from "./templates"
+import { useProducts } from "../../../../../hooks/api"
 
 const defaultValues = {
   campaign_id: undefined,
@@ -61,6 +66,9 @@ const defaultValues = {
     buy_rules: [],
   },
   campaign: undefined,
+  min_total_cart_price: undefined,
+  max_total_cart_price: undefined,
+  gift_product_id: undefined,
 }
 
 type TabState = Record<Tab, ProgressStatus>
@@ -80,9 +88,17 @@ export const CreatePromotionForm = () => {
     defaultValues,
     resolver: zodResolver(CreatePromotionSchema),
   })
+
   const { setValue, reset, getValues } = form
 
   const { mutateAsync: createPromotion } = useCreatePromotion()
+
+  const { products } = useProducts({
+    limit: 999999,
+  })
+
+  const { mutateAsync: createThresholdPromotion } =
+    useCreateThresholdPromotion()
 
   const handleSubmit = form.handleSubmit(
     async (data) => {
@@ -214,6 +230,165 @@ export const CreatePromotionForm = () => {
   }
 
   const handleContinue = async () => {
+    // Special handling for Spend Threshold Discount template
+    if (
+      currentTemplate?.id === "spend_threshold_discount" &&
+      tab === Tab.PROMOTION
+    ) {
+      const formValue = form.getValues()
+      const payload = {
+        application_method: {
+          type: formValue.application_method.type,
+          value: formValue.application_method.value,
+          target_type: formValue.application_method.target_type,
+          currency_code: formValue.application_method.currency_code,
+        },
+        code: formValue.code,
+        type: "standard",
+        status: formValue.status as any,
+        is_automatic: formValue.is_automatic === "true",
+        rules: [
+          {
+            attribute: "item_total",
+            operator: "gte",
+            values: formValue.min_total_cart_price as any,
+          },
+          {
+            attribute: "item_total",
+            operator: "lt",
+            values: formValue.max_total_cart_price as any,
+          },
+        ],
+      }
+      createThresholdPromotion(payload, {
+        onSuccess: ({ promotion }) => {
+          toast.success(
+            t("promotions.toasts.promotionCreateSuccess", {
+              code: promotion.code,
+            })
+          )
+
+          handleSuccess(`/promotions/${promotion.id}`)
+        },
+        onError: (e) => {
+          toast.error(e.message)
+        },
+      })
+      return
+    }
+
+    // Special handling for Price Range Gift template
+    if (currentTemplate?.id === "price_range_gift" && tab === Tab.PROMOTION) {
+      const formValue = form.getValues()
+      const payload = {
+        code: formValue.code,
+        type: "standard",
+        status: formValue.status as any,
+        is_automatic: formValue.is_automatic === "true",
+        application_method: {
+          type: "percentage",
+          value: 100, // No discount value for gift promotions
+          target_type: "items",
+          allocation: "each",
+          apply_to_quantity: 1,
+          max_quantity: 1,
+          target_rules: [
+            {
+              attribute: "items.product.id",
+              operator: "eq",
+              values: [formValue.gift_product_id as any],
+            },
+          ],
+        },
+        rules: [
+          {
+            attribute: "item_total",
+            operator: "gte",
+            values: formValue.min_total_cart_price,
+          },
+          {
+            attribute: "item_total",
+            operator: "lt",
+            values: formValue.max_total_cart_price,
+          },
+        ],
+      }
+
+      console.log(payload)
+      createThresholdPromotion(payload, {
+        onSuccess: ({ promotion }) => {
+          toast.success(
+            t("promotions.toasts.promotionCreateSuccess", {
+              code: promotion.code,
+            })
+          )
+
+          handleSuccess(`/promotions/${promotion.id}`)
+        },
+        onError: (e) => {
+          toast.error(e.message)
+        },
+      })
+      return
+    }
+
+    // Special handling for Buy X Get Percentage Off template
+    if (
+      currentTemplate?.id === "buy_x_get_percentage_off" &&
+      tab === Tab.PROMOTION
+    ) {
+      const formValue = form.getValues()
+      const buyRules = formValue.application_method.buy_rules
+      const buyRulesQuantity = buyRules.find(
+        (rule) => rule.attribute === "buy_rules_min_quantity"
+      )
+      const buyRulesProduct = buyRules.find(
+        (rule) => rule.attribute === "items.product.id"
+      )
+      const payload = {
+        application_method: {
+          type: formValue.application_method.type,
+          value: formValue.application_method.value,
+          target_type: formValue.application_method.target_type,
+          allocation: "across",
+          apply_to_quantity: null,
+          status: formValue.status as any,
+          max_quantity: null,
+          target_rules: [
+            {
+              attribute: "items.product.id",
+              operator: "eq",
+              values: buyRulesProduct?.values as any,
+            },
+            {
+              attribute: "items.quantity",
+              operator: "gte",
+              values: buyRulesQuantity?.values as any, // total quantity in cart
+            },
+          ],
+        },
+        code: formValue.code,
+        type: "standard",
+        is_automatic: formValue.is_automatic === "true",
+        rules: [],
+      }
+      createThresholdPromotion(payload, {
+        onSuccess: ({ promotion }) => {
+          toast.success(
+            t("promotions.toasts.promotionCreateSuccess", {
+              code: promotion.code,
+            })
+          )
+
+          handleSuccess(`/promotions/${promotion.id}`)
+        },
+        onError: (e) => {
+          toast.error(e.message)
+        },
+      })
+      return
+    }
+
     switch (tab) {
       case Tab.TYPE:
         handleTabChange(Tab.PROMOTION)
@@ -251,11 +426,25 @@ export const CreatePromotionForm = () => {
     for (const [key, value] of Object.entries(currentTemplate.defaults)) {
       if (typeof value === "object") {
         for (const [subKey, subValue] of Object.entries(value)) {
-          setValue(`application_method.${subKey}`, subValue)
+          setValue(`application_method.${subKey}` as any, subValue)
         }
       } else {
-        setValue(key, value)
+        setValue(key as any, value)
       }
+    }
+
+    // Special handling for Spend Threshold Discount template
+    if (currentTemplate.id === "spend_threshold_discount") {
+      setValue("rules", [
+        {
+          attribute: "currency_code",
+          operator: "eq",
+          values: "eur", // Default currency changed to EUR
+          required: true,
+          field_type: "select",
+          disguised: true,
+        },
+      ])
     }
 
     return currentTemplate
@@ -351,6 +540,29 @@ export const CreatePromotionForm = () => {
     }
   }
 
+  // Special handling for Spend Threshold Discount template rules
+  useEffect(() => {
+    if (currentTemplate?.id === "spend_threshold_discount") {
+      const currencyRule = {
+        attribute: "currency_code",
+        operator: "eq",
+        values: "usd",
+        required: true,
+        field_type: "select",
+        disguised: true,
+      }
+      const rules = form.getValues("rules") || []
+      // If rules is not exactly one currency rule, reset it
+      if (
+        rules.length !== 1 ||
+        rules[0].attribute !== "currency_code" ||
+        rules[0].operator !== "eq"
+      ) {
+        form.setValue("rules", [currencyRule])
+      }
+    }
+  }, [currentTemplate?.id, form])
+
   return (
     <RouteFocusModal.Form form={form}>
       <KeyboundForm className="flex h-full flex-col" onSubmit={handleSubmit}>
@@ -379,13 +591,17 @@ export const CreatePromotionForm = () => {
                     {t("promotions.tabs.details")}
                   </ProgressTabs.Trigger>
 
-                  <ProgressTabs.Trigger
-                    className="w-full"
-                    value={Tab.CAMPAIGN}
-                    status={tabState[Tab.CAMPAIGN]}
-                  >
-                    {t("promotions.tabs.campaign")}
-                  </ProgressTabs.Trigger>
+                  {/* Hide Campaign tab for buy_x_get_percentage_off */}
+                  {currentTemplate?.id !== "spend_threshold_discount" &&
+                    currentTemplate?.id !== "buy_x_get_percentage_off" && (
+                      <ProgressTabs.Trigger
+                        className="w-full"
+                        value={Tab.CAMPAIGN}
+                        status={tabState[Tab.CAMPAIGN]}
+                      >
+                        {t("promotions.tabs.campaign")}
+                      </ProgressTabs.Trigger>
+                    )}
                 </ProgressTabs.List>
               </div>
             </div>
@@ -430,6 +646,18 @@ export const CreatePromotionForm = () => {
                       )
                     }}
                   />
+
+                  {currentTemplate?.id === "spend_threshold_discount" && (
+                    <Alert variant="info" className="mt-4">
+                      <Text size="small">
+                        This promotion type automatically applies a percentage
+                        discount when the cart total meets the minimum
+                        threshold. You can add up to 3 rules: a required
+                        currency code rule, a required minimum price rule, and
+                        an optional maximum price rule.
+                      </Text>
+                    </Alert>
+                  )}
                 </div>
               </div>
             </ProgressTabs.Content>
@@ -627,9 +855,231 @@ export const CreatePromotionForm = () => {
                     />
                   )}
 
-                  <Divider />
+                  {currentTemplate?.id === "spend_threshold_discount" && (
+                    <Alert variant="info" className="mt-4">
+                      <Text size="small">
+                        Spend Threshold Discount uses percentage-based
+                        discounts. The discount will be applied as a percentage
+                        of the order total when the minimum threshold is met.
+                      </Text>
+                    </Alert>
+                  )}
 
-                  <RulesFormField form={form} ruleType={"rules"} />
+                  {/* Hide rules section for buy_x_get_percentage_off */}
+                  {currentTemplate?.id !== "buy_x_get_percentage_off" && (
+                    <>
+                      <Divider />
+                      <RulesFormField
+                        form={form}
+                        ruleType={"rules"}
+                        maxRules={
+                          currentTemplate?.id === "spend_threshold_discount"
+                            ? 1
+                            : undefined
+                        }
+                        locked={
+                          currentTemplate?.id === "spend_threshold_discount"
+                        }
+                      />
+                    </>
+                  )}
+
+                  {/* Custom min/max total cart price fields for spend_threshold_discount */}
+                  {currentTemplate?.id === "spend_threshold_discount" && (
+                    <div className="mt-6 flex gap-x-4">
+                      <Form.Field
+                        control={form.control}
+                        name="min_total_cart_price"
+                        render={({ field }) => (
+                          <Form.Item className="basis-1/2">
+                            <Form.Label>Min total cart price</Form.Label>
+                            <Form.Control>
+                              <Input
+                                {...field}
+                                type="number"
+                                min={0}
+                                placeholder="Minimum total cart price"
+                                value={
+                                  field.value === null ||
+                                  typeof field.value === "undefined"
+                                    ? ""
+                                    : field.value
+                                }
+                                onChange={(e) =>
+                                  field.onChange(
+                                    e.target.value === ""
+                                      ? undefined
+                                      : Number(e.target.value)
+                                  )
+                                }
+                              />
+                            </Form.Control>
+                            <Text
+                              size="small"
+                              className="text-ui-fg-subtle mt-1"
+                            >
+                              The minimum cart total required to unlock the
+                              promotion (greater than or equal to this value).
+                            </Text>
+                          </Form.Item>
+                        )}
+                      />
+                      <Form.Field
+                        control={form.control}
+                        name="max_total_cart_price"
+                        render={({ field }) => (
+                          <Form.Item className="basis-1/2">
+                            <Form.Label>Max total cart price</Form.Label>
+                            <Form.Control>
+                              <Input
+                                {...field}
+                                type="number"
+                                min={0}
+                                placeholder="Maximum total cart price"
+                                value={
+                                  field.value === null ||
+                                  typeof field.value === "undefined"
+                                    ? ""
+                                    : field.value
+                                }
+                                onChange={(e) =>
+                                  field.onChange(
+                                    e.target.value === ""
+                                      ? undefined
+                                      : Number(e.target.value)
+                                  )
+                                }
+                              />
+                            </Form.Control>
+                            <Text
+                              size="small"
+                              className="text-ui-fg-subtle mt-1"
+                            >
+                              The maximum cart total for which the promotion is
+                              valid (less than or equal to this value).
+                            </Text>
+                          </Form.Item>
+                        )}
+                      />
+                    </div>
+                  )}
+
+                  {currentTemplate?.id === "price_range_gift" && (
+                    <div className="mt-6 flex flex-col gap-y-4">
+                      <div className="flex gap-x-4">
+                        <Form.Field
+                          control={form.control}
+                          name="min_total_cart_price"
+                          render={({ field }) => (
+                            <Form.Item className="basis-1/2">
+                              <Form.Label>Min total cart price</Form.Label>
+                              <Form.Control>
+                                <Input
+                                  {...field}
+                                  type="number"
+                                  min={0}
+                                  placeholder="Minimum total cart price"
+                                  value={
+                                    field.value === null ||
+                                    typeof field.value === "undefined"
+                                      ? ""
+                                      : field.value
+                                  }
+                                  onChange={(e) =>
+                                    field.onChange(
+                                      e.target.value === ""
+                                        ? undefined
+                                        : Number(e.target.value)
+                                    )
+                                  }
+                                />
+                              </Form.Control>
+                              <Text
+                                size="small"
+                                className="text-ui-fg-subtle mt-1"
+                              >
+                                The minimum cart total required to unlock the
+                                gift (greater than or equal to this value).
+                              </Text>
+                            </Form.Item>
+                          )}
+                        />
+                        <Form.Field
+                          control={form.control}
+                          name="max_total_cart_price"
+                          render={({ field }) => (
+                            <Form.Item className="basis-1/2">
+                              <Form.Label>Max total cart price</Form.Label>
+                              <Form.Control>
+                                <Input
+                                  {...field}
+                                  type="number"
+                                  min={0}
+                                  placeholder="Maximum total cart price"
+                                  value={
+                                    field.value === null ||
+                                    typeof field.value === "undefined"
+                                      ? ""
+                                      : field.value
+                                  }
+                                  onChange={(e) =>
+                                    field.onChange(
+                                      e.target.value === ""
+                                        ? undefined
+                                        : Number(e.target.value)
+                                    )
+                                  }
+                                />
+                              </Form.Control>
+                              <Text
+                                size="small"
+                                className="text-ui-fg-subtle mt-1"
+                              >
+                                The maximum cart total for which the gift is
+                                valid (less than or equal to this value).
+                              </Text>
+                            </Form.Item>
+                          )}
+                        />
+                      </div>
+                      <Form.Field
+                        control={form.control}
+                        name="gift_product_id"
+                        render={({ field }) => (
+                          <Form.Item>
+                            <Form.Label>Gift product</Form.Label>
+                            <Form.Control>
+                              <Select
+                                value={field.value || ""}
+                                onValueChange={field.onChange}
+                              >
+                                <Select.Trigger>
+                                  <Select.Value placeholder="Select a product" />
+                                </Select.Trigger>
+                                <Select.Content>
+                                  {products?.map((product) => (
+                                    <Select.Item
+                                      key={product.id}
+                                      value={product.id}
+                                    >
+                                      {product.title}
+                                    </Select.Item>
+                                  ))}
+                                </Select.Content>
+                              </Select>
+                            </Form.Control>
+                            <Text
+                              size="small"
+                              className="text-ui-fg-subtle mt-1"
+                            >
+                              Select the product to be given as a gift when the
+                              price range is met.
+                            </Text>
+                          </Form.Item>
+                        )}
+                      />
+                    </div>
+                  )}
 
                   <Divider />
 
@@ -684,82 +1134,85 @@ export const CreatePromotionForm = () => {
                   <div className="flex gap-x-2 gap-y-4">
                     {!currentTemplate?.hiddenFields?.includes(
                       "application_method.value"
-                    ) && (
-                      <Form.Field
-                        control={form.control}
-                        name="application_method.value"
-                        render={({ field: { onChange, value, ...field } }) => {
-                          const currencyCode =
-                            form.getValues().application_method.currency_code
+                    ) &&
+                      currentTemplate?.id !== "price_range_gift" && (
+                        <Form.Field
+                          control={form.control}
+                          name="application_method.value"
+                          render={({
+                            field: { onChange, value, ...field },
+                          }) => {
+                            const currencyCode =
+                              form.getValues().application_method.currency_code
 
-                          return (
-                            <Form.Item className="basis-1/2">
-                              <Form.Label
-                                tooltip={
-                                  currencyCode || !isFixedValueType
-                                    ? undefined
-                                    : t("promotions.fields.amount.tooltip")
-                                }
-                              >
-                                {t("promotions.form.value.title")}
-                              </Form.Label>
-
-                              <Form.Control>
-                                {isFixedValueType ? (
-                                  <CurrencyInput
-                                    {...field}
-                                    min={0}
-                                    onValueChange={(value) => {
-                                      onChange(value ? parseInt(value) : "")
-                                    }}
-                                    code={currencyCode || "USD"}
-                                    symbol={
-                                      currencyCode
-                                        ? getCurrencySymbol(currencyCode)
-                                        : "$"
-                                    }
-                                    value={value}
-                                    disabled={!currencyCode}
-                                  />
-                                ) : (
-                                  <DeprecatedPercentageInput
-                                    key="amount"
-                                    className="text-right"
-                                    min={0}
-                                    max={100}
-                                    {...field}
-                                    value={value}
-                                    onChange={(e) => {
-                                      onChange(
-                                        e.target.value === ""
-                                          ? null
-                                          : parseInt(e.target.value)
-                                      )
-                                    }}
-                                  />
-                                )}
-                              </Form.Control>
-                              <Text
-                                size="small"
-                                leading="compact"
-                                className="text-ui-fg-subtle"
-                              >
-                                <Trans
-                                  t={t}
-                                  i18nKey={
-                                    isFixedValueType
-                                      ? "promotions.form.value_type.fixed.description"
-                                      : "promotions.form.value_type.percentage.description"
+                            return (
+                              <Form.Item className="basis-1/2">
+                                <Form.Label
+                                  tooltip={
+                                    currencyCode || !isFixedValueType
+                                      ? undefined
+                                      : t("promotions.fields.amount.tooltip")
                                   }
-                                  components={[<br key="break" />]}
-                                />
-                              </Text>
-                              <Form.ErrorMessage />
-                            </Form.Item>
-                          )
-                        }}
-                      />
-                    )}
+                                >
+                                  {t("promotions.form.value.title")}
+                                </Form.Label>
+
+                                <Form.Control>
+                                  {isFixedValueType ? (
+                                    <CurrencyInput
+                                      {...field}
+                                      min={0}
+                                      onValueChange={(value) => {
+                                        onChange(value ? parseInt(value) : "")
+                                      }}
+                                      code={currencyCode || "USD"}
+                                      symbol={
+                                        currencyCode
+                                          ? getCurrencySymbol(currencyCode)
+                                          : "$"
+                                      }
+                                      value={value}
+                                      disabled={!currencyCode}
+                                    />
+                                  ) : (
+                                    <DeprecatedPercentageInput
+                                      key="amount"
+                                      className="text-right"
+                                      min={0}
+                                      max={100}
+                                      {...field}
+                                      value={value}
+                                      onChange={(e) => {
+                                        onChange(
+                                          e.target.value === ""
+                                            ? null
+                                            : parseInt(e.target.value)
+                                        )
+                                      }}
+                                    />
+                                  )}
+                                </Form.Control>
+                                <Text
+                                  size="small"
+                                  leading="compact"
+                                  className="text-ui-fg-subtle"
+                                >
+                                  <Trans
+                                    t={t}
+                                    i18nKey={
+                                      isFixedValueType
+                                        ? "promotions.form.value_type.fixed.description"
+                                        : "promotions.form.value_type.percentage.description"
+                                    }
+                                    components={[<br key="break" />]}
+                                  />
+                                </Text>
+                                <Form.ErrorMessage />
+                              </Form.Item>
+                            )
+                          }}
+                        />
+                      )}
 
                     {isTypeStandard && watchAllocation === "each" && (
                       <Form.Field
@@ -852,26 +1305,36 @@ export const CreatePromotionForm = () => {
                       />
                     )}
 
-                  {!isTypeStandard && (
-                    <>
-                      <RulesFormField
-                        form={form}
-                        ruleType={"buy-rules"}
-                        scope="application_method.buy_rules"
-                      />
-                    </>
+                  {/* Show buy-rules for buy_x_get_percentage_off and buyget */}
+                  {(currentTemplate?.id === "buy_x_get_percentage_off" ||
+                    !isTypeStandard) && (
+                    <RulesFormField
+                      form={form}
+                      ruleType={"buy-rules"}
+                      scope="application_method.buy_rules"
+                      maxRules={
+                        currentTemplate?.id === "buy_x_get_percentage_off"
+                          ? 2
+                          : undefined
+                      }
+                      locked={
+                        currentTemplate?.id === "buy_x_get_percentage_off"
+                      }
+                    />
                   )}
 
-                  {!isTargetTypeOrder && (
-                    <>
-                      <Divider />
-                      <RulesFormField
-                        form={form}
-                        ruleType={"target-rules"}
-                        scope="application_method.target_rules"
-                      />
-                    </>
-                  )}
+                  {/* Hide target-rules for buy_x_get_percentage_off */}
+                  {currentTemplate?.id !== "buy_x_get_percentage_off" &&
+                    !isTargetTypeOrder && (
+                      <>
+                        <Divider />
+                        <RulesFormField
+                          form={form}
+                          ruleType={"target-rules"}
+                          scope="application_method.target_rules"
+                        />
+                      </>
+                    )}
                 </div>
               </div>
             </ProgressTabs.Content>
@@ -880,14 +1343,17 @@ export const CreatePromotionForm = () => {
               value={Tab.CAMPAIGN}
               className="size-full overflow-auto"
             >
-              <div className="flex flex-col items-center">
-                <div className="flex w-full max-w-[720px] flex-col gap-y-8 py-16">
-                  <AddCampaignPromotionFields
-                    form={form}
-                    campaigns={campaigns || []}
-                  />
-                </div>
-              </div>
+              {currentTemplate?.id !== "spend_threshold_discount" &&
+                currentTemplate?.id !== "buy_x_get_percentage_off" && (
+                  <div className="flex flex-col items-center">
+                    <div className="flex w-full max-w-[720px] flex-col gap-y-8 py-16">
+                      <AddCampaignPromotionFields
+                        form={form}
+                        campaigns={campaigns || []}
+                      />
+                    </div>
+                  </div>
+                )}
             </ProgressTabs.Content>
           </RouteFocusModal.Body>
         </ProgressTabs>

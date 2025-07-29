@@ -171,6 +171,28 @@ export const useDeletePromotion = (
   })
 }
 
+export const useCreateThresholdPromotion = (
+  options?: UseMutationOptions<
+    HttpTypes.AdminPromotionResponse,
+    FetchError,
+    any
+  >
+) => {
+  return useMutation({
+    mutationFn: (payload) =>
+      sdk.client.fetch(`/admin/gift-promotion`, {
+        method: "POST",
+        body: payload,
+      }),
+    onSuccess: (data, variables, context) => {
+      queryClient.invalidateQueries({ queryKey: promotionsQueryKeys.lists() })
+      queryClient.invalidateQueries({ queryKey: campaignsQueryKeys.lists() })
+      options?.onSuccess?.(data, variables, context)
+    },
+    ...options,
+  })
+}
+
 export const useCreatePromotion = (
   options?: UseMutationOptions<
     HttpTypes.AdminPromotionResponse,

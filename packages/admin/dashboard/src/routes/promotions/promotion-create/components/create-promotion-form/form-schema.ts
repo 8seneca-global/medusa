@@ -38,6 +38,9 @@ export const CreatePromotionSchema = z
       target_type: z.enum(["order", "shipping_methods", "items"]),
     }),
     campaign: CreateCampaignSchema.optional(),
+    min_total_cart_price: z.number().optional().nullable(),
+    max_total_cart_price: z.number().optional().nullable(),
+    gift_product_id: z.string().optional(),
   })
   .refine(
     (data) => {

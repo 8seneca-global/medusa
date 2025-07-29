@@ -29,6 +29,7 @@ type RulesFormFieldType = {
     | "application_method.buy_rules"
     | "rules"
     | "application_method.target_rules"
+  maxRules?: number
 }
 
 export const RulesFormField = ({
@@ -38,7 +39,9 @@ export const RulesFormField = ({
   rulesToRemove,
   scope = "rules",
   promotion,
-}: RulesFormFieldType) => {
+  maxRules,
+  locked,
+}: RulesFormFieldType & { locked?: boolean }) => {
   const { t } = useTranslation()
   const formData = form.getValues()
   const { attributes } = usePromotionRuleAttributes(ruleType, formData.type)
@@ -300,7 +303,7 @@ export const RulesFormField = ({
               </div>
 
               <div className="size-7 flex-none self-center">
-                {!fieldRule.required && (
+                {!locked && !fieldRule.required && (
                   <IconButton
                     size="small"
                     variant="transparent"
@@ -334,42 +337,54 @@ export const RulesFormField = ({
         )
       })}
 
-      <div className={fields.length ? "mt-6" : ""}>
-        <Button
-          type="button"
-          variant="secondary"
-          className="inline-block"
-          onClick={() => {
-            append({
-              attribute: "",
-              operator: "",
-              values: [],
-              required: false,
-            } as any)
-          }}
-        >
-          {t("promotions.fields.addCondition")}
-        </Button>
+      {!locked && (
+        <div className={fields.length ? "mt-6" : ""}>
+          {(!maxRules || fields.length < maxRules) && (
+            <Button
+              type="button"
+              variant="secondary"
+              className="inline-block"
+              onClick={() => {
+                append({
+                  attribute: "",
+                  operator: "",
+                  values: [],
+                  required: false,
+                } as any)
+              }}
+            >
+              {t("promotions.fields.addCondition")}
+            </Button>
+          )}
+          {maxRules
+            ? fields.length >= maxRules && (
+                <Text size="small" className="text-ui-fg-subtle mt-2">
+                  Maximum {maxRules} rules allowed for this promotion type
+                </Text>
+              )
+            : null}
+          {!!fields.length && (
+            <Button
+              type="button"
+              variant="transparent"
+              className="text-ui-fg-muted hover:text-ui-fg-subtle ml-2 inline-block"
+              onClick={() => {
+                const indicesToRemove = fields
+                  .map((field: any, index) => (field.required ? null : index))
+                  .filter((f) => f !== null)
 
-        {!!fields.length && (
-          <Button
-            type="button"
-            variant="transparent"
-            className="text-ui-fg-muted hover:text-ui-fg-subtle ml-2 inline-block"
-            onClick={() => {
-              const indicesToRemove = fields
-                .map((field: any, index) => (field.required ? null : index))
-                .filter((f) => f !== null)
-
-              setRulesToRemove &&
-                setRulesToRemove(fields.filter((field: any) => !field.required))
-              remove(indicesToRemove)
-            }}
-          >
-            {t("promotions.fields.clearAll")}
-          </Button>
-        )}
-      </div>
+                setRulesToRemove &&
+                  setRulesToRemove(
+                    fields.filter((field: any) => !field.required)
+                  )
+                remove(indicesToRemove)
+              }}
+            >
+              {t("promotions.fields.clearAll")}
+            </Button>
+          )}
+        </div>
+      )}
     </div>
   )
 }
