@@ -34,6 +34,20 @@ export const PromotionDetail = () => {
     )
   }
 
+  const isHideItemApply =
+    promotion?.rules?.some((rule) => rule.attribute === "item_subtotal") &&
+    promotion?.application_method?.allocation !== "each" &&
+    promotion?.application_method?.apply_to_quantity !== 1
+
+  const isHideWhoCanUse =
+    promotion?.application_method?.target_rules?.some(
+      (rule) => rule.attribute === "items.product.id"
+    ) &&
+    promotion?.application_method?.target_rules?.some(
+      (rule) => rule.attribute === "items.quantity"
+    )
+
+  console.log(isHideWhoCanUse)
   return (
     <TwoColumnPage
       data={promotion}
@@ -48,11 +62,15 @@ export const PromotionDetail = () => {
     >
       <TwoColumnPage.Main>
         <PromotionGeneralSection promotion={promotion} />
-        <PromotionConditionsSection rules={rules || []} ruleType={"rules"} />
-        <PromotionConditionsSection
-          rules={targetRules || []}
-          ruleType={"target-rules"}
-        />
+        {!isHideWhoCanUse && (
+          <PromotionConditionsSection rules={rules || []} ruleType={"rules"} />
+        )}
+        {!isHideItemApply && (
+          <PromotionConditionsSection
+            rules={targetRules || []}
+            ruleType={"target-rules"}
+          />
+        )}
         {promotion.type === "buyget" && (
           <PromotionConditionsSection
             rules={buyRules || []}

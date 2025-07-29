@@ -249,12 +249,12 @@ export const CreatePromotionForm = () => {
         is_automatic: formValue.is_automatic === "true",
         rules: [
           {
-            attribute: "item_total",
+            attribute: "item_subtotal",
             operator: "gte",
             values: formValue.min_total_cart_price as any,
           },
           {
-            attribute: "item_total",
+            attribute: "item_subtotal",
             operator: "lt",
             values: formValue.max_total_cart_price as any,
           },
@@ -292,6 +292,7 @@ export const CreatePromotionForm = () => {
           allocation: "each",
           apply_to_quantity: 1,
           max_quantity: 1,
+          currency_code: formValue.application_method.currency_code,
           target_rules: [
             {
               attribute: "items.product.id",
@@ -302,19 +303,17 @@ export const CreatePromotionForm = () => {
         },
         rules: [
           {
-            attribute: "item_total",
+            attribute: "item_subtotal",
             operator: "gte",
             values: formValue.min_total_cart_price,
           },
           {
-            attribute: "item_total",
+            attribute: "item_subtotal",
             operator: "lt",
             values: formValue.max_total_cart_price,
           },
         ],
       }
-
-      console.log(payload)
       createThresholdPromotion(payload, {
         onSuccess: ({ promotion }) => {
           toast.success(
@@ -593,7 +592,8 @@ export const CreatePromotionForm = () => {
 
                   {/* Hide Campaign tab for buy_x_get_percentage_off */}
                   {currentTemplate?.id !== "spend_threshold_discount" &&
-                    currentTemplate?.id !== "buy_x_get_percentage_off" && (
+                    currentTemplate?.id !== "buy_x_get_percentage_off" &&
+                    currentTemplate?.id !== "price_range_gift" && (
                       <ProgressTabs.Trigger
                         className="w-full"
                         value={Tab.CAMPAIGN}
@@ -873,12 +873,14 @@ export const CreatePromotionForm = () => {
                         form={form}
                         ruleType={"rules"}
                         maxRules={
-                          currentTemplate?.id === "spend_threshold_discount"
+                          currentTemplate?.id === "spend_threshold_discount" ||
+                          currentTemplate?.id === "price_range_gift"
                             ? 1
                             : undefined
                         }
                         locked={
-                          currentTemplate?.id === "spend_threshold_discount"
+                          currentTemplate?.id === "spend_threshold_discount" ||
+                          currentTemplate?.id === "price_range_gift"
                         }
                       />
                     </>
@@ -1344,7 +1346,8 @@ export const CreatePromotionForm = () => {
               className="size-full overflow-auto"
             >
               {currentTemplate?.id !== "spend_threshold_discount" &&
-                currentTemplate?.id !== "buy_x_get_percentage_off" && (
+                currentTemplate?.id !== "buy_x_get_percentage_off" &&
+                currentTemplate?.id !== "price_range_gift" && (
                   <div className="flex flex-col items-center">
                     <div className="flex w-full max-w-[720px] flex-col gap-y-8 py-16">
                       <AddCampaignPromotionFields
