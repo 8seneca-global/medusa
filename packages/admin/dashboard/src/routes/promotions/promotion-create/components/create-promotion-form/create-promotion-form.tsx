@@ -286,8 +286,8 @@ export const CreatePromotionForm = () => {
         status: formValue.status as any,
         is_automatic: formValue.is_automatic === "true",
         application_method: {
-          type: "percentage",
-          value: 100, // No discount value for gift promotions
+          type: "fixed",
+          value: 0, // No discount value for gift promotions
           target_type: "items",
           allocation: "each",
           apply_to_quantity: 1,
