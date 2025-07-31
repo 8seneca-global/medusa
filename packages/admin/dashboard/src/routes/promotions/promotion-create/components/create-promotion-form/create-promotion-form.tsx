@@ -256,7 +256,8 @@ export const CreatePromotionForm = () => {
           {
             attribute: "item_subtotal",
             operator: "lt",
-            values: formValue.max_total_cart_price as any,
+            values:
+              (formValue?.max_total_cart_price as any) ?? Number.MAX_VALUE,
           },
         ],
       }
@@ -310,7 +311,7 @@ export const CreatePromotionForm = () => {
           {
             attribute: "item_subtotal",
             operator: "lt",
-            values: formValue.max_total_cart_price,
+            values: formValue?.max_total_cart_price ?? Number.MAX_VALUE,
           },
         ],
       }
