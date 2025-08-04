@@ -58,5 +58,21 @@ export const CreatePromotionSchema = z
       message: `required field`,
     }
   )
+  .refine(
+    (data) => {
+      // If both min and max cart prices are provided, min must be less than max
+      if (
+        typeof data.min_total_cart_price === "number" &&
+        typeof data.max_total_cart_price === "number"
+      ) {
+        return data.min_total_cart_price < data.max_total_cart_price
+      }
+      return true
+    },
+    {
+      path: ["max_total_cart_price"],
+      // message: "Maximum cart price must be greater than minimum cart price",
+    }
+  )
 
 export type CreatePromotionSchemaType = z.infer<typeof CreatePromotionSchema>

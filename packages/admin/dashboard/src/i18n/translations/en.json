@@ -2016,7 +2016,8 @@
       "promotionTabError": "Fix errors in Promotion Tab before proceeding"
     },
     "toasts": {
-      "promotionCreateSuccess": "Promotion ({{code}}) was successfully created."
+      "promotionCreateSuccess": "Promotion ({{code}}) was successfully created.",
+      "invalidCartPrice": "Maximum cart price must be greater than minimum cart price"
     },
     "create": {},
     "edit": {
@@ -2142,6 +2143,20 @@
       "list": {
         "noRecordsMessage": "Add a condition to restrict what items the promotion applies to."
       }
+    },
+    "cartPrice": {
+      "minTotalCartPrice": "Min total cart price",
+      "maxTotalCartPrice": "Max total cart price",
+      "minTotalCartPricePlaceholder": "Minimum total cart price",
+      "maxTotalCartPricePlaceholder": "Maximum total cart price",
+      "minTotalCartPriceDescription": "The minimum cart total required to unlock the promotion (greater than or equal to this value).",
+      "maxTotalCartPriceDescription": "The maximum cart total for which the promotion is valid (less than or equal to this value).",
+      "maxTotalCartPriceGiftDescription": "The maximum cart total for which the gift is valid (less than or equal to this value)."
+    },
+    "gift": {
+      "giftProduct": "Gift product",
+      "selectProduct": "Select a product",
+      "giftProductDescription": "Select the product to be given as a gift when the price range is met."
     }
   },
   "campaigns": {

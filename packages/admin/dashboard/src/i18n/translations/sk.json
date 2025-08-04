@@ -2015,7 +2015,8 @@
       "promotionTabError": "Opraviť chyby v záložke Promoakcia pred pokračovaním"
     },
     "toasts": {
-      "promotionCreateSuccess": "Promoakcia ({{code}}) bola úspešne vytvorená."
+      "promotionCreateSuccess": "Promoakcia ({{code}}) bola úspešne vytvorená.",
+      "invalidCartPrice": "Maximálna cena košíka musí byť väčšia ako minimálna cena košíka"
     },
     "create": {},
     "edit": {
@@ -2141,6 +2142,20 @@
       "list": {
         "noRecordsMessage": "Pridajte podmienku na obmedzenie položiek, na ktoré sa promoakcia vzťahuje."
       }
+    },
+    "cartPrice": {
+      "minTotalCartPrice": "Minimálna celková cena košíka",
+      "maxTotalCartPrice": "Maximálna celková cena košíka",
+      "minTotalCartPricePlaceholder": "Minimálna celková cena košíka",
+      "maxTotalCartPricePlaceholder": "Maximálna celková cena košíka",
+      "minTotalCartPriceDescription": "Minimálna celková suma košíka potrebná na odomknutie promoakcie (väčšia alebo rovná tejto hodnote).",
+      "maxTotalCartPriceDescription": "Maximálna celková suma košíka, pre ktorú je promoakcia platná (menšia alebo rovná tejto hodnote).",
+      "maxTotalCartPriceGiftDescription": "Maximálna celková suma košíka, pre ktorú je darček platný (menšia alebo rovná tejto hodnote)."
+    },
+    "gift": {
+      "giftProduct": "Darčekový produkt",
+      "selectProduct": "Vyberte produkt",
+      "giftProductDescription": "Vyberte produkt, ktorý sa má dať ako darček, keď je splnený cenový rozsah."
     }
   },
   "campaigns": {

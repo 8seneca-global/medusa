@@ -230,6 +230,17 @@ export const CreatePromotionForm = () => {
   }
 
   const handleContinue = async () => {
+    // Validate min and max cart prices
+    const formValue = form.getValues()
+    if (
+      typeof formValue.min_total_cart_price === "number" &&
+      typeof formValue.max_total_cart_price === "number" &&
+      formValue.min_total_cart_price >= formValue.max_total_cart_price
+    ) {
+      toast.error(t("promotions.toasts.invalidCartPrice"))
+      return
+    }
+
     // Special handling for Spend Threshold Discount template
     if (
       currentTemplate?.id === "spend_threshold_discount" &&
@@ -281,6 +292,16 @@ export const CreatePromotionForm = () => {
     // Special handling for Price Range Gift template
     if (currentTemplate?.id === "price_range_gift" && tab === Tab.PROMOTION) {
       const formValue = form.getValues()
+
+      // Validate min and max cart prices for gift template
+      if (
+        typeof formValue.min_total_cart_price === "number" &&
+        typeof formValue.max_total_cart_price === "number" &&
+        formValue.min_total_cart_price >= formValue.max_total_cart_price
+      ) {
+        toast.error(t("promotions.toasts.invalidCartPrice"))
+        return
+      }
       const payload = {
         code: formValue.code,
         type: "standard",
@@ -540,6 +561,32 @@ export const CreatePromotionForm = () => {
     }
   }
 
+  // Watch min and max cart prices for validation
+  const watchMinCartPrice = useWatch({
+    control: form.control,
+    name: "min_total_cart_price",
+  })
+
+  const watchMaxCartPrice = useWatch({
+    control: form.control,
+    name: "max_total_cart_price",
+  })
+
+  // Validate that min cart price is less than max cart price
+  useEffect(() => {
+    if (
+      typeof watchMinCartPrice === "number" &&
+      typeof watchMaxCartPrice === "number" &&
+      watchMinCartPrice >= watchMaxCartPrice
+    ) {
+      form.setError("max_total_cart_price", {
+        type: "manual",
+      })
+    } else {
+      form.clearErrors("max_total_cart_price")
+    }
+  }, [watchMinCartPrice, watchMaxCartPrice, form, t])
+
   // Special handling for Spend Threshold Discount template rules
   useEffect(() => {
     if (currentTemplate?.id === "spend_threshold_discount") {
@@ -647,18 +694,6 @@ export const CreatePromotionForm = () => {
                       )
                     }}
                   />
-
-                  {currentTemplate?.id === "spend_threshold_discount" && (
-                    <Alert variant="info" className="mt-4">
-                      <Text size="small">
-                        This promotion type automatically applies a percentage
-                        discount when the cart total meets the minimum
-                        threshold. You can add up to 3 rules: a required
-                        currency code rule, a required minimum price rule, and
-                        an optional maximum price rule.
-                      </Text>
-                    </Alert>
-                  )}
                 </div>
               </div>
             </ProgressTabs.Content>
@@ -856,16 +891,6 @@ export const CreatePromotionForm = () => {
                     />
                   )}
 
-                  {currentTemplate?.id === "spend_threshold_discount" && (
-                    <Alert variant="info" className="mt-4">
-                      <Text size="small">
-                        Spend Threshold Discount uses percentage-based
-                        discounts. The discount will be applied as a percentage
-                        of the order total when the minimum threshold is met.
-                      </Text>
-                    </Alert>
-                  )}
-
                   {/* Hide rules section for buy_x_get_percentage_off */}
                   {currentTemplate?.id !== "buy_x_get_percentage_off" && (
                     <>
@@ -895,13 +920,17 @@ export const CreatePromotionForm = () => {
                         name="min_total_cart_price"
                         render={({ field }) => (
                           <Form.Item className="basis-1/2">
-                            <Form.Label>Min total cart price</Form.Label>
+                            <Form.Label>
+                              {t("promotions.cartPrice.minTotalCartPrice")}
+                            </Form.Label>
                             <Form.Control>
                               <Input
                                 {...field}
                                 type="number"
                                 min={0}
-                                placeholder="Minimum total cart price"
+                                placeholder={t(
+                                  "promotions.cartPrice.minTotalCartPricePlaceholder"
+                                )}
                                 value={
                                   field.value === null ||
                                   typeof field.value === "undefined"
@@ -921,8 +950,9 @@ export const CreatePromotionForm = () => {
                               size="small"
                               className="text-ui-fg-subtle mt-1"
                             >
-                              The minimum cart total required to unlock the
-                              promotion (greater than or equal to this value).
+                              {t(
+                                "promotions.cartPrice.minTotalCartPriceDescription"
+                              )}
                             </Text>
                           </Form.Item>
                         )}
@@ -932,13 +962,17 @@ export const CreatePromotionForm = () => {
                         name="max_total_cart_price"
                         render={({ field }) => (
                           <Form.Item className="basis-1/2">
-                            <Form.Label>Max total cart price</Form.Label>
+                            <Form.Label>
+                              {t("promotions.cartPrice.maxTotalCartPrice")}
+                            </Form.Label>
                             <Form.Control>
                               <Input
                                 {...field}
                                 type="number"
                                 min={0}
-                                placeholder="Maximum total cart price"
+                                placeholder={t(
+                                  "promotions.cartPrice.maxTotalCartPricePlaceholder"
+                                )}
                                 value={
                                   field.value === null ||
                                   typeof field.value === "undefined"
@@ -958,9 +992,11 @@ export const CreatePromotionForm = () => {
                               size="small"
                               className="text-ui-fg-subtle mt-1"
                             >
-                              The maximum cart total for which the promotion is
-                              valid (less than or equal to this value).
+                              {t(
+                                "promotions.cartPrice.maxTotalCartPriceDescription"
+                              )}
                             </Text>
+                            <Form.ErrorMessage />
                           </Form.Item>
                         )}
                       />
@@ -975,13 +1011,17 @@ export const CreatePromotionForm = () => {
                           name="min_total_cart_price"
                           render={({ field }) => (
                             <Form.Item className="basis-1/2">
-                              <Form.Label>Min total cart price</Form.Label>
+                              <Form.Label>
+                                {t("promotions.cartPrice.minTotalCartPrice")}
+                              </Form.Label>
                               <Form.Control>
                                 <Input
                                   {...field}
                                   type="number"
                                   min={0}
-                                  placeholder="Minimum total cart price"
+                                  placeholder={t(
+                                    "promotions.cartPrice.minTotalCartPricePlaceholder"
+                                  )}
                                   value={
                                     field.value === null ||
                                     typeof field.value === "undefined"
@@ -1001,8 +1041,9 @@ export const CreatePromotionForm = () => {
                                 size="small"
                                 className="text-ui-fg-subtle mt-1"
                               >
-                                The minimum cart total required to unlock the
-                                gift (greater than or equal to this value).
+                                {t(
+                                  "promotions.cartPrice.minTotalCartPriceDescription"
+                                )}
                               </Text>
                             </Form.Item>
                           )}
@@ -1012,13 +1053,17 @@ export const CreatePromotionForm = () => {
                           name="max_total_cart_price"
                           render={({ field }) => (
                             <Form.Item className="basis-1/2">
-                              <Form.Label>Max total cart price</Form.Label>
+                              <Form.Label>
+                                {t("promotions.cartPrice.maxTotalCartPrice")}
+                              </Form.Label>
                               <Form.Control>
                                 <Input
                                   {...field}
                                   type="number"
                                   min={0}
-                                  placeholder="Maximum total cart price"
+                                  placeholder={t(
+                                    "promotions.cartPrice.maxTotalCartPricePlaceholder"
+                                  )}
                                   value={
                                     field.value === null ||
                                     typeof field.value === "undefined"
@@ -1038,9 +1083,11 @@ export const CreatePromotionForm = () => {
                                 size="small"
                                 className="text-ui-fg-subtle mt-1"
                               >
-                                The maximum cart total for which the gift is
-                                valid (less than or equal to this value).
+                                {t(
+                                  "promotions.cartPrice.maxTotalCartPriceGiftDescription"
+                                )}
                               </Text>
+                              <Form.ErrorMessage />
                             </Form.Item>
                           )}
                         />
@@ -1050,14 +1097,20 @@ export const CreatePromotionForm = () => {
                         name="gift_product_id"
                         render={({ field }) => (
                           <Form.Item>
-                            <Form.Label>Gift product</Form.Label>
+                            <Form.Label>
+                              {t("promotions.gift.giftProduct")}
+                            </Form.Label>
                             <Form.Control>
                               <Select
                                 value={field.value || ""}
                                 onValueChange={field.onChange}
                               >
                                 <Select.Trigger>
-                                  <Select.Value placeholder="Select a product" />
+                                  <Select.Value
+                                    placeholder={t(
+                                      "promotions.gift.selectProduct"
+                                    )}
+                                  />
                                 </Select.Trigger>
                                 <Select.Content>
                                   {products?.map((product) => (
@@ -1075,8 +1128,7 @@ export const CreatePromotionForm = () => {
                               size="small"
                               className="text-ui-fg-subtle mt-1"
                             >
-                              Select the product to be given as a gift when the
-                              price range is met.
+                              {t("promotions.gift.giftProductDescription")}
                             </Text>
                           </Form.Item>
                         )}
