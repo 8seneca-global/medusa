@@ -1,8 +1,9 @@
 import { Spinner } from "@8medusa/icons"
-import { Button, Container, FocusModal } from "@8medusa/ui"
+import { Button, Container, FocusModal, toast } from "@8medusa/ui"
 import { UniqueIdentifier } from "@dnd-kit/core"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { FetchError } from "../../../../../../../../core/js-sdk/dist/esm/client"
 import { RouteFocusModal } from "../../../../../components/modals"
 import {
   useGetProductGroupsByType,
@@ -58,6 +59,13 @@ export const OrganizeCategoryForm = () => {
       })
 
       return { previousValue }
+    },
+    onError: (error: FetchError, _newValue, context) => {
+      queryClient.setQueryData(
+        [`categories-groups-by-type-${selectedTab}`],
+        (context as { previousValue: CategoryTreeItem[] })?.previousValue
+      )
+      toast.error(error.message)
     },
   })
 
