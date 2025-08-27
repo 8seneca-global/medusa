@@ -767,6 +767,10 @@
   "categories": {
     "domain": "Skupina produktov",
     "subtitle": "Usporiadajte produkty do skupín a spravujte poradie a hierarchiu týchto skupín.",
+    "ranking": {
+      "collections": "Kolekcie",
+      "categories": "Kategórie"
+    },
     "create": {
       "header": "Vytvorte skupinu produktov",
       "hint": "Vytvorte novú skupinu produktov na usporiadanie produktov.",

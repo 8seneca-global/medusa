@@ -1,13 +1,13 @@
-import { useMutation } from "@tanstack/react-query"
-import { useParams } from "react-router-dom"
-import { UniqueIdentifier } from "@dnd-kit/core"
 import { Spinner } from "@8medusa/icons"
-import { FetchError } from "@8medusa/js-sdk"
-import { toast } from "@8medusa/ui"
+import { Button, Container, FocusModal } from "@8medusa/ui"
+import { UniqueIdentifier } from "@dnd-kit/core"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { RouteFocusModal } from "../../../../../components/modals"
-import { useGetProductCategoriesAdditionById } from "../../../../../hooks/api/categories"
-import { sdk } from "../../../../../lib/client"
+import {
+  useGetProductGroupsByType,
+  useUpdateProductGroupsRanking,
+} from "../../../../../hooks/api/categories"
 import { queryClient } from "../../../../../lib/query-client"
 import { CategoryTree } from "../../../common/components/category-tree"
 import { CategoryTreeItem } from "../../../common/types"
@@ -20,66 +20,44 @@ import { CategoryTreeItem } from "../../../common/types"
 //   limit: 9999,
 // }
 
+enum ProductGroupTabEnum {
+  COLLECTION = "collection",
+  CATEGORY = "category",
+}
+
 export const OrganizeCategoryForm = () => {
-  const { id } = useParams()
+  const { t } = useTranslation()
+  const [selectedTab, setSelectedTab] = useState<ProductGroupTabEnum>(
+    ProductGroupTabEnum.CATEGORY
+  )
   const {
     product_categories,
     isPending,
     isError,
     error: fetchError,
-  } = useGetProductCategoriesAdditionById(id || "")
+  } = useGetProductGroupsByType(selectedTab)
 
   const [snapshot, setSnapshot] = useState<CategoryTreeItem[]>([])
 
-  const { mutateAsync, isPending: isMutating } = useMutation({
-    mutationFn: async ({
-      value,
-    }: {
-      value: {
-        id: string
-        parent_category_id: string | null
-        rank: number | null
-      }
-      arr: CategoryTreeItem[]
-    }) => {
-      await sdk.admin.productCategory.update(value.id, {
-        rank: value.rank ?? 0,
-        parent_category_id: value.parent_category_id,
-      })
-    },
-    onMutate: async (update) => {
+  const { mutateAsync, isPending: isMutating } = useUpdateProductGroupsRanking({
+    onMutate: async () => {
       // Cancel any outgoing refetches
       await queryClient.cancelQueries({
-        queryKey: [`categories-addition-by-id-${id}`],
+        queryKey: [`categories-groups-by-type-${selectedTab}`],
       })
 
       // Snapshot the previous value
       const previousValue = queryClient.getQueryData([
-        `categories-addition-by-id-${id}`,
+        `categories-groups-by-type-${selectedTab}`,
       ])
 
       // Optimistically update to the new value
-      queryClient.setQueryData([`categories-addition-by-id-${id}`], {
+      queryClient.setQueryData([`categories-groups-by-type-${selectedTab}`], {
         ...(previousValue as Record<string, any>),
-        product_categories: update.arr,
+        product_categories: snapshot,
       })
 
       return { previousValue }
-    },
-    onError: (error: FetchError, _newValue, context) => {
-      // Roll back to the previous value
-      queryClient.setQueryData(
-        [`categories-addition-by-id-${id}`],
-        context?.previousValue
-      )
-
-      toast.error(error.message)
-    },
-    onSuccess: () => {
-      // Refetch the data after successful update
-      queryClient.invalidateQueries({
-        queryKey: [`categories-addition-by-id-${id}`],
-      })
     },
   })
 
@@ -91,14 +69,12 @@ export const OrganizeCategoryForm = () => {
     },
     arr: CategoryTreeItem[]
   ) => {
-    const val = {
-      id: value.id as string,
-      parent_category_id: value.parentId as string | null,
-      rank: value.index,
-    }
-
     setSnapshot(arr)
-    await mutateAsync({ value: val, arr })
+    await mutateAsync({
+      type: selectedTab,
+      group_id: value.id as string,
+      rank: value.index,
+    })
   }
 
   const loading = isPending || isMutating
@@ -113,8 +89,35 @@ export const OrganizeCategoryForm = () => {
         <div className="flex items-center justify-end">
           {loading && <Spinner className="animate-spin" />}
         </div>
+        <FocusModal.Title></FocusModal.Title>
       </RouteFocusModal.Header>
       <RouteFocusModal.Body className="bg-ui-bg-subtle flex flex-1 flex-col overflow-y-auto">
+        <Container className="flex items-center gap-2 !rounded-none border-b">
+          <Button
+            variant="secondary"
+            size="small"
+            className={`${
+              selectedTab === ProductGroupTabEnum.COLLECTION
+                ? ""
+                : "bg-ui-bg-subtle text-ui-fg-subtle"
+            }`}
+            onClick={() => setSelectedTab(ProductGroupTabEnum.COLLECTION)}
+          >
+            {t("categories.ranking.collections")}
+          </Button>
+          <Button
+            variant="secondary"
+            size="small"
+            className={`${
+              selectedTab === ProductGroupTabEnum.CATEGORY
+                ? ""
+                : "bg-ui-bg-subtle text-ui-fg-subtle"
+            }`}
+            onClick={() => setSelectedTab(ProductGroupTabEnum.CATEGORY)}
+          >
+            {t("categories.ranking.categories")}
+          </Button>
+        </Container>
         <CategoryTree
           renderValue={(item) => item.name}
           value={loading ? snapshot : product_categories || []}

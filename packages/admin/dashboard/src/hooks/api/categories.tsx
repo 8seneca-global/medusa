@@ -10,8 +10,8 @@ import {
 import { sdk } from "../../lib/client"
 import { queryClient } from "../../lib/query-client"
 import { queryKeysFactory } from "../../lib/query-key-factory"
-import { productsQueryKeys } from "./products"
 import { CreateCategoryPayload } from "../../types/category"
+import { productsQueryKeys } from "./products"
 
 const CATEGORIES_QUERY_KEY = "categories" as const
 export const categoriesQueryKeys = queryKeysFactory(CATEGORIES_QUERY_KEY)
@@ -65,8 +65,13 @@ export const useGetProductCategoriesAddition = (
   return { ...data, ...rest }
 }
 
-export const useGetProductCategoriesAdditionById = (
-  id: string,
+enum ProductGroupTabEnum {
+  COLLECTION = "collection",
+  CATEGORY = "category",
+}
+
+export const useGetProductGroupsByType = (
+  type: ProductGroupTabEnum,
   options?: Omit<
     UseQueryOptions<
       HttpTypes.AdminProductCategoryListResponse,
@@ -78,11 +83,12 @@ export const useGetProductCategoriesAdditionById = (
   >
 ) => {
   const { data, ...rest } = useQuery({
-    queryKey: [`categories-addition-by-id-${id}`],
+    queryKey: [`categories-groups-by-type-${type}`],
     queryFn: async () => {
       const response =
         await sdk.client.fetch<HttpTypes.AdminProductCategoryListResponse>(
-          `/admin/category-addition?id=${id}`
+          `/admin/category-addition`,
+          { query: { type } }
         )
       return response
     },
@@ -90,6 +96,37 @@ export const useGetProductCategoriesAdditionById = (
   })
 
   return { ...data, ...rest }
+}
+
+export const useUpdateProductGroupsRanking = (
+  options?: UseMutationOptions<
+    HttpTypes.AdminProductCategoryListResponse,
+    FetchError,
+    {
+      type: ProductGroupTabEnum
+      group_id: string
+      rank: number
+    }
+  >
+) => {
+  return useMutation({
+    mutationFn: (payload) =>
+      sdk.client.fetch(`/admin/group-ranking`, {
+        method: "POST",
+        body: payload,
+      }),
+    onSuccess: (data, variables, context) => {
+      queryClient.invalidateQueries({
+        queryKey: [`categories-groups-by-type-${variables.type}`],
+      })
+      queryClient.refetchQueries({
+        queryKey: [`categories-groups-by-type-${variables.type}`],
+      })
+
+      options?.onSuccess?.(data, variables, context)
+    },
+    ...options,
+  })
 }
 
 export const useGetAllProductCategoriesAddition = (

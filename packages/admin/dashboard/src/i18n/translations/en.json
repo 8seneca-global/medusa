@@ -767,6 +767,10 @@
   "categories": {
     "domain": "Product Group",
     "subtitle": "Organize products into groups, and manage those groups' ranking and hierarchy.",
+    "ranking": {
+      "collections": "Collections",
+      "categories": "Categories"
+    },
     "create": {
       "header": "Create Product Groups",
       "hint": "Create a new groups to organize your products.",

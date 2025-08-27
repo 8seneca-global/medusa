@@ -2871,6 +2871,19 @@
         "subtitle": {
           "type": "string"
         },
+        "ranking": {
+          "type": "object",
+          "properties": {
+            "collections": {
+              "type": "string"
+            },
+            "categories": {
+              "type": "string"
+            }
+          },
+          "required": ["collections", "categories"],
+          "additionalProperties": false
+        },
         "create": {
           "type": "object",
           "properties": {
@@ -3102,6 +3115,7 @@
       "required": [
         "domain",
         "subtitle",
+        "ranking",
         "create",
         "edit",
         "delete",

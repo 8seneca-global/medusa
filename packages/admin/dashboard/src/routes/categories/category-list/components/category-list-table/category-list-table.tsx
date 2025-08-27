@@ -77,11 +77,11 @@ export const CategoryListTable = () => {
           </Text>
         </div>
         <div className="flex items-center gap-x-2">
-          {/* {showRankingAction && (
+          {showRankingAction && (
             <Button size="small" variant="secondary" asChild>
               <Link to="organize">{t("categories.organize.action")}</Link>
             </Button>
-          )} */}
+          )}
           <Button size="small" variant="secondary" asChild>
             <Link to="create">{t("actions.create")}</Link>
           </Button>
