@@ -1,8 +1,10 @@
-import { MathBN, isPresent } from "@8medusa/framework/utils"
+import { ContainerRegistrationKeys, MathBN, isPresent } from "@8medusa/framework/utils"
 import {
+  StepResponse,
   WorkflowData,
   WorkflowResponse,
   createHook,
+  createStep,
   createWorkflow,
   parallelize,
   transform,
@@ -53,6 +55,26 @@ export const refreshPaymentCollectionForCartWorkflowId =
  *
  * @property hooks.validate - This hook is executed before all operations. You can consume this hook to perform any custom validation. If validation fails, you can throw an error to stop the workflow execution.
  */
+
+type LogStepInput = {
+  payment_collection: any
+}
+
+const logStep = createStep(
+  "log-step",
+  async ({ payment_collection }: LogStepInput, { container }) => {
+    const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
+
+    logger.info(
+      `[refreshPaymentCollectionForCartWorkflow] payment_collection=${JSON.stringify(
+        payment_collection
+      )}`
+    )
+
+    return new StepResponse("something")
+  }
+)
+
 export const refreshPaymentCollectionForCartWorkflow = createWorkflow(
   refreshPaymentCollectionForCartWorkflowId,
   (input: WorkflowData<RefreshPaymentCollectionForCartWorklowInput>) => {
@@ -63,6 +85,7 @@ export const refreshPaymentCollectionForCartWorkflow = createWorkflow(
         entry_point: "cart",
         fields: [
           "id",
+          "completed_at",
           "region_id",
           "currency_code",
           "total",
@@ -89,6 +112,16 @@ export const refreshPaymentCollectionForCartWorkflow = createWorkflow(
     })
 
     when({ cart }, ({ cart }) => {
+      return isPresent(cart)
+    }).then(() => {
+      logStep({ payment_collection: cart })
+    })
+
+    when({ cart }, ({ cart }) => {
+      if (cart?.completed_at) {
+        return false
+      }
+
       const valueIsEqual = MathBN.eq(
         cart.payment_collection?.raw_amount ?? -1,
         cart.raw_total

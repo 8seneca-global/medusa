@@ -204,8 +204,8 @@ async function main() {
   const newVersion = process.argv[2]
   if (!newVersion) {
     console.error("❌ Please provide a version number")
-    console.log("Usage: node scripts/release-core-packages.js <version>")
-    console.log("Example: node scripts/release-core-packages.js 2.7.2")
+    console.log("Usage: yarn release:core-flows <version>")
+    console.log("Example: yarn release:core-flows 2.7.2")
     process.exit(1)
   }
 
