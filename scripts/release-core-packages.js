@@ -16,24 +16,20 @@ const CORE_PACKAGES = [
     name: "@8medusa/utils",
     publishName: "@8medusa/utils",
     path: "packages/core/utils",
-    updateDependenciesIn: [
-      "packages/admin/dashboard",
-      "packages/admin/admin-bundler",
-      "packages/medusa",
-    ],
-  },
-  {
-    name: "@8medusa/dashboard",
-    publishName: "@8medusa/dashboard",
-    path: "packages/admin/dashboard",
-    updateDependenciesIn: ["packages/admin/admin-bundler", "packages/medusa"],
-  },
-  {
-    name: "@8medusa/admin-bundler",
-    publishName: "@8medusa/admin-bundler",
-    path: "packages/admin/admin-bundler",
     updateDependenciesIn: ["packages/medusa"],
   },
+  // {
+  //   name: "@8medusa/dashboard",
+  //   publishName: "@8medusa/dashboard",
+  //   path: "packages/admin/dashboard",
+  //   updateDependenciesIn: ["packages/admin/admin-bundler", "packages/medusa"],
+  // },
+  // {
+  //   name: "@8medusa/admin-bundler",
+  //   publishName: "@8medusa/admin-bundler",
+  //   path: "packages/admin/admin-bundler",
+  //   updateDependenciesIn: ["packages/medusa"],
+  // },
   {
     name: "@8medusa/medusa",
     publishName: "@8medusa/medusa",
