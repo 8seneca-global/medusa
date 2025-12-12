@@ -219,8 +219,11 @@ export function decorateCartTotals(
   const originalTotal = MathBN.add(itemsOriginalTotal, shippingOriginalTotal)
 
   // TODO: subtract (cart.gift_card_total + cart.gift_card_tax_total)
-  const tempTotal = MathBN.add(subtotal, taxTotal)
-  const total = MathBN.sub(tempTotal, discountSubtotal, creditLinesTotal)
+  // Use itemsTotal and shippingTotal which are already rounded at line item level
+  const total = MathBN.sub(
+    MathBN.add(itemsTotal, shippingTotal),
+    creditLinesTotal
+  )
 
   const cart = cartLike as any
 

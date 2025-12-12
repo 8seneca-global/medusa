@@ -95,7 +95,10 @@ export function getShippingMethodTotals(
 
     subtotal: new BigNumber(subtotal),
     total: new BigNumber(
-      MathBN.sum(MathBN.sub(subtotal, discountsSubtotal), taxTotal)
+      MathBN.round(
+        MathBN.sum(MathBN.sub(subtotal, discountsSubtotal), taxTotal),
+        2
+      )
     ),
     original_total: new BigNumber(
       isTaxInclusive
