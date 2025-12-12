@@ -155,6 +155,10 @@ export const CreatePromotionForm = () => {
           application_method: {
             ...applicationMethodData,
             ...applicationMethodRuleData,
+            value: (() => {
+              const normalized = applicationMethodData.value.replace(",", ".")
+              return Number(normalized)
+            })(),
             target_rules: buildRulesData(targetRulesData),
             buy_rules: buildRulesData(buyRulesData),
           },
@@ -250,7 +254,13 @@ export const CreatePromotionForm = () => {
       const payload = {
         application_method: {
           type: formValue.application_method.type,
-          value: formValue.application_method.value,
+          value: (() => {
+            const normalized = formValue.application_method.value.replace(
+              ",",
+              "."
+            )
+            return Number(normalized)
+          })(),
           target_type: formValue.application_method.target_type,
           currency_code: formValue.application_method.currency_code,
         },
@@ -369,7 +379,13 @@ export const CreatePromotionForm = () => {
       const payload = {
         application_method: {
           type: formValue.application_method.type,
-          value: formValue.application_method.value,
+          value: (() => {
+            const normalized = formValue.application_method.value.replace(
+              ",",
+              "."
+            )
+            return Number(normalized)
+          })(),
           target_type: formValue.application_method.target_type,
           allocation: "across",
           apply_to_quantity: null,
@@ -1217,8 +1233,12 @@ export const CreatePromotionForm = () => {
                                     <CurrencyInput
                                       {...field}
                                       min={0}
+                                      decimalScale={2}
+                                      decimalsLimit={2}
+                                      allowDecimals={true}
+                                      disableGroupSeparators={true}
                                       onValueChange={(value) => {
-                                        onChange(value ? parseInt(value) : "")
+                                        onChange(value || "")
                                       }}
                                       code={currencyCode || "USD"}
                                       symbol={
@@ -1226,7 +1246,7 @@ export const CreatePromotionForm = () => {
                                           ? getCurrencySymbol(currencyCode)
                                           : "$"
                                       }
-                                      value={value}
+                                      value={value || ""}
                                       disabled={!currencyCode}
                                     />
                                   ) : (
@@ -1236,12 +1256,12 @@ export const CreatePromotionForm = () => {
                                       min={0}
                                       max={100}
                                       {...field}
-                                      value={value}
+                                      value={value || ""}
                                       onChange={(e) => {
                                         onChange(
                                           e.target.value === ""
-                                            ? null
-                                            : parseInt(e.target.value)
+                                            ? ""
+                                            : e.target.value
                                         )
                                       }}
                                     />

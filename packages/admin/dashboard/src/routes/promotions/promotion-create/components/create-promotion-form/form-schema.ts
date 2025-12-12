@@ -29,7 +29,16 @@ export const CreatePromotionSchema = z
     rules: RuleSchema,
     application_method: z.object({
       allocation: z.enum(["each", "across"]),
-      value: z.number().min(0),
+      value: z
+        .string()
+        .min(1, { message: "Required field" })
+        .refine(
+          (val) => {
+            const normalized = val.replace(",", ".")
+            return !Number.isNaN(Number(normalized))
+          },
+          { message: "Invalid number" }
+        ),
       currency_code: z.string().optional(),
       max_quantity: z.number().optional().nullable(),
       target_rules: RuleSchema,

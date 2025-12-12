@@ -312,7 +312,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/core-flows@2.9.14, @8medusa/core-flows@workspace:*, @8medusa/core-flows@workspace:^, @8medusa/core-flows@workspace:packages/core/core-flows":
+"@8medusa/core-flows@2.10.10, @8medusa/core-flows@workspace:*, @8medusa/core-flows@workspace:^, @8medusa/core-flows@workspace:packages/core/core-flows":
   version: 0.0.0-use.local
   resolution: "@8medusa/core-flows@workspace:packages/core/core-flows"
   dependencies:
@@ -1074,7 +1074,7 @@ __metadata:
     "@8medusa/cache-inmemory": 2.7.0
     "@8medusa/cache-redis": 2.7.0
     "@8medusa/cart": 2.7.0
-    "@8medusa/core-flows": 2.9.14
+    "@8medusa/core-flows": 2.10.10
     "@8medusa/currency": 2.7.0
     "@8medusa/customer": 2.7.0
     "@8medusa/event-bus-local": 2.7.0

@@ -13,6 +13,16 @@ const RETRY_DELAY = 30000 // 30 seconds delay before retry
 // Core packages to update in specific order with their dependencies
 const CORE_PACKAGES = [
   {
+    name: "@8medusa/utils",
+    publishName: "@8medusa/utils",
+    path: "packages/core/utils",
+    updateDependenciesIn: [
+      "packages/admin/dashboard",
+      "packages/admin/admin-bundler",
+      "packages/medusa",
+    ],
+  },
+  {
     name: "@8medusa/dashboard",
     publishName: "@8medusa/dashboard",
     path: "packages/admin/dashboard",
