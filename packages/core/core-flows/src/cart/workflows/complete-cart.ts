@@ -4,7 +4,6 @@ import {
   UsageComputedActions,
 } from "@8medusa/framework/types"
 import {
-  ContainerRegistrationKeys,
   isDefined,
   Modules,
   OrderStatus,
@@ -12,10 +11,8 @@ import {
 } from "@8medusa/framework/utils"
 import {
   createHook,
-  createStep,
   createWorkflow,
   parallelize,
-  StepResponse,
   transform,
   when,
   WorkflowData,
@@ -87,26 +84,6 @@ export const completeCartWorkflowId = "complete-cart"
  *
  * @property hooks.validate - This hook is executed before all operations. You can consume this hook to perform any custom validation. If validation fails, you can throw an error to stop the workflow execution.
  */
-
-type LogStepInput = {
-  payment_collection: any
-}
-
-const logStep = createStep(
-  "log-step",
-  async ({ payment_collection }: LogStepInput, { container }) => {
-    const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
-
-    logger.info(
-      `[completeCart] payment_collection=${JSON.stringify(
-        payment_collection
-      )}`
-    )
-
-    return new StepResponse("something")
-  }
-)
-
 export const completeCartWorkflow = createWorkflow(
   {
     name: completeCartWorkflowId,
@@ -142,7 +119,6 @@ export const completeCartWorkflow = createWorkflow(
       ({ orderId }) => !orderId
     ).then(() => {
       const paymentSessions = validateCartPaymentsStep({ cart })
-
       // purpose of this step is to run compensation if cart completion fails
       // and tries to cancel or refund the payment depending on the status.
       compensatePaymentIfNeededStep({
@@ -185,8 +161,6 @@ export const completeCartWorkflow = createWorkflow(
         // This might change in the future.
         id: paymentSessions![0].id,
       })
-
-      logStep({ payment_collection: payment })
 
       const { variants, sales_channel_id } = transform({ cart }, (data) => {
         const variantsMap: Record<string, any> = {}
