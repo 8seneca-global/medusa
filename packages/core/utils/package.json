@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/utils",
-  "version": "2.10.12",
+  "version": "2.10.15",
   "description": "Medusa utilities functions shared by Medusa core and Modules",
   "main": "dist/index.js",
   "exports": {

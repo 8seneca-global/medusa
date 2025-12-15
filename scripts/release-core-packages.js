@@ -16,7 +16,50 @@ const CORE_PACKAGES = [
     name: "@8medusa/utils",
     publishName: "@8medusa/utils",
     path: "packages/core/utils",
-    updateDependenciesIn: ["packages/medusa"],
+    updateDependenciesIn: [
+      "packages/cli/medusa-cli",
+      "packages/core/framework",
+      "packages/core/workflows-sdk",
+      "packages/core/modules-sdk",
+      "packages/core/orchestration",
+    ],
+  },
+  {
+    name: "@8medusa/orchestration",
+    publishName: "@8medusa/orchestration",
+    path: "packages/core/orchestration",
+    updateDependenciesIn: [
+      "packages/core/framework",
+      "packages/core/workflows-sdk",
+      "packages/core/modules-sdk",
+    ],
+  },
+  {
+    name: "@8medusa/modules-sdk",
+    publishName: "@8medusa/modules-sdk",
+    path: "packages/core/modules-sdk",
+    updateDependenciesIn: [
+      "packages/core/framework",
+      "packages/core/workflows-sdk",
+    ],
+  },
+  {
+    name: "@8medusa/workflows-sdk",
+    publishName: "@8medusa/workflows-sdk",
+    path: "packages/core/workflows-sdk",
+    updateDependenciesIn: ["packages/core/framework"],
+  },
+  {
+    name: "@8medusa/framework",
+    publishName: "@8medusa/framework",
+    path: "packages/core/framework",
+    updateDependenciesIn: ["packages/core/core-flows", "packages/medusa"],
+  },
+  {
+    name: "@8medusa/cli",
+    publishName: "@8medusa/cli",
+    path: "packages/cli/medusa-cli",
+    updateDependenciesIn: [],
   },
   // {
   //   name: "@8medusa/dashboard",
