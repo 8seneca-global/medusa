@@ -1,5 +1,33 @@
 # integration-tests-http
 
+## 1.0.11
+
+### Patch Changes
+
+- Updated dependencies [[`01542f69737b48346d924670296c551e4c4b47ec`](https://github.com/medusajs/medusa/commit/01542f69737b48346d924670296c551e4c4b47ec), [`413a0da26c7e9acffe9cc087fd77500efc76191a`](https://github.com/medusajs/medusa/commit/413a0da26c7e9acffe9cc087fd77500efc76191a), [`2f6963a5fbea05537680cb1b1f6a2b9822c36325`](https://github.com/medusajs/medusa/commit/2f6963a5fbea05537680cb1b1f6a2b9822c36325), [`b8902637251e9ed4f8762ef280659bbab6d967de`](https://github.com/medusajs/medusa/commit/b8902637251e9ed4f8762ef280659bbab6d967de), [`8618e6ee3843069ea189ea64d5191d93db52dc9d`](https://github.com/medusajs/medusa/commit/8618e6ee3843069ea189ea64d5191d93db52dc9d)]:
+  - @8medusa/core-flows@2.10.13
+  - @8medusa/medusa@2.10.13
+  - @8medusa/event-bus-local@2.10.13
+  - @8medusa/test-utils@2.10.13
+  - @8medusa/modules-sdk@2.10.13
+  - @8medusa/utils@2.10.13
+  - @8medusa/workflow-engine-inmemory@2.10.13
+  - @8medusa/api-key@2.10.13
+  - @8medusa/auth@2.10.13
+  - @8medusa/cache-inmemory@2.10.13
+  - @8medusa/customer@2.10.13
+  - @8medusa/fulfillment@2.10.13
+  - @8medusa/inventory@2.10.13
+  - @8medusa/pricing@2.10.13
+  - @8medusa/product@2.10.13
+  - @8medusa/promotion@2.10.13
+  - @8medusa/fulfillment-manual@2.10.13
+  - @8medusa/region@2.10.13
+  - @8medusa/stock-location@2.10.13
+  - @8medusa/store@2.10.13
+  - @8medusa/tax@2.10.13
+  - @8medusa/user@2.10.13
+
 ## 1.0.10
 
 ### Patch Changes

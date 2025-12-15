@@ -1,5 +1,14 @@
 # @8medusa/admin-bundler
 
+## 2.10.13
+
+### Patch Changes
+
+- Updated dependencies [[`f6b20a943e14ad6689cc1e118ae08ebc49fde603`](https://github.com/medusajs/medusa/commit/f6b20a943e14ad6689cc1e118ae08ebc49fde603)]:
+  - @8medusa/dashboard@2.10.13
+  - @8medusa/admin-shared@2.10.13
+  - @8medusa/admin-vite-plugin@2.10.13
+
 ## 2.7.0
 
 ### Patch Changes

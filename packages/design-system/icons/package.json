@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/icons",
-  "version": "2.7.0",
+  "version": "2.10.13",
   "description": "Medusa UI React icon library",
   "author": "Kasper Kristensen <kasper@8medusa.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "generate": "rimraf ./src/components && toolbox icons -o './src/components'"
   },
   "devDependencies": {
-    "@8medusa/toolbox": "2.7.0",
+    "@8medusa/toolbox": "2.10.13",
     "@atomico/rollup-plugin-sizes": "^1.1.4",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-replace": "^5.0.2",

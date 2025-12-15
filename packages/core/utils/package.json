@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/utils",
-  "version": "2.10.12",
+  "version": "2.10.13",
   "description": "Medusa utilities functions shared by Medusa core and Modules",
   "main": "dist/index.js",
   "exports": {
@@ -43,7 +43,7 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@8medusa/types": "2.7.0",
+    "@8medusa/types": "2.10.13",
     "@graphql-codegen/core": "^4.0.2",
     "@graphql-codegen/typescript": "^4.0.9",
     "@graphql-tools/merge": "^9.0.7",

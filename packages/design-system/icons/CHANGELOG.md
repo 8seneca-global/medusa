@@ -1,5 +1,7 @@
 # @8medusa/icons
 
+## 2.10.13
+
 ## 2.7.0
 
 ### Patch Changes

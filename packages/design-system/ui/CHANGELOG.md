@@ -1,5 +1,12 @@
 # @8medusa/ui
 
+## 4.0.9
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @8medusa/icons@2.10.13
+
 ## 4.0.8
 
 ### Patch Changes

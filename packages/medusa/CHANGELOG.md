@@ -1,5 +1,57 @@
 # Change Log
 
+## 2.10.13
+
+### Patch Changes
+
+- [#12124](https://github.com/medusajs/medusa/pull/12124) [`01542f69737b48346d924670296c551e4c4b47ec`](https://github.com/medusajs/medusa/commit/01542f69737b48346d924670296c551e4c4b47ec) Thanks [@fPolic](https://github.com/fPolic)! - feat(core-flows,js-sdk,medusa): draft order shipping removal
+
+- Updated dependencies [[`ee35f3ce9097832c10cdf2fd168763088e6c3fcb`](https://github.com/medusajs/medusa/commit/ee35f3ce9097832c10cdf2fd168763088e6c3fcb), [`01542f69737b48346d924670296c551e4c4b47ec`](https://github.com/medusajs/medusa/commit/01542f69737b48346d924670296c551e4c4b47ec), [`413a0da26c7e9acffe9cc087fd77500efc76191a`](https://github.com/medusajs/medusa/commit/413a0da26c7e9acffe9cc087fd77500efc76191a), [`4ea1a2e09fc220555166c9bb013c0e11c99b4235`](https://github.com/medusajs/medusa/commit/4ea1a2e09fc220555166c9bb013c0e11c99b4235), [`2f6963a5fbea05537680cb1b1f6a2b9822c36325`](https://github.com/medusajs/medusa/commit/2f6963a5fbea05537680cb1b1f6a2b9822c36325), [`b8902637251e9ed4f8762ef280659bbab6d967de`](https://github.com/medusajs/medusa/commit/b8902637251e9ed4f8762ef280659bbab6d967de), [`8618e6ee3843069ea189ea64d5191d93db52dc9d`](https://github.com/medusajs/medusa/commit/8618e6ee3843069ea189ea64d5191d93db52dc9d)]:
+  - @8medusa/framework@2.10.13
+  - @8medusa/core-flows@2.10.13
+  - @8medusa/index@2.10.13
+  - @8medusa/event-bus-local@2.10.13
+  - @8medusa/workflow-engine-inmemory@2.10.13
+  - @8medusa/workflow-engine-redis@2.10.13
+  - @8medusa/api-key@2.10.13
+  - @8medusa/auth@2.10.13
+  - @8medusa/cache-inmemory@2.10.13
+  - @8medusa/cache-redis@2.10.13
+  - @8medusa/cart@2.10.13
+  - @8medusa/currency@2.10.13
+  - @8medusa/customer@2.10.13
+  - @8medusa/event-bus-redis@2.10.13
+  - @8medusa/file@2.10.13
+  - @8medusa/fulfillment@2.10.13
+  - @8medusa/inventory@2.10.13
+  - @8medusa/link-modules@2.10.13
+  - @8medusa/locking@2.10.13
+  - @8medusa/notification@2.10.13
+  - @8medusa/order@2.10.13
+  - @8medusa/payment@2.10.13
+  - @8medusa/pricing@2.10.13
+  - @8medusa/product@2.10.13
+  - @8medusa/promotion@2.10.13
+  - @8medusa/auth-emailpass@2.10.13
+  - @8medusa/auth-github@2.10.13
+  - @8medusa/auth-google@2.10.13
+  - @8medusa/file-local@2.10.13
+  - @8medusa/file-s3@2.10.13
+  - @8medusa/fulfillment-manual@2.10.13
+  - @8medusa/locking-postgres@2.10.13
+  - @8medusa/locking-redis@2.10.13
+  - @8medusa/notification-local@2.10.13
+  - @8medusa/notification-sendgrid@2.10.13
+  - @8medusa/payment-stripe@2.10.13
+  - @8medusa/region@2.10.13
+  - @8medusa/sales-channel@2.10.13
+  - @8medusa/stock-location@2.10.13
+  - @8medusa/store@2.10.13
+  - @8medusa/tax@2.10.13
+  - @8medusa/user@2.10.13
+  - @8medusa/admin-bundler@2.10.13
+  - @8medusa/telemetry@2.10.13
+
 ## 2.7.0
 
 ### Patch Changes

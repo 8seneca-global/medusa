@@ -1,5 +1,16 @@
 # @8medusa/core-flows
 
+## 2.10.13
+
+### Patch Changes
+
+- [#12124](https://github.com/medusajs/medusa/pull/12124) [`01542f69737b48346d924670296c551e4c4b47ec`](https://github.com/medusajs/medusa/commit/01542f69737b48346d924670296c551e4c4b47ec) Thanks [@fPolic](https://github.com/fPolic)! - feat(core-flows,js-sdk,medusa): draft order shipping removal
+
+- [#12115](https://github.com/medusajs/medusa/pull/12115) [`413a0da26c7e9acffe9cc087fd77500efc76191a`](https://github.com/medusajs/medusa/commit/413a0da26c7e9acffe9cc087fd77500efc76191a) Thanks [@fPolic](https://github.com/fPolic)! - fix(core-flows): draft order reservations + emit order placedevent on convert
+
+- Updated dependencies [[`ee35f3ce9097832c10cdf2fd168763088e6c3fcb`](https://github.com/medusajs/medusa/commit/ee35f3ce9097832c10cdf2fd168763088e6c3fcb), [`2f6963a5fbea05537680cb1b1f6a2b9822c36325`](https://github.com/medusajs/medusa/commit/2f6963a5fbea05537680cb1b1f6a2b9822c36325), [`b8902637251e9ed4f8762ef280659bbab6d967de`](https://github.com/medusajs/medusa/commit/b8902637251e9ed4f8762ef280659bbab6d967de)]:
+  - @8medusa/framework@2.10.13
+
 ## 2.7.0
 
 ### Minor Changes

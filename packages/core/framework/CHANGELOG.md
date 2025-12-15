@@ -1,5 +1,24 @@
 # @8medusa/framework
 
+## 2.10.13
+
+### Patch Changes
+
+- [#12194](https://github.com/medusajs/medusa/pull/12194) [`ee35f3ce9097832c10cdf2fd168763088e6c3fcb`](https://github.com/medusajs/medusa/commit/ee35f3ce9097832c10cdf2fd168763088e6c3fcb) Thanks [@thetutlage](https://github.com/thetutlage)! - fix: apply additional data validator using a global middleware
+
+- [#12157](https://github.com/medusajs/medusa/pull/12157) [`2f6963a5fbea05537680cb1b1f6a2b9822c36325`](https://github.com/medusajs/medusa/commit/2f6963a5fbea05537680cb1b1f6a2b9822c36325) Thanks [@adrien2p](https://github.com/adrien2p)! - fix: event group propagation and event managements
+
+- [#12140](https://github.com/medusajs/medusa/pull/12140) [`b8902637251e9ed4f8762ef280659bbab6d967de`](https://github.com/medusajs/medusa/commit/b8902637251e9ed4f8762ef280659bbab6d967de) Thanks [@thetutlage](https://github.com/thetutlage)! - Add support for dynamoDB for storing sessions and some types cleanup
+
+- Updated dependencies [[`2f6963a5fbea05537680cb1b1f6a2b9822c36325`](https://github.com/medusajs/medusa/commit/2f6963a5fbea05537680cb1b1f6a2b9822c36325), [`b8902637251e9ed4f8762ef280659bbab6d967de`](https://github.com/medusajs/medusa/commit/b8902637251e9ed4f8762ef280659bbab6d967de), [`8618e6ee3843069ea189ea64d5191d93db52dc9d`](https://github.com/medusajs/medusa/commit/8618e6ee3843069ea189ea64d5191d93db52dc9d), [`1f73281ab88c064404ecf7cc9dd0977dfd369723`](https://github.com/medusajs/medusa/commit/1f73281ab88c064404ecf7cc9dd0977dfd369723)]:
+  - @8medusa/orchestration@2.10.13
+  - @8medusa/modules-sdk@2.10.13
+  - @8medusa/types@2.10.13
+  - @8medusa/utils@2.10.13
+  - @8medusa/workflows-sdk@2.10.13
+  - @8medusa/cli@2.10.13
+  - @8medusa/telemetry@2.10.13
+
 ## 2.7.0
 
 ### Patch Changes
