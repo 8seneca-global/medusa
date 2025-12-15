@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/file-local",
-  "version": "2.7.0",
+  "version": "2.10.13",
   "description": "Local filesystem file storage for Medusa",
   "main": "dist/index.js",
   "repository": {
@@ -28,7 +28,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "@8medusa/framework": "2.7.0",
+    "@8medusa/framework": "2.10.13",
     "@swc/core": "^1.7.28",
     "@swc/jest": "^0.2.36",
     "jest": "^29.7.0",
@@ -36,7 +36,7 @@
     "typescript": "^5.6.2"
   },
   "peerDependencies": {
-    "@8medusa/framework": "2.7.0"
+    "@8medusa/framework": "2.10.13"
   },
   "keywords": [
     "medusa-plugin",

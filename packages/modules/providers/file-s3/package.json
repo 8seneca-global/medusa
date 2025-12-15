@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/file-s3",
-  "version": "2.7.0",
+  "version": "2.10.13",
   "description": "S3 protocol file storage for Medusa. Supports any S3-compatible storage provider",
   "main": "dist/index.js",
   "repository": {
@@ -29,7 +29,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "@8medusa/framework": "2.7.0",
+    "@8medusa/framework": "2.10.13",
     "@swc/core": "^1.7.28",
     "@swc/jest": "^0.2.36",
     "axios": "^1.6.8",
@@ -43,7 +43,7 @@
     "ulid": "^2.3.0"
   },
   "peerDependencies": {
-    "@8medusa/framework": "2.7.0"
+    "@8medusa/framework": "2.10.13"
   },
   "keywords": [
     "medusa-plugin",
