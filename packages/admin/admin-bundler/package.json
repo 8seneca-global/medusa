@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/admin-bundler",
-  "version": "2.10.9",
+  "version": "2.10.11",
   "description": "Bundler for the Medusa admin dashboard.",
   "author": "Kasper Kristensen <kasper@8medusa.com>",
   "scripts": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "@8medusa/admin-shared": "2.7.0",
     "@8medusa/admin-vite-plugin": "2.7.0",
-    "@8medusa/dashboard": "2.10.9",
+    "@8medusa/dashboard": "2.10.11",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
     "compression": "^1.7.4",

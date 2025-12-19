@@ -21,7 +21,16 @@ const EditPromotionSchema = zod.object({
   code: zod.string().min(1),
   status: zod.enum(["active", "inactive", "draft"]),
   value_type: zod.enum(["fixed", "percentage"]),
-  value: zod.number(),
+  value: zod
+    .string()
+    .min(1, { message: "Required field" })
+    .refine(
+      (val) => {
+        const normalized = val.replace(",", ".")
+        return !Number.isNaN(Number(normalized))
+      },
+      { message: "Invalid number" }
+    ),
   allocation: zod.enum(["each", "across"]),
 })
 
@@ -36,7 +45,7 @@ export const EditPromotionDetailsForm = ({
       is_automatic: promotion.is_automatic!.toString(),
       code: promotion.code,
       status: promotion.status,
-      value: promotion.application_method!.value,
+      value: promotion.application_method!.value?.toString() || "",
       allocation: promotion.application_method!.allocation,
       value_type: promotion.application_method!.type,
     },
@@ -53,13 +62,16 @@ export const EditPromotionDetailsForm = ({
   const { mutateAsync, isPending } = useUpdatePromotion(promotion.id)
 
   const handleSubmit = form.handleSubmit(async (data) => {
+    const normalized = data.value.replace(",", ".") // "6,5" -> "6.5"
+    const valueNumber = Number(normalized)
+
     await mutateAsync(
       {
         is_automatic: data.is_automatic === "true",
         code: data.code,
         status: data.status,
         application_method: {
-          value: data.value,
+          value: valueNumber,
           type: data.value_type as any,
           allocation: data.allocation as any,
         },
@@ -247,13 +259,14 @@ export const EditPromotionDetailsForm = ({
                       {isFixedValueType ? (
                         <CurrencyInput
                           min={0}
-                          onValueChange={(val) =>
-                            onChange(val ? parseInt(val) : null)
-                          }
+                          decimalScale={2}
+                          decimalsLimit={2}
+                          disableGroupSeparators={true}
+                          onValueChange={(val) => onChange(val || "")}
                           code={currencyCode}
                           symbol={getCurrencySymbol(currencyCode)}
                           {...field}
-                          value={field.value}
+                          value={field.value || ""}
                         />
                       ) : (
                         <DeprecatedPercentageInput
@@ -264,9 +277,7 @@ export const EditPromotionDetailsForm = ({
                           value={field.value || ""}
                           onChange={(e) => {
                             onChange(
-                              e.target.value === ""
-                                ? null
-                                : parseInt(e.target.value)
+                              e.target.value === "" ? "" : e.target.value
                             )
                           }}
                         />

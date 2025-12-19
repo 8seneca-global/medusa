@@ -109,4 +109,9 @@ export class MathBN {
     const num2 = MathBN.convert(n2)
     return num1.isEqualTo(num2)
   }
+
+  static round(n: BNInput, decimalPlaces: number = 2): BigNumberJS {
+    const num = MathBN.convert(n)
+    return num.decimalPlaces(decimalPlaces, BigNumberJS.ROUND_HALF_UP)
+  }
 }
