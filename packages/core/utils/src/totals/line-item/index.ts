@@ -117,15 +117,15 @@ function getLineItemTotals(
   )
 
   const sumTaxRate = MathBN.div(sumTax, 100)
-  const totalItemPrice = MathBN.mult(item.unit_price, item.quantity)
 
   /*
+    Calculate unit subtotal first
     If the price is inclusive of tax, we need to remove the taxed amount from the subtotal
     Original Price = Total Price / (1 + Tax Rate)
   */
-  const subtotal = isTaxInclusive
-    ? MathBN.div(totalItemPrice, MathBN.add(1, sumTaxRate))
-    : totalItemPrice
+  const unitSubtotal = isTaxInclusive
+    ? MathBN.div(item.unit_price, MathBN.add(1, sumTaxRate))
+    : item.unit_price
 
   const {
     adjustmentsTotal: discountsTotal,
@@ -137,6 +137,31 @@ function getLineItemTotals(
     taxRate: sumTaxRate,
   })
 
+  const unitDiscount = MathBN.eq(item.quantity, 0)
+    ? 0
+    : MathBN.div(discountsSubtotal, item.quantity)
+
+  const unitPriceAfterDiscount = MathBN.sub(unitSubtotal, unitDiscount)
+
+  const unitTax = calculateTaxTotal({
+    taxLines: item.tax_lines || [],
+    taxableAmount: unitPriceAfterDiscount,
+    setTotalField: "total",
+  })
+
+  // Step 4: Add tax to get gross unit price and round per item
+  const unitTotalBeforeRounding = MathBN.add(unitPriceAfterDiscount, unitTax)
+  const unitTotal = MathBN.round(unitTotalBeforeRounding, 2)
+
+  // Step 5: Multiply rounded unit total by quantity
+  const subtotal = MathBN.mult(unitSubtotal, item.quantity)
+  const total = MathBN.mult(unitTotal, item.quantity)
+
+  // Calculate original total using the same EU-standard method as total
+  const unitOriginalTotal = MathBN.round(unitTotalBeforeRounding, 2)
+  const originalTotal = MathBN.mult(unitOriginalTotal, item.quantity)
+
+  // Calculate tax totals for reporting
   const taxTotal = calculateTaxTotal({
     taxLines: item.tax_lines || [],
     taxableAmount: MathBN.sub(subtotal, discountsSubtotal),
@@ -154,16 +179,9 @@ function getLineItemTotals(
     unit_price: item.unit_price,
 
     subtotal: new BigNumber(subtotal),
-    total: new BigNumber(
-      MathBN.round(
-        MathBN.sum(MathBN.sub(subtotal, discountsSubtotal), taxTotal),
-        2
-      )
-    ),
+    total: new BigNumber(total),
 
-    original_total: new BigNumber(
-      isTaxInclusive ? totalItemPrice : MathBN.add(subtotal, originalTaxTotal)
-    ),
+    original_total: new BigNumber(originalTotal),
 
     discount_total: new BigNumber(discountsTotal),
     discount_subtotal: new BigNumber(discountsSubtotal),
