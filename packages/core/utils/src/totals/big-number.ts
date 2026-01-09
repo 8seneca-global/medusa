@@ -7,7 +7,7 @@ export class BigNumber implements IBigNumber {
 
   private numeric_: number
   private raw_?: BigNumberRawValue
-  private bignumber_?: BigNumberJS
+  private bignumber_?: InstanceType<typeof BigNumberJS>
 
   constructor(
     rawValue: BigNumberInput | BigNumber,
@@ -99,7 +99,7 @@ export class BigNumber implements IBigNumber {
     return this.raw_
   }
 
-  get bigNumber(): BigNumberJS | undefined {
+  get bigNumber(): InstanceType<typeof BigNumberJS> | undefined {
     return this.bignumber_
   }
 
