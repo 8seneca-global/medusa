@@ -86,18 +86,41 @@ function setRefundableTotal(
     itemDetail.return_dismissed_quantity ?? 0
   )
   const currentQuantity = MathBN.sub(item.quantity, totalReturnedQuantity)
-  const discountPerUnit = MathBN.div(discountsTotal, item.quantity)
 
-  const refundableSubTotal = MathBN.sub(
-    MathBN.mult(currentQuantity, item.unit_price),
-    MathBN.mult(currentQuantity, discountPerUnit)
+  // Use line-level calculation for refundable total
+  const isTaxInclusive = item.is_tax_inclusive ?? context.includeTax
+  const sumTax = MathBN.sum(
+    ...((item.tax_lines ?? []).map((taxLine) => taxLine.rate) ?? [])
+  )
+  const sumTaxRate = MathBN.div(sumTax, 100)
+
+  const unitNet = isTaxInclusive
+    ? MathBN.div(item.unit_price, MathBN.add(1, sumTaxRate))
+    : item.unit_price
+
+  const discountPerUnit = MathBN.eq(item.quantity, 0)
+    ? 0
+    : MathBN.div(discountsTotal, item.quantity)
+
+  // Compute refundable line net (high precision)
+  const refundableLineNetExact = MathBN.mult(
+    currentQuantity,
+    MathBN.sub(unitNet, discountPerUnit)
   )
 
+  // Round at line level (matches Helios algorithm)
+  const refundableLineNetRounded = MathBN.round(refundableLineNetExact, 2)
+
+  // Compute tax on rounded line net
   const taxTotal = calculateTaxTotal({
     taxLines: item.tax_lines || [],
-    taxableAmount: refundableSubTotal,
+    taxableAmount: refundableLineNetRounded,
   })
-  const refundableTotal = MathBN.add(refundableSubTotal, taxTotal)
+
+  const refundableTotal = MathBN.round(
+    MathBN.add(refundableLineNetRounded, taxTotal),
+    2
+  )
 
   totals.refundable_total_per_unit = new BigNumber(
     MathBN.eq(currentQuantity, 0)
@@ -119,11 +142,11 @@ function getLineItemTotals(
   const sumTaxRate = MathBN.div(sumTax, 100)
 
   /*
-    Calculate unit subtotal first
+    Calculate unit subtotal (net price per unit)
     If the price is inclusive of tax, we need to remove the taxed amount from the subtotal
     Original Price = Total Price / (1 + Tax Rate)
   */
-  const unitSubtotal = isTaxInclusive
+  const unitNet = isTaxInclusive
     ? MathBN.div(item.unit_price, MathBN.add(1, sumTaxRate))
     : item.unit_price
 
@@ -137,42 +160,40 @@ function getLineItemTotals(
     taxRate: sumTaxRate,
   })
 
-  const unitDiscount = MathBN.eq(item.quantity, 0)
-    ? 0
-    : MathBN.div(discountsSubtotal, item.quantity)
+  // LINE-LEVEL CALCULATION (Helios-compatible rounding)
+  // Compute line net before discounts (high precision, no rounding)
+  const lineNetBefore = MathBN.mult(unitNet, item.quantity)
+  const subtotal = lineNetBefore
 
-  const unitPriceAfterDiscount = MathBN.sub(unitSubtotal, unitDiscount)
+  // Apply discounts at line level (high precision)
+  const lineNetAfterExact = MathBN.sub(lineNetBefore, discountsSubtotal)
 
-  const unitTax = calculateTaxTotal({
-    taxLines: item.tax_lines || [],
-    taxableAmount: unitPriceAfterDiscount,
-    setTotalField: "total",
-  })
+  // CRITICAL ROUNDING POINT - Round at NET LINE level (matches Helios algorithm)
+  // Helios reconstructs: lineNet = totalPrice / (1 + vatRate), then rounds to 2 decimals
+  // By rounding here, we ensure Helios gets the same lineNet without additional drift
+  const lineNetAfterRounded = MathBN.round(lineNetAfterExact, 2)
 
-  // Step 4: Add tax to get gross unit price and round per item
-  const unitTotalBeforeRounding = MathBN.add(unitPriceAfterDiscount, unitTax)
-  const unitTotal = MathBN.round(unitTotalBeforeRounding, 2)
-
-  // Step 5: Multiply rounded unit total by quantity
-  const subtotal = MathBN.mult(unitSubtotal, item.quantity)
-  const total = MathBN.mult(unitTotal, item.quantity)
-
-  // Calculate original total using the same EU-standard method as total
-  const unitOriginalTotal = MathBN.round(unitTotalBeforeRounding, 2)
-  const originalTotal = MathBN.mult(unitOriginalTotal, item.quantity)
-
-  // Calculate tax totals for reporting
+  // Compute tax on the rounded line net (ensures tax is based on the same value Helios uses)
   const taxTotal = calculateTaxTotal({
     taxLines: item.tax_lines || [],
-    taxableAmount: MathBN.sub(subtotal, discountsSubtotal),
+    taxableAmount: lineNetAfterRounded,
     setTotalField: "total",
   })
 
+  // Compute gross line total from rounded line net + tax
+  const total = MathBN.round(MathBN.add(lineNetAfterRounded, taxTotal), 2)
+
+  // Calculate original totals using line-level rounding (before discounts)
+  const lineNetOriginalRounded = MathBN.round(lineNetBefore, 2)
   const originalTaxTotal = calculateTaxTotal({
     taxLines: item.tax_lines || [],
-    taxableAmount: subtotal,
-    setTotalField: "subtotal",
+    taxableAmount: lineNetOriginalRounded,
+    setTotalField: "total",
   })
+  const originalTotal = MathBN.round(
+    MathBN.add(lineNetOriginalRounded, originalTaxTotal),
+    2
+  )
 
   const totals: GetItemTotalOutput = {
     quantity: item.quantity,

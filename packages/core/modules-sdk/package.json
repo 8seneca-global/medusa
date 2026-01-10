@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/modules-sdk",
-  "version": "2.10.19",
+  "version": "2.10.20",
   "description": "SDK for medusa modules",
   "main": "dist/index.js",
   "export": {
@@ -45,9 +45,9 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@8medusa/orchestration": "2.10.19",
+    "@8medusa/orchestration": "2.10.20",
     "@8medusa/types": "2.7.0",
-    "@8medusa/utils": "2.10.19"
+    "@8medusa/utils": "2.10.20"
   },
   "peerDependencies": {
     "@mikro-orm/core": "6.4.3",

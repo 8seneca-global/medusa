@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/orchestration",
-  "version": "2.10.19",
+  "version": "2.10.20",
   "description": "Medusa utilities to orchestrate modules",
   "main": "dist/index.js",
   "exports": {
@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@8medusa/types": "2.7.0",
-    "@8medusa/utils": "2.10.19"
+    "@8medusa/utils": "2.10.20"
   },
   "peerDependencies": {
     "@mikro-orm/core": "6.4.3",

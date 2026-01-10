@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/medusa",
-  "version": "2.10.19",
+  "version": "2.10.20",
   "description": "Building blocks for digital commerce",
   "main": "dist/index.js",
   "exports": {
@@ -44,7 +44,7 @@
     "test:integration": "jest --forceExit -- src/**/integration-tests/**/__tests__/**/*.ts"
   },
   "devDependencies": {
-    "@8medusa/framework": "2.10.19",
+    "@8medusa/framework": "2.10.20",
     "@opentelemetry/api": "^1.9.0",
     "@opentelemetry/instrumentation": "^0.53.0",
     "@opentelemetry/instrumentation-pg": "^0.44.0",
@@ -127,7 +127,7 @@
     "zod": "3.22.4"
   },
   "peerDependencies": {
-    "@8medusa/framework": "2.10.19",
+    "@8medusa/framework": "2.10.20",
     "@mikro-orm/core": "6.4.3",
     "@mikro-orm/knex": "6.4.3",
     "@mikro-orm/migrations": "6.4.3",
