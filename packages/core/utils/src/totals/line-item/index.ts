@@ -87,45 +87,54 @@ function setRefundableTotal(
   )
   const currentQuantity = MathBN.sub(item.quantity, totalReturnedQuantity)
 
-  // Use line-level calculation for refundable total
+  if (MathBN.eq(currentQuantity, 0)) {
+    totals.refundable_total_per_unit = new BigNumber(0)
+    totals.refundable_total = new BigNumber(0)
+    return
+  }
+
   const isTaxInclusive = item.is_tax_inclusive ?? context.includeTax
   const sumTax = MathBN.sum(
     ...((item.tax_lines ?? []).map((taxLine) => taxLine.rate) ?? [])
   )
-  const sumTaxRate = MathBN.div(sumTax, 100)
 
+  const sumTaxRate = MathBN.div(sumTax, 100)
+  const vatMul = MathBN.add(1, sumTaxRate)
+
+  // Derive unitNet (same as main calculation)
   const unitNet = isTaxInclusive
-    ? MathBN.div(item.unit_price, MathBN.add(1, sumTaxRate))
+    ? MathBN.div(item.unit_price, vatMul)
     : item.unit_price
 
-  const discountPerUnit = MathBN.eq(item.quantity, 0)
-    ? 0
-    : MathBN.div(discountsTotal, item.quantity)
+  // Calculate refundable line net (for current quantity, not returned)
+  const refundableLineNet = MathBN.mult(unitNet, currentQuantity)
+  const refundableLineNetRounded = MathBN.round(refundableLineNet, 2)
 
-  // Compute refundable line net (high precision)
-  const refundableLineNetExact = MathBN.mult(
-    currentQuantity,
-    MathBN.sub(unitNet, discountPerUnit)
+  // Calculate discount per unit and apply to refundable quantity
+  const discountPerUnit = MathBN.div(discountsTotal, item.quantity)
+  const refundableDiscount = MathBN.mult(discountPerUnit, currentQuantity)
+
+  // Subtract discount from net
+  const refundableNetAfterDiscount = MathBN.sub(
+    refundableLineNetRounded,
+    refundableDiscount
   )
 
-  // Round at line level (matches Helios algorithm)
-  const refundableLineNetRounded = MathBN.round(refundableLineNetExact, 2)
-
-  // Compute tax on rounded line net
+  // Calculate tax on refundable net (after discount)
   const taxTotal = calculateTaxTotal({
     taxLines: item.tax_lines || [],
-    taxableAmount: refundableLineNetRounded,
+    taxableAmount: refundableNetAfterDiscount,
   })
+  const taxTotalRounded = MathBN.round(taxTotal, 2)
 
+  // Calculate refundable gross total
   const refundableTotal = MathBN.round(
-    MathBN.add(refundableLineNetRounded, taxTotal),
+    MathBN.add(refundableNetAfterDiscount, taxTotalRounded),
     2
   )
 
   totals.refundable_total_per_unit = new BigNumber(
-    MathBN.eq(currentQuantity, 0)
-      ? 0
-      : MathBN.div(refundableTotal, currentQuantity)
+    MathBN.div(refundableTotal, currentQuantity)
   )
   totals.refundable_total = new BigNumber(refundableTotal)
 }
@@ -140,80 +149,101 @@ function getLineItemTotals(
   )
 
   const sumTaxRate = MathBN.div(sumTax, 100)
+  const vatMul = MathBN.add(1, sumTaxRate)
 
   /*
-    Calculate unit subtotal (net price per unit)
-    If the price is inclusive of tax, we need to remove the taxed amount from the subtotal
-    Original Price = Total Price / (1 + Tax Rate)
+    A) Derive vatRate and unitNet
+    If the price is inclusive of tax, we need to remove the taxed amount
+    unitNet = unitGross / (1 + vatRate)
+    DO NOT round unitNet - keep high precision for line-level calculation
   */
   const unitNet = isTaxInclusive
-    ? MathBN.div(item.unit_price, MathBN.add(1, sumTaxRate))
+    ? MathBN.div(item.unit_price, vatMul)
     : item.unit_price
 
-  const {
-    adjustmentsTotal: discountsTotal,
-    adjustmentsSubtotal: discountsSubtotal,
-    adjustmentsTaxTotal: discountTaxTotal,
-  } = calculateAdjustmentTotal({
-    adjustments: item.adjustments || [],
-    includesTax: isTaxInclusive,
-    taxRate: sumTaxRate,
-  })
-
-  // LINE-LEVEL CALCULATION (Helios-compatible rounding)
-  // Compute line net before discounts (high precision, no rounding)
+  /*
+    B) Compute line net BEFORE promotions (pre-promo base)
+    lineNetBefore = qty × unitNet (high precision, no rounding yet)
+  */
   const lineNetBefore = MathBN.mult(unitNet, item.quantity)
-  const subtotal = lineNetBefore
 
-  // Apply discounts at line level (high precision)
-  const lineNetAfterExact = MathBN.sub(lineNetBefore, discountsSubtotal)
+  /*
+    C) CRITICAL: Round at NET LINE level to match Helios rounding point
+    Helios will do: round2(totalPrice / (1 + vatRate))
+    We ensure consistency by rounding the net base at LINE level, NOT unit level.
+    This is the key alignment point that prevents rounding drift.
+  */
+  const lineNetBeforeRounded = MathBN.round(lineNetBefore, 2)
 
-  // CRITICAL ROUNDING POINT - Round at NET LINE level (matches Helios algorithm)
-  // Helios reconstructs: lineNet = totalPrice / (1 + vatRate), then rounds to 2 decimals
-  // By rounding here, we ensure Helios gets the same lineNet without additional drift
-  const lineNetAfterRounded = MathBN.round(lineNetAfterExact, 2)
-
-  // Compute tax on the rounded line net (ensures tax is based on the same value Helios uses)
-  const taxTotal = calculateTaxTotal({
+  /*
+    D) Compute tax on the PRE-PROMO net (tax is NOT affected by promotions)
+    Tax must be calculated from lineNetBeforeRounded (not unit, not discounted net)
+  */
+  const lineTax = calculateTaxTotal({
     taxLines: item.tax_lines || [],
-    taxableAmount: lineNetAfterRounded,
+    taxableAmount: lineNetBeforeRounded,
     setTotalField: "total",
   })
+  const lineTaxRounded = MathBN.round(lineTax, 2)
 
-  // Compute gross line total from rounded line net + tax
-  const total = MathBN.round(MathBN.add(lineNetAfterRounded, taxTotal), 2)
-
-  // Calculate original totals using line-level rounding (before discounts)
-  const lineNetOriginalRounded = MathBN.round(lineNetBefore, 2)
-  const originalTaxTotal = calculateTaxTotal({
-    taxLines: item.tax_lines || [],
-    taxableAmount: lineNetOriginalRounded,
-    setTotalField: "total",
-  })
-  const originalTotal = MathBN.round(
-    MathBN.add(lineNetOriginalRounded, originalTaxTotal),
+  /*
+    E) Compute original (pre-promo) gross line total
+    This is what the customer would pay without any promotions
+  */
+  const lineGrossBeforePromo = MathBN.round(
+    MathBN.add(lineNetBeforeRounded, lineTaxRounded),
     2
   )
 
+  /*
+    F) Compute promo/discount on GROSS (post-tax reduction)
+    Promotions are applied to customer-facing gross totals, not to the taxable base.
+    - Percentage promos are computed on lineGrossBeforePromo (gross), not on net
+    - Fixed promos are subtracted from gross after percentage is computed
+    - Tax is NOT recalculated after applying promo
+  */
+  const { adjustmentsTotal: promoGross } = calculateAdjustmentTotal({
+    adjustments: item.adjustments || [],
+    includesTax: true, // Force gross interpretation - promotions reduce customer-facing price
+    taxRate: sumTaxRate,
+  })
+
+  /*
+    G) Compute final total (gross after promo)
+    This is the totalPrice we sync to Helios
+  */
+  const total = MathBN.round(MathBN.sub(lineGrossBeforePromo, promoGross), 2)
+
+  /*
+    H) Prepare output fields
+    - subtotal: line net before promo (for consistency with existing API)
+    - total: gross line total after promo (synced to Helios as totalPrice)
+    - original_total: gross line total before promo
+    - original_tax_total: tax on pre-promo amounts
+    - tax_total: same as original_tax_total (tax doesn't change with promo)
+    - discount_total: gross discount amount
+    - discount_subtotal: net discount amount (derived)
+    - discount_tax_total: tax component of discount (derived)
+  */
   const totals: GetItemTotalOutput = {
     quantity: item.quantity,
     unit_price: item.unit_price,
 
-    subtotal: new BigNumber(subtotal),
+    subtotal: new BigNumber(lineNetBeforeRounded),
     total: new BigNumber(total),
 
-    original_total: new BigNumber(originalTotal),
+    original_total: new BigNumber(lineGrossBeforePromo),
 
-    discount_total: new BigNumber(discountsTotal),
-    discount_subtotal: new BigNumber(discountsSubtotal),
-    discount_tax_total: new BigNumber(discountTaxTotal),
+    discount_total: new BigNumber(promoGross),
+    discount_subtotal: new BigNumber(promoGross), // Same as discount_total - promotions apply to gross amounts
+    discount_tax_total: new BigNumber(0), // No tax on discount - promotions reduce post-tax totals
 
-    tax_total: new BigNumber(taxTotal),
-    original_tax_total: new BigNumber(originalTaxTotal),
+    tax_total: new BigNumber(lineTaxRounded),
+    original_tax_total: new BigNumber(lineTaxRounded),
   }
 
   if (isDefined(item.detail?.return_requested_quantity)) {
-    setRefundableTotal(item, discountsTotal, totals, context)
+    setRefundableTotal(item, promoGross, totals, context)
   }
 
   const div = MathBN.eq(item.quantity, 0) ? 1 : item.quantity

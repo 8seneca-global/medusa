@@ -50,8 +50,34 @@ export function getApplicableQuantity(lineItem, maxQuantity) {
   return lineItem.quantity
 }
 
-function getLineItemUnitPrice(lineItem) {
-  return MathBN.div(lineItem.subtotal, lineItem.quantity)
+/**
+ * Calculate gross total from subtotal and tax_lines
+ * ALL promotions apply to post-tax (gross) amounts
+ */
+function getLineItemGrossTotal(lineItem) {
+  const subtotal = MathBN.convert(lineItem.subtotal)
+
+  // Calculate tax from tax_lines if available
+  if (
+    lineItem.tax_lines &&
+    Array.isArray(lineItem.tax_lines) &&
+    lineItem.tax_lines.length > 0
+  ) {
+    const totalTaxRate = lineItem.tax_lines.reduce(
+      (acc, taxLine) => MathBN.add(acc, MathBN.div(taxLine.rate, 100)),
+      MathBN.convert(0)
+    )
+    const taxAmount = MathBN.mult(subtotal, totalTaxRate)
+    return MathBN.add(subtotal, taxAmount)
+  }
+
+  // If no tax_lines, return subtotal (gross = net when no tax)
+  return subtotal
+}
+
+function getLineItemUnitPriceGross(lineItem) {
+  const grossTotal = getLineItemGrossTotal(lineItem)
+  return MathBN.div(grossTotal, lineItem.quantity)
 }
 
 export function calculateAdjustmentAmountFromPromotion(
@@ -60,36 +86,19 @@ export function calculateAdjustmentAmountFromPromotion(
   lineItemsTotal: BigNumberInput = 0
 ) {
   /*
-    For a promotion with an across allocation, we consider not only the line item total, but also the total of all other line items in the order.
-
-    We then distribute the promotion value proportionally across the line items based on the total of each line item.
-
-    For example, if the promotion is 100$, and the order total is 400$, and the items are:
-      item1: 250$
-      item2: 150$
-      total: 400$
-    
-    The promotion value for the line items would be:
-      item1: 62.5$
-      item2: 37.5$
-      total: 100$
-
-    For the next 100$ promotion, we remove the applied promotions value from the line item total and redistribute the promotion value across the line items based on the updated totals.
-
-    Example:
-      item1: (250 - 62.5) = 187.5
-      item2: (150 - 37.5) = 112.5
-      total: 300
-
-      The promotion value for the line items would be:
-      item1: $62.5
-      item2: $37.5
-      total: 100$
-  
+    ALL promotions apply to GROSS (post-tax) amounts.
+    - PERCENTAGE: Calculate percentage on gross total
+    - FIXED: Distribute fixed amount proportionally across items based on gross totals
   */
+
   if (promotion.allocation === ApplicationMethodAllocation.ACROSS) {
     const quantity = getApplicableQuantity(lineItem, promotion.max_quantity)
-    const lineItemTotal = MathBN.mult(getLineItemUnitPrice(lineItem), quantity)
+
+    // Always use GROSS for all promotion types
+    const lineItemTotal = MathBN.mult(
+      getLineItemUnitPriceGross(lineItem),
+      quantity
+    )
     const applicableTotal = MathBN.sub(lineItemTotal, promotion.applied_value)
 
     if (MathBN.lte(applicableTotal, 0)) {
@@ -106,31 +115,14 @@ export function calculateAdjustmentAmountFromPromotion(
   }
 
   /*
-    For a promotion with an EACH allocation, we calculate the promotion value on the line item as a whole.
-
-    Example:
-      item1: {
-        subtotal: 200$,
-        unit_price: 50$,
-        quantity: 4,
-      }
-      
-      When applying promotions, we need to consider 2 values:
-        1. What is the maximum promotion value?
-        2. What is the maximum promotion we can apply on the line item?
-      
-      After applying each promotion, we reduce the maximum promotion that you can add to the line item by the value of the promotions applied.
-      
-      We then apply whichever is lower.
+    For EACH allocation - also use GROSS
   */
+  const grossTotal = getLineItemGrossTotal(lineItem)
+  const remainingItemTotal = MathBN.sub(grossTotal, promotion.applied_value)
 
-  const remainingItemTotal = MathBN.sub(
-    lineItem.subtotal,
-    promotion.applied_value
-  )
-  const unitPrice = MathBN.div(lineItem.subtotal, lineItem.quantity)
+  const unitPriceGross = MathBN.div(grossTotal, lineItem.quantity)
   const maximumPromotionTotal = MathBN.mult(
-    unitPrice,
+    unitPriceGross,
     promotion.max_quantity ?? MathBN.convert(1)
   )
   const applicableTotal = MathBN.min(remainingItemTotal, maximumPromotionTotal)

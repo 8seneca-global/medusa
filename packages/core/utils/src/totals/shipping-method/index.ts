@@ -66,11 +66,7 @@ export function getShippingMethodTotals(
     ? MathBN.div(shippingMethodAmount, MathBN.add(1, sumTaxRate))
     : shippingMethodAmount
 
-  const {
-    adjustmentsTotal: discountsTotal,
-    adjustmentsSubtotal: discountsSubtotal,
-    adjustmentsTaxTotal: discountsTaxTotal,
-  } = calculateAdjustmentTotal({
+  const { adjustmentsTotal: discountsTotal } = calculateAdjustmentTotal({
     adjustments: shippingMethod.adjustments || [],
     includesTax: isTaxInclusive,
     taxRate: sumTaxRate,
@@ -78,37 +74,34 @@ export function getShippingMethodTotals(
 
   const taxLines = shippingMethod.tax_lines || []
 
-  const taxTotal = calculateTaxTotal({
-    taxLines,
-    taxableAmount: MathBN.sub(subtotal, discountsSubtotal),
-    setTotalField: "total",
-  })
-
+  // Tax is calculated on original subtotal - not affected by discounts
   const originalTaxTotal = calculateTaxTotal({
     taxLines,
     taxableAmount: subtotal,
     setTotalField: "subtotal",
   })
 
+  // Tax total is same as original - promotions don't reduce tax
+  const taxTotal = originalTaxTotal
+
+  // Original gross total (before promotions)
+  const originalGrossTotal = isTaxInclusive
+    ? shippingMethodAmount
+    : MathBN.add(subtotal, originalTaxTotal)
+
+  // Final total = original gross - discount (promotions reduce post-tax total)
+  const total = MathBN.round(MathBN.sub(originalGrossTotal, discountsTotal), 2)
+
   const totals: GetShippingMethodTotalOutput = {
     amount: new BigNumber(shippingMethodAmount),
 
     subtotal: new BigNumber(subtotal),
-    total: new BigNumber(
-      MathBN.round(
-        MathBN.sum(MathBN.sub(subtotal, discountsSubtotal), taxTotal),
-        2
-      )
-    ),
-    original_total: new BigNumber(
-      isTaxInclusive
-        ? shippingMethodAmount
-        : MathBN.add(subtotal, originalTaxTotal)
-    ),
+    total: new BigNumber(total),
+    original_total: new BigNumber(originalGrossTotal),
 
     discount_total: new BigNumber(discountsTotal),
-    discount_subtotal: new BigNumber(discountsSubtotal),
-    discount_tax_total: new BigNumber(discountsTaxTotal),
+    discount_subtotal: new BigNumber(discountsTotal), // Same as discount_total - promotions apply to gross
+    discount_tax_total: new BigNumber(0), // No tax on discount - promotions reduce post-tax totals
 
     tax_total: new BigNumber(taxTotal),
     original_tax_total: new BigNumber(originalTaxTotal),
