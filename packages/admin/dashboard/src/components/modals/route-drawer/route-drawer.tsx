@@ -51,6 +51,9 @@ const Root = ({ prev = "..", children }: RouteDrawerProps) => {
             })}
           >
             {children}
+            <div className="sr-only">
+              <Drawer.Title>Drawer</Drawer.Title>
+            </div>
           </Drawer.Content>
         </StackedModalProvider>
       </RouteModalProvider>

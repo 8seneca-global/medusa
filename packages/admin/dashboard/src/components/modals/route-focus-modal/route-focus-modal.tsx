@@ -75,6 +75,9 @@ const Content = ({ stackedModalOpen, children }: ContentProps) => {
       })}
     >
       {children}
+      <div className="sr-only">
+        <FocusModal.Title>Modal</FocusModal.Title>
+      </div>
     </FocusModal.Content>
   )
 }

@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/workflows-sdk",
-  "version": "2.11.1",
+  "version": "2.12.2",
   "description": "Set of workflows tooling for Medusa",
   "main": "dist/index.js",
   "exports": {
@@ -42,10 +42,10 @@
     "zod": "3.22.4"
   },
   "dependencies": {
-    "@8medusa/modules-sdk": "2.11.1",
-    "@8medusa/orchestration": "2.11.1",
-    "@8medusa/types": "2.12.0",
-    "@8medusa/utils": "2.12.0",
+    "@8medusa/modules-sdk": "2.12.2",
+    "@8medusa/orchestration": "2.12.2",
+    "@8medusa/types": "2.12.2",
+    "@8medusa/utils": "2.12.2",
     "ulid": "^2.3.0"
   },
   "peerDependencies": {

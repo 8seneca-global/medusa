@@ -229,7 +229,6 @@ function topoSortForPublish(selected, allPackages) {
     const allDeps = {
       ...pkg.dependencies,
       ...pkg.peerDependencies,
-      ...pkg.devDependencies,
     }
     for (const depName of Object.keys(allDeps)) {
       if (inSet.has(depName) && depName !== pkg.name) {

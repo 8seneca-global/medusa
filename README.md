@@ -66,6 +66,23 @@ Join our [Discord server](https://discord.com/invite/medusajs) to meet other com
 - [LinkedIn](https://www.linkedin.com/company/medusajs)
 - [Medusa Blog](https://medusajs.com/blog/)
 
+  # First time: log in to npm (this is what was missing earlier)
+
+  npm login --registry https://registry.npmjs.org/
+
+  # Preview what would publish
+
+  node scripts/release-changed-packages.js 2.12.0 --dry-run
+
+  # Narrow the diff window explicitly
+
+  node scripts/release-changed-packages.js 2.12.0 --since 4df39c00b9 --dry-run
+
+  # Actual run
+
+  node scripts/release-changed-packages.js 2.12.0 --exclude
+  @8medusa/dashboard,@8medusa/admin-bundler
+
 ## License
 
 Licensed under the [MIT License](https://github.com/medusajs/medusa/blob/develop/LICENSE).

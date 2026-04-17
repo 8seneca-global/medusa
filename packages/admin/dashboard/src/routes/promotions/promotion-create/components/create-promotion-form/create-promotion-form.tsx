@@ -451,11 +451,12 @@ export const CreatePromotionForm = () => {
     name: "template_id",
   })
 
-  const currentTemplate = useMemo(() => {
-    const currentTemplate = templates.find(
-      (template) => template.id === watchTemplateId
-    )
+  const currentTemplate = useMemo(
+    () => templates.find((template) => template.id === watchTemplateId),
+    [watchTemplateId]
+  )
 
+  useEffect(() => {
     if (!currentTemplate) {
       return
     }
@@ -472,22 +473,19 @@ export const CreatePromotionForm = () => {
       }
     }
 
-    // Special handling for Spend Threshold Discount template
     if (currentTemplate.id === "spend_threshold_discount") {
       setValue("rules", [
         {
           attribute: "currency_code",
           operator: "eq",
-          values: "eur", // Default currency changed to EUR
+          values: "eur",
           required: true,
           field_type: "select",
           disguised: true,
         },
       ])
     }
-
-    return currentTemplate
-  }, [watchTemplateId, setValue, reset])
+  }, [currentTemplate, watchTemplateId, setValue, reset])
 
   const watchValueType = useWatch({
     control: form.control,
@@ -569,15 +567,18 @@ export const CreatePromotionForm = () => {
     (rule) => rule.attribute === "currency_code"
   )
 
-  if (watchCurrencyRule) {
-    const formData = form.getValues()
-    const currencyCode = formData.application_method.currency_code
+  useEffect(() => {
+    if (!watchCurrencyRule) {
+      return
+    }
+
+    const currencyCode = getValues().application_method.currency_code
     const ruleValue = watchCurrencyRule.values
 
     if (!Array.isArray(ruleValue) && currencyCode !== ruleValue) {
-      form.setValue("application_method.currency_code", ruleValue as string)
+      setValue("application_method.currency_code", ruleValue as string)
     }
-  }
+  }, [watchCurrencyRule, getValues, setValue])
 
   // Watch min and max cart prices for validation
   const watchMinCartPrice = useWatch({

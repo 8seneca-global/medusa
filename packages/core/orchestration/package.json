@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/orchestration",
-  "version": "2.11.1",
+  "version": "2.12.2",
   "description": "Medusa utilities to orchestrate modules",
   "main": "dist/index.js",
   "exports": {
@@ -39,8 +39,8 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@8medusa/types": "2.12.0",
-    "@8medusa/utils": "2.12.0"
+    "@8medusa/types": "2.12.2",
+    "@8medusa/utils": "2.12.2"
   },
   "peerDependencies": {
     "@mikro-orm/core": "6.4.3",

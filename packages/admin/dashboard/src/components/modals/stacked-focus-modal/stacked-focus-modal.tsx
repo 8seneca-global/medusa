@@ -72,7 +72,7 @@ Description.displayName = "StackedFocusModal.Description"
 const Content = forwardRef<
   HTMLDivElement,
   ComponentPropsWithoutRef<typeof FocusModal.Content>
->(({ className, ...props }, ref) => {
+>(({ className, children, ...props }, ref) => {
   return (
     <FocusModal.Content
       ref={ref}
@@ -81,7 +81,12 @@ const Content = forwardRef<
         className: "bg-transparent",
       }}
       {...props}
-    />
+    >
+      {children}
+      <div className="sr-only">
+        <FocusModal.Title>Modal</FocusModal.Title>
+      </div>
+    </FocusModal.Content>
   )
 })
 Content.displayName = "StackedFocusModal.Content"

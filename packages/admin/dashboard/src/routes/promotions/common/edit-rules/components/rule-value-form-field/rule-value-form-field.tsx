@@ -79,13 +79,19 @@ export const RuleValueFormField = ({
     <Form.Field
       key={`${identifier}.${scope}.${name}-${fieldRule.attribute}`}
       name={name}
-      render={({ field: { onChange, ref, ...field } }) => {
+      render={({ field: { onChange, ref, value, ...field } }) => {
+        const inputValue =
+          value === null || typeof value === "undefined" || Array.isArray(value)
+            ? ""
+            : (value as string | number)
+
         if (attribute?.field_type === "number") {
           return (
             <Form.Item className="basis-1/2">
               <Form.Control>
                 <Input
                   {...field}
+                  value={inputValue}
                   type="number"
                   onChange={onChange}
                   className="bg-ui-bg-base"
@@ -103,6 +109,7 @@ export const RuleValueFormField = ({
               <Form.Control>
                 <Input
                   {...field}
+                  value={inputValue}
                   ref={ref}
                   onChange={onChange}
                   className="bg-ui-bg-base"

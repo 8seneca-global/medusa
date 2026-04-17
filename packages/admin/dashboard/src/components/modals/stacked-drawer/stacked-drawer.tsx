@@ -59,7 +59,7 @@ Description.displayName = "StackedDrawer.Description"
 const Content = forwardRef<
   HTMLDivElement,
   ComponentPropsWithoutRef<typeof Drawer.Content>
->(({ className, ...props }, ref) => {
+>(({ className, children, ...props }, ref) => {
   return (
     <Drawer.Content
       ref={ref}
@@ -68,7 +68,12 @@ const Content = forwardRef<
         className: "bg-transparent",
       }}
       {...props}
-    />
+    >
+      {children}
+      <div className="sr-only">
+        <Drawer.Title>Drawer</Drawer.Title>
+      </div>
+    </Drawer.Content>
   )
 })
 Content.displayName = "StackedDrawer.Content"
