@@ -4,13 +4,49 @@ const commonHiddenFields = [
   "application_method.allocation",
 ]
 
+const amountOfProductHiddenFields = [...commonHiddenFields]
+
+const amountOfOrderHiddenFields = [...commonHiddenFields]
+
+const percentageOfProductHiddenFields = [
+  ...commonHiddenFields,
+  "is_tax_inclusive",
+]
+
+const percentageOfOrderHiddenFields = [
+  ...commonHiddenFields,
+  "is_tax_inclusive",
+]
+
+const buyGetHiddenFields = [
+  ...commonHiddenFields,
+  "application_method.value",
+  "is_tax_inclusive",
+]
+
+const spendThresholdDiscountHiddenFields = [
+  ...commonHiddenFields,
+  "is_tax_inclusive",
+]
+
+const priceRangeGiftHiddenFields = [
+  ...commonHiddenFields,
+  "is_tax_inclusive",
+]
+
+const buyXGetPercentageOffHiddenFields = [
+  ...commonHiddenFields,
+  "rules",
+  "is_tax_inclusive",
+]
+
 export const templates = [
   {
     id: "amount_off_products",
     type: "standard",
-    title: "Amount off products",
-    description: "Discount specific products or collection of products",
-    hiddenFields: [...commonHiddenFields],
+    title: "promotions.templates.amount_off_products.title",
+    description: "promotions.templates.amount_off_products.description",
+    hiddenFields: amountOfProductHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,
@@ -25,9 +61,9 @@ export const templates = [
   {
     id: "amount_off_order",
     type: "standard",
-    title: "Amount off order",
-    description: "Discounts the total order amount",
-    hiddenFields: [...commonHiddenFields],
+    title: "promotions.templates.amount_off_order.title",
+    description: "promotions.templates.amount_off_order.description",
+    hiddenFields: amountOfOrderHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,
@@ -42,9 +78,9 @@ export const templates = [
   {
     id: "percentage_off_product",
     type: "standard",
-    title: "Percentage off product",
-    description: "Discounts a percentage off selected products",
-    hiddenFields: [...commonHiddenFields],
+    title: "promotions.templates.percentage_off_product.title",
+    description: "promotions.templates.percentage_off_product.description",
+    hiddenFields: percentageOfProductHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,
@@ -59,9 +95,9 @@ export const templates = [
   {
     id: "percentage_off_order",
     type: "standard",
-    title: "Percentage off order",
-    description: "Discounts a percentage of the total order amount",
-    hiddenFields: [...commonHiddenFields],
+    title: "promotions.templates.percentage_off_order.title",
+    description: "promotions.templates.percentage_off_order.description",
+    hiddenFields: percentageOfOrderHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,
@@ -76,9 +112,9 @@ export const templates = [
   {
     id: "buy_get",
     type: "buy_get",
-    title: "Buy X Get Y",
-    description: "Buy X product(s), get Y product(s)",
-    hiddenFields: [...commonHiddenFields, "application_method.value"],
+    title: "promotions.templates.buy_get.title",
+    description: "promotions.templates.buy_get.description",
+    hiddenFields: buyGetHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,
@@ -94,9 +130,9 @@ export const templates = [
   {
     id: "spend_threshold_discount",
     type: "standard",
-    title: "Spend Threshold Discount",
-    description: "Get a discount when order total exceeds a set amount",
-    hiddenFields: [...commonHiddenFields],
+    title: "promotions.templates.spend_threshold_discount.title",
+    description: "promotions.templates.spend_threshold_discount.description",
+    hiddenFields: spendThresholdDiscountHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,
@@ -111,10 +147,9 @@ export const templates = [
   {
     id: "price_range_gift",
     type: "standard",
-    title: "Buy in price range, get gift product",
-    description:
-      "Get a gift product when the order total is within a specific price range",
-    hiddenFields: [...commonHiddenFields],
+    title: "promotions.templates.price_range_gift.title",
+    description: "promotions.templates.price_range_gift.description",
+    hiddenFields: priceRangeGiftHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,
@@ -129,9 +164,9 @@ export const templates = [
   {
     id: "buy_x_get_percentage_off",
     type: "standard",
-    title: "Buy X get percentage off",
-    description: "Buy X product(s), get a percentage off each product",
-    hiddenFields: [...commonHiddenFields, "rules"],
+    title: "promotions.templates.buy_x_get_percentage_off.title",
+    description: "promotions.templates.buy_x_get_percentage_off.description",
+    hiddenFields: buyXGetPercentageOffHiddenFields,
     defaults: {
       is_automatic: "false",
       is_tax_inclusive: false,

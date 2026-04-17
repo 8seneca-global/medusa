@@ -94,6 +94,7 @@ export const useComboboxData = <
     searchValue,
     onSearchValueChange,
     disabled,
-    ...rest,
+    fetchNextPage: rest.fetchNextPage,
+    isFetchingNextPage: rest.isFetchingNextPage,
   }
 }

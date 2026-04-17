@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/medusa",
-  "version": "2.12.2",
+  "version": "2.12.3",
   "description": "Building blocks for digital commerce",
   "main": "dist/index.js",
   "exports": {

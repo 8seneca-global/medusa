@@ -27,7 +27,7 @@
   "dependencies": {
     "@8medusa/admin-shared": "2.7.0",
     "@8medusa/admin-vite-plugin": "2.7.0",
-    "@8medusa/dashboard": "2.12.2",
+    "@8medusa/dashboard": "2.12.3",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
     "compression": "^1.7.4",

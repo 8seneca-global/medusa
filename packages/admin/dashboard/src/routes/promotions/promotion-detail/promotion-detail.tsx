@@ -47,7 +47,6 @@ export const PromotionDetail = () => {
       (rule) => rule.attribute === "items.quantity"
     )
 
-  console.log(isHideWhoCanUse)
   return (
     <TwoColumnPage
       data={promotion}
