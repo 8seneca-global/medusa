@@ -180,6 +180,16 @@ export const PromotionGeneralSection = ({
           {promotion.application_method?.allocation!}
         </Text>
       </div>
+
+      <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
+        <Text size="small" weight="plus" leading="compact">
+          {t("promotions.fields.is_tax_inclusive")}
+        </Text>
+
+        <Text size="small" leading="compact" className="text-pretty">
+          {promotion.is_tax_inclusive ? t("fields.true") : t("fields.false")}
+        </Text>
+      </div>
     </Container>
   )
 }

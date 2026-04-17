@@ -6,6 +6,7 @@ import { Trans, useTranslation } from "react-i18next"
 import * as zod from "zod"
 
 import { Form } from "../../../../../components/common/form"
+import { SwitchBox } from "../../../../../components/common/switch-box"
 import { DeprecatedPercentageInput } from "../../../../../components/inputs/percentage-input"
 import { RouteDrawer, useRouteModal } from "../../../../../components/modals"
 import { KeyboundForm } from "../../../../../components/utilities/keybound-form"
@@ -19,6 +20,7 @@ type EditPromotionFormProps = {
 const EditPromotionSchema = zod.object({
   is_automatic: zod.string().toLowerCase(),
   code: zod.string().min(1),
+  is_tax_inclusive: zod.boolean().optional(),
   status: zod.enum(["active", "inactive", "draft"]),
   value_type: zod.enum(["fixed", "percentage"]),
   value: zod
@@ -43,6 +45,7 @@ export const EditPromotionDetailsForm = ({
   const form = useForm<zod.infer<typeof EditPromotionSchema>>({
     defaultValues: {
       is_automatic: promotion.is_automatic!.toString(),
+      is_tax_inclusive: promotion.is_tax_inclusive ?? false,
       code: promotion.code,
       status: promotion.status,
       value: promotion.application_method!.value?.toString() || "",
@@ -68,6 +71,7 @@ export const EditPromotionDetailsForm = ({
     await mutateAsync(
       {
         is_automatic: data.is_automatic === "true",
+        is_tax_inclusive: data.is_tax_inclusive,
         code: data.code,
         status: data.status,
         application_method: {
@@ -171,6 +175,13 @@ export const EditPromotionDetailsForm = ({
                   </Form.Item>
                 )
               }}
+            />
+
+            <SwitchBox
+              control={form.control}
+              name="is_tax_inclusive"
+              label={t("promotions.form.tax_inclusive.title")}
+              description={t("promotions.form.tax_inclusive.description")}
             />
 
             <div className="flex flex-col gap-y-4">

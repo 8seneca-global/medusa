@@ -51,13 +51,12 @@ export function getApplicableQuantity(lineItem, maxQuantity) {
 }
 
 /**
- * Calculate gross total from subtotal and tax_lines
- * ALL promotions apply to post-tax (gross) amounts
+ * Calculate gross total from subtotal and tax_lines.
+ * Used when is_tax_inclusive is true — promotions apply to post-tax amounts.
  */
 function getLineItemGrossTotal(lineItem) {
   const subtotal = MathBN.convert(lineItem.subtotal)
 
-  // Calculate tax from tax_lines if available
   if (
     lineItem.tax_lines &&
     Array.isArray(lineItem.tax_lines) &&
@@ -71,7 +70,6 @@ function getLineItemGrossTotal(lineItem) {
     return MathBN.add(subtotal, taxAmount)
   }
 
-  // If no tax_lines, return subtotal (gross = net when no tax)
   return subtotal
 }
 
@@ -80,25 +78,34 @@ function getLineItemUnitPriceGross(lineItem) {
   return MathBN.div(grossTotal, lineItem.quantity)
 }
 
+/**
+ * Get subtotal (standard upstream logic).
+ * Used when is_tax_inclusive is false.
+ */
+function getLineItemSubtotal(lineItem) {
+  return MathBN.convert(lineItem.subtotal)
+}
+
+function getLineItemUnitPriceSubtotal(lineItem) {
+  return MathBN.div(getLineItemSubtotal(lineItem), lineItem.quantity)
+}
+
 export function calculateAdjustmentAmountFromPromotion(
   lineItem,
   promotion,
   lineItemsTotal: BigNumberInput = 0
 ) {
-  /*
-    ALL promotions apply to GROSS (post-tax) amounts.
-    - PERCENTAGE: Calculate percentage on gross total
-    - FIXED: Distribute fixed amount proportionally across items based on gross totals
-  */
+  const isTaxInclusive = promotion.is_tax_inclusive ?? false
 
   if (promotion.allocation === ApplicationMethodAllocation.ACROSS) {
     const quantity = getApplicableQuantity(lineItem, promotion.max_quantity)
 
-    // Always use GROSS for all promotion types
-    const lineItemTotal = MathBN.mult(
-      getLineItemUnitPriceGross(lineItem),
-      quantity
-    )
+    // Choose unit price based on tax-inclusive flag
+    const unitPrice = isTaxInclusive
+      ? getLineItemUnitPriceGross(lineItem)
+      : getLineItemUnitPriceSubtotal(lineItem)
+
+    const lineItemTotal = MathBN.mult(unitPrice, quantity)
     const applicableTotal = MathBN.sub(lineItemTotal, promotion.applied_value)
 
     if (MathBN.lte(applicableTotal, 0)) {
@@ -114,15 +121,19 @@ export function calculateAdjustmentAmountFromPromotion(
     return MathBN.min(promotionValue, applicableTotal)
   }
 
-  /*
-    For EACH allocation - also use GROSS
-  */
-  const grossTotal = getLineItemGrossTotal(lineItem)
-  const remainingItemTotal = MathBN.sub(grossTotal, promotion.applied_value)
+  // EACH allocation — choose total based on tax-inclusive flag
+  const itemTotal = isTaxInclusive
+    ? getLineItemGrossTotal(lineItem)
+    : getLineItemSubtotal(lineItem)
 
-  const unitPriceGross = MathBN.div(grossTotal, lineItem.quantity)
+  const remainingItemTotal = MathBN.sub(itemTotal, promotion.applied_value)
+
+  const unitPrice = isTaxInclusive
+    ? MathBN.div(getLineItemGrossTotal(lineItem), lineItem.quantity)
+    : MathBN.div(getLineItemSubtotal(lineItem), lineItem.quantity)
+
   const maximumPromotionTotal = MathBN.mult(
-    unitPriceGross,
+    unitPrice,
     promotion.max_quantity ?? MathBN.convert(1)
   )
   const applicableTotal = MathBN.min(remainingItemTotal, maximumPromotionTotal)

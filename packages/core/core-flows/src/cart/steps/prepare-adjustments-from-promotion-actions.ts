@@ -120,7 +120,7 @@ export const prepareAdjustmentsFromPromotionActionsStep = createStep(
 
     const promotions = await promotionModuleService.listPromotions(
       { code: actions.map((a) => a.code) },
-      { select: ["id", "code"] }
+      { select: ["id", "code", "is_tax_inclusive"] }
     )
 
     const promotionsMap = new Map<string, PromotionDTO>(

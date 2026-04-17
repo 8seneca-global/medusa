@@ -13,6 +13,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "standard",
       application_method: {
         allocation: "each",
@@ -29,6 +30,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "standard",
       application_method: {
         allocation: "across",
@@ -45,6 +47,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "standard",
       application_method: {
         allocation: "each",
@@ -61,6 +64,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "standard",
       application_method: {
         allocation: "across",
@@ -77,6 +81,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields, "application_method.value"],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "buyget",
       application_method: {
         type: "percentage",
@@ -94,6 +99,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "standard",
       application_method: {
         allocation: "across",
@@ -111,6 +117,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "standard",
       application_method: {
         allocation: "across",
@@ -127,6 +134,7 @@ export const templates = [
     hiddenFields: [...commonHiddenFields, "rules"],
     defaults: {
       is_automatic: "false",
+      is_tax_inclusive: false,
       type: "buyget",
       application_method: {
         type: "percentage",

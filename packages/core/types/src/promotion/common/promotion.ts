@@ -61,6 +61,13 @@ export interface PromotionDTO {
   is_automatic?: boolean
 
   /**
+   * Whether the promotion is tax inclusive.
+   * When true, promotion values are calculated on gross (post-tax) amounts.
+   * When false, promotion values are calculated on net (pre-tax) amounts.
+   */
+  is_tax_inclusive?: boolean
+
+  /**
    * The associated application method.
    */
   application_method?: ApplicationMethodDTO
@@ -114,6 +121,11 @@ export interface CreatePromotionDTO {
   is_automatic?: boolean
 
   /**
+   * Whether the promotion is tax inclusive.
+   */
+  is_tax_inclusive?: boolean
+
+  /**
    * The associated application method.
    */
   application_method: CreateApplicationMethodDTO
@@ -147,6 +159,11 @@ export interface UpdatePromotionDTO {
    * Whether the promotion is applied automatically.
    */
   is_automatic?: boolean
+
+  /**
+   * Whether the promotion is tax inclusive.
+   */
+  is_tax_inclusive?: boolean
 
   /**
    * The code of the promotion.

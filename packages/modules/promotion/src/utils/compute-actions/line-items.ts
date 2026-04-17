@@ -103,33 +103,44 @@ function applyPromotionToItems(
     ? 1
     : applicationMethod?.max_quantity!
 
-  // ALL promotions use GROSS totals (post-tax)
+  const isTaxInclusive = promotion.is_tax_inclusive ?? false
+
   let lineItemsTotal = MathBN.convert(0)
   if (allocation === ApplicationMethodAllocation.ACROSS) {
-    lineItemsTotal = applicableItems.reduce((acc, item) => {
-      // Calculate gross total (subtotal + tax) for ALL promotions
-      let itemTotal = MathBN.convert(item.subtotal)
+    if (isTaxInclusive) {
+      // Tax-inclusive: use GROSS totals (subtotal + tax) — existing Lyra logic
+      lineItemsTotal = applicableItems.reduce((acc, item) => {
+        let itemTotal = MathBN.convert(item.subtotal)
 
-      if (
-        item.tax_lines &&
-        Array.isArray(item.tax_lines) &&
-        item.tax_lines.length > 0
-      ) {
-        const taxLines = item.tax_lines as { rate: BigNumberInput }[]
-        const totalTaxRate = taxLines.reduce(
-          (taxAcc, taxLine) =>
-            MathBN.add(taxAcc, MathBN.div(taxLine.rate, 100)),
-          MathBN.convert(0)
+        if (
+          item.tax_lines &&
+          Array.isArray(item.tax_lines) &&
+          item.tax_lines.length > 0
+        ) {
+          const taxLines = item.tax_lines as { rate: BigNumberInput }[]
+          const totalTaxRate = taxLines.reduce(
+            (taxAcc, taxLine) =>
+              MathBN.add(taxAcc, MathBN.div(taxLine.rate, 100)),
+            MathBN.convert(0)
+          )
+          const taxAmount = MathBN.mult(item.subtotal, totalTaxRate)
+          itemTotal = MathBN.add(item.subtotal, taxAmount)
+        }
+
+        return MathBN.sub(
+          MathBN.add(acc, itemTotal),
+          appliedPromotionsMap.get(item.id) ?? 0
         )
-        const taxAmount = MathBN.mult(item.subtotal, totalTaxRate)
-        itemTotal = MathBN.add(item.subtotal, taxAmount)
-      }
-
-      return MathBN.sub(
-        MathBN.add(acc, itemTotal),
-        appliedPromotionsMap.get(item.id) ?? 0
-      )
-    }, MathBN.convert(0))
+      }, MathBN.convert(0))
+    } else {
+      // Non-tax-inclusive: use subtotal only — standard upstream logic
+      lineItemsTotal = applicableItems.reduce((acc, item) => {
+        return MathBN.sub(
+          MathBN.add(acc, item.subtotal),
+          appliedPromotionsMap.get(item.id) ?? 0
+        )
+      }, MathBN.convert(0))
+    }
 
     if (MathBN.lte(lineItemsTotal, 0)) {
       return computedActions
@@ -181,6 +192,7 @@ function applyPromotionToItems(
         item_id: item.id,
         amount,
         code: promotion.code!,
+        is_tax_inclusive: isTaxInclusive,
       })
     } else if (isTargetShippingMethod) {
       computedActions.push({
@@ -188,6 +200,7 @@ function applyPromotionToItems(
         shipping_method_id: item.id,
         amount,
         code: promotion.code!,
+        is_tax_inclusive: isTaxInclusive,
       })
     }
   }

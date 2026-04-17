@@ -20,6 +20,7 @@ const RuleSchema = z.array(
 export const CreatePromotionSchema = z
   .object({
     template_id: z.string().optional(),
+    is_tax_inclusive: z.boolean().optional().default(false),
     campaign_id: z.string().optional(),
     campaign_choice: z.enum(["none", "existing", "new"]).optional(),
     is_automatic: z.string().toLowerCase(),

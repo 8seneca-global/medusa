@@ -66,6 +66,11 @@ export interface AddItemAdjustmentAction {
   code: string
 
   /**
+   * Whether the promotion's value is tax inclusive.
+   */
+  is_tax_inclusive?: boolean
+
+  /**
    * The promotion's description.
    */
   description?: string
@@ -119,6 +124,11 @@ export interface AddShippingMethodAdjustment {
    * The promotion's code.
    */
   code: string
+
+  /**
+   * Whether the promotion's value is tax inclusive.
+   */
+  is_tax_inclusive?: boolean
 
   /**
    * The promotion's description.

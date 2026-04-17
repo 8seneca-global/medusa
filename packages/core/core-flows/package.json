@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/core-flows",
-  "version": "2.9.14",
+  "version": "2.12.0",
   "description": "Set of workflow definitions for Medusa",
   "main": "dist/index.js",
   "exports": {

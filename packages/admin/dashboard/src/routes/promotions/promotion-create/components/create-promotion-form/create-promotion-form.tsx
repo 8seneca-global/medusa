@@ -28,6 +28,7 @@ import { useForm, useWatch } from "react-hook-form"
 import { Trans, useTranslation } from "react-i18next"
 import { z } from "zod"
 import { Form } from "../../../../../components/common/form"
+import { SwitchBox } from "../../../../../components/common/switch-box"
 import { DeprecatedPercentageInput } from "../../../../../components/inputs/percentage-input"
 import {
   RouteFocusModal,
@@ -51,6 +52,7 @@ import { useProducts } from "../../../../../hooks/api"
 const defaultValues = {
   campaign_id: undefined,
   template_id: templates[0].id!,
+  is_tax_inclusive: false,
   campaign_choice: "none" as "none",
   is_automatic: "false",
   code: "",
@@ -862,6 +864,13 @@ export const CreatePromotionForm = () => {
                       }}
                     />
                   </div>
+
+                  <SwitchBox
+                    control={form.control}
+                    name="is_tax_inclusive"
+                    label={t("promotions.form.tax_inclusive.title")}
+                    description={t("promotions.form.tax_inclusive.description")}
+                  />
 
                   {!currentTemplate?.hiddenFields?.includes("type") && (
                     <Form.Field

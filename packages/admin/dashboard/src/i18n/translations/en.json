@@ -1992,6 +1992,7 @@
       "campaign": "Campaign",
       "method": "Method",
       "allocation": "Allocation",
+      "is_tax_inclusive": "Tax inclusive",
       "addCondition": "Add condition",
       "clearAll": "Clear all",
       "amount": {
@@ -2120,6 +2121,10 @@
           "title": "Across",
           "description": "Applies value across items"
         }
+      },
+      "tax_inclusive": {
+        "title": "Tax inclusive",
+        "description": "When enabled, the promotion value is calculated on gross (post-tax) amounts. When disabled, it is calculated on net (pre-tax) amounts."
       },
       "code": {
         "title": "Code",
