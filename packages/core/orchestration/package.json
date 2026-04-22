@@ -39,7 +39,7 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@8medusa/types": "2.12.2",
+    "@8medusa/types": "2.12.4",
     "@8medusa/utils": "2.12.2"
   },
   "peerDependencies": {

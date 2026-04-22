@@ -78,7 +78,7 @@
     "@8medusa/modules-sdk": "2.12.2",
     "@8medusa/orchestration": "2.12.2",
     "@8medusa/telemetry": "2.7.0",
-    "@8medusa/types": "2.12.2",
+    "@8medusa/types": "2.12.4",
     "@8medusa/utils": "2.12.2",
     "@8medusa/workflows-sdk": "2.12.2",
     "@jercle/yargonaut": "^1.1.5",

@@ -161,11 +161,6 @@ export interface UpdatePromotionDTO {
   is_automatic?: boolean
 
   /**
-   * Whether the promotion is tax inclusive.
-   */
-  is_tax_inclusive?: boolean
-
-  /**
    * The code of the promotion.
    */
   code?: string

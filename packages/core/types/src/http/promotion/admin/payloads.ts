@@ -202,10 +202,6 @@ export interface AdminUpdatePromotion {
    */
   is_automatic?: boolean
   /**
-   * Whether the promotion is tax inclusive.
-   */
-  is_tax_inclusive?: boolean
-  /**
    * The type of promotion.
    */
   type?: PromotionTypeValues

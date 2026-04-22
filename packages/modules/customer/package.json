@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@8medusa/framework": "2.12.2",
-    "@8medusa/test-utils": "2.12.2",
+    "@8medusa/test-utils": "2.12.4",
     "@mikro-orm/cli": "6.4.3",
     "@mikro-orm/core": "6.4.3",
     "@mikro-orm/migrations": "6.4.3",
