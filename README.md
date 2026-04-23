@@ -72,16 +72,11 @@ Join our [Discord server](https://discord.com/invite/medusajs) to meet other com
 
   # Preview what would publish
 
-  node scripts/release-changed-packages.js 2.12.0 --dry-run
-
-  # Narrow the diff window explicitly
-
-  node scripts/release-changed-packages.js 2.12.0 --since 4df39c00b9 --dry-run
+  node scripts/release-changed-packages.js 2.12.5 --since HEAD --dry-run
 
   # Actual run
 
-  node scripts/release-changed-packages.js 2.12.0 --exclude
-  @8medusa/dashboard,@8medusa/admin-bundler
+  node scripts/release-changed-packages.js 2.12.5 --since HEAD --include @8medusa/medusa --allow-dirty
 
 ## License
 

@@ -6,14 +6,38 @@ import {
 import {
   ApplicationMethodAllocation,
   ApplicationMethodTargetType,
+  ApplicationMethodType,
   ComputedActions,
   MathBN,
   MedusaError,
   ApplicationMethodTargetType as TargetType,
   calculateAdjustmentAmountFromPromotion,
 } from "@8medusa/framework/utils"
+import { BigNumber as BigNumberJS } from "bignumber.js"
 import { areRulesValidForContext } from "../validations"
 import { computeActionForBudgetExceeded } from "./usage"
+
+// Currency precision is hardcoded to 2 decimal places throughout this
+// codebase (see tax, line-item totals). LRM rounding honors the same.
+const ROUND_DP = 2
+const CENT = 0.01
+
+// MathBN on the version of @8medusa/utils transitively pinned by the
+// installed @8medusa/framework package predates the `round`/`floor`
+// helpers, so we use bignumber.js directly for 2dp rounding here.
+function floorTo(value: BigNumberInput, dp: number): InstanceType<typeof BigNumberJS> {
+  return new BigNumberJS(MathBN.convert(value).toString()).decimalPlaces(
+    dp,
+    BigNumberJS.ROUND_DOWN
+  )
+}
+
+function roundTo(value: BigNumberInput, dp: number): InstanceType<typeof BigNumberJS> {
+  return new BigNumberJS(MathBN.convert(value).toString()).decimalPlaces(
+    dp,
+    BigNumberJS.ROUND_HALF_UP
+  )
+}
 
 function validateContext(
   contextKey: string,
@@ -64,6 +88,111 @@ export function getComputedActionsForOrder(
     methodIdPromoValueMap,
     ApplicationMethodAllocation.ACROSS
   )
+}
+
+/**
+ * Largest-remainder method: round each adjustment amount down to 2dp, then
+ * distribute the residual cents to the lines with the largest fractional
+ * remainders. Ensures sum(rounded amounts) == target to the cent — so the
+ * face value of a fixed/across promotion is delivered exactly even when the
+ * pro-rata split has sub-cent residuals.
+ */
+function applyLargestRemainderRounding(
+  adjustmentActions: PromotionTypes.ComputeActions[],
+  promotionValue: BigNumberInput,
+  appliedPromotionsMap: Map<string, BigNumberInput>
+): void {
+  // Only operate on item/shipping-method adjustment actions. Budget-exceeded
+  // actions carry no amount to redistribute.
+  const rows = adjustmentActions
+    .map((action, index) => ({ action, index }))
+    .filter(
+      ({ action }) =>
+        action.action === ComputedActions.ADD_ITEM_ADJUSTMENT ||
+        action.action === ComputedActions.ADD_SHIPPING_METHOD_ADJUSTMENT
+    )
+
+  if (rows.length === 0) {
+    return
+  }
+
+  const rawSum = rows.reduce(
+    (acc, { action }) => MathBN.add(acc, (action as any).amount),
+    MathBN.convert(0)
+  )
+
+  // Target caps at the promotion value. If capping reduced total allocation
+  // (one item hit its applicableTotal ceiling), we align to the raw sum
+  // instead of the promotion value — otherwise LRM would invent cents.
+  const targetRounded = roundTo(
+    MathBN.min(rawSum, promotionValue),
+    ROUND_DP
+  )
+
+  const floored = rows.map(({ action, index }) => {
+    const raw = MathBN.convert((action as any).amount)
+    const flooredValue = floorTo(raw, ROUND_DP)
+    return {
+      index,
+      amount: (action as any).amount,
+      floored: flooredValue,
+      remainder: MathBN.sub(raw, flooredValue),
+    }
+  })
+
+  const flooredSum = floored.reduce(
+    (acc, r) => MathBN.add(acc, r.floored),
+    MathBN.convert(0)
+  )
+
+  // residualCents is how many cents we still need to distribute so the
+  // rounded allocation matches the target. Positive → hand cents out in
+  // descending-remainder order. Zero → already exact.
+  const residualCents = Math.round(
+    Number(MathBN.sub(targetRounded, flooredSum).toFixed(ROUND_DP)) / CENT
+  )
+
+  const finalAmounts = new Map<number, BigNumberInput>()
+  for (const r of floored) {
+    finalAmounts.set(r.index, r.floored)
+  }
+
+  if (residualCents > 0) {
+    const sorted = [...floored].sort((a, b) => {
+      const cmp = MathBN.sub(b.remainder, a.remainder)
+      if (!MathBN.eq(cmp, 0)) {
+        return MathBN.gt(cmp, 0) ? 1 : -1
+      }
+      // Deterministic tiebreak by action index so identical remainders always
+      // favor the same line across runs.
+      return a.index - b.index
+    })
+
+    for (let i = 0; i < residualCents && i < sorted.length; i++) {
+      const target = sorted[i]
+      finalAmounts.set(target.index, MathBN.add(target.floored, CENT))
+    }
+  }
+
+  for (const { action, index } of rows) {
+    const rounded = finalAmounts.get(index)
+    if (rounded === undefined) {
+      continue
+    }
+    const previousAmount = (action as any).amount
+    ;(action as any).amount = rounded
+
+    // Keep appliedPromotionsMap in sync so subsequent stacked promotions
+    // see the LRM-adjusted applied value when they compute their own
+    // applicableTotal for this line.
+    const key =
+      (action as any).item_id ?? (action as any).shipping_method_id
+    if (key != null) {
+      const prevApplied = appliedPromotionsMap.get(key) ?? 0
+      const delta = MathBN.sub(rounded, previousAmount)
+      appliedPromotionsMap.set(key, MathBN.add(prevApplied, delta))
+    }
+  }
 }
 
 function applyPromotionToItems(
@@ -203,6 +332,16 @@ function applyPromotionToItems(
         is_tax_inclusive: isTaxInclusive,
       })
     }
+  }
+
+  const isFixed = applicationMethod?.type === ApplicationMethodType.FIXED
+  const isAcross = allocation === ApplicationMethodAllocation.ACROSS
+  if (isFixed && isAcross) {
+    applyLargestRemainderRounding(
+      computedActions,
+      promotionValue,
+      appliedPromotionsMap
+    )
   }
 
   return computedActions
