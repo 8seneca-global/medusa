@@ -1,4 +1,5 @@
 import { StatusBadge, usePrompt, Container, Heading } from "@8medusa/ui"
+import "../../../../../components/rich-text-editor/styles.css"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import * as zod from "zod"
@@ -162,7 +163,7 @@ export const ProductGeneralSection = ({
                   dangerouslySetInnerHTML={{
                     __html: product?.product_addition?.long_description,
                   }}
-                  className="ProseMirror !py-0 !pl-0"
+                  className="product-description-content prose prose-sm"
                 />
               )
             }
