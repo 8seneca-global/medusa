@@ -1,6 +1,6 @@
 {
   "name": "@8medusa/medusa-oas-cli",
-  "version": "2.12.4",
+  "version": "2.12.8",
   "description": "OAS CLI",
   "main": "dist/index.js",
   "bin": {
@@ -35,7 +35,7 @@
     "medusa-oas": "ts-node src/index.ts"
   },
   "dependencies": {
-    "@8medusa/medusa": "2.12.6",
+    "@8medusa/medusa": "2.12.8",
     "@8medusa/utils": "2.12.2",
     "@readme/json-schema-ref-parser": "^1.2.0",
     "@readme/openapi-parser": "^2.4.0",
