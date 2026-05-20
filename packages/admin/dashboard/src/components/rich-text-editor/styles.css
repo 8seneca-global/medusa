@@ -2,20 +2,42 @@
   outline: none;
   padding-inline: 16px;
   padding-block: 8px;
-  max-height: 200px;
+  max-height: 400px;
   overflow-y: auto;
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.ProseMirror h1 {
+  font-size: 22.5pt;
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 1rem 0 0.75rem;
 }
 
 .ProseMirror h2 {
-  font-size: 1.5em;
-  font-weight: 600;
-  margin: 1em 0 0.5em;
+  font-size: 17.55pt;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem;
 }
 
 .ProseMirror h3 {
-  font-size: 1.25em;
-  font-weight: 600;
-  margin: 1em 0 0.5em;
+  font-size: 12.45pt;
+  line-height: 1.3;
+  font-weight: 500;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.ProseMirror hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #e3e0de;
+}
+
+.ProseMirror a {
+  color: #2474ce;
+  text-decoration: underline;
 }
 
 .ProseMirror ul {
@@ -72,7 +94,6 @@
   z-index: 2;
 }
 
-/* Table column resizing handle */
 .ProseMirror .column-resize-handle {
   position: absolute;
   right: -2px;
@@ -88,7 +109,6 @@
   cursor: col-resize;
 }
 
-/* Table selection */
 .tableWrapper {
   padding: 1rem 0;
   overflow-x: auto;
@@ -98,16 +118,59 @@
   cursor: col-resize;
 }
 
-/* Selected cells */
 .selectedCell {
   position: relative;
 }
 
-/* Placeholder */
 .ProseMirror p.is-editor-empty:first-child::before {
   color: #adb5bd;
   content: attr(data-placeholder);
   float: left;
   height: 0;
   pointer-events: none;
+}
+
+/* Detail-view preview rendering — mirrors storefront */
+.product-description-content.prose {
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #222;
+}
+.product-description-content.prose p {
+  font-size: 11pt;
+}
+.product-description-content.prose h1 {
+  font-size: 22.5pt;
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 1rem 0 0.75rem;
+}
+.product-description-content.prose h2 {
+  font-size: 17.55pt;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem;
+}
+.product-description-content.prose h3 {
+  font-size: 12.45pt;
+  line-height: 1.3;
+  font-weight: 500;
+  margin: 0.75rem 0 0.5rem;
+}
+.product-description-content.prose hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #e3e0de;
+}
+.product-description-content.prose a {
+  color: #2474ce;
+  text-decoration: underline;
+}
+.product-description-content.prose ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.product-description-content.prose ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
 }
