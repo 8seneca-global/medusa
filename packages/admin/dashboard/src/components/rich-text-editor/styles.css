@@ -134,7 +134,7 @@
 .product-description-content.prose {
   font-size: 11pt;
   line-height: 1.5;
-  color: #222;
+  @apply text-ui-fg-base;
 }
 .product-description-content.prose p {
   font-size: 11pt;
