@@ -130,11 +130,15 @@
   pointer-events: none;
 }
 
-/* Detail-view preview rendering — mirrors storefront */
+/* Detail-view preview rendering — admin theme-aware color overrides any
+   legacy inline style="color:#222" baked into stored long_description HTML. */
+.product-description-content.prose,
+.product-description-content.prose *:not(a) {
+  color: var(--fg-base) !important;
+}
 .product-description-content.prose {
   font-size: 11pt;
   line-height: 1.5;
-  @apply text-ui-fg-base;
 }
 .product-description-content.prose p {
   font-size: 11pt;

@@ -5,13 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8c0
 
-"@8medusa/admin-bundler@2.12.4, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
+"@8medusa/admin-bundler@2.12.9, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
   version: 0.0.0-use.local
   resolution: "@8medusa/admin-bundler@workspace:packages/admin/admin-bundler"
   dependencies:
     "@8medusa/admin-shared": 2.7.0
     "@8medusa/admin-vite-plugin": 2.7.0
-    "@8medusa/dashboard": 2.12.4
+    "@8medusa/dashboard": 2.12.9
     "@8medusa/types": 2.12.4
     "@types/compression": ^1.7.5
     "@vitejs/plugin-react": ^4.2.1
@@ -100,7 +100,7 @@ __metadata:
   resolution: "@8medusa/api-key@workspace:packages/modules/api-key"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@swc/core": ^1.7.28
     "@swc/jest": ^0.2.36
@@ -184,7 +184,7 @@ __metadata:
   resolution: "@8medusa/auth@workspace:packages/modules/auth"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -241,7 +241,7 @@ __metadata:
   resolution: "@8medusa/cart@workspace:packages/modules/cart"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -353,7 +353,7 @@ __metadata:
   resolution: "@8medusa/currency@workspace:packages/modules/currency"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -378,7 +378,7 @@ __metadata:
   resolution: "@8medusa/customer@workspace:packages/modules/customer"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -398,7 +398,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/dashboard@2.12.4, @8medusa/dashboard@workspace:packages/admin/dashboard":
+"@8medusa/dashboard@2.12.9, @8medusa/dashboard@workspace:packages/admin/dashboard":
   version: 0.0.0-use.local
   resolution: "@8medusa/dashboard@workspace:packages/admin/dashboard"
   dependencies:
@@ -583,7 +583,7 @@ __metadata:
   resolution: "@8medusa/file@workspace:packages/modules/file"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -695,7 +695,7 @@ __metadata:
   resolution: "@8medusa/fulfillment@workspace:packages/modules/fulfillment"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -754,7 +754,7 @@ __metadata:
   resolution: "@8medusa/index@workspace:packages/modules/index"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/knex": 6.4.3
@@ -781,7 +781,7 @@ __metadata:
   resolution: "@8medusa/inventory@workspace:packages/modules/inventory"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -831,7 +831,7 @@ __metadata:
   resolution: "@8medusa/link-modules@workspace:packages/modules/link-modules"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
     "@mikro-orm/postgresql": 6.4.3
@@ -891,7 +891,7 @@ __metadata:
   resolution: "@8medusa/locking@workspace:packages/modules/locking"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -937,7 +937,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@8medusa/medusa-oas-cli@workspace:packages/cli/oas/medusa-oas-cli"
   dependencies:
-    "@8medusa/medusa": 2.12.6
+    "@8medusa/medusa": 2.12.9
     "@8medusa/types": 2.12.4
     "@8medusa/utils": 2.12.2
     "@readme/json-schema-ref-parser": ^1.2.0
@@ -962,11 +962,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/medusa@2.12.6, @8medusa/medusa@workspace:*, @8medusa/medusa@workspace:packages/medusa":
+"@8medusa/medusa@2.12.9, @8medusa/medusa@workspace:*, @8medusa/medusa@workspace:packages/medusa":
   version: 0.0.0-use.local
   resolution: "@8medusa/medusa@workspace:packages/medusa"
   dependencies:
-    "@8medusa/admin-bundler": 2.12.4
+    "@8medusa/admin-bundler": 2.12.9
     "@8medusa/api-key": 2.7.0
     "@8medusa/auth": 2.7.0
     "@8medusa/auth-emailpass": 2.9.20
@@ -1216,7 +1216,7 @@ __metadata:
   resolution: "@8medusa/notification@workspace:packages/modules/notification"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1278,7 +1278,7 @@ __metadata:
   resolution: "@8medusa/order@workspace:packages/modules/order"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1320,7 +1320,7 @@ __metadata:
   resolution: "@8medusa/payment@workspace:packages/modules/payment"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1345,7 +1345,7 @@ __metadata:
   resolution: "@8medusa/pricing@workspace:packages/modules/pricing"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1370,7 +1370,7 @@ __metadata:
   resolution: "@8medusa/product@workspace:packages/modules/product"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1396,7 +1396,7 @@ __metadata:
   resolution: "@8medusa/promotion@workspace:packages/modules/promotion"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1434,7 +1434,7 @@ __metadata:
   resolution: "@8medusa/region@workspace:packages/modules/region"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1459,7 +1459,7 @@ __metadata:
   resolution: "@8medusa/sales-channel@workspace:packages/modules/sales-channel"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1484,7 +1484,7 @@ __metadata:
   resolution: "@8medusa/stock-location@workspace:packages/modules/stock-location"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1509,7 +1509,7 @@ __metadata:
   resolution: "@8medusa/store@workspace:packages/modules/store"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1534,7 +1534,7 @@ __metadata:
   resolution: "@8medusa/tax@workspace:packages/modules/tax"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1576,7 +1576,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/test-utils@2.12.4, @8medusa/test-utils@workspace:*, @8medusa/test-utils@workspace:packages/medusa-test-utils":
+"@8medusa/test-utils@2.12.8, @8medusa/test-utils@workspace:*, @8medusa/test-utils@workspace:packages/medusa-test-utils":
   version: 0.0.0-use.local
   resolution: "@8medusa/test-utils@workspace:packages/medusa-test-utils"
   dependencies:
@@ -1598,7 +1598,7 @@ __metadata:
     typescript: ^5.6.2
   peerDependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/medusa": 2.12.6
+    "@8medusa/medusa": 2.12.9
     "@mikro-orm/postgresql": 6.4.3
     awilix: ^8.0.1
   peerDependenciesMeta:
@@ -1754,7 +1754,7 @@ __metadata:
   resolution: "@8medusa/user@workspace:packages/modules/user"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1854,7 +1854,7 @@ __metadata:
   resolution: "@8medusa/workflow-engine-inmemory@workspace:packages/modules/workflow-engine-inmemory"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
@@ -1881,7 +1881,7 @@ __metadata:
   resolution: "@8medusa/workflow-engine-redis@workspace:packages/modules/workflow-engine-redis"
   dependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/test-utils": 2.12.4
+    "@8medusa/test-utils": 2.12.8
     "@mikro-orm/cli": 6.4.3
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/migrations": 6.4.3
