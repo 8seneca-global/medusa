@@ -29,6 +29,7 @@ const LinkWithId = Link.extend({
       id: {
         default: null,
         parseHTML: (element: HTMLElement) => element.getAttribute("id"),
+        // eslint-disable-next-line no-confusing-arrow
         renderHTML: (attributes: { id?: string | null }) =>
           attributes.id ? { id: attributes.id } : {},
       },
@@ -91,7 +92,7 @@ export const RichTextEditor = ({ value, onChange }: RichTextEditorProps) => {
       />
       {isPreview ? (
         <div
-          className="product-description-content prose prose-sm p-3 min-h-[200px]"
+          className="product-description-content prose prose-sm min-h-[200px] p-3"
           dangerouslySetInnerHTML={{ __html: editor.getHTML() }}
         />
       ) : (
