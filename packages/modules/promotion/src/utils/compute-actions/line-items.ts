@@ -11,8 +11,13 @@ import {
   MathBN,
   MedusaError,
   ApplicationMethodTargetType as TargetType,
-  calculateAdjustmentAmountFromPromotion,
 } from "@8medusa/framework/utils"
+// Import directly from workspace @8medusa/utils. The framework package in
+// node_modules pins an older @8medusa/utils that predates the is_tax_inclusive
+// gross-vs-subtotal branching, so re-exporting it via @8medusa/framework/utils
+// would route to the stale implementation. Same pattern used by
+// __tests__/line-items.spec.ts for decorateCartTotals.
+import { calculateAdjustmentAmountFromPromotion } from "@8medusa/utils"
 import { BigNumber as BigNumberJS } from "bignumber.js"
 import { areRulesValidForContext } from "../validations"
 import { computeActionForBudgetExceeded } from "./usage"
@@ -295,6 +300,7 @@ function applyPromotionToItems(
         max_quantity: maxQuantity,
         type: applicationMethod?.type!,
         allocation,
+        is_tax_inclusive: isTaxInclusive,
       },
       lineItemsTotal
     )
