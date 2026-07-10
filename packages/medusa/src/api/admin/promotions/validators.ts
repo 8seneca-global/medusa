@@ -35,6 +35,12 @@ export const AdminGetPromotionsParamsFields = z.object({
   created_at: createOperatorMap().optional(),
   updated_at: createOperatorMap().optional(),
   deleted_at: createOperatorMap().optional(),
+  status: z
+    .union([
+      z.nativeEnum(PromotionStatus),
+      z.array(z.nativeEnum(PromotionStatus)),
+    ])
+    .optional(),
 })
 
 export type AdminGetPromotionsParamsType = z.infer<
@@ -140,7 +146,7 @@ export const AdminUpdateApplicationMethod = z
   })
   .strict()
 
-const promoRefinement = (promo) => {
+const promoRefinement = (promo: any) => {
   if (promo.campaign && promo.campaign_id) {
     return false
   }

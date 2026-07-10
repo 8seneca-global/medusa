@@ -1,16 +1,13 @@
 import { motion } from "motion/react"
 import { useTheme } from "../../../providers/theme-provider"
-
-const LyraDarkLogo = "https://storage-api.8seneca.com/medusa-dev/lyra-dark.png"
-const LyraLightLogo =
-  "https://storage-api.8seneca.com/medusa-dev/lyra-light.png"
+import { LYRA_DARK_LOGO, LYRA_LIGHT_LOGO } from "./lyra-logos"
 
 export default function AvatarBox({ checked }: { checked?: boolean }) {
   const { theme } = useTheme()
   return (
     <div className="relative">
       <img
-        src={theme === "light" ? LyraLightLogo : LyraDarkLogo}
+        src={theme === "light" ? LYRA_LIGHT_LOGO : LYRA_DARK_LOGO}
         alt="Lyra Chocolate"
         className="mb-5 h-32 w-32 rounded-lg p-3"
       />

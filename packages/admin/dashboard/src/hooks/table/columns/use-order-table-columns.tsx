@@ -23,6 +23,10 @@ import {
   FulfillmentStatusHeader,
 } from "../../../components/table/table-cells/order/fulfillment-status-cell"
 import {
+  OrderNoteCell,
+  OrderNoteHeader,
+} from "../../../components/table/table-cells/order/order-note-cell"
+import {
   PaymentStatusCell,
   PaymentStatusHeader,
 } from "../../../components/table/table-cells/order/payment-status-cell"
@@ -47,6 +51,11 @@ export const useOrderTableColumns = (props: UseOrderTableColumnsProps) => {
 
   const columns = useMemo(
     () => [
+      columnHelper.display({
+        id: "order_note",
+        header: () => <OrderNoteHeader />,
+        cell: ({ row }) => <OrderNoteCell order={row.original} />,
+      }),
       columnHelper.accessor("display_id", {
         header: () => <DisplayIdHeader />,
         cell: ({ getValue }) => {

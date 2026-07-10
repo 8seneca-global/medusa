@@ -1,4 +1,4 @@
-import { HttpTypes } from "@8medusa/types"
+import { HttpTypes, PromotionStatusValues } from "@8medusa/types"
 import { useQueryParams } from "../../use-query-params"
 
 type UsePromotionTableQueryProps = {
@@ -11,16 +11,17 @@ export const usePromotionTableQuery = ({
   pageSize = 20,
 }: UsePromotionTableQueryProps) => {
   const queryObject = useQueryParams(
-    ["offset", "q", "created_at", "updated_at"],
+    ["offset", "q", "created_at", "updated_at", "status"],
     prefix
   )
 
-  const { offset, q, created_at, updated_at } = queryObject
+  const { offset, q, created_at, updated_at, status } = queryObject
 
   const searchParams: HttpTypes.AdminGetPromotionsParams = {
     limit: pageSize,
     created_at: created_at ? JSON.parse(created_at) : undefined,
     updated_at: updated_at ? JSON.parse(updated_at) : undefined,
+    status: status ? (status.split(",") as PromotionStatusValues[]) : undefined,
     offset: offset ? Number(offset) : 0,
     q,
   }

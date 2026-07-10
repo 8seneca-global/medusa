@@ -1,5 +1,5 @@
 import { BaseFilterable, OperatorMap } from "../../../dal"
-import { ApplicationMethodTypeValues } from "../../../promotion"
+import { ApplicationMethodTypeValues, PromotionStatusValues } from "../../../promotion"
 import { FindParams, SelectParams } from "../../common"
 
 export interface AdminGetPromotionParams extends SelectParams {}
@@ -48,6 +48,10 @@ export interface AdminGetPromotionsParams
    * Filter by the promotion's application method type.
    */
   application_method_type?: ApplicationMethodTypeValues | ApplicationMethodTypeValues[]
+  /**
+   * Filter by the promotion's status.
+   */
+  status?: PromotionStatusValues | PromotionStatusValues[]
   /**
    * An array of filters to apply on the entity, where each item in the array is joined with an "and" condition.
    */
