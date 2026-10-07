@@ -126,6 +126,7 @@ export const RuleValueFormField = ({
                 <Combobox
                   {...field}
                   {...comboboxData}
+                  value={value}
                   multiple={watchOperator !== "eq"}
                   ref={ref}
                   placeholder={

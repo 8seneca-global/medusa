@@ -18,6 +18,25 @@ moduleIntegrationTestRunner({
         })
       })
 
+      describe("in", () => {
+        const operator = "in"
+
+        it("should evaluate conditions accurately", async () => {
+          expect(testFunc(["1", "2"], operator, [2])).toEqual(true)
+          expect(testFunc(["2"], operator, ["2"])).toEqual(true)
+          expect(testFunc(["2"], operator, ["22"])).toEqual(false)
+        })
+
+        it("should match when any context value is in the rule values", async () => {
+          expect(
+            testFunc(["pcat_sale"], operator, ["pcat_other", "pcat_sale"])
+          ).toEqual(true)
+          expect(
+            testFunc(["pcat_sale"], operator, ["pcat_other", "pcat_more"])
+          ).toEqual(false)
+        })
+      })
+
       describe("ne", () => {
         const operator = "ne"
 
