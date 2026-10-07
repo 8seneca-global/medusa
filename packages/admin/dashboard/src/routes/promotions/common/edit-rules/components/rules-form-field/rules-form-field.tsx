@@ -91,12 +91,24 @@ export const RulesFormField = ({
       replace(generateRuleAttributes(rules) as any)
     }
 
+    // New buyget promotions start with a Product row. Unlocked forms (Buy X Get Y)
+    // let the admin change or remove it like any other condition; locked templates
+    // (buy_x_get_percentage_off) depend on its fixed shape when submitting.
+    const defaultProductRule = locked
+      ? requiredProductRule
+      : {
+          ...requiredProductRule,
+          required: false,
+          operator: "in",
+          operator_label: "In",
+        }
+
     if (ruleType === "buy-rules" && !fields.length) {
       form.resetField("application_method.buy_rules")
       const rulesToAppend =
         promotion?.id || promotionType === "standard"
           ? rules
-          : [...rules, requiredProductRule]
+          : [...rules, defaultProductRule]
 
       replace(generateRuleAttributes(rulesToAppend) as any)
     }
@@ -106,7 +118,7 @@ export const RulesFormField = ({
       const rulesToAppend =
         promotion?.id || promotionType === "standard"
           ? rules
-          : [...rules, requiredProductRule]
+          : [...rules, defaultProductRule]
 
       replace(generateRuleAttributes(rulesToAppend) as any)
     }
@@ -119,6 +131,7 @@ export const RulesFormField = ({
     replace,
     rules,
     promotion?.id,
+    locked,
   ])
 
   return (

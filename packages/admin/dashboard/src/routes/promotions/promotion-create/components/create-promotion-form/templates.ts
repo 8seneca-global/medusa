@@ -121,7 +121,10 @@ export const templates = [
       type: "buyget",
       application_method: {
         type: "percentage",
-        value: 100,
+        // A string: the create form schema validates `value` as text so admins can type
+        // comma decimals. The field is hidden for this template, so a number would fail
+        // validation with no visible error and block the Details step.
+        value: "100",
         apply_to_quantity: 1,
         max_quantity: 1,
       },

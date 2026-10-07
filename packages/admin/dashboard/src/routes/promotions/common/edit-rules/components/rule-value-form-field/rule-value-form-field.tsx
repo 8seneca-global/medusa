@@ -21,6 +21,22 @@ type RuleValueFormFieldType = {
   ruleType: "rules" | "target-rules" | "buy-rules"
 }
 
+// Combobox picks single vs multi select from whether its value is an array and
+// ignores `multiple`, so shape the value by operator: "eq" takes one value,
+// "in"/"ne" take a list. Without this, a rule that started on "eq" with no value
+// stays single-select after switching to "in".
+const toComboboxValue = (value: unknown, operator?: string) => {
+  if (operator === "eq") {
+    return Array.isArray(value) ? value[0] ?? "" : value ?? ""
+  }
+
+  if (Array.isArray(value)) {
+    return value
+  }
+
+  return value ? [value] : []
+}
+
 const buildFilters = (attribute?: string, store?: HttpTypes.AdminStore) => {
   if (!attribute || !store) {
     return {}
@@ -126,7 +142,7 @@ export const RuleValueFormField = ({
                 <Combobox
                   {...field}
                   {...comboboxData}
-                  value={value}
+                  value={toComboboxValue(value, watchOperator)}
                   multiple={watchOperator !== "eq"}
                   ref={ref}
                   placeholder={
