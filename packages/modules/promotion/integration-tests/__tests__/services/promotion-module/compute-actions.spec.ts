@@ -4701,11 +4701,12 @@ moduleIntegrationTestRunner({
             context
           )
 
+          // Fork divergence: the cheapest unit is free (500 per tshirt vs 1000 per tshirt2).
           expect(JSON.parse(JSON.stringify(result))).toEqual([
             {
               action: "addItemAdjustment",
-              item_id: "item_cotton_tshirt2",
-              amount: 1000,
+              item_id: "item_cotton_tshirt",
+              amount: 500,
               code: "PROMOTION_TEST",
             },
           ])
@@ -4881,17 +4882,18 @@ moduleIntegrationTestRunner({
             context
           )
 
+          // Fork divergence: discounted units are taken cheapest first.
           expect(JSON.parse(JSON.stringify(result))).toEqual([
-            {
-              action: "addItemAdjustment",
-              item_id: "item_cotton_tshirt2",
-              amount: 2000,
-              code: "PROMOTION_TEST",
-            },
             {
               action: "addItemAdjustment",
               item_id: "item_cotton_tshirt",
               amount: 1000,
+              code: "PROMOTION_TEST",
+            },
+            {
+              action: "addItemAdjustment",
+              item_id: "item_cotton_tshirt2",
+              amount: 2000,
               code: "PROMOTION_TEST",
             },
           ])
