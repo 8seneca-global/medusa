@@ -18,17 +18,35 @@ export type EligibleItem = {
   quantity: BigNumberInput
 }
 
-function sortByPrice(a: ComputeActionItemLine, b: ComputeActionItemLine) {
-  return MathBN.lt(a.subtotal, b.subtotal) ? 1 : -1
+function unitPrice(item: ComputeActionItemLine) {
+  return MathBN.div(item.subtotal, item.quantity)
 }
 
 /*
-  Grabs all the items in the context where the rules apply
-  We then sort by price to prioritize most valuable item
+  Fork divergence: upstream orders both the bought and the discounted items most valuable first,
+  by line subtotal, so a "buy 2 get 1" on 3 cheap + 3 dear units gives a dear unit away. Lyra's
+  rule is "the cheapest item is free": the units the customer pays for are taken most expensive
+  first, and the discount goes to the cheapest unit left. Both compare unit price, because a line
+  total grows with quantity and would rank ten cheap units above two dear ones.
+*/
+function mostExpensiveFirst(
+  a: ComputeActionItemLine,
+  b: ComputeActionItemLine
+) {
+  return MathBN.lt(unitPrice(a), unitPrice(b)) ? 1 : -1
+}
+
+function cheapestFirst(a: ComputeActionItemLine, b: ComputeActionItemLine) {
+  return MathBN.gt(unitPrice(a), unitPrice(b)) ? 1 : -1
+}
+
+/*
+  Grabs all the items in the context where the rules apply, in the order they should be used
 */
 function filterItemsByPromotionRules(
   itemsContext: ComputeActionItemLine[],
-  rules?: PromotionTypes.PromotionRuleDTO[]
+  rules: PromotionTypes.PromotionRuleDTO[] | undefined,
+  order: (a: ComputeActionItemLine, b: ComputeActionItemLine) => number
 ) {
   return itemsContext
     .filter((item) =>
@@ -38,7 +56,7 @@ function filterItemsByPromotionRules(
         ApplicationMethodTargetType.ITEMS
       )
     )
-    .sort(sortByPrice)
+    .sort(order)
 }
 
 export function getComputedActionsForBuyGet(
@@ -78,7 +96,8 @@ export function getComputedActionsForBuyGet(
 
   const eligibleBuyItems = filterItemsByPromotionRules(
     itemsContext,
-    promotion.application_method?.buy_rules
+    promotion.application_method?.buy_rules,
+    mostExpensiveFirst
   )
 
   if (!eligibleBuyItems.length) {
@@ -154,7 +173,8 @@ export function getComputedActionsForBuyGet(
   // Find all items that match the target rules criteria
   const eligibleTargetItems = filterItemsByPromotionRules(
     itemsContext,
-    promotion.application_method?.target_rules
+    promotion.application_method?.target_rules,
+    cheapestFirst
   )
 
   // If no items match the target rules, return early
