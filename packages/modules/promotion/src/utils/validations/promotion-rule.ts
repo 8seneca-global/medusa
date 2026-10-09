@@ -120,13 +120,13 @@ export function evaluateRuleValueCondition(
   }
 
   switch (operator) {
-    case "eq": {
-      const ruleValueSet = new Set(ruleValues)
-      return valuesToCheck.every((val) => ruleValueSet.has(`${val}`))
-    }
     // Backport of upstream medusajs/medusa#13078: a context value can be a list
     // (e.g. a product's categories), and "in" must match when any one of them is
-    // in the rule values. Sharing the "eq" branch required all of them to match.
+    // in the rule values. Requiring all of them to match broke "in".
+    // Fork divergence: "eq" had the same flaw, so "category equals C1" failed for a
+    // product in C1 and C2; it now matches like "in". A single value, such as a
+    // currency, behaves as before.
+    case "eq":
     case "in": {
       const ruleValueSet = new Set(ruleValues)
       return valuesToCheck.some((val) => ruleValueSet.has(`${val}`))

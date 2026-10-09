@@ -47,3 +47,50 @@ describe("areRulesValidForContext — customer group not in", () => {
     }
   })
 })
+
+describe("areRulesValidForContext — equals on a multi-valued field", () => {
+  const equalsA = rule("eq", ["cusgroup_a"])
+
+  it("passes a customer who is in the group alongside others", () => {
+    expect(isValid(equalsA, customerIn("cusgroup_a", "cusgroup_b"))).toBe(true)
+  })
+
+  it("rejects a customer who is not in the group", () => {
+    expect(isValid(equalsA, customerIn("cusgroup_b"))).toBe(false)
+    expect(isValid(equalsA, customerIn())).toBe(false)
+  })
+
+  it("passes a product in the category alongside others", () => {
+    const categoryEquals = [
+      {
+        attribute: "items.product.categories.id",
+        operator: "eq",
+        values: [{ value: "pcat_c1" }],
+      },
+    ] as any[]
+    const item = {
+      product: { categories: [{ id: "pcat_c1" }, { id: "pcat_c2" }] },
+    }
+
+    expect(
+      areRulesValidForContext(
+        categoryEquals,
+        item,
+        ApplicationMethodTargetType.ITEMS
+      )
+    ).toBe(true)
+  })
+
+  it("keeps single-valued fields as they were", () => {
+    const currencyEquals = [
+      {
+        attribute: "currency_code",
+        operator: "eq",
+        values: [{ value: "eur" }],
+      },
+    ] as any[]
+
+    expect(isValid(currencyEquals, { currency_code: "eur" })).toBe(true)
+    expect(isValid(currencyEquals, { currency_code: "czk" })).toBe(false)
+  })
+})
