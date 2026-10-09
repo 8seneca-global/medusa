@@ -316,7 +316,7 @@ export const RulesFormField = ({
               </div>
 
               <div className="size-7 flex-none self-center">
-                {!locked && !fieldRule.required && (
+                {(!locked || !fieldRule.id) && !fieldRule.required && (
                   <IconButton
                     size="small"
                     variant="transparent"
@@ -350,54 +350,55 @@ export const RulesFormField = ({
         )
       })}
 
-      {!locked && (
-        <div className={fields.length ? "mt-6" : ""}>
-          {(!maxRules || fields.length < maxRules) && (
-            <Button
-              type="button"
-              variant="secondary"
-              className="inline-block"
-              onClick={() => {
-                append({
-                  attribute: "",
-                  operator: "",
-                  values: [],
-                  required: false,
-                } as any)
-              }}
-            >
-              {t("promotions.fields.addCondition")}
-            </Button>
-          )}
-          {maxRules
-            ? fields.length >= maxRules && (
-                <Text size="small" className="text-ui-fg-subtle mt-2">
-                  Maximum {maxRules} rules allowed for this promotion type
-                </Text>
-              )
-            : null}
-          {!!fields.length && (
-            <Button
-              type="button"
-              variant="transparent"
-              className="text-ui-fg-muted hover:text-ui-fg-subtle ml-2 inline-block"
-              onClick={() => {
-                const indicesToRemove = fields
-                  .map((field: any, index) => (field.required ? null : index))
-                  .filter((f) => f !== null)
+      {/* Fork divergence: the edit drawer passes `locked` so saved conditions (including
+          the ones a Lyra template generated) cannot be removed. It used to hide "Add
+          condition" too, so a section left empty at creation could never get a condition.
+          Adding stays open; an unsaved condition (no id yet) can still be removed, and
+          "Clear all" stays hidden while locked. */}
+      <div className={fields.length ? "mt-6" : ""}>
+        {(!maxRules || fields.length < maxRules) && (
+          <Button
+            type="button"
+            variant="secondary"
+            className="inline-block"
+            onClick={() => {
+              append({
+                attribute: "",
+                operator: "",
+                values: [],
+                required: false,
+              } as any)
+            }}
+          >
+            {t("promotions.fields.addCondition")}
+          </Button>
+        )}
+        {maxRules
+          ? fields.length >= maxRules && (
+              <Text size="small" className="text-ui-fg-subtle mt-2">
+                Maximum {maxRules} rules allowed for this promotion type
+              </Text>
+            )
+          : null}
+        {!locked && !!fields.length && (
+          <Button
+            type="button"
+            variant="transparent"
+            className="text-ui-fg-muted hover:text-ui-fg-subtle ml-2 inline-block"
+            onClick={() => {
+              const indicesToRemove = fields
+                .map((field: any, index) => (field.required ? null : index))
+                .filter((f) => f !== null)
 
-                setRulesToRemove &&
-                  setRulesToRemove(
-                    fields.filter((field: any) => !field.required)
-                  )
-                remove(indicesToRemove)
-              }}
-            >
-              {t("promotions.fields.clearAll")}
-            </Button>
-          )}
-        </div>
-      )}
+              setRulesToRemove &&
+                setRulesToRemove(fields.filter((field: any) => !field.required))
+              remove(indicesToRemove)
+            }}
+          >
+            {t("promotions.fields.clearAll")}
+          </Button>
+        )}
+      </div>
     </div>
   )
 }
