@@ -112,8 +112,11 @@ export function evaluateRuleValueCondition(
     ? ruleValuesToCheck
     : [ruleValuesToCheck]
 
+  // Fork divergence: upstream fails every operator on an empty list, so "customer group not in
+  // VOC" rejected a guest customer who belongs to no group. An empty list contains none of the
+  // excluded values, so "ne" passes; every other operator still needs a value to match.
   if (!valuesToCheck.length) {
-    return false
+    return operator === "ne"
   }
 
   switch (operator) {
