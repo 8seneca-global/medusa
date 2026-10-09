@@ -74,3 +74,43 @@ describe("getComputedActionsForBuyGet — which unit is free", () => {
     ).toEqual([{ item_id: "item_cheap", amount: 1 }])
   })
 })
+
+const lineWithVat = (
+  id: string,
+  quantity: number,
+  netUnitPrice: number,
+  vatRate: number
+): any => ({
+  ...line(id, quantity, netUnitPrice),
+  subtotal: Math.round(quantity * netUnitPrice * 100) / 100,
+  tax_lines: [{ rate: vatRate }],
+})
+
+describe("getComputedActionsForBuyGet — free unit including VAT", () => {
+  it("discounts the free unit by its gross price, rounded to the cent", () => {
+    // 3 x 4.06 net at 23% is 14.98 gross; the free unit must take 4.99 off, not the net 4.06
+    expect(compute(2, [lineWithVat("item", 3, 4.06, 23)])).toEqual([
+      { item_id: "item", amount: 4.99 },
+    ])
+  })
+
+  it("makes a single-unit line fully free", () => {
+    // 1.68 net at 23% is 2.07 gross (1.68 + 0.39)
+    expect(
+      compute(2, [
+        lineWithVat("item_dear", 2, 6.66, 23),
+        lineWithVat("item_cheap", 1, 1.68, 23),
+      ])
+    ).toEqual([{ item_id: "item_cheap", amount: 2.07 }])
+  })
+
+  it("picks the cheapest unit by gross price when VAT rates differ", () => {
+    // 4.40 net at 5% (4.62 gross) is cheaper than 4.00 net at 23% (4.92 gross)
+    expect(
+      compute(1, [
+        lineWithVat("item_low_net", 1, 4.0, 23),
+        lineWithVat("item_low_gross", 1, 4.4, 5),
+      ])
+    ).toEqual([{ item_id: "item_low_gross", amount: 4.62 }])
+  })
+})
