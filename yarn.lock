@@ -5,13 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8c0
 
-"@8medusa/admin-bundler@2.12.12, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
+"@8medusa/admin-bundler@2.12.13, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
   version: 0.0.0-use.local
   resolution: "@8medusa/admin-bundler@workspace:packages/admin/admin-bundler"
   dependencies:
     "@8medusa/admin-shared": 2.7.0
     "@8medusa/admin-vite-plugin": 2.7.0
-    "@8medusa/dashboard": 2.12.12
+    "@8medusa/dashboard": 2.12.13
     "@8medusa/types": 2.12.11
     "@types/compression": ^1.7.5
     "@vitejs/plugin-react": ^4.2.1
@@ -398,7 +398,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/dashboard@2.12.12, @8medusa/dashboard@workspace:packages/admin/dashboard":
+"@8medusa/dashboard@2.12.13, @8medusa/dashboard@workspace:packages/admin/dashboard":
   version: 0.0.0-use.local
   resolution: "@8medusa/dashboard@workspace:packages/admin/dashboard"
   dependencies:
@@ -937,7 +937,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@8medusa/medusa-oas-cli@workspace:packages/cli/oas/medusa-oas-cli"
   dependencies:
-    "@8medusa/medusa": 2.12.12
+    "@8medusa/medusa": 2.12.13
     "@8medusa/types": 2.12.11
     "@8medusa/utils": 2.12.2
     "@readme/json-schema-ref-parser": ^1.2.0
@@ -962,11 +962,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/medusa@2.12.12, @8medusa/medusa@workspace:*, @8medusa/medusa@workspace:packages/medusa":
+"@8medusa/medusa@2.12.13, @8medusa/medusa@workspace:*, @8medusa/medusa@workspace:packages/medusa":
   version: 0.0.0-use.local
   resolution: "@8medusa/medusa@workspace:packages/medusa"
   dependencies:
-    "@8medusa/admin-bundler": 2.12.12
+    "@8medusa/admin-bundler": 2.12.13
     "@8medusa/api-key": 2.7.0
     "@8medusa/auth": 2.7.0
     "@8medusa/auth-emailpass": 2.9.20
@@ -1000,7 +1000,7 @@ __metadata:
     "@8medusa/payment-stripe": 2.7.0
     "@8medusa/pricing": 2.7.0
     "@8medusa/product": 2.7.0
-    "@8medusa/promotion": 2.12.6
+    "@8medusa/promotion": 2.12.7
     "@8medusa/region": 2.7.0
     "@8medusa/sales-channel": 2.7.0
     "@8medusa/stock-location": 2.7.0
@@ -1391,7 +1391,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/promotion@2.12.6, @8medusa/promotion@workspace:^, @8medusa/promotion@workspace:packages/modules/promotion":
+"@8medusa/promotion@2.12.7, @8medusa/promotion@workspace:^, @8medusa/promotion@workspace:packages/modules/promotion":
   version: 0.0.0-use.local
   resolution: "@8medusa/promotion@workspace:packages/modules/promotion"
   dependencies:
@@ -1598,7 +1598,7 @@ __metadata:
     typescript: ^5.6.2
   peerDependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/medusa": 2.12.12
+    "@8medusa/medusa": 2.12.13
     "@mikro-orm/postgresql": 6.4.3
     awilix: ^8.0.1
   peerDependenciesMeta:
