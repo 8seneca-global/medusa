@@ -18,8 +18,23 @@ export type EligibleItem = {
   quantity: BigNumberInput
 }
 
+/*
+  Fork divergence: this fork's line-item totals read every adjustment amount as VAT-inclusive
+  (core/utils totals/line-item, `includesTax: true`), but upstream prices the free unit from
+  `subtotal`, which is net. With net prices and 23% VAT, a free €4.99 unit was discounted by only
+  €4.06. Price units gross so the free one costs nothing.
+*/
 function unitPrice(item: ComputeActionItemLine) {
-  return MathBN.div(item.subtotal, item.quantity)
+  const taxLines = Array.isArray(item.tax_lines)
+    ? (item.tax_lines as { rate: BigNumberInput }[])
+    : []
+  const taxRate = taxLines.reduce(
+    (sum, taxLine) => MathBN.add(sum, MathBN.div(taxLine.rate, 100)),
+    MathBN.convert(0)
+  )
+  const lineGross = MathBN.mult(item.subtotal, MathBN.add(1, taxRate))
+
+  return MathBN.div(lineGross, item.quantity)
 }
 
 /*
@@ -259,9 +274,13 @@ export function getComputedActionsForBuyGet(
     const multiplier = MathBN.min(targetItem.quantity, remainingQtyToApply)
 
     // Calculate discount amount based on item price and applicable percentage
-    const pricePerUnit = MathBN.div(item.subtotal, item.quantity)
-    const applicableAmount = MathBN.mult(pricePerUnit, multiplier)
-    const amount = MathBN.mult(applicableAmount, applicablePercentage).div(100)
+    const applicableAmount = MathBN.mult(unitPrice(item), multiplier)
+    // Rounded to the cent: unrounded gross (4.9938) would push a fully free line below zero
+    // once the line total is rounded.
+    const amount = MathBN.round(
+      MathBN.mult(applicableAmount, applicablePercentage).div(100),
+      2
+    )
 
     if (MathBN.lte(amount, 0)) {
       continue
