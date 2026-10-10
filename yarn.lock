@@ -5,14 +5,14 @@ __metadata:
   version: 6
   cacheKey: 8c0
 
-"@8medusa/admin-bundler@2.12.9, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
+"@8medusa/admin-bundler@2.12.12, @8medusa/admin-bundler@workspace:packages/admin/admin-bundler":
   version: 0.0.0-use.local
   resolution: "@8medusa/admin-bundler@workspace:packages/admin/admin-bundler"
   dependencies:
     "@8medusa/admin-shared": 2.7.0
     "@8medusa/admin-vite-plugin": 2.7.0
-    "@8medusa/dashboard": 2.12.9
-    "@8medusa/types": 2.12.4
+    "@8medusa/dashboard": 2.12.12
+    "@8medusa/types": 2.12.11
     "@types/compression": ^1.7.5
     "@vitejs/plugin-react": ^4.2.1
     autoprefixer: ^10.4.16
@@ -398,7 +398,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/dashboard@2.12.9, @8medusa/dashboard@workspace:packages/admin/dashboard":
+"@8medusa/dashboard@2.12.12, @8medusa/dashboard@workspace:packages/admin/dashboard":
   version: 0.0.0-use.local
   resolution: "@8medusa/dashboard@workspace:packages/admin/dashboard"
   dependencies:
@@ -406,7 +406,7 @@ __metadata:
     "@8medusa/admin-vite-plugin": 2.7.0
     "@8medusa/icons": 2.7.0
     "@8medusa/js-sdk": 2.12.2
-    "@8medusa/types": 2.12.4
+    "@8medusa/types": 2.12.11
     "@8medusa/ui": 4.0.8
     "@8medusa/ui-preset": 2.7.0
     "@ariakit/react": ^0.4.15
@@ -608,7 +608,7 @@ __metadata:
     "@8medusa/modules-sdk": 2.12.2
     "@8medusa/orchestration": 2.12.2
     "@8medusa/telemetry": 2.7.0
-    "@8medusa/types": 2.12.4
+    "@8medusa/types": 2.12.11
     "@8medusa/utils": 2.12.2
     "@8medusa/workflows-sdk": 2.12.2
     "@aws-sdk/client-dynamodb": ^3.218.0
@@ -805,7 +805,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@8medusa/js-sdk@workspace:packages/core/js-sdk"
   dependencies:
-    "@8medusa/types": 2.12.4
+    "@8medusa/types": 2.12.11
     fetch-event-stream: ^0.1.5
     jest: ^29.7.0
     msw: ^2.3.0
@@ -937,8 +937,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@8medusa/medusa-oas-cli@workspace:packages/cli/oas/medusa-oas-cli"
   dependencies:
-    "@8medusa/medusa": 2.12.9
-    "@8medusa/types": 2.12.4
+    "@8medusa/medusa": 2.12.12
+    "@8medusa/types": 2.12.11
     "@8medusa/utils": 2.12.2
     "@readme/json-schema-ref-parser": ^1.2.0
     "@readme/openapi-parser": ^2.4.0
@@ -962,11 +962,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/medusa@2.12.9, @8medusa/medusa@workspace:*, @8medusa/medusa@workspace:packages/medusa":
+"@8medusa/medusa@2.12.12, @8medusa/medusa@workspace:*, @8medusa/medusa@workspace:packages/medusa":
   version: 0.0.0-use.local
   resolution: "@8medusa/medusa@workspace:packages/medusa"
   dependencies:
-    "@8medusa/admin-bundler": 2.12.9
+    "@8medusa/admin-bundler": 2.12.12
     "@8medusa/api-key": 2.7.0
     "@8medusa/auth": 2.7.0
     "@8medusa/auth-emailpass": 2.9.20
@@ -1155,7 +1155,7 @@ __metadata:
   resolution: "@8medusa/modules-sdk@workspace:packages/core/modules-sdk"
   dependencies:
     "@8medusa/orchestration": 2.12.2
-    "@8medusa/types": 2.12.4
+    "@8medusa/types": 2.12.11
     "@8medusa/utils": 2.12.2
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/knex": 6.4.3
@@ -1249,7 +1249,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@8medusa/orchestration@workspace:packages/core/orchestration"
   dependencies:
-    "@8medusa/types": 2.12.4
+    "@8medusa/types": 2.12.11
     "@8medusa/utils": 2.12.2
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/knex": 6.4.3
@@ -1598,7 +1598,7 @@ __metadata:
     typescript: ^5.6.2
   peerDependencies:
     "@8medusa/framework": 2.12.2
-    "@8medusa/medusa": 2.12.9
+    "@8medusa/medusa": 2.12.12
     "@mikro-orm/postgresql": 6.4.3
     awilix: ^8.0.1
   peerDependenciesMeta:
@@ -1633,7 +1633,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@8medusa/types@2.12.4, @8medusa/types@workspace:^, @8medusa/types@workspace:packages/core/types":
+"@8medusa/types@2.12.11, @8medusa/types@workspace:^, @8medusa/types@workspace:packages/core/types":
   version: 0.0.0-use.local
   resolution: "@8medusa/types@workspace:packages/core/types"
   dependencies:
@@ -1779,7 +1779,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@8medusa/utils@workspace:packages/core/utils"
   dependencies:
-    "@8medusa/types": 2.12.4
+    "@8medusa/types": 2.12.11
     "@graphql-codegen/core": ^4.0.2
     "@graphql-codegen/typescript": ^4.0.9
     "@graphql-tools/merge": ^9.0.7
@@ -1910,7 +1910,7 @@ __metadata:
   dependencies:
     "@8medusa/modules-sdk": 2.12.2
     "@8medusa/orchestration": 2.12.2
-    "@8medusa/types": 2.12.4
+    "@8medusa/types": 2.12.11
     "@8medusa/utils": 2.12.2
     "@mikro-orm/core": 6.4.3
     "@mikro-orm/knex": 6.4.3
