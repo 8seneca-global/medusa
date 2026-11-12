@@ -29,15 +29,27 @@ const spendThresholdDiscountHiddenFields = [
   "is_tax_inclusive",
 ]
 
-const priceRangeGiftHiddenFields = [
-  ...commonHiddenFields,
-  "is_tax_inclusive",
-]
+const priceRangeGiftHiddenFields = [...commonHiddenFields, "is_tax_inclusive"]
 
 const buyXGetPercentageOffHiddenFields = [
   ...commonHiddenFields,
   "rules",
   "is_tax_inclusive",
+]
+
+// Fork addition: the shipping templates. Upstream offers no way to create a promotion whose
+// target is the shipping fee, though the promotion module supports it
+// (application_method.target_type "shipping_methods").
+const percentageOfShippingHiddenFields = [
+  ...commonHiddenFields,
+  "is_tax_inclusive",
+]
+
+const amountOfShippingHiddenFields = [...commonHiddenFields]
+
+const freeShippingHiddenFields = [
+  ...percentageOfShippingHiddenFields,
+  "application_method.value",
 ]
 
 export const templates = [
@@ -178,6 +190,61 @@ export const templates = [
         type: "percentage",
         apply_to_quantity: 1,
         max_quantity: 1,
+      },
+    },
+  },
+  {
+    id: "free_shipping",
+    type: "standard",
+    title: "promotions.templates.free_shipping.title",
+    description: "promotions.templates.free_shipping.description",
+    hiddenFields: freeShippingHiddenFields,
+    defaults: {
+      is_automatic: "false",
+      is_tax_inclusive: false,
+      type: "standard",
+      application_method: {
+        allocation: "across",
+        target_type: "shipping_methods",
+        type: "percentage",
+        // A string, like buy_get's: the form validates `value` as text.
+        value: "100",
+      },
+    },
+  },
+  {
+    id: "percentage_off_shipping",
+    type: "standard",
+    title: "promotions.templates.percentage_off_shipping.title",
+    description: "promotions.templates.percentage_off_shipping.description",
+    hiddenFields: percentageOfShippingHiddenFields,
+    defaults: {
+      is_automatic: "false",
+      is_tax_inclusive: false,
+      type: "standard",
+      application_method: {
+        allocation: "across",
+        target_type: "shipping_methods",
+        type: "percentage",
+      },
+    },
+  },
+  {
+    id: "amount_off_shipping",
+    type: "standard",
+    title: "promotions.templates.amount_off_shipping.title",
+    description: "promotions.templates.amount_off_shipping.description",
+    hiddenFields: amountOfShippingHiddenFields,
+    defaults: {
+      is_automatic: "false",
+      // On: customers see shipping with VAT, so "€5 off shipping" means €5 off that price.
+      // Off, the €5 is net and €6 comes off a 20 % VAT fee.
+      is_tax_inclusive: true,
+      type: "standard",
+      application_method: {
+        allocation: "across",
+        target_type: "shipping_methods",
+        type: "fixed",
       },
     },
   },

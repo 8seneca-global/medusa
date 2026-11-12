@@ -171,6 +171,22 @@ export const PromotionGeneralSection = ({
         </div>
       </div>
 
+      {/* Fork addition: the shipping templates make the target matter; without this row a
+          shipping promotion reads exactly like an order one. */}
+      <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
+        <Text size="small" weight="plus" leading="compact">
+          {t("promotions.fields.target_type")}
+        </Text>
+
+        <Text size="small" leading="compact" className="text-pretty">
+          {promotion.application_method?.target_type
+            ? t(
+                `promotions.target_types.${promotion.application_method.target_type}`
+              )
+            : "-"}
+        </Text>
+      </div>
+
       <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
         <Text size="small" weight="plus" leading="compact">
           {t("promotions.fields.allocation")}
