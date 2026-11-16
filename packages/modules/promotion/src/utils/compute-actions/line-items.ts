@@ -79,7 +79,47 @@ export function getComputedActionsForShippingMethods(
 ): PromotionTypes.ComputeActions[] {
   validateContext("shipping_methods", shippingMethods)
 
-  return applyPromotionToItems(promotion, shippingMethods, appliedPromotionsMap)
+  const actions = applyPromotionToItems(
+    promotion,
+    shippingMethods,
+    appliedPromotionsMap
+  )
+
+  return promotion.is_tax_inclusive
+    ? actions.map((action) => toNetShippingAdjustment(action, shippingMethods))
+    : actions
+}
+
+/**
+ * Fork: a tax-inclusive promotion computes its shipping discount on the gross fee, as it does for
+ * items, but getShippingMethodTotals (@8medusa/utils totals/shipping-method) reads a shipping
+ * method adjustment as net and adds the method's tax on top, where line items read theirs as
+ * gross. So "€5 off" a €12 (€10 + 20 % VAT) fee took €6 off and "50 %" took €7.20. Converting the
+ * adjustment to net here lands the customer-facing discount on the promotion value. Done here
+ * rather than in the totals so the tax-exclusive shipping promotions keep their upstream amounts.
+ */
+function toNetShippingAdjustment(
+  action: PromotionTypes.ComputeActions,
+  shippingMethods: PromotionTypes.ComputeActionContext[TargetType.SHIPPING_METHODS]
+): PromotionTypes.ComputeActions {
+  if (action.action !== ComputedActions.ADD_SHIPPING_METHOD_ADJUSTMENT) {
+    return action
+  }
+
+  // The cart passes its shipping methods with their tax lines (cartFieldsForRefreshSteps loads
+  // shipping_methods.tax_lines.*); ComputeActionShippingLine just does not declare them.
+  const method = shippingMethods?.find(
+    (shippingMethod) => shippingMethod.id === action.shipping_method_id
+  ) as { tax_lines?: { rate: BigNumberInput }[] } | undefined
+  const taxRate = (method?.tax_lines ?? []).reduce(
+    (rate, line) => MathBN.add(rate, MathBN.div(line.rate, 100)),
+    MathBN.convert(0)
+  )
+
+  return {
+    ...action,
+    amount: MathBN.div(action.amount, MathBN.add(1, taxRate)),
+  }
 }
 
 export function getComputedActionsForOrder(

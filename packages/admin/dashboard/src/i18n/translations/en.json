@@ -1980,6 +1980,11 @@
     "sections": {
       "details": "Promotion Details"
     },
+    "target_types": {
+      "items": "Items",
+      "order": "Order",
+      "shipping_methods": "Shipping"
+    },
     "templates": {
       "amount_off_products": {
         "title": "Amount off products",
@@ -2012,6 +2017,18 @@
       "buy_x_get_percentage_off": {
         "title": "Buy X get percentage off",
         "description": "Buy X product(s), get a percentage off each product"
+      },
+      "free_shipping": {
+        "title": "Free shipping",
+        "description": "Waives the shipping fee"
+      },
+      "percentage_off_shipping": {
+        "title": "Percentage off shipping",
+        "description": "Discounts a percentage of the shipping fee"
+      },
+      "amount_off_shipping": {
+        "title": "Amount off shipping",
+        "description": "Discounts a fixed amount of the shipping fee"
       }
     },
     "tabs": {
@@ -2025,6 +2042,7 @@
       "value": "Value",
       "campaign": "Campaign",
       "method": "Method",
+      "target_type": "Applies to",
       "allocation": "Allocation",
       "is_tax_inclusive": "Tax inclusive",
       "addCondition": "Add condition",

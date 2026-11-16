@@ -516,7 +516,9 @@ export const CreatePromotionForm = () => {
     name: "application_method.target_type",
   })
 
-  const isTargetTypeOrder = targetType === "order"
+  // Item conditions ("what items will the promotion be applied to?") only mean something for an
+  // items target; an order or a shipping target has no items to pick.
+  const isTargetTypeItems = targetType === "items"
 
   const formData = form.getValues()
   let campaignQuery: object = {}
@@ -733,7 +735,7 @@ export const CreatePromotionForm = () => {
                         size="2xsmall"
                         rounded="full"
                       >
-                        {currentTemplate?.title}
+                        {t(currentTemplate.title)}
                       </Badge>
                     )}
                   </Heading>
@@ -1414,7 +1416,7 @@ export const CreatePromotionForm = () => {
 
                   {/* Hide target-rules for buy_x_get_percentage_off */}
                   {currentTemplate?.id !== "buy_x_get_percentage_off" &&
-                    !isTargetTypeOrder && (
+                    isTargetTypeItems && (
                       <>
                         <Divider />
                         <RulesFormField

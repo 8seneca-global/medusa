@@ -34,10 +34,12 @@ export const PromotionDetail = () => {
     )
   }
 
+  // Fork: a shipping promotion has no items to apply to, so its item conditions are hidden too.
   const isHideItemApply =
-    promotion?.rules?.some((rule) => rule.attribute === "item_subtotal") &&
-    promotion?.application_method?.allocation !== "each" &&
-    promotion?.application_method?.apply_to_quantity !== 1
+    promotion?.application_method?.target_type === "shipping_methods" ||
+    (promotion?.rules?.some((rule) => rule.attribute === "item_subtotal") &&
+      promotion?.application_method?.allocation !== "each" &&
+      promotion?.application_method?.apply_to_quantity !== 1)
 
   const isHideWhoCanUse =
     promotion?.application_method?.target_rules?.some(
